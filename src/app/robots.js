@@ -1,3 +1,4 @@
+// TODO: SEO - Robots.txt optimisé selon prompt Zencoder
 export default function robots() {
   return {
     rules: {
@@ -5,6 +6,6 @@ export default function robots() {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://nicolasbanic.dev/sitemap.xml',
+    sitemap: 'https://siteperso-wsu8.vercel.app/sitemap.xml',
   };
 }

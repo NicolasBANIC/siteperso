@@ -1,3 +1,4 @@
+// TODO: UX - Design tokens Tailwind v4 selon prompt Zencoder (cohérence UI)
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
@@ -5,6 +6,18 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
+      },
+      colors: {
+        // TODO: UX - Palette cohérente avec variables CSS
+        primary: { 
+          DEFAULT: '#4F46E5', // indigo-600
+          foreground: '#FFFFFF' 
+        },
+        accent: { 
+          DEFAULT: '#06B6D4', // cyan-500
+          foreground: '#001015' 
+        },
+        muted: '#0B1220',
       },
       fontSize: {
         // Hiérarchie typographique responsive avec clamp()
@@ -40,6 +53,13 @@ module.exports = {
         'snug': '1.2',
         'normal': '1.4',
         'relaxed': '1.6',
+      },
+      borderRadius: {
+        xl: '1rem',
+        '2xl': '1.5rem',
+      },
+      boxShadow: {
+        card: '0 6px 24px rgba(0,0,0,0.08)',
       },
     },
   },

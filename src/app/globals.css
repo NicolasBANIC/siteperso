@@ -9,6 +9,7 @@
     box-sizing: border-box;
   }
 
+  /* TODO: UX - Design tokens selon prompt Zencoder (thème clair/sombre cohérents) */
   :root {
     color-scheme: light;
     --color-background: #f8fafc;
@@ -21,6 +22,10 @@
     --color-accent-matrix: #00FF41; /* Vert Matrix */
     --color-accent-foreground: #ffffff;
     --color-ring: rgba(0, 71, 171, 0.45);
+    
+    /* Design tokens Tailwind v4 (RGB pour alpha) */
+    --color-primary: 79 70 229; /* indigo-600 */
+    --color-accent-cyan: 6 182 212; /* cyan-500 */
     
     /* Logo BANDEV tokens */
     --logo-gold: #8C6A18;
@@ -41,6 +46,10 @@
     --color-accent-matrix: #00FF41; /* Vert Matrix */
     --color-accent-foreground: #ffffff;
     --color-ring: rgba(0, 255, 65, 0.35);
+    
+    /* Design tokens Tailwind v4 (RGB pour alpha) */
+    --color-primary: 99 102 241; /* indigo-500 */
+    --color-accent-cyan: 34 211 238; /* cyan-400 */
     
     /* Logo BANDEV tokens (dark mode) */
     --logo-gold: #E5C461;

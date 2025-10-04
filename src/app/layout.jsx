@@ -14,29 +14,30 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+// TODO: SEO - Metadata optimisé selon prompt Zencoder (Lighthouse SEO ≥95)
 export const metadata = {
   title: {
-    default: 'BANDEV — Développeur Web Freelance | Transformez vos idées en expériences digitales exceptionnelles',
+    default: 'BANDEV — Développeur Web Freelance',
     template: '%s | BANDEV'
   },
-  description: 'BANDEV : Votre partenaire digital pour des sites web ultra-performants. Création de sites vitrines, e-commerce et applications web modernes avec Next.js, React et les dernières technologies. Performance, design et innovation au service de votre réussite.',
+  description: 'Sites et apps Next.js performants (Lighthouse 95+), SEO, accessibilité AA, expériences premium.',
   keywords: ['BANDEV', 'développeur web', 'freelance', 'Lyon', 'création site web', 'e-commerce', 'application web', 'Next.js', 'React', 'développeur full-stack', 'site performant', 'web moderne'],
   authors: [{ name: 'Nicolas Banic', email: 'bcnicolaspro@gmail.com' }],
   creator: 'BANDEV - Nicolas Banic',
-  metadataBase: new URL('https://bandev.fr'),
+  metadataBase: new URL('https://siteperso-wsu8.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'BANDEV — Développeur Web Freelance | Expériences digitales exceptionnelles',
-    description: 'Transformez vos idées en sites web ultra-performants. Design moderne, technologies de pointe et expertise technique pour propulser votre présence en ligne.',
-    url: 'https://bandev.fr',
-    siteName: 'BANDEV',
-    locale: 'fr_FR',
     type: 'website',
+    url: 'https://siteperso-wsu8.vercel.app',
+    siteName: 'BANDEV',
+    title: 'BANDEV — Développeur Web Freelance',
+    description: 'Next.js, React, Node.js. Performances, SEO, accessibilité.',
+    locale: 'fr_FR',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/og/og-home.png',
         width: 1200,
         height: 630,
         alt: 'BANDEV - Développeur Web Freelance',
@@ -45,9 +46,10 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    creator: '@bandev',
     title: 'BANDEV — Développeur Web Freelance',
-    description: 'Transformez vos idées en expériences digitales exceptionnelles',
-    images: ['/images/og-image.jpg'],
+    description: 'Sites et apps Next.js performants (Lighthouse 95+)',
+    images: ['/og/og-home.png'],
   },
   robots: {
     index: true,
@@ -158,10 +160,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${inter.className} bg-[var(--color-background)] text-[var(--color-foreground)] antialiased transition-colors motion-reduce:transition-none`}
       >
+        {/* TODO: AA - Skip link pour accessibilité clavier (WCAG AA) */}
+        <a 
+          href="#main" 
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-black focus:text-white focus:px-3 focus:py-2"
+        >
+          Aller au contenu
+        </a>
+        
         <ScrollProgress />
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="flex-1">
+          <main id="main" className="flex-1">
             {children}
           </main>
           <Footer />

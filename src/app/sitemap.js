@@ -1,15 +1,17 @@
+// TODO: SEO - Sitemap optimisé selon prompt Zencoder (toutes les pages principales)
 export default function sitemap() {
-  const baseUrl = 'https://nicolasbanic.dev';
+  const baseUrl = 'https://siteperso-wsu8.vercel.app';
   
   const routes = [
     '',
-    '/portfolio',
     '/services',
+    '/processus',
+    '/portfolio',
     '/tarifs',
-    '/apropos',
     '/temoignages',
-    '/devis',
+    '/apropos',
     '/contact',
+    '/devis',
     '/mentions-legales',
     '/politique-confidentialite',
   ];

@@ -87,10 +87,15 @@ export default function FormulaireContact() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6" aria-label="Formulaire de contact">
+      {/* TODO: AA - Messages avec aria-live pour accessibilité (WCAG AA) */}
       {/* Success Message */}
       {status === 'success' && (
-        <div className="p-4 bg-[var(--color-accent-matrix)]/10 border border-[var(--color-accent-matrix)]/30 rounded-lg flex items-start gap-3">
+        <div 
+          role="alert" 
+          aria-live="polite"
+          className="p-4 bg-[var(--color-accent-matrix)]/10 border border-[var(--color-accent-matrix)]/30 rounded-lg flex items-start gap-3"
+        >
           <CheckCircle className="w-5 h-5 text-[var(--color-accent-matrix)] flex-shrink-0 mt-0.5" aria-hidden="true" />
           <div>
             <p className="text-ui font-semibold text-[var(--color-foreground)]">
@@ -105,7 +110,11 @@ export default function FormulaireContact() {
 
       {/* Error Message */}
       {status === 'error' && (
-        <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-3">
+        <div 
+          role="alert" 
+          aria-live="assertive"
+          className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-3"
+        >
           <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
           <div>
             <p className="text-ui font-semibold text-[var(--color-foreground)]">
@@ -129,6 +138,8 @@ export default function FormulaireContact() {
           name="nom"
           value={formData.nom}
           onChange={handleChange}
+          aria-invalid={errors.nom ? 'true' : 'false'}
+          aria-describedby={errors.nom ? 'nom-error' : undefined}
           className={`w-full px-4 py-3 rounded-lg border text-body ${
             errors.nom 
               ? 'border-red-500 focus:ring-red-500' 
@@ -137,7 +148,7 @@ export default function FormulaireContact() {
           placeholder="Jean Dupont"
         />
         {errors.nom && (
-          <p className="mt-1 text-body-sm text-red-500">{errors.nom}</p>
+          <p id="nom-error" className="mt-1 text-body-sm text-red-500" role="alert">{errors.nom}</p>
         )}
       </div>
 
