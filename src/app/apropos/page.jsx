@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Code2, Lightbulb, Users, Award, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import HeroSection from "@/components/HeroSection";
+import CTAButton from "@/components/CTAButton";
+import CTASection from "@/components/CTASection";
 
 const skills = [
   "Next.js & React",
@@ -63,32 +65,24 @@ export default function AproposPage() {
         badge="10+ Années d'Expérience"
         height="65vh"
       >
-        <Link
-          href="/contact"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
-        >
-          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-          <span className="relative">Travaillons ensemble</span>
-          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Link>
-        <Link
-          href="/portfolio"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
-        >
-          <span className="relative">Découvrir mes projets</span>
-        </Link>
+        <CTAButton href="/contact" variant="primary" showIcon>
+          Travaillons ensemble
+        </CTAButton>
+        <CTAButton href="/portfolio" variant="secondary">
+          Découvrir mes projets
+        </CTAButton>
       </HeroSection>
 
       <div className="container-page">
 
       {/* Stats */}
       <ScrollReveal direction="up">
-        <section className="mb-24 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="section-spacing grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <ScrollReveal key={stat.label} direction="up" delay={index * 50}>
-              <div className="card text-center">
+              <div className="section-card center-content">
                 <p className="text-4xl font-bold text-[var(--color-accent)]">{stat.value}</p>
-                <p className="mt-2 text-sm text-[var(--color-muted)]">{stat.label}</p>
+                <p className="mt-2 body-small">{stat.label}</p>
               </div>
             </ScrollReveal>
           ))}
@@ -98,17 +92,17 @@ export default function AproposPage() {
       {/* Parcours & Compétences */}
       <section className="mb-24 grid gap-8 lg:grid-cols-2">
         <ScrollReveal direction="up">
-          <div className="card space-y-4">
-            <h2 className="text-2xl font-semibold text-[var(--color-foreground)]">Mon parcours</h2>
-            <p className="leading-relaxed text-[var(--color-muted)]">
+          <div className="section-card space-y-4">
+            <h2 className="heading-secondary">Mon parcours</h2>
+            <p className="body-regular">
               Après plusieurs années en agence digitale puis en start-up, j'ai choisi le freelancing pour travailler au
               plus près des décisions et offrir une collaboration fluide et personnalisée.
             </p>
-            <p className="leading-relaxed text-[var(--color-muted)]">
+            <p className="body-regular">
               Mon expérience couvre la conception, le design, le développement front et back-end, ainsi que la stratégie
               produit. J'ai accompagné des dizaines d'artisans, TPE et PME dans leur transformation digitale.
             </p>
-            <p className="leading-relaxed text-[var(--color-muted)]">
+            <p className="body-regular">
               Aujourd'hui, je me concentre sur la création de sites web modernes et performants qui génèrent de vrais
               résultats pour mes clients.
             </p>
@@ -116,8 +110,8 @@ export default function AproposPage() {
         </ScrollReveal>
 
         <ScrollReveal direction="up" delay={100}>
-          <div className="card space-y-4">
-            <h2 className="text-2xl font-semibold text-[var(--color-foreground)]">Compétences techniques</h2>
+          <div className="section-card space-y-4">
+            <h2 className="heading-secondary">Compétences techniques</h2>
             <div className="grid grid-cols-2 gap-3">
               {skills.map((skill, index) => (
                 <div
@@ -135,10 +129,10 @@ export default function AproposPage() {
 
       {/* Valeurs */}
       <ScrollReveal direction="up">
-        <section className="mb-24">
-          <div className="mb-12 space-y-4 text-center">
-            <h2 className="section-title">Mes valeurs</h2>
-            <p className="section-subtitle mx-auto">
+        <section className="section-spacing">
+          <div className="mb-12 space-y-4 center-text">
+            <h2 className="heading-primary">Mes valeurs</h2>
+            <p className="body-large mx-auto max-w-2xl">
               Ce qui guide mon travail au quotidien
             </p>
           </div>
@@ -148,12 +142,12 @@ export default function AproposPage() {
               const Icon = value.icon;
               return (
                 <ScrollReveal key={value.title} direction="up" delay={index * 100}>
-                  <div className="card text-center">
+                  <div className="section-card center-content gpu-accelerated">
                     <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
                       <Icon className="h-7 w-7" aria-hidden="true" />
                     </div>
-                    <h3 className="text-lg font-semibold text-[var(--color-foreground)]">{value.title}</h3>
-                    <p className="mt-2 text-sm text-[var(--color-muted)]">{value.description}</p>
+                    <h3 className="heading-tertiary">{value.title}</h3>
+                    <p className="mt-2 body-small">{value.description}</p>
                   </div>
                 </ScrollReveal>
               );
@@ -163,19 +157,19 @@ export default function AproposPage() {
       </ScrollReveal>
 
       {/* Ce qui m'anime */}
-      <section className="mb-24 grid gap-8 lg:grid-cols-2 lg:items-center">
+      <section className="section-spacing grid gap-8 lg:grid-cols-2 lg:items-center">
         <ScrollReveal direction="up">
-          <div className="card space-y-6">
-            <h2 className="text-2xl font-semibold text-[var(--color-foreground)]">Ce qui m'anime</h2>
-            <p className="leading-relaxed text-[var(--color-muted)]">
+          <div className="section-card space-y-6">
+            <h2 className="heading-secondary">Ce qui m'anime</h2>
+            <p className="body-regular">
               J'aime comprendre votre métier pour traduire vos enjeux business en solutions digitales concrètes. Chaque projet
               est l'occasion d'apporter de la valeur à vos équipes et à vos clients.
             </p>
-            <p className="leading-relaxed text-[var(--color-muted)]">
+            <p className="body-regular">
               Qualité, transparence, réactivité et pédagogie sont au cœur de ma démarche. Je privilégie des cycles courts,
               l'écoute et les retours réguliers pour avancer efficacement.
             </p>
-            <p className="leading-relaxed text-[var(--color-muted)]">
+            <p className="body-regular">
               Mon objectif : créer des sites web qui non seulement vous plaisent, mais qui génèrent aussi des résultats
               mesurables pour votre activité.
             </p>
@@ -199,30 +193,12 @@ export default function AproposPage() {
       </section>
 
       {/* CTA */}
-      <ScrollReveal direction="up">
-        <section className="rounded-3xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-secondary)] px-8 py-12 text-white shadow-2xl">
-          <div className="mx-auto max-w-2xl space-y-6 text-center">
-            <h2 className="text-3xl font-bold tracking-tight">Travaillons ensemble</h2>
-            <p className="text-lg text-white/90">
-              Vous avez un projet en tête ? Discutons-en autour d'un café (virtuel ou réel) !
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/devis"
-                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-[var(--color-accent)] shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl motion-reduce:transform-none"
-              >
-                Demander un devis
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white px-8 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white hover:text-[var(--color-accent)] motion-reduce:transform-none"
-              >
-                Me contacter
-              </Link>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
+      <CTASection
+        title="Travaillons ensemble"
+        description="Vous avez un projet en tête ? Discutons-en autour d'un café (virtuel ou réel) !"
+        primaryButton={{ text: "Demander un devis", href: "/devis" }}
+        secondaryButton={{ text: "Me contacter", href: "/contact" }}
+      />
       </div>
     </>
   );

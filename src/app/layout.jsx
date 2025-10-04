@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
     alternateName: 'Nicolas Banic - Développeur Web Freelance',
     description: 'BANDEV : Création de sites web modernes, performants et sur mesure. Spécialiste Next.js, React et applications web haute performance.',
     url: 'https://bandev.fr',
-    logo: 'https://bandev.fr/images/logoNB.png',
+    logo: 'https://bandev.fr/brand/logo.png',
     image: 'https://bandev.fr/images/og-image.jpg',
     email: 'bcnicolaspro@gmail.com',
     telephone: '+33-XXX-XXX-XXX',
@@ -145,6 +145,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
+        {/* Meta tags essentiels */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        
+        {/* JSON-LD pour le SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

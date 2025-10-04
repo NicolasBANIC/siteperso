@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -34,30 +33,26 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-transparent backdrop-blur transition-all motion-reduce:transition-none ${
+      role="banner"
+      className={`sticky top-0 inset-inline-start-0 z-50 w-full border-b border-transparent backdrop-blur transition-all motion-reduce:transition-none ${
         isScrolled
           ? "border-[var(--color-border)] bg-[var(--color-surface)]/95 shadow-sm"
           : "bg-[var(--color-surface)]/80"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-3">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-3">
         <Link
           href="/"
-          className="group inline-flex items-center gap-3 text-heading-sm font-semibold text-[var(--color-foreground)]"
-          aria-label="Retour à l'accueil"
+          className="brand inline-flex items-center transition-opacity duration-200 hover:opacity-80"
+          aria-label="Accueil BANDEV"
         >
-          <div className="relative h-10 w-10 transition-transform duration-300 group-hover:rotate-[360deg] motion-reduce:transition-none motion-reduce:group-hover:rotate-0">
-            <Image
-              src="/images/logoNB.png"
-              alt="Logo BANDEV - Développeur Web Freelance"
-              width={40}
-              height={40}
-              sizes="40px"
-              className="h-full w-full object-contain"
-              priority
-            />
-          </div>
-          <span className="hidden sm:inline-flex">BANDEV</span>
+          <img
+            src="/brand/logo.svg"
+            alt="BANDEV"
+            width="260"
+            height="80"
+            className="h-8 w-auto md:h-10"
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 text-ui font-medium lg:flex" aria-label="Navigation principale">

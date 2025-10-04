@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nouveau Logo BANDEV - Prévisualisation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      padding: 3rem 1.5rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-align: center;
+      background: linear-gradient(135deg, #FFD200 0%, #00FF55 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 3rem;
+      font-size: 1.125rem;
+    }
+
+    .preview-grid {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .preview-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .preview-card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #f1f5f9;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .dark-bg {
+      background: #0f172a;
+    }
+
+    .light-bg {
+      background: #f8fafc;
+    }
+
+    .colored-bg {
+      background: linear-gradient(135deg, #0047AB 0%, #006D77 100%);
+    }
+
+    .specs {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .specs h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #FFD200;
+    }
+
+    .specs ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .specs li {
+      padding: 0.5rem 0;
+      color: #cbd5e1;
+      font-size: 0.875rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .specs li:last-child {
+      border-bottom: none;
+    }
+
+    .specs li strong {
+      color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .color-swatch {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 0.5rem;
+    }
+
+    .color-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 0.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .color-info {
+      flex: 1;
+    }
+
+    .color-name {
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 0.25rem;
+    }
+
+    .color-code {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      font-family: 'Courier New', monospace;
+    }
+
+    .gold-gradient {
+      background: linear-gradient(180deg, #FFD200 0%, #FFB800 100%);
+    }
+
+    .green-gradient {
+      background: linear-gradient(180deg, #00FF55 0%, #00CC44 100%);
+    }
+
+    .size-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 0.75rem;
+    }
+
+    .size-label {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Nouveau Logo BANDEV</h1>
+    <p class="subtitle">Logo vectoriel premium avec dégradés dorés et vert matrix</p>
+
+    <div class="preview-grid">
+      <!-- Fond sombre -->
+      <div class="preview-card">
+        <h2>📱 Sur fond sombre (Header)</h2>
+        <div class="logo-container dark-bg">
+          <img src="logo.svg" alt="Logo BANDEV" style="height: 60px; width: auto;">
+        </div>
+        <p style="text-align: center; color: #94a3b8; font-size: 0.875rem;">
+          Utilisation principale dans le header du site
+        </p>
+      </div>
+
+      <!-- Fond clair -->
+      <div class="preview-card">
+        <h2>☀️ Sur fond clair</h2>
+        <div class="logo-container light-bg">
+          <img src="logo.svg" alt="Logo BANDEV" style="height: 60px; width: auto;">
+        </div>
+        <p style="text-align: center; color: #94a3b8; font-size: 0.875rem;">
+          Excellent contraste sur fond blanc
+        </p>
+      </div>
+
+      <!-- Fond coloré -->
+      <div class="preview-card">
+        <h2>🎨 Sur fond coloré</h2>
+        <div class="logo-container colored-bg">
+          <img src="logo.svg" alt="Logo BANDEV" style="height: 60px; width: auto;">
+        </div>
+        <p style="text-align: center; color: #94a3b8; font-size: 0.875rem;">
+          Parfait sur les dégradés bleus du site
+        </p>
+      </div>
+
+      <!-- Différentes tailles -->
+      <div class="preview-card">
+        <h2>📏 Différentes tailles</h2>
+        <div class="size-demo">
+          <div>
+            <img src="logo.svg" alt="Logo BANDEV" style="height: 32px; width: auto;">
+            <div class="size-label">32px (Mobile)</div>
+          </div>
+          <div>
+            <img src="logo.svg" alt="Logo BANDEV" style="height: 40px; width: auto;">
+            <div class="size-label">40px (Desktop)</div>
+          </div>
+          <div>
+            <img src="logo.svg" alt="Logo BANDEV" style="height: 60px; width: auto;">
+            <div class="size-label">60px (Hero)</div>
+          </div>
+          <div>
+            <img src="logo.svg" alt="Logo BANDEV" style="height: 80px; width: auto;">
+            <div class="size-label">80px (Large)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Palette de couleurs -->
+      <div class="preview-card">
+        <h2>🎨 Palette de couleurs</h2>
+        <div class="color-palette">
+          <div class="color-swatch">
+            <div class="color-box gold-gradient"></div>
+            <div class="color-info">
+              <div class="color-name">Doré Premium</div>
+              <div class="color-code">#FFD200 → #FFB800</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box green-gradient"></div>
+            <div class="color-info">
+              <div class="color-name">Vert Matrix</div>
+              <div class="color-code">#00FF55 → #00CC44</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spécifications techniques -->
+      <div class="preview-card">
+        <h2>⚙️ Spécifications techniques</h2>
+        <div class="specs">
+          <h3>Caractéristiques</h3>
+          <ul>
+            <li><strong>Format :</strong> SVG vectoriel (scalable sans perte)</li>
+            <li><strong>Dimensions :</strong> 260×80px (viewBox)</li>
+            <li><strong>Fond :</strong> Transparent</li>
+            <li><strong>Police :</strong> Montserrat ExtraBold (800)</li>
+            <li><strong>Dégradés :</strong> Linéaires verticaux pour effet premium</li>
+            <li><strong>Éléments :</strong> Chevrons &lt; &gt;, texte BAN/DEV, lignes décoratives</li>
+            <li><strong>Poids :</strong> ~1.5KB (ultra-léger)</li>
+            <li><strong>Compatibilité :</strong> Tous navigateurs modernes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Éléments du design -->
+      <div class="preview-card">
+        <h2>🎯 Éléments du design</h2>
+        <div class="specs">
+          <h3>Composition</h3>
+          <ul>
+            <li><strong>Chevron gauche &lt;</strong> Doré premium (#FFD200→#FFB800)</li>
+            <li><strong>Texte "BAN"</strong> Doré premium, Montserrat ExtraBold 38px</li>
+            <li><strong>Texte "DEV"</strong> Vert matrix (#00FF55→#00CC44), Montserrat ExtraBold 38px</li>
+            <li><strong>Chevron droit &gt;</strong> Vert matrix profond</li>
+            <li><strong>Ligne sous BAN</strong> Dorée, largeur du mot</li>
+            <li><strong>Traits sous DEV</strong> 3 petits traits + 1 ligne longue, vert matrix</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; padding: 2rem; color: #64748b; font-size: 0.875rem;">
+      <p>✨ Logo créé avec des dégradés premium pour un rendu professionnel et moderne</p>
+      <p style="margin-top: 0.5rem;">🚀 Optimisé pour tous les écrans et tous les fonds</p>
+    </div>
+  </div>
+</body>
+</html>

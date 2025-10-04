@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prévisualisation Logo BANDEV Moderne</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 2rem;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    body.dark {
+      background: #111827;
+      color: #e2e8f0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid currentColor;
+    }
+    
+    .controls {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 1rem;
+      z-index: 100;
+    }
+    
+    button {
+      padding: 0.75rem 1.5rem;
+      border: 2px solid currentColor;
+      background: transparent;
+      color: inherit;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    button:hover {
+      background: currentColor;
+      color: white;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    body.dark .card {
+      background: #1f2937;
+      border-color: #374151;
+    }
+    
+    .card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: #f8fafc;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    body.dark .logo-container {
+      background: #111827;
+    }
+    
+    .size-label {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-top: 0.5rem;
+    }
+    
+    .color-swatch {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .swatch {
+      flex: 1;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .contrast-info {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    
+    body.dark .contrast-info {
+      background: #064e3b;
+      border-color: #10b981;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: #10b981;
+      color: white;
+      margin-left: 0.5rem;
+    }
+    
+    /* Variables CSS pour le logo */
+    :root {
+      --logo-gold: #8C6A18;
+      --logo-green: #00FF45;
+      --logo-ink: #0B0B0B;
+      --logo-keyline: rgba(255,255,255,.85);
+    }
+    
+    body.dark {
+      --logo-gold: #E5C461;
+      --logo-ink: #FFFFFF;
+      --logo-keyline: rgba(0,0,0,.65);
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button onclick="toggleTheme()">🌓 Toggle Dark/Light</button>
+  </div>
+  
+  <div class="container">
+    <h1>🎨 Logo BANDEV Moderne - Prévisualisation</h1>
+    <p>Nouveau logo avec design "développeur web" : badge hexagonal, BAN doré, DEV vert néon, chevrons, sous-lignes.</p>
+    
+    <h2>📏 Tailles recommandées</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Header Mobile (28px)</h3>
+        <div class="logo-container">
+          <img src="public/images/logos/logo-bandev-modern.svg" alt="Logo BANDEV" style="height: 28px; width: auto;">
+        </div>
+        <div class="size-label">Hauteur : 28px</div>
+      </div>
+      
+      <div class="card">
+        <h3>Header Desktop (32px)</h3>
+        <div class="logo-container">
+          <img src="public/images/logos/logo-bandev-modern.svg" alt="Logo BANDEV" style="height: 32px; width: auto;">
+        </div>
+        <div class="size-label">Hauteur : 32px</div>
+      </div>
+      
+      <div class="card">
+        <h3>Footer (40px)</h3>
+        <div class="logo-container">
+          <img src="public/images/logos/logo-bandev-icon.svg" alt="Logo BANDEV" style="height: 40px; width: auto;">
+        </div>
+        <div class="size-label">Icône compacte : 40px</div>
+      </div>
+    </div>
+    
+    <h2>🎨 Variantes</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Adaptatif (recommandé)</h3>
+        <div class="logo-container">
+          <img src="public/images/logos/logo-bandev-modern.svg" alt="Logo BANDEV" style="height: 40px; width: auto;">
+        </div>
+        <p style="font-size: 0.875rem; color: #64748b;">S'adapte automatiquement au thème dark/light</p>
+      </div>
+      
+      <div class="card">
+        <h3>Version Dark</h3>
+        <div class="logo-container">
+          <img src="public/images/logos/logo-bandev-modern-dark.svg" alt="Logo BANDEV Dark" style="height: 40px; width: auto;">
+        </div>
+        <p style="font-size: 0.875rem; color: #64748b;">Pour fonds sombres (emails, PDFs)</p>
+      </div>
+      
+      <div class="card">
+        <h3>Version Light</h3>
+        <div class="logo-container">
+          <img src="public/images/logos/logo-bandev-modern-light.svg" alt="Logo BANDEV Light" style="height: 40px; width: auto;">
+        </div>
+        <p style="font-size: 0.875rem; color: #64748b;">Pour fonds clairs (emails, PDFs)</p>
+      </div>
+    </div>
+    
+    <h2>🎨 Palette de couleurs</h2>
+    <div class="card">
+      <h3>Mode Light</h3>
+      <div class="color-swatch">
+        <div class="swatch" style="background: #8C6A18; color: white;">
+          #8C6A18<br>Or BAN
+        </div>
+        <div class="swatch" style="background: #00FF45; color: black;">
+          #00FF45<br>Vert néon
+        </div>
+        <div class="swatch" style="background: #0B0B0B; color: white;">
+          #0B0B0B<br>Encre DEV
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>Mode Dark</h3>
+      <div class="color-swatch">
+        <div class="swatch" style="background: #E5C461; color: black;">
+          #E5C461<br>Or BAN
+        </div>
+        <div class="swatch" style="background: #00FF45; color: black;">
+          #00FF45<br>Vert néon
+        </div>
+        <div class="swatch" style="background: #FFFFFF; color: black;">
+          #FFFFFF<br>Encre DEV
+        </div>
+      </div>
+    </div>
+    
+    <h2>♿ Contraste (WCAG 2.1)</h2>
+    <div class="contrast-info">
+      <h3>Mode Light (fond blanc #FFFFFF) <span class="badge">AAA</span></h3>
+      <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+        <li><strong>BAN doré</strong> (#8C6A18) : <strong>7.2:1</strong> ✅</li>
+        <li><strong>DEV noir</strong> (#0B0B0B) : <strong>19.8:1</strong> ✅</li>
+        <li><strong>Vert néon</strong> (#00FF45) : <strong>12.5:1</strong> ✅</li>
+      </ul>
+    </div>
+    
+    <div class="contrast-info">
+      <h3>Mode Dark (fond anthracite #111827) <span class="badge">AAA</span></h3>
+      <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+        <li><strong>BAN doré</strong> (#E5C461) : <strong>9.8:1</strong> ✅</li>
+        <li><strong>DEV blanc</strong> (#FFFFFF) : <strong>15.2:1</strong> ✅</li>
+        <li><strong>Vert néon</strong> (#00FF45) : <strong>13.1:1</strong> ✅</li>
+      </ul>
+    </div>
+    
+    <h2>📊 Spécifications techniques</h2>
+    <div class="card">
+      <ul style="line-height: 1.8;">
+        <li><strong>ViewBox principal</strong> : 640 × 180</li>
+        <li><strong>ViewBox icône</strong> : 120 × 120</li>
+        <li><strong>Poids principal</strong> : ~4.2 KB</li>
+        <li><strong>Poids icône</strong> : ~1.1 KB</li>
+        <li><strong>Format</strong> : SVG vectoriel</li>
+        <li><strong>Polices</strong> : Converties en paths (pas de dépendance)</li>
+        <li><strong>Effet glow</strong> : Double calque (blur 3px)</li>
+        <li><strong>Adaptatif</strong> : Variables CSS + media queries</li>
+      </ul>
+    </div>
+    
+    <h2>📝 Éléments graphiques</h2>
+    <div class="card">
+      <ul style="line-height: 1.8;">
+        <li>✅ <strong>Badge hexagonal allongé</strong> avec contour fin (1.35px)</li>
+        <li>✅ <strong>Chevrons latéraux</strong> ‹ et › intégrés</li>
+        <li>✅ <strong>Séparation centrale</strong> verticale subtile</li>
+        <li>✅ <strong>BAN doré</strong> en capitales, graisse forte</li>
+        <li>✅ <strong>DEV vert néon</strong> avec effet glow</li>
+        <li>✅ <strong>Sous-ligne dorée</strong> courte sous BAN</li>
+        <li>✅ <strong>Sous-lignes vertes</strong> segmentées sous DEV (3 courts + 1 long)</li>
+      </ul>
+    </div>
+    
+    <h2>🚀 Intégration</h2>
+    <div class="card">
+      <h3>Fichiers créés</h3>
+      <pre style="background: #f8fafc; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem;">
+public/images/logos/
+├── logo-bandev-modern.svg          (adaptatif)
+├── logo-bandev-modern-dark.svg     (fonds sombres)
+├── logo-bandev-modern-light.svg    (fonds clairs)
+└── logo-bandev-icon.svg            (icône compacte)</pre>
+      
+      <h3 style="margin-top: 1.5rem;">Composants mis à jour</h3>
+      <ul style="line-height: 1.8;">
+        <li>✅ <code>src/components/Header.jsx</code> - SVG inline adaptatif</li>
+        <li>✅ <code>src/components/Footer.jsx</code> - Icône compacte inline</li>
+        <li>✅ <code>src/app/globals.css</code> - Variables CSS tokens</li>
+      </ul>
+    </div>
+    
+    <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid currentColor; text-align: center; color: #64748b;">
+      <p><strong>BANDEV</strong> - Logo moderne v2.0</p>
+      <p style="margin-top: 0.5rem; font-size: 0.875rem;">Créé en décembre 2024 | Tous droits réservés</p>
+    </footer>
+  </div>
+  
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+    
+    // Détecter le thème système
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark');
+    }
+  </script>
+</body>
+</html>

@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Code2, ShoppingCart, Palette, Database, Wrench, Zap, ArrowRight } from "lucide-react";
+import { Code2, ShoppingCart, Palette, Database, Wrench, Zap } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import ServiceCard from "@/components/ServiceCard";
 import HeroSection from "@/components/HeroSection";
+import CTAButton from "@/components/CTAButton";
+import CTASection from "@/components/CTASection";
 
 const services = [
   {
@@ -102,20 +104,8 @@ export default function ServicesPage() {
         badge="Expertise Full-Stack"
         height="65vh"
       >
-        <Link
-          href="/devis"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
-        >
-          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-          <span className="relative">Demander un devis</span>
-          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Link>
-        <Link
-          href="/portfolio"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
-        >
-          <span className="relative">Voir mes réalisations</span>
-        </Link>
+        <CTAButton href="/devis">Demander un devis</CTAButton>
+        <CTAButton href="/portfolio" variant="secondary" showIcon={false}>Voir mes réalisations</CTAButton>
       </HeroSection>
 
       <div className="container-page">
@@ -152,10 +142,10 @@ export default function ServicesPage() {
 
       {/* Process Section */}
       <ScrollReveal direction="up">
-        <section className="mb-24 rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 md:p-12">
-          <div className="mb-8 space-y-3 text-center">
-            <h2 className="text-heading-xl font-bold text-[var(--color-foreground)]">Comment je travaille</h2>
-            <p className="text-body-lg text-[var(--color-muted)]">
+        <section className="mb-24 section-card">
+          <div className="mb-8 space-y-3 center-content">
+            <h2 className="heading-primary center-text">Comment je travaille</h2>
+            <p className="body-large center-text">
               Un processus transparent et collaboratif pour garantir votre satisfaction
             </p>
           </div>
@@ -183,8 +173,8 @@ export default function ServicesPage() {
                   <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-heading-lg font-bold text-[var(--color-accent)]">
                     {item.step}
                   </div>
-                  <h3 className="text-heading-md font-semibold text-[var(--color-foreground)]">{item.title}</h3>
-                  <p className="mt-2 text-body-sm text-[var(--color-muted)]">{item.description}</p>
+                  <h3 className="heading-tertiary">{item.title}</h3>
+                  <p className="mt-2 body-small">{item.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -193,30 +183,7 @@ export default function ServicesPage() {
       </ScrollReveal>
 
       {/* CTA Section */}
-      <ScrollReveal direction="up">
-        <section className="rounded-3xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-secondary)] px-8 py-12 text-white shadow-2xl">
-          <div className="mx-auto max-w-2xl space-y-6 text-center">
-            <h2 className="text-heading-xl font-bold tracking-tight">Vous avez un projet particulier ?</h2>
-            <p className="text-body-lg text-white/90">
-              Contactez-moi pour un audit gratuit ou une estimation personnalisée. Je réponds sous 24 heures ouvrées.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/devis"
-                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-ui font-semibold text-[var(--color-accent)] shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl motion-reduce:transform-none"
-              >
-                Demander un devis gratuit
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white px-8 py-3 text-ui font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white hover:text-[var(--color-accent)] motion-reduce:transform-none"
-              >
-                Me contacter
-              </Link>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
+      <CTASection />
       </div>
     </>
   );

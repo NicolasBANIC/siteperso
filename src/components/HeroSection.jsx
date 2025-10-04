@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ScrollReveal from "./ScrollReveal";
+import OptimizedImage from "./OptimizedImage";
 import { Clock, CheckCircle, AlertCircle, Info } from "lucide-react";
 
 // Map icon names to components
@@ -72,18 +73,21 @@ export default function HeroSection({
     >
       {/* Image de fond avec parallax */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 gpu-accelerated"
         style={{
-          transform: `translateY(${offset}px)`,
+          transform: `translate3d(0, ${offset}px, 0)`,
           transition: "transform 0.1s ease-out",
           willChange: "transform",
           zIndex: 0,
         }}
       >
-        <img
+        <OptimizedImage
           src={backgroundImage}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
           style={{
             transform: "scale(1.15)",
           }}

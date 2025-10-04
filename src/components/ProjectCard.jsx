@@ -12,7 +12,7 @@ export default function ProjectCard({
   return (
     <div 
       onClick={onClick}
-      className="card group cursor-pointer overflow-hidden"
+      className="card group cursor-pointer overflow-hidden gpu-accelerated"
     >
       {/* Image */}
       <div className="relative h-64 overflow-hidden rounded-lg mb-4">
@@ -20,7 +20,7 @@ export default function ProjectCard({
           src={image}
           alt={title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110 motion-reduce:transform-none"
+          className="object-cover img-optimized transition-transform duration-500 group-hover:scale-110 motion-reduce:transform-none"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-foreground)]/80 via-[var(--color-foreground)]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
           <span className="text-white font-medium flex items-center gap-2 text-ui">

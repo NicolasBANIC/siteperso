@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function ServiceCard({ title, description, icon, features, href }) {
   return (
-    <article className="group card hover:scale-[1.02] transition-all duration-300 motion-reduce:transform-none">
+    <article className="group card gpu-accelerated hover:scale-[1.02] transition-all duration-300 motion-reduce:transform-none">
       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)] transition-colors duration-300 group-hover:bg-[var(--color-accent)] group-hover:text-white">
         {icon ? (
           <Image 

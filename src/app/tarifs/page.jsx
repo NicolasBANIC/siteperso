@@ -3,6 +3,8 @@ import { Check, Star, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import PricingCard from "@/components/PricingCard";
 import HeroSection from "@/components/HeroSection";
+import CTAButton from "@/components/CTAButton";
+import CTASection from "@/components/CTASection";
 
 const pricingPlans = [
   {
@@ -115,28 +117,20 @@ export default function TarifsPage() {
         badge="Devis Gratuit"
         height="65vh"
       >
-        <Link
-          href="/devis"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
-        >
-          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-          <span className="relative">Demander un devis gratuit</span>
-          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Link>
-        <Link
-          href="/contact"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
-        >
-          <span className="relative">Poser une question</span>
-        </Link>
+        <CTAButton href="/devis" variant="primary" showIcon>
+          Demander un devis gratuit
+        </CTAButton>
+        <CTAButton href="/contact" variant="secondary">
+          Poser une question
+        </CTAButton>
       </HeroSection>
 
       <div className="container-page">
 
       {/* Main Pricing */}
-      <section className="mb-24">
+      <section className="section-spacing">
         <ScrollReveal direction="up">
-          <h2 className="mb-8 text-center text-2xl font-bold text-[var(--color-foreground)]">
+          <h2 className="mb-8 heading-primary center-text">
             Création de sites web
           </h2>
         </ScrollReveal>
@@ -150,8 +144,8 @@ export default function TarifsPage() {
         </div>
 
         <ScrollReveal direction="up" delay={300}>
-          <div className="mt-8 text-center">
-            <p className="text-sm text-[var(--color-muted)]">
+          <div className="mt-8 center-text">
+            <p className="body-small">
               * Prix indicatifs H.T. Le tarif final dépend de vos besoins spécifiques.
             </p>
           </div>
@@ -159,9 +153,9 @@ export default function TarifsPage() {
       </section>
 
       {/* Maintenance Pricing */}
-      <section className="mb-24">
+      <section className="section-spacing">
         <ScrollReveal direction="up">
-          <h2 className="mb-8 text-center text-2xl font-bold text-[var(--color-foreground)]">
+          <h2 className="mb-8 heading-primary center-text">
             Forfaits de maintenance
           </h2>
         </ScrollReveal>
@@ -177,10 +171,10 @@ export default function TarifsPage() {
 
       {/* Additional Services */}
       <ScrollReveal direction="up">
-        <section className="mb-24 rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 md:p-12">
-          <div className="mb-8 text-center">
-            <h2 className="text-2xl font-bold text-[var(--color-foreground)]">Services complémentaires</h2>
-            <p className="mt-2 text-[var(--color-muted)]">
+        <section className="section-spacing section-card">
+          <div className="mb-8 center-text">
+            <h2 className="heading-secondary">Services complémentaires</h2>
+            <p className="mt-2 body-regular">
               Des prestations à la carte pour répondre à tous vos besoins
             </p>
           </div>
@@ -188,9 +182,9 @@ export default function TarifsPage() {
           <div className="mx-auto max-w-2xl space-y-4">
             {additionalServices.map((service, index) => (
               <ScrollReveal key={service.name} direction="up" delay={index * 50}>
-                <div className="flex items-center justify-between rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] p-4">
-                  <span className="font-medium text-[var(--color-foreground)]">{service.name}</span>
-                  <span className="text-sm font-semibold text-[var(--color-accent)]">{service.price}</span>
+                <div className="flex items-center justify-between rounded-xl border border-[var(--color-border)] bg-[var(--color-background)] p-4 gpu-accelerated">
+                  <span className="body-regular font-medium">{service.name}</span>
+                  <span className="badge-primary">{service.price}</span>
                 </div>
               </ScrollReveal>
             ))}
@@ -200,9 +194,9 @@ export default function TarifsPage() {
 
       {/* Why Choose Me */}
       <ScrollReveal direction="up">
-        <section className="mb-24 rounded-3xl bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-background)] p-8 md:p-12">
-          <div className="mb-8 text-center">
-            <h2 className="text-2xl font-bold text-[var(--color-foreground)]">Pourquoi me choisir ?</h2>
+        <section className="section-spacing section-gradient">
+          <div className="mb-8 center-text">
+            <h2 className="heading-secondary">Pourquoi me choisir ?</h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -226,12 +220,12 @@ export default function TarifsPage() {
               const Icon = item.icon;
               return (
                 <ScrollReveal key={item.title} direction="up" delay={index * 100}>
-                  <div className="text-center">
+                  <div className="center-content gpu-accelerated">
                     <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
                       <Icon className="h-7 w-7" aria-hidden="true" />
                     </div>
-                    <h3 className="text-lg font-semibold text-[var(--color-foreground)]">{item.title}</h3>
-                    <p className="mt-2 text-sm text-[var(--color-muted)]">{item.description}</p>
+                    <h3 className="heading-tertiary">{item.title}</h3>
+                    <p className="mt-2 body-small">{item.description}</p>
                   </div>
                 </ScrollReveal>
               );
@@ -241,30 +235,12 @@ export default function TarifsPage() {
       </ScrollReveal>
 
       {/* CTA */}
-      <ScrollReveal direction="up">
-        <section className="rounded-3xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-secondary)] px-8 py-12 text-white shadow-2xl">
-          <div className="mx-auto max-w-2xl space-y-6 text-center">
-            <h2 className="text-3xl font-bold tracking-tight">Prêt à démarrer votre projet ?</h2>
-            <p className="text-lg text-white/90">
-              Recevez un devis personnalisé et gratuit sous 24h. Aucun engagement.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/devis"
-                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-[var(--color-accent)] shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl motion-reduce:transform-none"
-              >
-                Demander un devis gratuit
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white px-8 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white hover:text-[var(--color-accent)] motion-reduce:transform-none"
-              >
-                Poser une question
-              </Link>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
+      <CTASection
+        title="Prêt à démarrer votre projet ?"
+        description="Recevez un devis personnalisé et gratuit sous 24h. Aucun engagement."
+        primaryButton={{ text: "Demander un devis gratuit", href: "/devis" }}
+        secondaryButton={{ text: "Poser une question", href: "/contact" }}
+      />
       </div>
     </>
   );

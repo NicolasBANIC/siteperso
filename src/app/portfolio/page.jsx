@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { X, ExternalLink, Github, ArrowRight } from "lucide-react";
+import { X, ExternalLink, Github } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import HeroSection from "@/components/HeroSection";
+import CTAButton from "@/components/CTAButton";
 
 const projects = [
   {
@@ -159,20 +160,8 @@ export default function PortfolioPage() {
         badge="40+ Projets Livrés"
         height="65vh"
       >
-        <Link
-          href="/devis"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
-        >
-          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-          <span className="relative">Démarrer votre projet</span>
-          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Link>
-        <Link
-          href="/contact"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
-        >
-          <span className="relative">Discutons de votre idée</span>
-        </Link>
+        <CTAButton href="/devis">Démarrer votre projet</CTAButton>
+        <CTAButton href="/contact" variant="secondary" showIcon={false}>Discutons de votre idée</CTAButton>
       </HeroSection>
 
       <div className="container-page">
@@ -221,11 +210,11 @@ export default function PortfolioPage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="mb-2 inline-flex rounded-full bg-[var(--color-accent)]/10 px-3 py-1 text-xs font-medium text-[var(--color-accent)]">
+                  <div className="mb-2 badge-primary">
                     {project.category}
                   </div>
-                  <h3 className="text-xl font-semibold text-[var(--color-foreground)]">{project.title}</h3>
-                  <p className="mt-2 text-sm text-[var(--color-muted)]">{project.description}</p>
+                  <h3 className="heading-tertiary">{project.title}</h3>
+                  <p className="mt-2 body-small">{project.description}</p>
                 </div>
               </article>
             </ScrollReveal>
@@ -264,17 +253,17 @@ export default function PortfolioPage() {
 
             <div className="p-8 space-y-6">
               <div>
-                <div className="mb-3 inline-flex rounded-full bg-[var(--color-accent)]/10 px-4 py-1.5 text-sm font-medium text-[var(--color-accent)]">
+                <div className="mb-3 badge-primary">
                   {selectedProject.category}
                 </div>
-                <h2 className="text-3xl font-bold text-[var(--color-foreground)]">{selectedProject.title}</h2>
-                <p className="mt-4 text-lg leading-relaxed text-[var(--color-muted)]">
+                <h2 className="heading-primary">{selectedProject.title}</h2>
+                <p className="mt-4 body-large">
                   {selectedProject.longDescription}
                 </p>
               </div>
 
               <div>
-                <h3 className="mb-3 text-lg font-semibold text-[var(--color-foreground)]">Technologies utilisées</h3>
+                <h3 className="mb-3 heading-secondary">Technologies utilisées</h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.technologies.map((tech) => (
                     <span
@@ -288,11 +277,10 @@ export default function PortfolioPage() {
               </div>
 
               <div>
-                <h3 className="mb-3 text-lg font-semibold text-[var(--color-foreground)]">Fonctionnalités clés</h3>
-                <ul className="space-y-2">
+                <h3 className="mb-3 heading-secondary">Fonctionnalités clés</h3>
+                <ul className="list-custom">
                   {selectedProject.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3 text-[var(--color-muted)]">
-                      <span className="mt-1.5 inline-flex h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                    <li key={index}>
                       {feature}
                     </li>
                   ))}

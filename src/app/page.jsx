@@ -21,10 +21,12 @@ import TechBadge from "@/components/TechBadge";
 import MatrixRain from "@/components/MatrixRain";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import CodeTypingAnimation from "@/components/CodeTypingAnimation";
-import Globe3D from "@/components/Globe3D";
 import MockDashboard from "@/components/MockDashboard";
 import GlassmorphismCard from "@/components/GlassmorphismCard";
 import MeshGradient from "@/components/MeshGradient";
+import OptimizedVideo from "@/components/OptimizedVideo";
+import CTAButton from "@/components/CTAButton";
+import CTASection from "@/components/CTASection";
 
 const services = [
   {
@@ -229,18 +231,14 @@ export default function HomePage() {
     <>
       {/* Hero Section with Video Background */}
       <section className="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-[#0047AB] via-[#006D77] to-[#0047AB]">
-        {/* Video Background */}
+        {/* Video Background - Optimisé avec lazy loading et désactivation mobile */}
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-full w-full object-cover opacity-30"
-          >
-            <source src="/videos/videolibreCoding.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+          <OptimizedVideo 
+            src="/videos/videolibreCoding.mp4"
+            opacity="opacity-20 md:opacity-30"
+            disableOnMobile={true}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
         </div>
 
         {/* Matrix Rain Effect */}
@@ -274,23 +272,12 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
-                  <Link 
-                    href="/devis" 
-                    className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
-                  >
-                    {/* Shimmer effect */}
-                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                    <span className="relative">Demander un devis</span>
-                    <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <Link 
-                    href="/portfolio" 
-                    className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
-                  >
-                    {/* Glow effect */}
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[var(--color-accent-matrix)] to-white opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-30" />
-                    <span className="relative">Voir mes projets</span>
-                  </Link>
+                  <CTAButton href="/devis">
+                    Demander un devis
+                  </CTAButton>
+                  <CTAButton href="/portfolio" variant="secondary" showIcon={false}>
+                    Voir mes projets
+                  </CTAButton>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-6 pt-4">
@@ -318,7 +305,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce gpu-accelerated">
           <div className="flex flex-col items-center gap-2 text-white/60">
             <span className="text-caption uppercase tracking-widest font-medium">Découvrir</span>
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -334,7 +321,7 @@ export default function HomePage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
               <ScrollReveal key={stat.label} direction="up" delay={index * 100}>
-                <div className="text-center">
+                <div className="text-center gpu-accelerated">
                   <div className="mb-2 text-display font-bold text-[var(--color-accent)]">
                     <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                   </div>
@@ -621,22 +608,6 @@ export default function HomePage() {
                 <CodeTypingAnimation snippetIndex={0} />
               </GlassmorphismCard>
             </ScrollReveal>
-
-            {/* Globe 3D Demo */}
-            <ScrollReveal direction="right" delay={100}>
-              <GlassmorphismCard className="p-6" variant="gradient">
-                <div className="mb-4">
-                  <h3 className="mb-2 text-heading-md font-semibold text-white">
-                    Visualisations 3D interactives
-                  </h3>
-                  <p className="text-body-sm text-white/70">
-                    Globe 3D animé pour représenter votre présence internationale 
-                    ou vos données géographiques de manière immersive.
-                  </p>
-                </div>
-                <Globe3D className="py-8" />
-              </GlassmorphismCard>
-            </ScrollReveal>
           </div>
 
           {/* Dashboard Demo - Full Width */}
@@ -730,53 +701,14 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="container-page">
-        <ScrollReveal direction="up">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-secondary)] p-12 text-center text-white shadow-2xl md:p-16">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0 bg-[url('/images/grid.svg')]" />
-            </div>
-
-            <div className="relative z-10">
-              <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-                Prêt à démarrer votre projet ?
-              </h2>
-              <p className="mx-auto mb-8 max-w-2xl text-lg text-white/90">
-                Discutons de vos besoins et je vous proposerai une solution sur mesure adaptée à votre budget et vos objectifs.
-              </p>
-
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <Link
-                  href="/devis"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-semibold text-[var(--color-accent)] shadow-xl transition-all hover:scale-105"
-                >
-                  Demander un devis gratuit
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-lg font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
-                >
-                  Me contacter
-                </Link>
-              </div>
-
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-white/80">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5" />
-                  <span>Réponse sous 24h</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5" />
-                  <span>Devis détaillé gratuit</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5" />
-                  <span>Sans engagement</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
+        <CTASection 
+          title="Prêt à démarrer votre projet ?"
+          description="Discutons de vos besoins et je vous proposerai une solution sur mesure adaptée à votre budget et vos objectifs."
+          primaryButtonText="Demander un devis gratuit"
+          primaryButtonHref="/devis"
+          secondaryButtonText="Me contacter"
+          secondaryButtonHref="/contact"
+        />
       </section>
     </>
   );

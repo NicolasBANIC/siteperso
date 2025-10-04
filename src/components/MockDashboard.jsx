@@ -14,6 +14,7 @@ export default function MockDashboard({ className = "" }) {
   const [chartData, setChartData] = useState([40, 45, 38, 52, 48, 55, 60]);
 
   useEffect(() => {
+    // Ralenti de 2s à 4s pour réduire les re-renders
     const interval = setInterval(() => {
       setStats(prev => ({
         revenue: prev.revenue + Math.floor(Math.random() * 100),
@@ -26,7 +27,7 @@ export default function MockDashboard({ className = "" }) {
         const newData = [...prev.slice(1), Math.floor(Math.random() * 30) + 40];
         return newData;
       });
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);

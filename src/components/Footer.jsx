@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Linkedin, Github, Mail } from "lucide-react";
 
 const navigationLinks = [
@@ -42,18 +41,13 @@ export default function Footer() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-16 px-6 py-14 lg:flex-row lg:items-start lg:justify-between">
         <div className="space-y-5 lg:max-w-sm">
           <div className="flex items-center gap-3">
-            <div className="relative h-10 w-10">
-              <Image
-                src="/images/logoNB.png"
-                alt="Logo BANDEV"
-                width={40}
-                height={40}
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <p className="text-lg font-semibold text-[var(--color-foreground)]">
-              BANDEV
-            </p>
+            <img
+              src="/brand/logo.svg"
+              alt="BANDEV"
+              width="120"
+              height="40"
+              className="h-10 w-auto"
+            />
           </div>
           <p className="leading-relaxed">
             Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure. Transformez vos idées en expériences digitales exceptionnelles.

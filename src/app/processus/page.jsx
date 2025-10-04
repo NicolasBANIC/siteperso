@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import HeroSection from "@/components/HeroSection";
+import CTAButton from "@/components/CTAButton";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const processSteps = [
@@ -107,20 +108,12 @@ export default function ProcessusPage() {
         badge="Méthodologie Agile"
         height="65vh"
       >
-        <Link
-          href="/devis"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
-        >
-          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-          <span className="relative">Démarrer un projet</span>
-          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Link>
-        <Link
-          href="/services"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
-        >
-          <span className="relative">Découvrir mes services</span>
-        </Link>
+        <CTAButton href="/devis" variant="primary" showIcon>
+          Démarrer un projet
+        </CTAButton>
+        <CTAButton href="/services" variant="secondary">
+          Découvrir mes services
+        </CTAButton>
       </HeroSection>
 
       <div className="container-page">
@@ -143,18 +136,17 @@ export default function ProcessusPage() {
                     />
                   </div>
                   <div>
-                    <span className="text-sm font-semibold text-[var(--color-accent)]">Étape {step.number}</span>
-                    <h2 className="mt-1 text-3xl font-bold text-[var(--color-foreground)]">{step.title}</h2>
+                    <span className="badge-primary">Étape {step.number}</span>
+                    <h2 className="mt-1 heading-secondary">{step.title}</h2>
                   </div>
                 </div>
 
-                <p className="text-lg leading-relaxed text-[var(--color-muted)]">{step.description}</p>
+                <p className="body-large">{step.description}</p>
 
-                <ul className="space-y-3">
+                <ul className="list-custom space-y-3">
                   {step.details.map((detail, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[var(--color-accent-matrix)]" />
-                      <span className="text-[var(--color-muted)]">{detail}</span>
+                    <li key={i} className="body-regular">
+                      {detail}
                     </li>
                   ))}
                 </ul>
@@ -168,7 +160,7 @@ export default function ProcessusPage() {
               {/* Visual */}
               <div className={`relative ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                 <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-10 blur-2xl" />
-                <div className="card relative flex items-center justify-center p-12">
+                <div className="section-card relative flex items-center justify-center p-12 gpu-accelerated">
                   <div className="relative">
                     <div className="absolute inset-0 animate-pulse rounded-full bg-[var(--color-accent)]/20 blur-xl" />
                     <Image
@@ -176,7 +168,7 @@ export default function ProcessusPage() {
                       alt={`Grande illustration de l'étape ${step.number} - ${step.title} du processus de développement`}
                       width={200}
                       height={200}
-                      className="relative h-48 w-48 object-contain"
+                      className="relative h-48 w-48 object-contain img-optimized"
                     />
                   </div>
                 </div>
@@ -195,20 +187,20 @@ export default function ProcessusPage() {
 
       {/* Benefits */}
       <ScrollReveal direction="up">
-        <section className="mb-24">
-          <div className="mb-12 space-y-4 text-center">
-            <h2 className="section-title">Les avantages de ma méthode</h2>
-            <p className="section-subtitle mx-auto">
+        <section className="section-spacing">
+          <div className="mb-12 space-y-4 center-text">
+            <h2 className="heading-primary">Les avantages de ma méthode</h2>
+            <p className="body-large mx-auto max-w-2xl">
               Un processus structuré pour des résultats garantis
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid-auto-fit gap-6">
             {benefits.map((benefit, index) => (
               <ScrollReveal key={benefit.title} direction="up" delay={index * 50}>
-                <div className="card group hover:border-[var(--color-accent)] transition-all duration-300">
-                  <h3 className="text-lg font-semibold text-[var(--color-foreground)]">{benefit.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{benefit.description}</p>
+                <div className="section-card group hover:border-[var(--color-accent)] transition-all duration-300 gpu-accelerated">
+                  <h3 className="heading-tertiary">{benefit.title}</h3>
+                  <p className="mt-3 body-small">{benefit.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -218,22 +210,22 @@ export default function ProcessusPage() {
 
       {/* Timeline Summary */}
       <ScrollReveal direction="up">
-        <section className="mb-24">
-          <div className="card border-[var(--color-accent)] bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-background)]">
-            <div className="space-y-6 text-center">
-              <h2 className="text-2xl font-bold text-[var(--color-foreground)]">
+        <section className="section-spacing">
+          <div className="section-gradient border-[var(--color-accent)]">
+            <div className="space-y-6 center-content">
+              <h2 className="heading-secondary">
                 Durée totale moyenne : 6 à 10 semaines
               </h2>
-              <p className="text-lg text-[var(--color-muted)]">
+              <p className="body-large">
                 Du premier contact à la mise en ligne, en fonction de la complexité de votre projet et de vos disponibilités.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                <Link href="/devis" className="btn-primary">
+                <CTAButton href="/devis" variant="primary">
                   Demander un devis gratuit
-                </Link>
-                <Link href="/portfolio" className="btn-secondary">
+                </CTAButton>
+                <CTAButton href="/portfolio" variant="secondary">
                   Voir mes réalisations
-                </Link>
+                </CTAButton>
               </div>
             </div>
           </div>
@@ -243,8 +235,8 @@ export default function ProcessusPage() {
       {/* FAQ Section */}
       <ScrollReveal direction="up">
         <section>
-          <div className="mb-12 space-y-4 text-center">
-            <h2 className="section-title">Questions fréquentes</h2>
+          <div className="mb-12 space-y-4 center-text">
+            <h2 className="heading-primary">Questions fréquentes</h2>
           </div>
 
           <div className="space-y-4">
@@ -267,12 +259,12 @@ export default function ProcessusPage() {
               },
             ].map((faq, index) => (
               <ScrollReveal key={index} direction="up" delay={index * 50}>
-                <details className="card group cursor-pointer">
-                  <summary className="flex cursor-pointer items-center justify-between font-semibold text-[var(--color-foreground)] list-none">
+                <details className="section-card group cursor-pointer gpu-accelerated">
+                  <summary className="flex cursor-pointer items-center justify-between heading-tertiary list-none">
                     {faq.question}
                     <span className="text-[var(--color-accent)] transition-transform group-open:rotate-180">▼</span>
                   </summary>
-                  <p className="mt-4 leading-relaxed text-[var(--color-muted)]">{faq.answer}</p>
+                  <p className="mt-4 body-regular">{faq.answer}</p>
                 </details>
               </ScrollReveal>
             ))}

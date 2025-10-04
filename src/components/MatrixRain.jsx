@@ -1,32 +1,51 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function MatrixRain() {
   const canvasRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    let animationInterval;
     
-    // Set canvas size
+    // Intersection Observer pour pause automatique
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(canvas);
+
+    // Set canvas size avec debounce
+    let resizeTimeout;
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }, 150);
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Matrix characters
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
+    // Matrix characters - réduit pour performance
+    const chars = '01アイウエオカキクケコサシスセソ';
+    const fontSize = 16; // Augmenté pour moins de colonnes
+    const columns = Math.floor(canvas.width / fontSize) * 0.5; // 50% moins de colonnes
     const drops = Array(Math.floor(columns)).fill(1);
 
-    // Animation
+    // Animation optimisée
     const draw = () => {
+      if (!isVisible) return; // Pause si non visible
+
       // Fade effect
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -34,9 +53,10 @@ export default function MatrixRain() {
       ctx.fillStyle = '#00FF41'; // Matrix green
       ctx.font = `${fontSize}px monospace`;
 
+      // Dessiner seulement une partie des drops pour économiser CPU
       for (let i = 0; i < drops.length; i++) {
         const text = chars[Math.floor(Math.random() * chars.length)];
-        const x = i * fontSize;
+        const x = i * fontSize * 2; // Espacement doublé
         const y = drops[i] * fontSize;
 
         ctx.fillText(text, x, y);
@@ -49,13 +69,18 @@ export default function MatrixRain() {
       }
     };
 
-    const interval = setInterval(draw, 33);
+    // Réduit de 30 FPS à 20 FPS (50ms au lieu de 33ms)
+    if (isVisible) {
+      animationInterval = setInterval(draw, 50);
+    }
 
     return () => {
-      clearInterval(interval);
+      clearInterval(animationInterval);
+      clearTimeout(resizeTimeout);
       window.removeEventListener('resize', resizeCanvas);
+      observer.disconnect();
     };
-  }, []);
+  }, [isVisible]);
 
   return (
     <canvas

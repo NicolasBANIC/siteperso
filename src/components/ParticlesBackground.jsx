@@ -1,22 +1,40 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-export default function ParticlesBackground({ interactive = true }) {
+export default function ParticlesBackground({ interactive = false }) { // Désactivé par défaut pour performance
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: null, y: null });
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     let animationFrameId;
     let particles = [];
 
+    // Intersection Observer pour pause automatique
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(canvas);
+
+    // Debounce resize pour performance
+    let resizeTimeout;
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        init(); // Réinitialiser les particules après resize
+      }, 150);
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
@@ -96,47 +114,51 @@ export default function ParticlesBackground({ interactive = true }) {
 
     const init = () => {
       particles = [];
-      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000);
+      // Réduit de 60% le nombre de particules pour performance
+      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 25000);
       for (let i = 0; i < numberOfParticles; i++) {
         particles.push(new Particle());
       }
     };
 
     const connectParticles = () => {
+      // Optimisation: limiter les connexions pour réduire O(n²)
+      const maxConnections = 3; // Limite de connexions par particule
+      
       for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
+        let connections = 0;
+        
+        for (let j = i + 1; j < particles.length && connections < maxConnections; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
-            const opacity = (1 - distance / 120) * 0.15;
-            const gradient = ctx.createLinearGradient(
-              particles[i].x, particles[i].y,
-              particles[j].x, particles[j].y
-            );
-            gradient.addColorStop(0, `rgba(0, 71, 171, ${opacity})`);
-            gradient.addColorStop(1, `rgba(0, 109, 119, ${opacity})`);
+          // Réduit la distance de connexion de 120 à 100
+          if (distance < 100) {
+            const opacity = (1 - distance / 100) * 0.12;
             
-            ctx.strokeStyle = gradient;
+            // Simplifié: pas de gradient pour économiser CPU
+            ctx.strokeStyle = `rgba(0, 71, 171, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
+            
+            connections++;
           }
         }
       }
 
-      // Connect to mouse
+      // Connect to mouse (seulement si interactive activé)
       if (interactive && mouseRef.current.x !== null) {
         particles.forEach(particle => {
           const dx = mouseRef.current.x - particle.x;
           const dy = mouseRef.current.y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
-            const opacity = (1 - distance / 150) * 0.3;
+          if (distance < 120) { // Réduit de 150 à 120
+            const opacity = (1 - distance / 120) * 0.25;
             ctx.strokeStyle = `rgba(0, 255, 65, ${opacity})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
@@ -149,6 +171,11 @@ export default function ParticlesBackground({ interactive = true }) {
     };
 
     const animate = () => {
+      if (!isVisible) {
+        animationFrameId = requestAnimationFrame(animate);
+        return; // Pause si non visible
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       particles.forEach(particle => {
@@ -165,13 +192,15 @@ export default function ParticlesBackground({ interactive = true }) {
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      clearTimeout(resizeTimeout);
       window.removeEventListener('resize', resizeCanvas);
+      observer.disconnect();
       if (interactive) {
         canvas.removeEventListener('mousemove', handleMouseMove);
         canvas.removeEventListener('mouseleave', handleMouseLeave);
       }
     };
-  }, [interactive]);
+  }, [interactive, isVisible]);
 
   return (
     <canvas

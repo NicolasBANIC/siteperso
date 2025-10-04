@@ -3,8 +3,9 @@ import Container from "@/components/Container";
 import Section from "@/components/Section";
 import ScrollReveal from "@/components/ScrollReveal";
 import HeroSection from "@/components/HeroSection";
-import { Star, Quote, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import CTAButton from "@/components/CTAButton";
+import CTASection from "@/components/CTASection";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -90,20 +91,12 @@ export default function TemoignagesPage() {
         badge="Note moyenne : 4.9/5 ⭐"
         height="65vh"
       >
-        <Link
-          href="/devis"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
-        >
-          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-          <span className="relative">Rejoignez-les</span>
-          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Link>
-        <Link
-          href="/portfolio"
-          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
-        >
-          <span className="relative">Voir mes réalisations</span>
-        </Link>
+        <CTAButton href="/devis">
+          Rejoignez-les
+        </CTAButton>
+        <CTAButton href="/portfolio" variant="secondary" showIcon={false}>
+          Voir mes réalisations
+        </CTAButton>
       </HeroSection>
 
       {/* Stats Section */}
@@ -114,7 +107,7 @@ export default function TemoignagesPage() {
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-[var(--color-border)]"
+                  className="gpu-accelerated text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-[var(--color-border)]"
                 >
                   <div className="text-3xl md:text-4xl font-bold text-[var(--color-accent)] mb-2">
                     {stat.value}
@@ -160,28 +153,14 @@ export default function TemoignagesPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section background="gradient">
-        <Container>
-          <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                Prêt à rejoindre mes clients satisfaits ?
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                Discutons de votre projet et voyons comment je peux vous aider à atteindre vos objectifs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/devis" className="btn-primary">
-                  Demander un devis
-                </Link>
-                <Link href="/contact" className="btn-secondary">
-                  Me contacter
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-        </Container>
-      </Section>
+      <CTASection 
+        title="Prêt à rejoindre mes clients satisfaits ?"
+        description="Discutons de votre projet et voyons comment je peux vous aider à atteindre vos objectifs."
+        primaryButtonText="Demander un devis"
+        primaryButtonHref="/devis"
+        secondaryButtonText="Me contacter"
+        secondaryButtonHref="/contact"
+      />
     </>
   );
 }

@@ -1,17 +1,29 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Globe3D({ className = "" }) {
   const canvasRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     let animationFrameId;
     let rotation = 0;
+
+    // Intersection Observer pour pause automatique
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(canvas);
 
     const size = Math.min(400, window.innerWidth * 0.8);
     canvas.width = size;
@@ -21,9 +33,9 @@ export default function Globe3D({ className = "" }) {
     const centerY = size / 2;
     const radius = size * 0.35;
 
-    // Generate points on sphere
+    // Generate points on sphere - RÉDUIT de 800 à 400 points
     const points = [];
-    const numPoints = 800;
+    const numPoints = 400;
     
     for (let i = 0; i < numPoints; i++) {
       const phi = Math.acos(-1 + (2 * i) / numPoints);
@@ -37,17 +49,17 @@ export default function Globe3D({ className = "" }) {
       });
     }
 
-    // Add connection lines (latitude/longitude)
+    // Add connection lines (latitude/longitude) - RÉDUIT pour performance
     const lines = [];
-    const numLatLines = 12;
-    const numLonLines = 18;
+    const numLatLines = 8; // Réduit de 12 à 8
+    const numLonLines = 12; // Réduit de 18 à 12
 
     // Latitude lines
     for (let i = 0; i < numLatLines; i++) {
       const lat = (i / numLatLines) * Math.PI;
       const linePoints = [];
-      for (let j = 0; j <= 50; j++) {
-        const lon = (j / 50) * Math.PI * 2;
+      for (let j = 0; j <= 30; j++) { // Réduit de 50 à 30 points par ligne
+        const lon = (j / 30) * Math.PI * 2;
         linePoints.push({
           x: radius * Math.cos(lon) * Math.sin(lat),
           y: radius * Math.sin(lon) * Math.sin(lat),
@@ -61,8 +73,8 @@ export default function Globe3D({ className = "" }) {
     for (let i = 0; i < numLonLines; i++) {
       const lon = (i / numLonLines) * Math.PI * 2;
       const linePoints = [];
-      for (let j = 0; j <= 50; j++) {
-        const lat = (j / 50) * Math.PI;
+      for (let j = 0; j <= 30; j++) { // Réduit de 50 à 30 points par ligne
+        const lat = (j / 30) * Math.PI;
         linePoints.push({
           x: radius * Math.cos(lon) * Math.sin(lat),
           y: radius * Math.sin(lon) * Math.sin(lat),
@@ -93,6 +105,11 @@ export default function Globe3D({ className = "" }) {
     };
 
     const animate = () => {
+      if (!isVisible) {
+        animationFrameId = requestAnimationFrame(animate);
+        return; // Pause si non visible
+      }
+
       ctx.clearRect(0, 0, size, size);
 
       // Draw lines
@@ -139,7 +156,7 @@ export default function Globe3D({ className = "" }) {
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, size, size);
 
-      rotation += 0.003;
+      rotation += 0.002; // Ralenti de 0.003 à 0.002
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -147,8 +164,9 @@ export default function Globe3D({ className = "" }) {
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
     };
-  }, []);
+  }, [isVisible]);
 
   return (
     <div className={`flex items-center justify-center ${className}`}>
