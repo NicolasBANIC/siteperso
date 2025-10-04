@@ -1,14 +1,22 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+interface CTAButtonProps {
+  href: string;
+  children: React.ReactNode;
+  variant?: "primary" | "secondary";
+  showIcon?: boolean;
+  className?: string;
+}
+
 /**
  * CTAButton - Bouton Call-to-Action réutilisable avec effet shimmer
  * 
- * @param {string} href - URL de destination
- * @param {string} children - Texte du bouton
- * @param {string} variant - Style du bouton ("primary" | "secondary")
- * @param {boolean} showIcon - Afficher l'icône flèche
- * @param {string} className - Classes CSS additionnelles
+ * @param href - URL de destination
+ * @param children - Texte du bouton
+ * @param variant - Style du bouton ("primary" | "secondary")
+ * @param showIcon - Afficher l'icône flèche
+ * @param className - Classes CSS additionnelles
  */
 export default function CTAButton({ 
   href, 
@@ -16,7 +24,7 @@ export default function CTAButton({
   variant = "primary",
   showIcon = true,
   className = "" 
-}) {
+}: CTAButtonProps) {
   if (variant === "secondary") {
     return (
       <Link 

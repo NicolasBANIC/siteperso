@@ -13,17 +13,34 @@ const iconMap = {
   info: Info,
 };
 
+interface BadgeObject {
+  icon?: keyof typeof iconMap;
+  text: string;
+  variant?: string;
+}
+
+interface HeroSectionProps {
+  title: string;
+  subtitle: string;
+  backgroundImage: string;
+  badge?: string | BadgeObject | null;
+  children?: React.ReactNode;
+  overlayOpacity?: string;
+  height?: string;
+  textAlign?: "left" | "center" | "right";
+}
+
 /**
  * HeroSection - Section héros moderne avec effet parallax
  * 
- * @param {string} title - Titre principal (peut contenir du HTML)
- * @param {string} subtitle - Sous-titre descriptif
- * @param {string} backgroundImage - URL de l'image de fond
- * @param {string|object} badge - Texte du badge (string) ou objet {icon: string, text: string, variant: string}
- * @param {React.ReactNode} children - Contenu additionnel (boutons, etc.)
- * @param {string} overlayOpacity - Opacité de l'overlay (0-100)
- * @param {string} height - Hauteur de la section (ex: "60vh", "500px")
- * @param {string} textAlign - Alignement du texte ("left", "center", "right")
+ * @param title - Titre principal (peut contenir du HTML)
+ * @param subtitle - Sous-titre descriptif
+ * @param backgroundImage - URL de l'image de fond
+ * @param badge - Texte du badge (string) ou objet {icon: string, text: string, variant: string}
+ * @param children - Contenu additionnel (boutons, etc.)
+ * @param overlayOpacity - Opacité de l'overlay (0-100)
+ * @param height - Hauteur de la section (ex: "60vh", "500px")
+ * @param textAlign - Alignement du texte ("left", "center", "right")
  */
 export default function HeroSection({
   title,
@@ -34,8 +51,8 @@ export default function HeroSection({
   overlayOpacity = "60",
   height = "60vh",
   textAlign = "center",
-}) {
-  const sectionRef = useRef(null);
+}: HeroSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
@@ -97,7 +114,7 @@ export default function HeroSection({
       {/* Overlay gradient */}
       <div
         className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"
-        style={{ opacity: overlayOpacity / 100, zIndex: 1 }}
+        style={{ opacity: Number(overlayOpacity) / 100, zIndex: 1 }}
       />
 
       {/* Effet de grille subtile */}

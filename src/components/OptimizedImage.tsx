@@ -3,7 +3,20 @@
  * Utilise Next.js Image avec lazy loading et placeholder blur
  */
 
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
+
+interface OptimizedImageProps extends Omit<ImageProps, 'src' | 'alt' | 'width' | 'height'> {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  className?: string;
+  priority?: boolean;
+  quality?: number;
+  sizes?: string;
+  fill?: boolean;
+  objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
+}
 
 export default function OptimizedImage({
   src,
@@ -17,12 +30,12 @@ export default function OptimizedImage({
   fill = false,
   objectFit = 'cover',
   ...props
-}) {
+}: OptimizedImageProps) {
   // Déterminer si c'est une image locale ou externe
   const isLocal = src.startsWith('/');
 
   // Configuration optimale pour Next.js Image
-  const imageProps = {
+  const imageProps: any = {
     src,
     alt,
     quality,
@@ -58,13 +71,20 @@ export default function OptimizedImage({
     imageProps.loading = 'lazy';
   }
 
+  // eslint-disable-next-line jsx-a11y/alt-text
   return <Image {...imageProps} />;
 }
 
 /**
  * Variante pour images hero (above the fold)
  */
-export function HeroImage({ src, alt, className = '', ...props }) {
+interface HeroImageProps extends Omit<OptimizedImageProps, 'priority' | 'quality' | 'sizes'> {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+export function HeroImage({ src, alt, className = '', ...props }: HeroImageProps) {
   return (
     <OptimizedImage
       src={src}
@@ -81,7 +101,13 @@ export function HeroImage({ src, alt, className = '', ...props }) {
 /**
  * Variante pour thumbnails/cards
  */
-export function ThumbnailImage({ src, alt, className = '', ...props }) {
+interface ThumbnailImageProps extends Omit<OptimizedImageProps, 'quality' | 'sizes'> {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+export function ThumbnailImage({ src, alt, className = '', ...props }: ThumbnailImageProps) {
   return (
     <OptimizedImage
       src={src}
@@ -97,7 +123,14 @@ export function ThumbnailImage({ src, alt, className = '', ...props }) {
 /**
  * Variante pour avatars
  */
-export function AvatarImage({ src, alt, size = 40, className = '', ...props }) {
+interface AvatarImageProps extends Omit<OptimizedImageProps, 'width' | 'height' | 'quality' | 'sizes'> {
+  src: string;
+  alt: string;
+  size?: number;
+  className?: string;
+}
+
+export function AvatarImage({ src, alt, size = 40, className = '', ...props }: AvatarImageProps) {
   return (
     <OptimizedImage
       src={src}

@@ -8,9 +8,9 @@ import CTAButton from "@/components/CTAButton";
 import type { Metadata } from "next";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Génération statique des pages
@@ -23,7 +23,8 @@ export async function generateStaticParams() {
 
 // Génération des métadonnées SEO
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const project = getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -43,15 +44,16 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
   const allProjects = getAllProjects();
-  const currentIndex = allProjects.findIndex((p) => p.slug === params.slug);
+  const currentIndex = allProjects.findIndex((p) => p.slug === slug);
   const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
 
   return (
