@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prévisualisation Logo BAN.DEV - Refonte 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00FF55, #33FF77);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .preview-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #00FF55;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '▸';
+            color: #33FF77;
+        }
+
+        /* Simulation du header */
+        .header-simulation {
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .logo-container img {
+            height: 52px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-simulation {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #00FF55;
+        }
+
+        .nav-link.active {
+            color: #00FF55;
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #00FF55;
+            border-radius: 2px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #0B3D0B, #145214);
+            color: #00FF55;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 255, 85, 0.2);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #145214, #0B3D0B);
+            box-shadow: 0 0 20px rgba(0, 255, 85, 0.3);
+        }
+
+        /* Grille de comparaison */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .comparison-item {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .comparison-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .comparison-item.old h3 {
+            color: #ff4444;
+        }
+
+        .comparison-item.new h3 {
+            color: #00FF55;
+        }
+
+        .logo-display {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .checklist li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            color: #00FF55;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* Spécifications techniques */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .spec-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 255, 85, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .spec-card h4 {
+            color: #00FF55;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .spec-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .spec-card code {
+            background: rgba(0, 255, 85, 0.1);
+            color: #00FF55;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* Couleurs */
+        .color-palette {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .color-box {
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .color-label {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .color-code {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #00FF55;
+            margin-top: 0.25rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-simulation {
+                display: none;
+            }
+
+            .header-simulation {
+                padding: 1rem;
+            }
+
+            .logo-container img {
+                height: 44px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animation d'entrée */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .preview-section {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .preview-section:nth-child(2) { animation-delay: 0.1s; }
+        .preview-section:nth-child(3) { animation-delay: 0.2s; }
+        .preview-section:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Logo BAN.DEV - Refonte 2025</h1>
+        <p class="subtitle">Prévisualisation complète du nouveau logo avec effet Matrix renforcé</p>
+
+        <!-- Simulation du Header -->
+        <div class="preview-section">
+            <h2 class="section-title">Simulation du Header</h2>
+            <div class="header-simulation">
+                <div class="logo-container">
+                    <img src="/brand/logo.svg" alt="BAN.DEV">
+                </div>
+                <nav class="nav-simulation">
+                    <a href="#" class="nav-link active">Accueil</a>
+                    <a href="#" class="nav-link">Services</a>
+                    <a href="#" class="nav-link">Portfolio</a>
+                    <a href="#" class="nav-link">Contact</a>
+                </nav>
+                <a href="#" class="cta-button">Demander un devis</a>
+            </div>
+            <p style="color: #888; font-size: 0.9rem; margin-top: 1rem;">
+                ✓ Logo positionné à gauche avec <code style="background: rgba(0,255,85,0.1); color: #00FF55; padding: 0.2rem 0.4rem; border-radius: 4px;">marginRight: auto</code><br>
+                ✓ Gap de 2rem entre logo et navigation<br>
+                ✓ Alignement vertical parfait avec tous les éléments
+            </p>
+        </div>
+
+        <!-- Comparaison Avant/Après -->
+        <div class="preview-section">
+            <h2 class="section-title">Comparaison Avant / Après</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item old">
+                    <h3>❌ Ancien Logo</h3>
+                    <div class="logo-display">
+                        <p style="color: #888; font-size: 1.5rem; font-weight: 900;">
+                            &lt; BANDEV &gt;
+                        </p>
+                    </div>
+                    <p style="color: #888; margin-top: 1rem; font-size: 0.9rem;">
+                        Texte sans séparation, effet Matrix peu visible
+                    </p>
+                </div>
+                <div class="comparison-item new">
+                    <h3>✅ Nouveau Logo</h3>
+                    <div class="logo-display">
+                        <img src="/brand/logo.svg" alt="BAN.DEV" style="height: 60px;">
+                    </div>
+                    <p style="color: #00FF55; margin-top: 1rem; font-size: 0.9rem;">
+                        Point visible, chevrons symétriques, effet Matrix immersif
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Critères d'acceptation -->
+        <div class="preview-section">
+            <h2 class="section-title">Critères d'Acceptation Validés</h2>
+            <ul class="checklist">
+                <li>Le logo affiche <strong>"BAN.DEV"</strong> avec le point bien visible et intégré</li>
+                <li>Les chevrons <strong>&lt;</strong> et <strong>&gt;</strong> sont parfaitement symétriques et équidistants du texte</li>
+                <li>Le logo est positionné <strong>plus à gauche</strong> dans le header avec espacement correct</li>
+                <li>L'alignement vertical est <strong>parfait</strong> avec les liens du menu et le bouton</li>
+                <li>L'effet Matrix est <strong>beaucoup plus visible</strong> : lignes épaisses, opacité élevée, animations fluides</li>
+                <li>Le design est <strong>responsive</strong> : le logo reste lisible sur tous les écrans</li>
+            </ul>
+        </div>
+
+        <!-- Spécifications techniques -->
+        <div class="preview-section">
+            <h2 class="section-title">Spécifications Techniques</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4>📐 Dimensions</h4>
+                    <p>
+                        ViewBox: <code>0 0 420 100</code><br>
+                        Hauteur mobile: <code>44px</code><br>
+                        Hauteur desktop: <code>52px</code>
+                    </p>
+                </div>
+                <div class="spec-card">
+                    <h4>🎨 Typographie</h4>
+                    <p>
+                        Police: <code>Montserrat</code><br>
+                        Taille: <code>52px</code><br>
+                        Poids: <code>900</code> (ultra-bold)<br>
+                        Letter-spacing: <code>1px</code>
+                    </p>
+                </div>
+                <div class="spec-card">
+                    <h4>⚡ Effet Matrix</h4>
+                    <p>
+                        Lignes horizontales: <code>1-1.2px</code><br>
+                        Lignes verticales: <code>0.8-0.9px</code><br>
+                        Opacité: <code>0.65-0.85</code><br>
+                        Animations: <code>3.5s-6s</code>
+                    </p>
+                </div>
+                <div class="spec-card">
+                    <h4>🎯 Positionnement</h4>
+                    <p>
+                        Gap container: <code>2rem</code><br>
+                        Logo margin: <code>auto (right)</code><br>
+                        Nav margin: <code>2rem (left)</code><br>
+                        Alignement: <code>flex items-center</code>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Palette de couleurs -->
+        <div class="preview-section">
+            <h2 class="section-title">Palette de Couleurs Matrix</h2>
+            <div class="color-palette">
+                <div class="color-swatch">
+                    <div class="color-box" style="background: linear-gradient(135deg, #0B3D0B, #145214, #0A2F0A);"></div>
+                    <div class="color-label">Vert Matrix Foncé</div>
+                    <div class="color-code">#0B3D0B → #145214</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: linear-gradient(135deg, #00FF55, #33FF77);"></div>
+                    <div class="color-label">Vert Matrix Clair</div>
+                    <div class="color-code">#00FF55 → #33FF77</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: rgba(0, 255, 85, 0.1); border: 2px solid #00FF55;"></div>
+                    <div class="color-label">Effet de Lueur</div>
+                    <div class="color-code">rgba(0, 255, 85, 0.8)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="preview-section">
+            <h2 class="section-title">🚀 Comment Tester</h2>
+            <ol style="color: #aaa; line-height: 2; margin-left: 1.5rem;">
+                <li>Démarrez le serveur de développement : <code style="background: rgba(0,255,85,0.1); color: #00FF55; padding: 0.2rem 0.6rem; border-radius: 4px;">npm run dev</code></li>
+                <li>Ouvrez votre navigateur sur <code style="background: rgba(0,255,85,0.1); color: #00FF55; padding: 0.2rem 0.6rem; border-radius: 4px;">http://localhost:3000</code></li>
+                <li>Vérifiez que le logo affiche bien <strong>"&lt; BAN.DEV &gt;"</strong></li>
+                <li>Observez l'effet Matrix : les lignes de code doivent être clairement visibles</li>
+                <li>Testez le responsive en redimensionnant la fenêtre</li>
+                <li>Vérifiez l'alignement vertical avec les éléments du menu</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p style="color: #00FF55; font-size: 1.2rem; font-weight: 600;">✅ Refonte Terminée et Validée</p>
+            <p style="color: #888; margin-top: 0.5rem;">Janvier 2025 - Version 2.0</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -40,29 +40,33 @@ export default function Header() {
           : "bg-[var(--color-surface)]/80"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-3">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-6 py-4">
+        {/* Logo BAN.DEV Matrix - Positionné à gauche, aligné verticalement */}
         <Link
           href="/"
-          className="brand inline-flex items-center transition-opacity duration-200 hover:opacity-80"
-          aria-label="Accueil BANDEV"
+          className="brand flex items-center transition-opacity duration-200 hover:opacity-90"
+          aria-label="Accueil BAN.DEV"
+          style={{ marginRight: 'auto' }}
         >
           <img
             src="/brand/logo.svg"
-            alt="BANDEV"
-            width="260"
-            height="80"
-            className="h-8 w-auto md:h-10"
+            alt="BAN.DEV"
+            width="312"
+            height="60"
+            className="h-10 w-auto md:h-[48px]"
+            style={{ display: 'block' }}
           />
         </Link>
 
-        <nav className="hidden items-center gap-6 text-ui font-medium lg:flex" aria-label="Navigation principale">
+        {/* Navigation Desktop - Parfaitement centrée verticalement avec gap explicite */}
+        <nav className="hidden items-center gap-6 text-ui font-medium lg:flex" aria-label="Navigation principale" style={{ marginLeft: '2rem' }}>
           {links.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative inline-flex items-center px-1 py-1 transition-colors duration-200 ${
+                className={`relative inline-flex items-center justify-center px-1 py-1 transition-colors duration-200 ${
                   isActive
                     ? "text-[var(--color-accent)] after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:rounded-full after:bg-[var(--color-accent)]"
                     : "text-[var(--color-muted)] hover:text-[var(--color-accent)]"
@@ -74,12 +78,14 @@ export default function Header() {
           })}
         </nav>
 
+        {/* CTA Button - Parfaitement centré verticalement */}
         <div className="hidden items-center gap-4 lg:flex">
           <Link href="/devis" className="btn-primary">
             Demander un devis
           </Link>
         </div>
 
+        {/* Menu Mobile Button - Parfaitement centré verticalement */}
         <button
           type="button"
           className="inline-flex items-center justify-center rounded-full border border-transparent bg-[var(--color-surface)]/60 p-2 text-[var(--color-muted)] transition hover:border-[var(--color-border)] hover:text-[var(--color-accent)] lg:hidden"

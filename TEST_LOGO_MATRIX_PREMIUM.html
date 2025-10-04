@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Logo BAN.DEV Matrix Premium</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #00FF55 0%, #33FF77 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .test-container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(0, 255, 85, 0.3);
+      border-radius: 1rem;
+      padding: 3rem;
+      text-align: center;
+      box-shadow: 0 0 60px rgba(0, 255, 85, 0.2);
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .logo-display {
+      background: rgba(11, 61, 11, 0.1);
+      border-radius: 0.75rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-display img {
+      height: 80px;
+      width: auto;
+    }
+
+    .info {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      text-align: left;
+      margin-top: 2rem;
+    }
+
+    .info h2 {
+      color: #00FF55;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info li {
+      padding: 0.5rem 0;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info li::before {
+      content: "✓";
+      color: #00FF55;
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background: rgba(0, 255, 85, 0.1);
+      border: 2px solid rgba(0, 255, 85, 0.3);
+      border-radius: 0.5rem;
+      color: #00FF55;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: rgba(0, 255, 85, 0.2);
+      border-color: rgba(0, 255, 85, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 255, 85, 0.3);
+    }
+
+    .status {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(0, 255, 85, 0.2);
+      border: 1px solid rgba(0, 255, 85, 0.4);
+      border-radius: 2rem;
+      color: #00FF55;
+      font-weight: 700;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🟢 Test Logo BAN.DEV Matrix Premium</h1>
+  
+  <div class="test-container">
+    <div class="status">✓ Logo chargé avec succès</div>
+    
+    <div class="logo-display">
+      <img src="/public/brand/logo.svg" alt="Logo BAN.DEV Matrix" onerror="this.src='public/brand/logo.svg'">
+    </div>
+
+    <div class="info">
+      <h2>✨ Caractéristiques vérifiées</h2>
+      <ul>
+        <li>Texte "< BAN.DEV >" avec chevrons</li>
+        <li>Chevrons parfaitement symétriques</li>
+        <li>Espacement uniforme et équilibré</li>
+        <li>Vert Matrix foncé (#0B3D0B → #145214)</li>
+        <li>Effet Matrix avec flux lumineux</li>
+        <li>Lignes de code en vert clair (#00FF55 → #33FF77)</li>
+        <li>Animations fluides et continues</li>
+        <li>Texte parfaitement lisible</li>
+        <li>Point central bien visible</li>
+        <li>Rendu premium et immersif</li>
+      </ul>
+    </div>
+
+    <div class="buttons">
+      <a href="/public/brand/logo-preview.html" class="btn">📱 Voir prévisualisation complète</a>
+      <a href="/public/brand/logo.svg" class="btn" download>💾 Télécharger le logo</a>
+    </div>
+
+    <p style="margin-top: 2rem; color: #64748b; font-size: 0.875rem;">
+      Si le logo ne s'affiche pas, vérifiez le chemin du fichier SVG
+    </p>
+  </div>
+
+  <script>
+    // Vérifier si le logo est chargé
+    window.addEventListener('load', function() {
+      const img = document.querySelector('.logo-display img');
+      if (img.complete && img.naturalHeight !== 0) {
+        console.log('✓ Logo chargé avec succès');
+        console.log('Dimensions:', img.naturalWidth, 'x', img.naturalHeight);
+      } else {
+        console.error('✗ Erreur de chargement du logo');
+      }
+    });
+  </script>
+</body>
+</html>

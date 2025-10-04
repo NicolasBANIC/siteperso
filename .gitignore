@@ -39,3 +39,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Lighthouse CI
+.lighthouseci/
+
+# Zencoder reports (optionnel - peut être commité pour historique)
+# .zencoder/report.html
+
+# Bundle analyzer
+.next/analyze/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+.DS_Store

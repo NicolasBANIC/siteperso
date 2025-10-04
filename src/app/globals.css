@@ -55,6 +55,9 @@
     /* Support des safe-area pour notch/encoche */
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
+    /* CRITIQUE : Empêcher le scroll horizontal */
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body {
@@ -62,6 +65,10 @@
     font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
     line-height: 1.6;
     font-weight: 400;
+    /* CRITIQUE : Empêcher le scroll horizontal */
+    overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
   }
 
   /* Hiérarchie typographique Inter */
@@ -161,21 +168,96 @@
 }
 
 @layer components {
-  /* Logo BANDEV dans le header */
-  .brand {
-    display: inline-block;
-    line-height: 0;
+  /* ========================================
+     CLASSES UTILITAIRES DE CENTRAGE
+     ======================================== */
+  
+  /* Centrage flex horizontal + vertical */
+  .center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
   }
 
-  .brand svg {
-    height: 24px;
-    width: auto;
+  /* Centrage grid (plus simple) */
+  .center-grid {
+    display: grid;
+    place-items: center;
+    min-height: 100%;
   }
 
-  @media (min-width: 768px) {
-    .brand svg {
-      height: 28px;
-    }
+  /* Container responsive avec padding fluide */
+  .container {
+    width: 100%;
+    max-width: 72rem; /* 1152px */
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 3vw, 2rem);
+  }
+
+  /* ========================================
+     SECTIONS AVEC CENTRAGE AUTOMATIQUE
+     ======================================== */
+  
+  /* Section par défaut - Hauteur adaptative au contenu */
+  section,
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: clamp(3rem, 8vw, 6rem);
+    padding-inline: clamp(1rem, 3vw, 2rem);
+    /* Empêcher débordement */
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  /* Section pleine hauteur (pour hero sections) */
+  .section-full {
+    min-height: min(100svh, 100vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: clamp(3rem, 8vw, 6rem);
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Section compacte (pour peu de contenu) */
+  .section-compact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: clamp(2rem, 5vw, 4rem);
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Section auto (hauteur selon contenu, sans min-height) */
+  .section-auto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-block: clamp(2rem, 6vw, 5rem);
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* ========================================
+     IMAGES ET MÉDIAS FLUIDES
+     ======================================== */
+  
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   .card {
@@ -214,40 +296,62 @@
   }
 
   .section-title {
-    @apply text-[var(--color-foreground)];
+    @apply text-[var(--color-foreground)] text-center;
     font-size: clamp(1.75rem, 4vw, 2.5rem); /* 28-40px */
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.01em;
+    margin-bottom: 1rem;
   }
 
   .section-subtitle {
-    @apply text-[var(--color-muted)] max-w-3xl;
+    @apply text-[var(--color-muted)] max-w-3xl text-center mx-auto;
     font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
     font-weight: 400;
     line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 
   .container-page {
     @apply mx-auto max-w-7xl space-y-16 px-6 py-12 md:space-y-24 md:py-20;
+    width: 100%;
   }
 
-  /* Logo BANDEV - Styles pour l'intégration raster */
+  /* Conteneur centré pour le contenu des sections */
+  .section-content {
+    width: 100%;
+    max-width: 72rem; /* 1152px */
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 3vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Conteneur pour texte aligné à gauche dans une section centrée */
+  .section-content-left {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 3vw, 2rem);
+    text-align: left;
+  }
+
+  /* Logo BANDEV - Centrage parfait vertical et horizontal */
   .brand {
-    display: inline-block;
-    line-height: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
   }
 
+  .brand svg,
   .brand img {
-    height: 28px;
+    display: block;
+    height: auto;
     width: auto;
-    vertical-align: middle;
-  }
-
-  @media (min-width: 768px) {
-    .brand img {
-      height: 32px;
-    }
+    max-height: 100%;
   }
 }
 
