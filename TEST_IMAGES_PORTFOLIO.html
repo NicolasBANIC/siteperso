@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Images Portfolio - Nova Design & Echo Market</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .project-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .project-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .project-subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 60%; /* Ratio 16:10 */
+            background: #e9ecef;
+            overflow: hidden;
+        }
+
+        .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover .image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .image-label {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .hero-section {
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #495057;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .project-section {
+                padding: 20px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Test des Images Portfolio</h1>
+
+        <!-- NOVA DESIGN -->
+        <div class="project-section">
+            <div class="project-title">
+                <span>🚀 NOVA DESIGN</span>
+                <span class="badge">Site Vitrine</span>
+            </div>
+            <p class="project-subtitle">Agence de design d'interface futuriste et minimaliste</p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Images Totales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Images Galerie</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">✅</div>
+                    <div class="stat-label">Statut</div>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hero-section">
+                <h3 class="section-title">📸 Image Hero</h3>
+                <img src="/images/portfolio/nova-design/hero.jpg" 
+                     alt="Nova Design Hero" 
+                     class="hero-image"
+                     onerror="this.parentElement.innerHTML='<div style=\'background:#f8d7da;color:#721c24;padding:40px;border-radius:12px;text-align:center;\'><strong>❌ Erreur:</strong> Image hero.jpg non trouvée</div>'">
+            </div>
+
+            <!-- Cover Image -->
+            <div class="hero-section">
+                <h3 class="section-title">🖼️ Image de Couverture</h3>
+                <img src="/images/portfolio/nova-design/cover.jpg" 
+                     alt="Nova Design Cover" 
+                     class="hero-image"
+                     onerror="this.parentElement.innerHTML='<div style=\'background:#f8d7da;color:#721c24;padding:40px;border-radius:12px;text-align:center;\'><strong>❌ Erreur:</strong> Image cover.jpg non trouvée</div>'">
+            </div>
+
+            <!-- Gallery Images -->
+            <h3 class="section-title">🎨 Galerie (10 images)</h3>
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-1.jpg" alt="Nova Design 1">
+                    </div>
+                    <div class="image-label">Image 1</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-2.jpg" alt="Nova Design 2">
+                    </div>
+                    <div class="image-label">Image 2</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-3.jpg" alt="Nova Design 3">
+                    </div>
+                    <div class="image-label">Image 3</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-4.jpg" alt="Nova Design 4">
+                    </div>
+                    <div class="image-label">Image 4</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-5.jpg" alt="Nova Design 5">
+                    </div>
+                    <div class="image-label">Image 5</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-6.jpg" alt="Nova Design 6">
+                    </div>
+                    <div class="image-label">Image 6</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-7.jpg" alt="Nova Design 7">
+                    </div>
+                    <div class="image-label">Image 7</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-8.jpg" alt="Nova Design 8">
+                    </div>
+                    <div class="image-label">Image 8</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-9.jpg" alt="Nova Design 9">
+                    </div>
+                    <div class="image-label">Image 9</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/nova-design/image-10.jpg" alt="Nova Design 10">
+                    </div>
+                    <div class="image-label">Image 10</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ECHO MARKET -->
+        <div class="project-section">
+            <div class="project-title">
+                <span>🛒 ECHO MARKET</span>
+                <span class="badge" style="background: #28a745;">E-commerce</span>
+            </div>
+            <p class="project-subtitle">Marketplace éco-responsable pour produits durables</p>
+
+            <div class="stats">
+                <div class="stat-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Images Totales</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Images Galerie</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                    <div class="stat-number">✅</div>
+                    <div class="stat-label">Statut</div>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hero-section">
+                <h3 class="section-title">📸 Image Hero</h3>
+                <img src="/images/portfolio/echo-market/hero.jpg" 
+                     alt="Echo Market Hero" 
+                     class="hero-image"
+                     onerror="this.parentElement.innerHTML='<div style=\'background:#f8d7da;color:#721c24;padding:40px;border-radius:12px;text-align:center;\'><strong>❌ Erreur:</strong> Image hero.jpg non trouvée</div>'">
+            </div>
+
+            <!-- Cover Image -->
+            <div class="hero-section">
+                <h3 class="section-title">🖼️ Image de Couverture</h3>
+                <img src="/images/portfolio/echo-market/cover.jpg" 
+                     alt="Echo Market Cover" 
+                     class="hero-image"
+                     onerror="this.parentElement.innerHTML='<div style=\'background:#f8d7da;color:#721c24;padding:40px;border-radius:12px;text-align:center;\'><strong>❌ Erreur:</strong> Image cover.jpg non trouvée</div>'">
+            </div>
+
+            <!-- Gallery Images -->
+            <h3 class="section-title">🎨 Galerie (10 images)</h3>
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-1.jpg" alt="Echo Market 1">
+                    </div>
+                    <div class="image-label">Image 1</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-2.jpg" alt="Echo Market 2">
+                    </div>
+                    <div class="image-label">Image 2</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-3.jpg" alt="Echo Market 3">
+                    </div>
+                    <div class="image-label">Image 3</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-4.jpg" alt="Echo Market 4">
+                    </div>
+                    <div class="image-label">Image 4</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-5.jpg" alt="Echo Market 5">
+                    </div>
+                    <div class="image-label">Image 5</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-6.jpg" alt="Echo Market 6">
+                    </div>
+                    <div class="image-label">Image 6</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-7.jpg" alt="Echo Market 7">
+                    </div>
+                    <div class="image-label">Image 7</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-8.jpg" alt="Echo Market 8">
+                    </div>
+                    <div class="image-label">Image 8</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-9.jpg" alt="Echo Market 9">
+                    </div>
+                    <div class="image-label">Image 9</div>
+                </div>
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="/images/portfolio/echo-market/image-10.jpg" alt="Echo Market 10">
+                    </div>
+                    <div class="image-label">Image 10</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>✅ Test Terminé</h3>
+            <p>Si toutes les images s'affichent correctement, le portfolio est prêt !</p>
+            <p style="margin-top: 10px; opacity: 0.8;">
+                <strong>URLs à tester :</strong><br>
+                <a href="http://localhost:3000/portfolio" style="color: white;">Liste Portfolio</a> | 
+                <a href="http://localhost:3000/portfolio/nova-design" style="color: white;">Nova Design</a> | 
+                <a href="http://localhost:3000/portfolio/echo-market" style="color: white;">Echo Market</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Vérification automatique des images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            let loadedCount = 0;
+            let errorCount = 0;
+
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    loadedCount++;
+                    checkComplete();
+                });
+
+                img.addEventListener('error', function() {
+                    errorCount++;
+                    this.parentElement.style.background = '#f8d7da';
+                    this.parentElement.innerHTML = '<div style="padding:20px;color:#721c24;text-align:center;"><strong>❌</strong><br>Image non trouvée</div>';
+                    checkComplete();
+                });
+            });
+
+            function checkComplete() {
+                if (loadedCount + errorCount === images.length) {
+                    console.log(`✅ Images chargées: ${loadedCount}`);
+                    console.log(`❌ Images en erreur: ${errorCount}`);
+                    console.log(`📊 Total: ${images.length}`);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
