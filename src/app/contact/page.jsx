@@ -2,7 +2,7 @@ import FormulaireContact from "@/components/FormulaireContact";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import ScrollReveal from "@/components/ScrollReveal";
-import Image from "next/image";
+import HeroSection from "@/components/HeroSection";
 import { Mail, Phone, MapPin, Linkedin, Github, Clock } from "lucide-react";
 import Link from "next/link";
 
@@ -61,48 +61,16 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <Section background="gradient">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="text-center lg:text-left">
-              <ScrollReveal>
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium mb-6">
-                  <Clock className="w-4 h-4" />
-                  Réponse sous 24h ouvrées
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.1}>
-                <h1 className="section-title">
-                  Entrons en contact
-                </h1>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.2}>
-                <p className="section-subtitle">
-                  Discutons de vos objectifs, de vos contraintes et de la meilleure façon de vous accompagner dans votre projet digital.
-                </p>
-              </ScrollReveal>
-            </div>
-
-            <ScrollReveal direction="right" delay={0.3}>
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-600 opacity-20 blur-2xl" aria-hidden="true" />
-                <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-700 shadow-2xl">
-                  <Image
-                    src="/images/contact-hero.jpg"
-                    alt="Contactez Nicolas Banic pour votre projet web - développeur freelance disponible"
-                    width={600}
-                    height={400}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </Section>
+      <HeroSection
+        title="Entrons en contact"
+        subtitle="Discutons de vos objectifs, de vos contraintes et de la meilleure façon de vous accompagner dans votre projet digital."
+        badge={{
+          icon: "clock",
+          text: "Réponse sous 24h ouvrées",
+          variant: "success"
+        }}
+        backgroundImage="/images/contact-hero.jpg"
+      />
 
       {/* Contact Section */}
       <Section>

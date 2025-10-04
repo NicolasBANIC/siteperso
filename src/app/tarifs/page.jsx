@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Check, Star } from "lucide-react";
+import { Check, Star, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import PricingCard from "@/components/PricingCard";
+import HeroSection from "@/components/HeroSection";
 
 const pricingPlans = [
   {
@@ -105,16 +106,32 @@ export const metadata = {
 
 export default function TarifsPage() {
   return (
-    <div className="container-page">
-      {/* Header */}
-      <ScrollReveal direction="up">
-        <header className="mb-16 space-y-4 text-center">
-          <h1 className="section-title">Tarifs transparents et adaptés</h1>
-          <p className="section-subtitle mx-auto">
-            Des formules claires pour tous les budgets. Paiement en plusieurs fois possible.
-          </p>
-        </header>
-      </ScrollReveal>
+    <>
+      {/* Hero Section */}
+      <HeroSection
+        title='Tarifs <span class="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">transparents et adaptés</span>'
+        subtitle="Des formules claires pour tous les budgets. Paiement en plusieurs fois possible. Devis personnalisé gratuit sous 24h."
+        backgroundImage="/images/tarifs-hero.png"
+        badge="Devis Gratuit"
+        height="65vh"
+      >
+        <Link
+          href="/devis"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
+        >
+          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+          <span className="relative">Demander un devis gratuit</span>
+          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </Link>
+        <Link
+          href="/contact"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
+        >
+          <span className="relative">Poser une question</span>
+        </Link>
+      </HeroSection>
+
+      <div className="container-page">
 
       {/* Main Pricing */}
       <section className="mb-24">
@@ -248,6 +265,7 @@ export default function TarifsPage() {
           </div>
         </section>
       </ScrollReveal>
-    </div>
+      </div>
+    </>
   );
 }

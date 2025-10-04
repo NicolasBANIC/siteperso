@@ -2,6 +2,7 @@ import FormulaireDevis from "@/components/FormulaireDevis";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroSection from "@/components/HeroSection";
 import { CheckCircle, Clock, Shield, Zap } from "lucide-react";
 
 const avantages = [
@@ -40,38 +41,28 @@ export default function DevisPage() {
   return (
     <>
       {/* Hero Section */}
-      <Section background="gradient">
+      <HeroSection
+        title="Votre projet mérite une attention sur mesure"
+        subtitle="Renseignez quelques informations : je reviens vers vous sous 24 heures ouvrées avec un premier retour détaillé et un devis personnalisé."
+        badge={{
+          icon: "checkCircle",
+          text: "Devis gratuit et sans engagement",
+          variant: "success"
+        }}
+        backgroundImage="/images/tarifs-hero.png"
+      />
+
+      {/* Avantages Section */}
+      <Section>
         <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <ScrollReveal>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium mb-6">
-                <CheckCircle className="w-4 h-4" />
-                Devis gratuit et sans engagement
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.1}>
-              <h1 className="section-title">
-                Votre projet mérite une attention sur mesure
-              </h1>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <p className="section-subtitle">
-                Renseignez quelques informations : je reviens vers vous sous 24 heures ouvrées avec un premier retour détaillé et un devis personnalisé.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          {/* Avantages */}
-          <ScrollReveal delay={0.3}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {avantages.map((avantage, index) => {
                 const Icon = avantage.icon;
                 return (
                   <div 
                     key={index}
-                    className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm"
+                    className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700"
                   >
                     <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg mb-4">
                       <Icon className="w-6 h-6" />

@@ -20,6 +20,11 @@ import TestimonialSlider from "@/components/TestimonialSlider";
 import TechBadge from "@/components/TechBadge";
 import MatrixRain from "@/components/MatrixRain";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import CodeTypingAnimation from "@/components/CodeTypingAnimation";
+import Globe3D from "@/components/Globe3D";
+import MockDashboard from "@/components/MockDashboard";
+import GlassmorphismCard from "@/components/GlassmorphismCard";
+import MeshGradient from "@/components/MeshGradient";
 
 const services = [
   {
@@ -271,16 +276,20 @@ export default function HomePage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link 
                     href="/devis" 
-                    className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/20"
+                    className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
                   >
-                    Demander un devis
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    {/* Shimmer effect */}
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                    <span className="relative">Demander un devis</span>
+                    <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                   <Link 
                     href="/portfolio" 
-                    className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
+                    className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
                   >
-                    Voir mes projets
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[var(--color-accent-matrix)] to-white opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-30" />
+                    <span className="relative">Voir mes projets</span>
                   </Link>
                 </div>
 
@@ -362,18 +371,24 @@ export default function HomePage() {
         <div className="relative z-10 grid gap-8 md:grid-cols-2">
           {services.map((service, index) => (
             <ScrollReveal key={service.title} direction={index % 2 === 0 ? "left" : "right"} delay={index * 100}>
-              <article className="card group h-full transition-all duration-300 hover:scale-[1.02] hover:border-[var(--color-accent)] hover:shadow-2xl">
+              <article className="card group relative h-full overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:border-[var(--color-accent)] hover:shadow-2xl hover-lift">
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--color-accent)]/5 to-[var(--color-accent-secondary)]/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+
                 <div className="mb-6 overflow-hidden rounded-xl">
                   <Image
                     src={service.icon}
                     alt={service.title}
                     width={600}
                     height={300}
-                    className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="h-48 w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                   />
                 </div>
 
-                <h3 className="mb-4 text-heading-lg font-semibold text-[var(--color-foreground)]">
+                <h3 className="mb-4 text-heading-lg font-semibold text-[var(--color-foreground)] transition-colors group-hover:text-[var(--color-accent)]">
                   {service.title}
                 </h3>
 
@@ -382,24 +397,32 @@ export default function HomePage() {
                 </p>
 
                 <div className="mb-6 space-y-3">
-                  {service.features.map((feature) => (
-                    <div key={feature} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[var(--color-accent)]" />
+                  {service.features.map((feature, idx) => (
+                    <div 
+                      key={feature} 
+                      className="flex items-start gap-3 transition-transform duration-300"
+                      style={{ transitionDelay: `${idx * 50}ms` }}
+                    >
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[var(--color-accent)] transition-all group-hover:scale-110 group-hover:text-[var(--color-accent-matrix)]" />
                       <span className="text-body-sm text-[var(--color-foreground)]">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 <div className="flex flex-wrap gap-2 border-t border-[var(--color-border)] pt-6">
-                  {service.tech.map((tech) => (
+                  {service.tech.map((tech, idx) => (
                     <span
                       key={tech}
-                      className="badge"
+                      className="badge transition-all duration-300 hover:scale-110 hover:bg-[var(--color-accent)] hover:text-white"
+                      style={{ transitionDelay: `${idx * 30}ms` }}
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
+
+                {/* Glow effect on hover */}
+                <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-[var(--color-accent)] opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-20" />
               </article>
             </ScrollReveal>
           ))}
@@ -562,6 +585,117 @@ export default function HomePage() {
             </div>
           </div>
         </ScrollReveal>
+      </section>
+
+      {/* Tech Showcase Section - NEW */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[var(--color-background)] via-slate-900 to-[var(--color-background)] py-20 dark:via-slate-950">
+        <MeshGradient className="opacity-30" />
+        
+        <div className="container-page relative z-10">
+          <ScrollReveal direction="up">
+            <div className="mb-16 space-y-4 text-center">
+              <div className="eyebrow mx-auto">Innovation Technologique</div>
+              <h2 className="section-title">
+                Des solutions qui impressionnent par leur technologie
+              </h2>
+              <p className="section-subtitle mx-auto">
+                Découvrez des exemples concrets de ce que je peux créer pour vous : interfaces modernes, 
+                animations fluides, et expériences utilisateur exceptionnelles.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            {/* Code Animation Demo */}
+            <ScrollReveal direction="left" delay={100}>
+              <GlassmorphismCard className="p-6" variant="gradient">
+                <div className="mb-4">
+                  <h3 className="mb-2 text-heading-md font-semibold text-white">
+                    Code en temps réel
+                  </h3>
+                  <p className="text-body-sm text-white/70">
+                    Animation de code qui s'écrit automatiquement, parfait pour présenter 
+                    vos solutions techniques de manière dynamique.
+                  </p>
+                </div>
+                <CodeTypingAnimation snippetIndex={0} />
+              </GlassmorphismCard>
+            </ScrollReveal>
+
+            {/* Globe 3D Demo */}
+            <ScrollReveal direction="right" delay={100}>
+              <GlassmorphismCard className="p-6" variant="gradient">
+                <div className="mb-4">
+                  <h3 className="mb-2 text-heading-md font-semibold text-white">
+                    Visualisations 3D interactives
+                  </h3>
+                  <p className="text-body-sm text-white/70">
+                    Globe 3D animé pour représenter votre présence internationale 
+                    ou vos données géographiques de manière immersive.
+                  </p>
+                </div>
+                <Globe3D className="py-8" />
+              </GlassmorphismCard>
+            </ScrollReveal>
+          </div>
+
+          {/* Dashboard Demo - Full Width */}
+          <ScrollReveal direction="up" delay={200}>
+            <div className="mt-8">
+              <div className="mb-4 text-center">
+                <h3 className="mb-2 text-heading-md font-semibold text-white">
+                  Interfaces SaaS professionnelles
+                </h3>
+                <p className="text-body-sm text-white/70">
+                  Dashboard interactif avec données en temps réel, graphiques animés, 
+                  et design moderne pour vos applications métier.
+                </p>
+              </div>
+              <MockDashboard />
+            </div>
+          </ScrollReveal>
+
+          {/* Features Grid */}
+          <ScrollReveal direction="up" delay={300}>
+            <div className="mt-16 grid gap-6 md:grid-cols-3">
+              <GlassmorphismCard className="p-6 text-center" hover={true}>
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500">
+                  <Code2 className="h-8 w-8 text-white" />
+                </div>
+                <h4 className="mb-2 text-heading-sm font-semibold text-white">
+                  Code Moderne
+                </h4>
+                <p className="text-body-sm text-white/70">
+                  React 19, Next.js 15, TypeScript pour un code robuste et maintenable
+                </p>
+              </GlassmorphismCard>
+
+              <GlassmorphismCard className="p-6 text-center" hover={true}>
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-teal-500">
+                  <Zap className="h-8 w-8 text-white" />
+                </div>
+                <h4 className="mb-2 text-heading-sm font-semibold text-white">
+                  Performances Extrêmes
+                </h4>
+                <p className="text-body-sm text-white/70">
+                  Optimisations avancées pour des temps de chargement ultra-rapides
+                </p>
+              </GlassmorphismCard>
+
+              <GlassmorphismCard className="p-6 text-center" hover={true}>
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-red-500">
+                  <Rocket className="h-8 w-8 text-white" />
+                </div>
+                <h4 className="mb-2 text-heading-sm font-semibold text-white">
+                  Animations Fluides
+                </h4>
+                <p className="text-body-sm text-white/70">
+                  Transitions et animations 60fps pour une expérience premium
+                </p>
+              </GlassmorphismCard>
+            </div>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* Testimonials Section */}

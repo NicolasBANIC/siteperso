@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroSection from "@/components/HeroSection";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const processSteps = [
@@ -97,16 +98,32 @@ export const metadata = {
 
 export default function ProcessusPage() {
   return (
-    <div className="container-page">
-      {/* Header */}
-      <ScrollReveal direction="up">
-        <div className="mb-16 space-y-4 text-center">
-          <h1 className="section-title">Un processus éprouvé en 5 étapes</h1>
-          <p className="section-subtitle mx-auto">
-            De l'idée à la mise en ligne, je vous accompagne à chaque étape pour garantir le succès de votre projet web.
-          </p>
-        </div>
-      </ScrollReveal>
+    <>
+      {/* Hero Section */}
+      <HeroSection
+        title='Un processus <span class="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">éprouvé en 5 étapes</span>'
+        subtitle="De l'idée à la mise en ligne, je vous accompagne à chaque étape avec une méthodologie structurée et transparente pour garantir le succès de votre projet web."
+        backgroundImage="/images/processus-hero.png"
+        badge="Méthodologie Agile"
+        height="65vh"
+      >
+        <Link
+          href="/devis"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
+        >
+          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+          <span className="relative">Démarrer un projet</span>
+          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </Link>
+        <Link
+          href="/services"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
+        >
+          <span className="relative">Découvrir mes services</span>
+        </Link>
+      </HeroSection>
+
+      <div className="container-page">
 
       {/* Process Steps */}
       <div className="mb-24 space-y-12">
@@ -262,6 +279,7 @@ export default function ProcessusPage() {
           </div>
         </section>
       </ScrollReveal>
-    </div>
+      </div>
+    </>
   );
 }

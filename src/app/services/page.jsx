@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Code2, ShoppingCart, Palette, Database, Wrench, Zap } from "lucide-react";
+import { Code2, ShoppingCart, Palette, Database, Wrench, Zap, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import ServiceCard from "@/components/ServiceCard";
+import HeroSection from "@/components/HeroSection";
 
 const services = [
   {
@@ -92,17 +93,32 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="container-page">
-      {/* Header */}
-      <ScrollReveal direction="up">
-        <header className="mb-16 space-y-4 text-center">
-          <h1 className="section-title">Des services web pensés pour votre réussite</h1>
-          <p className="section-subtitle mx-auto">
-            Du site vitrine à l'application sur mesure, je vous accompagne à chaque étape pour créer un outil digital à la
-            hauteur de vos ambitions.
-          </p>
-        </header>
-      </ScrollReveal>
+    <>
+      {/* Hero Section */}
+      <HeroSection
+        title='Des services web <span class="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">pensés pour votre réussite</span>'
+        subtitle="Du site vitrine à l'application sur mesure, je vous accompagne à chaque étape pour créer un outil digital performant, moderne et à la hauteur de vos ambitions."
+        backgroundImage="/images/services-hero.png"
+        badge="Expertise Full-Stack"
+        height="65vh"
+      >
+        <Link
+          href="/devis"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
+        >
+          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+          <span className="relative">Demander un devis</span>
+          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </Link>
+        <Link
+          href="/portfolio"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
+        >
+          <span className="relative">Voir mes réalisations</span>
+        </Link>
+      </HeroSection>
+
+      <div className="container-page">
 
       {/* Services Grid */}
       <section className="mb-24 grid gap-8 lg:grid-cols-2">
@@ -201,6 +217,7 @@ export default function ServicesPage() {
           </div>
         </section>
       </ScrollReveal>
-    </div>
+      </div>
+    </>
   );
 }

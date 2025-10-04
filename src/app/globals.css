@@ -402,6 +402,45 @@
     animation: glow 2s ease-in-out infinite;
   }
 
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  /* Parallax effect */
+  @keyframes parallax {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-parallax {
+    animation: parallax 3s ease-in-out infinite alternate;
+  }
+
+  /* Pulse glow */
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(0, 71, 171, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(0, 71, 171, 0.6), 0 0 60px rgba(0, 255, 65, 0.3);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
   /* Gradient text */
   .gradient-text {
     background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 50%, var(--color-accent-matrix) 100%);
@@ -410,16 +449,94 @@
     background-clip: text;
   }
 
+  .gradient-text-animated {
+    background: linear-gradient(
+      90deg,
+      var(--color-accent) 0%,
+      var(--color-accent-secondary) 25%,
+      var(--color-accent-matrix) 50%,
+      var(--color-accent-secondary) 75%,
+      var(--color-accent) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
   /* Glassmorphism */
   .glass {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .dark .glass {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 71, 171, 0.1);
+  }
+
+  .dark .glass-strong {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 255, 65, 0.05);
+  }
+
+  /* Neumorphism */
+  .neumorphism {
+    background: var(--color-surface);
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.1),
+      -8px -8px 16px rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+  }
+
+  .dark .neumorphism {
+    background: var(--color-surface);
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.4),
+      -8px -8px 16px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 71, 171, 0.2);
+  }
+
+  .hover-glow {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary), var(--color-accent-matrix));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(10px);
+  }
+
+  .hover-glow:hover::before {
+    opacity: 0.7;
   }
 
   /* Smooth scrollbar */
@@ -435,9 +552,31 @@
   ::-webkit-scrollbar-thumb {
     background: var(--color-accent);
     border-radius: 5px;
+    transition: background 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-accent-secondary);
+  }
+
+  /* Loading skeleton */
+  @keyframes skeleton-loading {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-surface) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      var(--color-surface) 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
   }
 }

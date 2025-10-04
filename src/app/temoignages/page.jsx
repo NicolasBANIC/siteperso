@@ -2,7 +2,8 @@ import TestimonialCard from "@/components/TestimonialCard";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import ScrollReveal from "@/components/ScrollReveal";
-import { Star, Quote } from "lucide-react";
+import HeroSection from "@/components/HeroSection";
+import { Star, Quote, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const testimonials = [
@@ -82,41 +83,43 @@ export default function TemoignagesPage() {
   return (
     <>
       {/* Hero Section */}
-      <Section background="gradient">
+      <HeroSection
+        title='Ils me font <span class="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">confiance</span>'
+        subtitle="Une collaboration fondée sur l'écoute, la transparence et des résultats concrets pour chaque entreprise accompagnée. Découvrez les témoignages de mes clients satisfaits."
+        backgroundImage="/images/temoignages-hero.png"
+        badge="Note moyenne : 4.9/5 ⭐"
+        height="65vh"
+      >
+        <Link
+          href="/devis"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
+        >
+          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+          <span className="relative">Rejoignez-les</span>
+          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </Link>
+        <Link
+          href="/portfolio"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
+        >
+          <span className="relative">Voir mes réalisations</span>
+        </Link>
+      </HeroSection>
+
+      {/* Stats Section */}
+      <Section>
         <Container>
-          <div className="text-center max-w-3xl mx-auto">
-            <ScrollReveal>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-6">
-                <Star className="w-4 h-4 fill-current" />
-                Note moyenne : 4.9/5
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.1}>
-              <h1 className="section-title">
-                Ils me font confiance
-              </h1>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <p className="section-subtitle">
-                Une collaboration fondée sur l'écoute, la transparence et des résultats concrets pour chaque entreprise accompagnée.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          {/* Stats */}
-          <ScrollReveal delay={0.3}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+          <ScrollReveal>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm"
+                  className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-[var(--color-border)]"
                 >
-                  <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-[var(--color-accent)] mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-[var(--color-muted)]">
                     {stat.label}
                   </div>
                 </div>

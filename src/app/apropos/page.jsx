@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Code2, Lightbulb, Users, Award } from "lucide-react";
+import { Code2, Lightbulb, Users, Award, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroSection from "@/components/HeroSection";
 
 const skills = [
   "Next.js & React",
@@ -53,38 +54,32 @@ export const metadata = {
 
 export default function AproposPage() {
   return (
-    <div className="container-page">
-      {/* Header */}
-      <header className="mb-24 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <ScrollReveal direction="up">
-          <div className="space-y-6">
-            <h1 className="section-title">Un partenaire technique de confiance</h1>
-            <p className="text-lg leading-relaxed text-[var(--color-muted)]">
-              Développeur full-stack depuis plus de 10 ans, j'aide les artisans, TPE et PME à bâtir des outils digitaux
-              performants, durables et alignés sur leurs objectifs business.
-            </p>
-            <p className="text-lg leading-relaxed text-[var(--color-muted)]">
-              Basé en France, j'interviens partout en distanciel ou sur site selon vos besoins.
-            </p>
-          </div>
-        </ScrollReveal>
+    <>
+      {/* Hero Section */}
+      <HeroSection
+        title='Un partenaire technique <span class="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">de confiance</span>'
+        subtitle="Développeur full-stack depuis plus de 10 ans, j'aide les artisans, TPE et PME à bâtir des outils digitaux performants, durables et alignés sur leurs objectifs business."
+        backgroundImage="/images/apropos-hero.png"
+        badge="10+ Années d'Expérience"
+        height="65vh"
+      >
+        <Link
+          href="/contact"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
+        >
+          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+          <span className="relative">Travaillons ensemble</span>
+          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </Link>
+        <Link
+          href="/portfolio"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
+        >
+          <span className="relative">Découvrir mes projets</span>
+        </Link>
+      </HeroSection>
 
-        <ScrollReveal direction="right" delay={200}>
-          <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-20 blur-2xl" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-2xl">
-              <Image
-                src="/images/avatar.jpg"
-                alt="Portrait professionnel de Nicolas Banic, développeur web freelance"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
-                priority
-              />
-            </div>
-          </div>
-        </ScrollReveal>
-      </header>
+      <div className="container-page">
 
       {/* Stats */}
       <ScrollReveal direction="up">
@@ -228,6 +223,7 @@ export default function AproposPage() {
           </div>
         </section>
       </ScrollReveal>
-    </div>
+      </div>
+    </>
   );
 }

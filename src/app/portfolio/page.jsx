@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { X, ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
+import { X, ExternalLink, Github, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroSection from "@/components/HeroSection";
 
 const projects = [
   {
@@ -149,16 +151,31 @@ export default function PortfolioPage() {
 
   return (
     <>
+      {/* Hero Section */}
+      <HeroSection
+        title='Portfolio : <span class="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">Mes réalisations</span>'
+        subtitle="Découvrez une sélection de projets web que j'ai conçus et développés pour des artisans, TPE et PME. Chaque projet est unique et répond à des besoins spécifiques."
+        backgroundImage="/images/portfolio-hero.png"
+        badge="40+ Projets Livrés"
+        height="65vh"
+      >
+        <Link
+          href="/devis"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/30"
+        >
+          <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+          <span className="relative">Démarrer votre projet</span>
+          <ArrowRight className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </Link>
+        <Link
+          href="/contact"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:border-white/50 hover:bg-white/20"
+        >
+          <span className="relative">Discutons de votre idée</span>
+        </Link>
+      </HeroSection>
+
       <div className="container-page">
-        {/* Header */}
-        <ScrollReveal direction="up">
-          <div className="mb-12 space-y-4 text-center">
-            <h1 className="section-title">Portfolio</h1>
-            <p className="section-subtitle mx-auto">
-              Découvrez une sélection de mes réalisations pour artisans, TPE et PME.
-            </p>
-          </div>
-        </ScrollReveal>
 
         {/* Filters */}
         <ScrollReveal direction="up" delay={100}>
