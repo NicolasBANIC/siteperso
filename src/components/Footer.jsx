@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
 
 const navigationLinks = [
   { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
+  { href: "/processus", label: "Processus" },
   { href: "/portfolio", label: "Portfolio" },
+  { href: "/tarifs", label: "Tarifs" },
   { href: "/temoignages", label: "Témoignages" },
   { href: "/apropos", label: "À propos" },
   { href: "/contact", label: "Contact" },
@@ -27,9 +29,24 @@ const socialLinks = [
     icon: Github,
   },
   {
-    href: "mailto:bcnicolaspro@gmail.com",
+    href: "mailto:contact@bandev.fr",
     label: "Email",
     icon: Mail,
+  },
+];
+
+const contactInfo = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "contact@bandev.fr",
+    href: "mailto:contact@bandev.fr",
+  },
+  {
+    icon: MapPin,
+    label: "Localisation",
+    value: "France",
+    href: null,
   },
 ];
 
@@ -38,35 +55,43 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-surface)]/95 text-sm text-[var(--color-muted)] backdrop-blur">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-16 px-6 py-14 lg:flex-row lg:items-start lg:justify-between">
-        <div className="space-y-5 lg:max-w-sm">
-          <div className="flex items-center gap-3">
-            <img
-              src="/brand/logo.svg"
-              alt="BANDEV"
-              width="120"
-              height="40"
-              className="h-10 w-auto"
-            />
+      <div className="mx-auto w-full max-w-7xl px-6 py-14">
+        {/* Main Footer Content */}
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {/* Brand Section */}
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <img
+                src="/brand/logo.svg"
+                alt="BANDEV"
+                width="120"
+                height="40"
+                className="h-10 w-auto"
+              />
+            </div>
+            <p className="leading-relaxed">
+              Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
+            </p>
+            <p className="text-xs text-[var(--color-muted)]">
+              SIRET : 841 375 652 00028
+            </p>
+            <Link href="/devis" className="btn-primary inline-flex">
+              Demander un devis
+            </Link>
           </div>
-          <p className="leading-relaxed">
-            Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure. Transformez vos idées en expériences digitales exceptionnelles.
-          </p>
-          <p className="text-xs text-[var(--color-muted)]">
-            SIRET : 841 375 652 00028
-          </p>
-          <Link href="/devis" className="btn-primary inline-flex">
-            Demander un devis
-          </Link>
-        </div>
 
-        <div className="grid gap-12 sm:grid-cols-2 lg:gap-16">
+          {/* Navigation Links */}
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">Navigation</h2>
+            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
+              Navigation
+            </h2>
             <ul className="mt-4 space-y-2.5">
               {navigationLinks.map((link) => (
                 <li key={link.href}>
-                  <Link className="transition-colors hover:text-[var(--color-accent)]" href={link.href}>
+                  <Link
+                    className="transition-colors hover:text-[var(--color-accent)]"
+                    href={link.href}
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -74,22 +99,46 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">Légal</h2>
-              <ul className="mt-4 space-y-2.5">
-                {legalLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link className="transition-colors hover:text-[var(--color-accent)]" href={link.href}>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Contact Info & Social Links */}
+          <div>
+            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
+              Contact
+            </h2>
+            <ul className="mt-4 space-y-3">
+              {contactInfo.map((item) => {
+                const Icon = item.icon;
+                const content = (
+                  <div className="flex items-start gap-3">
+                    <Icon className="h-5 w-5 flex-shrink-0 text-[var(--color-accent)]" aria-hidden="true" />
+                    <div>
+                      <p className="text-xs font-medium text-[var(--color-muted)]">{item.label}</p>
+                      <p className="text-sm text-[var(--color-foreground)]">{item.value}</p>
+                    </div>
+                  </div>
+                );
 
-            <div>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">Réseaux sociaux</h2>
+                return (
+                  <li key={item.label}>
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="block transition-colors hover:text-[var(--color-accent)]"
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      content
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* Social Links */}
+            <div className="mt-6">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
+                Réseaux sociaux
+              </h3>
               <div className="mt-4 flex items-center gap-3">
                 {socialLinks.map((link) => {
                   const Icon = link.icon;
@@ -97,7 +146,7 @@ export default function Footer() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
@@ -110,12 +159,34 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+        {/* Legal Links */}
+        <div className="mt-12 border-t border-[var(--color-border)] pt-8">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
+            {legalLinks.map((link, index) => (
+              <span key={link.href} className="flex items-center gap-4">
+                <Link
+                  href={link.href}
+                  className="transition-colors hover:text-[var(--color-accent)]"
+                >
+                  {link.label}
+                </Link>
+                {index < legalLinks.length - 1 && (
+                  <span className="text-[var(--color-border)]">•</span>
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
+
+      {/* Bottom Bar */}
       <div className="border-t border-[var(--color-border)] bg-transparent">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-6 py-6 text-xs text-[var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
           <p>© {currentYear} BANDEV - Nicolas Banic. Tous droits réservés.</p>
           <p>
-            Développé avec <span className="text-[var(--color-accent)]">Next.js 15</span> & <span className="text-[var(--color-accent)]">React 19</span>
+            Développé avec <span className="text-[var(--color-accent)]">Next.js 15</span> &{" "}
+            <span className="text-[var(--color-accent)]">React 19</span>
           </p>
         </div>
       </div>

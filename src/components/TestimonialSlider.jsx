@@ -82,8 +82,9 @@ export default function TestimonialSlider() {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden">
-        <AnimatePresence initial={false} custom={direction}>
+      {/* Fixed height container to prevent layout shift */}
+      <div className="relative overflow-hidden" style={{ minHeight: '450px' }}>
+        <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={current}
             custom={direction}
@@ -107,19 +108,22 @@ export default function TestimonialSlider() {
                 paginate(-1);
               }
             }}
-            className="card relative"
+            className="card relative bg-surface/50 backdrop-blur-sm"
+            style={{ willChange: 'transform, opacity' }}
           >
-            <Quote className="absolute top-8 right-8 h-16 w-16 text-[var(--color-accent)]/10" aria-hidden="true" />
+            <Quote className="absolute top-8 right-8 h-16 w-16 text-accent/10" aria-hidden="true" />
             
             <div className="flex flex-col items-center text-center">
-              <div className="relative mb-6">
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-50 blur"></div>
+              <div className="relative mb-6 h-24 w-24">
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-50 blur"></div>
                 <Image
                   src={testimonials[current].avatar}
                   alt={`Photo de ${testimonials[current].name}`}
                   width={96}
                   height={96}
-                  className="relative h-24 w-24 rounded-full object-cover ring-4 ring-[var(--color-surface)]"
+                  className="relative h-24 w-24 rounded-full object-cover ring-4 ring-surface"
+                  priority={current === 0}
+                  loading={current === 0 ? "eager" : "lazy"}
                 />
               </div>
 
@@ -127,7 +131,7 @@ export default function TestimonialSlider() {
                 {[...Array(testimonials[current].rating)].map((_, i) => (
                   <svg
                     key={i}
-                    className="h-5 w-5 fill-[var(--color-accent-matrix)]"
+                    className="h-5 w-5 fill-accent"
                     viewBox="0 0 20 20"
                     aria-hidden="true"
                   >
@@ -136,18 +140,18 @@ export default function TestimonialSlider() {
                 ))}
               </div>
 
-              <blockquote className="mb-6 text-lg leading-relaxed text-[var(--color-foreground)]">
+              <blockquote className="mb-6 text-lg leading-relaxed text-foreground min-h-[120px] flex items-center justify-center">
                 "{testimonials[current].content}"
               </blockquote>
 
               <div>
-                <p className="font-semibold text-[var(--color-foreground)]">
+                <p className="font-semibold text-foreground">
                   {testimonials[current].name}
                 </p>
-                <p className="text-sm text-[var(--color-muted)]">
+                <p className="text-sm text-muted">
                   {testimonials[current].role}
                 </p>
-                <p className="mt-2 text-xs font-medium text-[var(--color-accent)]">
+                <p className="mt-2 text-xs font-medium text-accent">
                   {testimonials[current].project}
                 </p>
               </div>
@@ -160,7 +164,7 @@ export default function TestimonialSlider() {
       <div className="mt-8 flex items-center justify-center gap-4">
         <button
           onClick={() => paginate(-1)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] transition-all hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:scale-110"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-muted transition-all hover:border-accent hover:text-accent hover:scale-110 focus-visible:ring-2 focus-visible:ring-accent"
           aria-label="Témoignage précédent"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -174,10 +178,10 @@ export default function TestimonialSlider() {
                 setDirection(index > current ? 1 : -1);
                 setCurrent(index);
               }}
-              className={`h-2 rounded-full transition-all ${
+              className={`h-2 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-accent ${
                 index === current
-                  ? 'w-8 bg-[var(--color-accent)]'
-                  : 'w-2 bg-[var(--color-border)] hover:bg-[var(--color-accent)]/50'
+                  ? 'w-8 bg-accent'
+                  : 'w-2 bg-border hover:bg-accent/50'
               }`}
               aria-label={`Aller au témoignage ${index + 1}`}
             />
@@ -186,7 +190,7 @@ export default function TestimonialSlider() {
 
         <button
           onClick={() => paginate(1)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] transition-all hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:scale-110"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-muted transition-all hover:border-accent hover:text-accent hover:scale-110 focus-visible:ring-2 focus-visible:ring-accent"
           aria-label="Témoignage suivant"
         >
           <ChevronRight className="h-5 w-5" />

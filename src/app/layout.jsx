@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import ThemeToggle from '@/components/ThemeToggle';
 import BackToTop from '@/components/BackToTop';
 import ScrollProgress from '@/components/ScrollProgress';
+import ThemeProvider from '@/components/ThemeProvider';
 
 import './globals.css';
 
@@ -160,24 +161,26 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${inter.className} bg-[var(--color-background)] text-[var(--color-foreground)] antialiased transition-colors motion-reduce:transition-none`}
       >
-        {/* TODO: AA - Skip link pour accessibilité clavier (WCAG AA) */}
-        <a 
-          href="#main" 
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-black focus:text-white focus:px-3 focus:py-2"
-        >
-          Aller au contenu
-        </a>
-        
-        <ScrollProgress />
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main id="main" className="flex-1">
-            {children}
-          </main>
-          <Footer />
-        </div>
-        <ThemeToggle />
-        <BackToTop />
+        <ThemeProvider>
+          {/* TODO: AA - Skip link pour accessibilité clavier (WCAG AA) */}
+          <a 
+            href="#main" 
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-black focus:text-white focus:px-3 focus:py-2"
+          >
+            Aller au contenu
+          </a>
+          
+          <ScrollProgress />
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main id="main" className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
+          <ThemeToggle />
+          <BackToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

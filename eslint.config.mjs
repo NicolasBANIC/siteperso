@@ -10,15 +10,20 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals"),
   {
     ignores: [
       "node_modules/**",
       ".next/**",
       "out/**",
       "build/**",
+      "dist/**",
+      ".cache/**",
+      ".turbo/**",
       "next-env.d.ts",
     ],
+  },
+  ...compat.extends("next/core-web-vitals"),
+  {
     rules: {
       "next/no-html-link-for-pages": "off",
     },

@@ -27,6 +27,11 @@ import MeshGradient from "@/components/MeshGradient";
 import OptimizedVideo from "@/components/OptimizedVideo";
 import CTAButton from "@/components/CTAButton";
 import CTASection from "@/components/CTASection";
+import StatItem from "@/components/StatItem";
+import { Button } from "@/components/Button";
+import Card from "@/components/Card";
+import Section from "@/components/Section";
+import PricingCard from "@/components/PricingCard";
 
 const services = [
   {
@@ -229,46 +234,38 @@ const stats = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section with Video Background */}
-      <section className="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-[#0047AB] via-[#006D77] to-[#0047AB]">
-        {/* Video Background - Optimisé avec lazy loading et désactivation mobile */}
+      {/* Hero Section - Refonte avec dégradé statique */}
+      <section className="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-accent-secondary via-accent to-accent-secondary">
+        {/* Gradient Background - Statique et performant */}
         <div className="absolute inset-0">
-          <OptimizedVideo 
-            src="/videos/videolibreCoding.mp4"
-            opacity="opacity-20 md:opacity-30"
-            disableOnMobile={true}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
+          <MeshGradient />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/40" />
         </div>
-
-        {/* Matrix Rain Effect */}
-        <MatrixRain />
 
         {/* Content */}
         <div className="container-page relative z-10 flex min-h-[90vh] items-center">
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center w-full">
             {/* Left: Text Content */}
             <ScrollReveal direction="left">
               <div className="space-y-8 text-white">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-ui-sm font-medium backdrop-blur-sm">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00FF41] opacity-75"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00FF41]"></span>
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-accent-matrix opacity-60 motion-safe:animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-matrix"></span>
                   </span>
                   <span>Disponible pour de nouveaux projets</span>
                 </div>
 
                 <h1 className="text-hero font-bold tracking-tighter leading-tight">
-                  Je construis vos{" "}
-                  <span className="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">
-                    applications web
+                  Créons ensemble votre{" "}
+                  <span className="bg-gradient-to-r from-accent-matrix to-white bg-clip-text text-transparent">
+                    présence digitale
                   </span>{" "}
-                  modernes, performantes et élégantes
+                  de demain
                 </h1>
 
-                <p className="text-body-lg leading-relaxed text-white/90 font-regular">
-                  Développeur Full-Stack spécialisé en <strong className="font-semibold">Next.js</strong>, <strong className="font-semibold">React</strong> et <strong className="font-semibold">Node.js</strong>.
-                  Je transforme vos idées en solutions digitales qui impressionnent et performent.
+                <p className="text-body-lg leading-relaxed text-white/90 font-regular max-w-xl">
+                  Développeur web passionné, je conçois des sites et applications sur mesure qui allient design moderne et performances techniques.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
@@ -282,30 +279,35 @@ export default function HomePage() {
 
                 <div className="flex flex-wrap items-center gap-6 pt-4">
                   <div className="flex items-center gap-2 text-body-sm font-medium">
-                    <CheckCircle2 className="h-5 w-5 text-[#00FF41]" aria-hidden="true" />
-                    <span>Code de qualité production</span>
+                    <CheckCircle2 className="h-5 w-5 text-accent-matrix" aria-hidden="true" />
+                    <span>Code de qualité</span>
                   </div>
                   <div className="flex items-center gap-2 text-body-sm font-medium">
-                    <CheckCircle2 className="h-5 w-5 text-[#00FF41]" aria-hidden="true" />
-                    <span>Livraison dans les délais</span>
+                    <CheckCircle2 className="h-5 w-5 text-accent-matrix" aria-hidden="true" />
+                    <span>Délais respectés</span>
                   </div>
                   <div className="flex items-center gap-2 text-body-sm font-medium">
-                    <CheckCircle2 className="h-5 w-5 text-[#00FF41]" aria-hidden="true" />
-                    <span>Support technique inclus</span>
+                    <CheckCircle2 className="h-5 w-5 text-accent-matrix" aria-hidden="true" />
+                    <span>Support inclus</span>
                   </div>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Right: Contact Form */}
+            {/* Right: Visual or Illustration */}
             <ScrollReveal direction="right" delay={200}>
-              <HeroContactForm />
+              <div className="relative hidden lg:block">
+                <div className="relative aspect-square w-full max-w-md mx-auto">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent-matrix/20 to-white/10 blur-3xl"></div>
+                  <MockDashboard />
+                </div>
+              </div>
             </ScrollReveal>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce gpu-accelerated">
+        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 motion-safe:animate-bounce">
           <div className="flex flex-col items-center gap-2 text-white/60">
             <span className="text-caption uppercase tracking-widest font-medium">Découvrir</span>
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -315,24 +317,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="border-b border-[var(--color-border)] bg-[var(--color-surface)] py-16">
+      {/* Stats Section - Expertise */}
+      <section className="border-b border-border bg-surface py-16 md:py-24">
         <div className="container-page">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
-              <ScrollReveal key={stat.label} direction="up" delay={index * 100}>
-                <div className="text-center gpu-accelerated">
-                  <div className="mb-2 text-display font-bold text-[var(--color-accent)]">
-                    <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <div className="text-heading-sm font-semibold text-[var(--color-foreground)]">
-                    {stat.label}
-                  </div>
-                  <div className="mt-1 text-body-sm text-[var(--color-muted)]">
-                    {stat.description}
-                  </div>
-                </div>
-              </ScrollReveal>
+              <StatItem
+                key={stat.label}
+                count={stat.value}
+                suffix={stat.suffix}
+                label={stat.label}
+                description={stat.description}
+                icon={
+                  index === 0 ? <Rocket className="h-8 w-8" /> :
+                  index === 1 ? <CheckCircle2 className="h-8 w-8" /> :
+                  index === 2 ? <Zap className="h-8 w-8" /> :
+                  <Shield className="h-8 w-8" />
+                }
+              />
             ))}
           </div>
         </div>
@@ -358,24 +360,28 @@ export default function HomePage() {
         <div className="relative z-10 grid gap-8 md:grid-cols-2">
           {services.map((service, index) => (
             <ScrollReveal key={service.title} direction={index % 2 === 0 ? "left" : "right"} delay={index * 100}>
-              <article className="card group relative h-full overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:border-[var(--color-accent)] hover:shadow-2xl hover-lift">
+              <article className="card group relative h-full overflow-hidden transition-all duration-300 hover:scale-[1.01] hover:border-[var(--color-accent)] hover:shadow-elevation motion-reduce:transform-none">
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--color-accent)]/5 to-[var(--color-accent-secondary)]/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--color-accent)]/5 to-[var(--color-accent-secondary)]/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div className="mb-6 overflow-hidden rounded-xl">
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    width={600}
-                    height={300}
-                    className="h-48 w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
-                  />
+                {/* Numbered Icon Badge */}
+                <div className="mb-6 flex items-start justify-between gap-4">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-accent-secondary text-2xl font-bold text-white shadow-lg transition-transform duration-300 group-hover:scale-110 motion-reduce:transform-none">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  
+                  <div className="overflow-hidden rounded-xl flex-1">
+                    <Image
+                      src={service.icon}
+                      alt={service.title}
+                      width={600}
+                      height={200}
+                      className="h-32 w-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110 motion-reduce:transform-none"
+                    />
+                  </div>
                 </div>
 
-                <h3 className="mb-4 text-heading-lg font-semibold text-[var(--color-foreground)] transition-colors group-hover:text-[var(--color-accent)]">
+                <h3 className="mb-3 text-heading-lg font-bold text-[var(--color-foreground)] transition-colors group-hover:text-[var(--color-accent)]">
                   {service.title}
                 </h3>
 
@@ -383,33 +389,28 @@ export default function HomePage() {
                   {service.description}
                 </p>
 
-                <div className="mb-6 space-y-3">
+                <div className="mb-6 space-y-2.5">
                   {service.features.map((feature, idx) => (
                     <div 
                       key={feature} 
-                      className="flex items-start gap-3 transition-transform duration-300"
-                      style={{ transitionDelay: `${idx * 50}ms` }}
+                      className="flex items-start gap-2.5"
                     >
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[var(--color-accent)] transition-all group-hover:scale-110 group-hover:text-[var(--color-accent-matrix)]" />
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[var(--color-accent)]" aria-hidden="true" />
                       <span className="text-body-sm text-[var(--color-foreground)]">{feature}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-2 border-t border-[var(--color-border)] pt-6">
-                  {service.tech.map((tech, idx) => (
+                <div className="flex flex-wrap gap-2 border-t border-[var(--color-border)] pt-5">
+                  {service.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="badge transition-all duration-300 hover:scale-110 hover:bg-[var(--color-accent)] hover:text-white"
-                      style={{ transitionDelay: `${idx * 30}ms` }}
+                      className="inline-flex items-center rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1.5 text-xs font-medium text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-
-                {/* Glow effect on hover */}
-                <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-[var(--color-accent)] opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-20" />
               </article>
             </ScrollReveal>
           ))}
@@ -440,46 +441,49 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          <div className="space-y-8">
+          <div className="relative space-y-6">
+            {/* Vertical connecting line */}
+            <div className="absolute left-8 top-12 bottom-12 w-0.5 bg-gradient-to-b from-accent via-accent-secondary to-accent hidden lg:block" aria-hidden="true" />
+            
             {processSteps.map((step, index) => (
-              <ScrollReveal key={step.number} direction={index % 2 === 0 ? "left" : "right"} delay={index * 100}>
-                <article className="card group relative overflow-hidden transition-all duration-300 hover:border-[var(--color-accent)]">
-                  <div className="absolute right-0 top-0 text-[10rem] font-bold leading-none text-[var(--color-accent)]/5">
+              <ScrollReveal key={step.number} direction="up" delay={index * 100}>
+                <article className="card group relative overflow-hidden transition-all duration-300 hover:border-[var(--color-accent)] hover:shadow-elevation">
+                  {/* Large background number */}
+                  <div className="absolute right-4 top-4 text-[8rem] font-bold leading-none text-[var(--color-accent)]/5 select-none" aria-hidden="true">
                     {step.number}
                   </div>
 
-                  <div className="relative grid gap-8 lg:grid-cols-[auto_1fr]">
-                    <div className="flex flex-col items-center lg:items-start">
-                      <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-secondary)] shadow-lg">
-                        <Image
-                          src={step.icon}
-                          alt={step.title}
-                          width={40}
-                          height={40}
-                          className="h-10 w-10 object-contain brightness-0 invert"
-                        />
+                  <div className="relative grid gap-6 lg:grid-cols-[auto_1fr]">
+                    {/* Left: Number Badge */}
+                    <div className="flex flex-col items-center lg:items-start gap-3">
+                      <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-secondary text-2xl font-bold text-white shadow-lg ring-4 ring-background transition-transform duration-300 group-hover:scale-110 motion-reduce:transform-none">
+                        {step.number}
                       </div>
-                      <div className="rounded-full bg-[var(--color-accent)]/10 px-4 py-1 text-sm font-semibold text-[var(--color-accent)]">
+                      <div className="rounded-full bg-surface px-3 py-1.5 text-xs font-semibold text-accent border border-accent/20">
                         {step.duration}
                       </div>
                     </div>
 
-                    <div>
-                      <h3 className="mb-3 text-2xl font-bold text-[var(--color-foreground)]">
-                        {step.title}
-                      </h3>
-                      <p className="mb-6 leading-relaxed text-[var(--color-muted)]">
-                        {step.description}
-                      </p>
-
+                    {/* Right: Content */}
+                    <div className="space-y-4">
                       <div>
-                        <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
+                        <h3 className="mb-2 text-2xl font-bold text-[var(--color-foreground)] transition-colors group-hover:text-[var(--color-accent)]">
+                          {step.title}
+                        </h3>
+                        <p className="leading-relaxed text-[var(--color-muted)]">
+                          {step.description}
+                        </p>
+                      </div>
+
+                      <div className="rounded-xl bg-surface/50 p-4 border border-border">
+                        <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
+                          <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
                           Livrables
                         </h4>
                         <ul className="grid gap-2 sm:grid-cols-2">
                           {step.deliverables.map((deliverable) => (
                             <li key={deliverable} className="flex items-start gap-2">
-                              <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--color-accent-matrix)]" />
+                              <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-matrix" aria-hidden="true" />
                               <span className="text-sm text-[var(--color-foreground)]">{deliverable}</span>
                             </li>
                           ))}
@@ -667,6 +671,117 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
         </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="container-page py-20">
+        <ScrollReveal direction="up">
+          <div className="mb-16 space-y-4 text-center">
+            <div className="eyebrow mx-auto">Tarifs</div>
+            <h2 className="section-title">
+              Des formules adaptées à vos besoins
+            </h2>
+            <p className="section-subtitle mx-auto">
+              Choisissez la formule qui correspond le mieux à votre projet. Tous les tarifs incluent un accompagnement personnalisé et un support de 3 mois.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid gap-8 md:grid-cols-3 mb-12">
+          <ScrollReveal direction="left" delay={100}>
+            <PricingCard
+              title="Starter"
+              price="2 500€"
+              period="projet"
+              description="Idéal pour les petits projets et sites vitrines. Une solution clé en main pour démarrer votre présence en ligne."
+              features={[
+                "Site vitrine 5 pages maximum",
+                "Design responsive (mobile, tablette, desktop)",
+                "Optimisation SEO de base",
+                "Formulaire de contact",
+                "Hébergement 1 an inclus",
+                "Formation à la gestion du contenu",
+                "Support 3 mois inclus"
+              ]}
+              buttonLabel="Choisir Starter"
+              buttonHref="/devis?plan=starter"
+            />
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={200}>
+            <PricingCard
+              title="Business"
+              price="5 500€"
+              period="projet"
+              description="Pour les entreprises qui veulent se démarquer avec un site professionnel et performant."
+              features={[
+                "Site sur mesure jusqu'à 15 pages",
+                "Design personnalisé et moderne",
+                "Optimisation SEO avancée",
+                "Intégration CMS (WordPress/Strapi)",
+                "Animations et interactions",
+                "Tableau de bord analytics",
+                "Formation complète",
+                "Support 3 mois inclus"
+              ]}
+              highlight={true}
+              buttonLabel="Choisir Business"
+              buttonHref="/devis?plan=business"
+            />
+          </ScrollReveal>
+
+          <ScrollReveal direction="right" delay={300}>
+            <PricingCard
+              title="Premium"
+              price="Sur devis"
+              period=""
+              description="Pour les projets complexes nécessitant des fonctionnalités avancées et une architecture sur mesure."
+              features={[
+                "Application web complexe",
+                "Architecture scalable et sécurisée",
+                "Intégrations API tierces",
+                "Espace membre / authentification",
+                "Paiement en ligne (Stripe)",
+                "Dashboard admin personnalisé",
+                "Tests automatisés",
+                "Support prioritaire 6 mois"
+              ]}
+              buttonLabel="Demander un devis"
+              buttonHref="/devis?plan=premium"
+            />
+          </ScrollReveal>
+        </div>
+
+        {/* Daily Rate Card */}
+        <ScrollReveal direction="up" delay={400}>
+          <div className="card max-w-3xl mx-auto text-center bg-gradient-to-br from-accent/10 to-accent-secondary/10 border-accent/30">
+            <div className="space-y-4">
+              <h3 className="text-heading-lg font-bold text-foreground">Taux Journalier Moyen (TJM)</h3>
+              <div className="flex items-baseline justify-center gap-2">
+                <span className="text-display font-bold text-accent">450€</span>
+                <span className="text-body text-muted">/ jour</span>
+              </div>
+              <p className="text-body text-muted max-w-2xl mx-auto">
+                Pour les missions en régie ou les projets nécessitant une facturation au temps passé. 
+                Idéal pour les collaborations longue durée et les projets évolutifs.
+              </p>
+              <div className="pt-4">
+                <Button href="/contact" variant="secondary" size="md">
+                  Discuter de votre projet
+                </Button>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="up" delay={500}>
+          <div className="mt-12 text-center">
+            <Link href="/tarifs" className="btn-secondary">
+              Voir tous les détails tarifaires
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* Testimonials Section */}

@@ -1,21 +1,56 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+/**
+ * Composant Section réutilisable
+ * Props : id, title, subtitle, background, children
+ */
 export default function Section({ 
   children, 
   className = '', 
   id = '',
-  background = 'default' // 'default', 'dark', 'gradient'
+  title,
+  subtitle,
+  background = 'default' // 'default', 'surface', 'gradient'
 }) {
   const bgClasses = {
-    default: 'bg-white dark:bg-gray-900',
-    dark: 'bg-gray-50 dark:bg-gray-800',
-    gradient: 'bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900'
+    default: 'bg-background',
+    surface: 'bg-surface',
+    gradient: 'bg-gradient-to-br from-background via-surface to-background'
   };
 
   return (
     <section 
       id={id}
-      className={`py-16 md:py-24 ${bgClasses[background]} ${className}`}
+      className={`section ${bgClasses[background]} ${className}`}
     >
-      {children}
+      <div className="section-content">
+        {/* Title & Subtitle */}
+        {(title || subtitle) && (
+          <motion.div
+            className="mb-16 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            {title && (
+              <h2 className="section-title">
+                {title}
+              </h2>
+            )}
+            {subtitle && (
+              <p className="section-subtitle">
+                {subtitle}
+              </p>
+            )}
+          </motion.div>
+        )}
+        
+        {/* Content */}
+        {children}
+      </div>
     </section>
   );
 }

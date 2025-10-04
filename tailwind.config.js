@@ -1,26 +1,24 @@
-// TODO: UX - Design tokens Tailwind v4 selon prompt Zencoder (cohérence UI)
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        inter: ['var(--font-inter)', 'sans-serif'],
+        display: ['var(--font-space-grotesk)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       colors: {
-        // TODO: UX - Palette cohérente avec variables CSS
-        primary: { 
-          DEFAULT: '#4F46E5', // indigo-600
-          foreground: '#FFFFFF' 
+        background: 'var(--color-background)',
+        surface: 'var(--color-surface)',
+        foreground: 'var(--color-foreground)',
+        muted: 'var(--color-muted)',
+        accent: {
+          DEFAULT: 'var(--color-accent)',
+          secondary: 'var(--color-accent-secondary)',
+          matrix: 'var(--color-accent-matrix)',
         },
-        accent: { 
-          DEFAULT: '#06B6D4', // cyan-500
-          foreground: '#001015' 
-        },
-        muted: '#0B1220',
+        border: 'var(--color-border)',
       },
       fontSize: {
-        // Hiérarchie typographique responsive avec clamp()
         'hero': 'clamp(2.5rem, 5vw, 4rem)', // 40-64px
         'display': 'clamp(2rem, 4.5vw, 3rem)', // 32-48px
         'heading-xl': 'clamp(1.75rem, 4vw, 2.5rem)', // 28-40px
@@ -34,32 +32,25 @@ module.exports = {
         'ui': 'clamp(0.875rem, 2vw, 1rem)', // 14-16px
         'ui-sm': 'clamp(0.75rem, 1.5vw, 0.875rem)', // 12-14px
       },
-      fontWeight: {
-        regular: '400',
-        medium: '500',
-        semibold: '600',
-        bold: '700',
-      },
-      letterSpacing: {
-        tighter: '-0.02em',
-        tight: '-0.01em',
-        normal: '0',
-        wide: '0.005em',
-        wider: '0.01em',
-        widest: '0.08em',
-      },
-      lineHeight: {
-        'tight': '1.1',
-        'snug': '1.2',
-        'normal': '1.4',
-        'relaxed': '1.6',
+      spacing: {
+        '4': '0.25rem',   // 4px
+        '8': '0.5rem',    // 8px
+        '12': '0.75rem',  // 12px
+        '16': '1rem',     // 16px
+        '24': '1.5rem',   // 24px
+        '32': '2rem',     // 32px
+        '48': '3rem',     // 48px
       },
       borderRadius: {
-        xl: '1rem',
-        '2xl': '1.5rem',
+        'sm': '0.5rem',   // 8px
+        'lg': '1rem',     // 16px
+        'xl': '1.5rem',   // 24px
+        '2xl': '2rem',    // 32px
       },
       boxShadow: {
-        card: '0 6px 24px rgba(0,0,0,0.08)',
+        'elevation': '0 4px 20px rgba(0, 0, 0, 0.25)',
+        'card': '0 6px 24px rgba(0, 0, 0, 0.08)',
+        'card-hover': '0 8px 32px rgba(0, 0, 0, 0.12)',
       },
     },
   },
