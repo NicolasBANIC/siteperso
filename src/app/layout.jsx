@@ -16,22 +16,22 @@ const poppins = Poppins({
 
 export const metadata = {
   title: {
-    default: 'Nicolas Banic — Développeur Web Freelance | Sites & Applications sur mesure',
-    template: '%s | Nicolas Banic'
+    default: 'BANDEV — Développeur Web Freelance | Transformez vos idées en expériences digitales exceptionnelles',
+    template: '%s | BANDEV'
   },
-  description: 'Développeur web freelance à Lyon. Création de sites vitrines, e-commerce et applications web modernes, performants et accessibles pour artisans, TPE et PME.',
-  keywords: ['développeur web', 'freelance', 'Lyon', 'création site web', 'e-commerce', 'application web', 'Next.js', 'React', 'développeur full-stack'],
-  authors: [{ name: 'Nicolas Banic' }],
-  creator: 'Nicolas Banic',
-  metadataBase: new URL('https://nicolasbanic.dev'),
+  description: 'BANDEV : Votre partenaire digital pour des sites web ultra-performants. Création de sites vitrines, e-commerce et applications web modernes avec Next.js, React et les dernières technologies. Performance, design et innovation au service de votre réussite.',
+  keywords: ['BANDEV', 'développeur web', 'freelance', 'Lyon', 'création site web', 'e-commerce', 'application web', 'Next.js', 'React', 'développeur full-stack', 'site performant', 'web moderne'],
+  authors: [{ name: 'Nicolas Banic', email: 'bcnicolaspro@gmail.com' }],
+  creator: 'BANDEV - Nicolas Banic',
+  metadataBase: new URL('https://bandev.fr'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Nicolas Banic — Développeur Web Freelance',
-    description: 'Sites vitrines, e-commerce et applications web conçus avec une approche sur mesure pour artisans, TPE et PME.',
-    url: 'https://nicolasbanic.dev',
-    siteName: 'Nicolas Banic',
+    title: 'BANDEV — Développeur Web Freelance | Expériences digitales exceptionnelles',
+    description: 'Transformez vos idées en sites web ultra-performants. Design moderne, technologies de pointe et expertise technique pour propulser votre présence en ligne.',
+    url: 'https://bandev.fr',
+    siteName: 'BANDEV',
     locale: 'fr_FR',
     type: 'website',
     images: [
@@ -39,14 +39,14 @@ export const metadata = {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Nicolas Banic - Développeur Web Freelance',
+        alt: 'BANDEV - Développeur Web Freelance',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nicolas Banic — Développeur Web Freelance',
-    description: 'Création de sites web et applications sur mesure',
+    title: 'BANDEV — Développeur Web Freelance',
+    description: 'Transformez vos idées en expériences digitales exceptionnelles',
     images: ['/images/og-image.jpg'],
   },
   robots: {
@@ -66,39 +66,79 @@ export default function RootLayout({ children }) {
   // JSON-LD pour le SEO
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Nicolas Banic',
-    jobTitle: 'Développeur Web Freelance',
-    description: 'Développeur web freelance spécialisé dans la création de sites vitrines, e-commerce et applications web sur mesure.',
-    url: 'https://nicolasbanic.dev',
-    image: 'https://nicolasbanic.dev/images/avatar.jpg',
+    '@type': 'ProfessionalService',
+    name: 'BANDEV',
+    alternateName: 'Nicolas Banic - Développeur Web Freelance',
+    description: 'BANDEV : Création de sites web modernes, performants et sur mesure. Spécialiste Next.js, React et applications web haute performance.',
+    url: 'https://bandev.fr',
+    logo: 'https://bandev.fr/images/logoNB.png',
+    image: 'https://bandev.fr/images/og-image.jpg',
+    email: 'bcnicolaspro@gmail.com',
+    telephone: '+33-XXX-XXX-XXX',
+    founder: {
+      '@type': 'Person',
+      name: 'Nicolas Banic',
+      jobTitle: 'Développeur Web Full-Stack Freelance',
+      email: 'bcnicolaspro@gmail.com',
+    },
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Lyon',
+      addressRegion: 'Auvergne-Rhône-Alpes',
       addressCountry: 'FR',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'France',
     },
     sameAs: [
       'https://www.linkedin.com/in/nicolasbanic',
-      'https://github.com/nicolasbanic',
+      'https://github.com/NicolasBANIC',
     ],
     knowsAbout: [
       'Développement Web',
-      'Next.js',
-      'React',
+      'Next.js 15',
+      'React 19',
       'JavaScript',
       'TypeScript',
       'Node.js',
       'TailwindCSS',
       'E-commerce',
       'SEO',
+      'Performance Web',
+      'Applications Web',
     ],
-    offers: {
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: 'Développement Web',
-        description: 'Création de sites web et applications sur mesure',
-      },
+    priceRange: '€€',
+    serviceType: 'Développement Web',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Services de Développement Web',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Site Vitrine Premium',
+            description: 'Création de sites vitrines modernes et performants avec Next.js',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'E-commerce Sur Mesure',
+            description: 'Boutiques en ligne complètes avec gestion avancée',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Application Web Métier',
+            description: 'Applications web sur mesure pour vos besoins spécifiques',
+          },
+        },
+      ],
     },
   };
 

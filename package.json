@@ -1,7 +1,9 @@
 {
-  "name": "siteperso",
-  "version": "0.1.0",
+  "name": "bandev",
+  "version": "1.0.0",
   "private": true,
+  "author": "Nicolas Banic <bcnicolaspro@gmail.com>",
+  "description": "BANDEV - Développeur Web Freelance | Création de sites web modernes et performants",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

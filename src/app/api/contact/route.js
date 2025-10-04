@@ -37,21 +37,33 @@ export async function POST(request) {
       port: process.env.SMTP_PORT, // ex: 465
       secure: true,
       auth: {
-        user: process.env.SMTP_USER, // votre email Hostinger
-        pass: process.env.SMTP_PASSWORD, // votre mot de passe
+        user: process.env.SMTP_USER, // bcnicolaspro@gmail.com
+        pass: process.env.SMTP_PASSWORD, // votre mot de passe d'application Gmail
       },
     });
 
     await transporter.sendMail({
       from: process.env.SMTP_USER,
-      to: process.env.CONTACT_EMAIL,
-      subject: `Nouveau message de ${name}`,
+      to: 'bcnicolaspro@gmail.com', // Votre email professionnel
+      replyTo: email, // Email du client pour répondre facilement
+      subject: `[BANDEV] Nouveau message de ${name}`,
       html: `
-        <h2>Nouveau message depuis le formulaire de contact</h2>
-        <p><strong>Nom:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #0047AB; border-bottom: 2px solid #00FF41; padding-bottom: 10px;">
+            Nouveau message depuis BANDEV.fr
+          </h2>
+          <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p><strong>Nom:</strong> ${name}</p>
+            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p><strong>Message:</strong></p>
+            <div style="background: white; padding: 15px; border-radius: 4px; margin-top: 10px;">
+              ${message.replace(/\n/g, '<br>')}
+            </div>
+          </div>
+          <p style="color: #666; font-size: 12px; margin-top: 20px;">
+            SIRET: 841 375 652 00028 | BANDEV - Nicolas Banic
+          </p>
+        </div>
       `,
     });
     */

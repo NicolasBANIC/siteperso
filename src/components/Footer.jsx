@@ -23,12 +23,12 @@ const socialLinks = [
     icon: Linkedin,
   },
   {
-    href: "https://github.com/nicolasbanic",
+    href: "https://github.com/NicolasBANIC",
     label: "GitHub",
     icon: Github,
   },
   {
-    href: "mailto:contact@nicolasbanic.dev",
+    href: "mailto:bcnicolaspro@gmail.com",
     label: "Email",
     icon: Mail,
   },
@@ -45,18 +45,21 @@ export default function Footer() {
             <div className="relative h-10 w-10">
               <Image
                 src="/images/logoNB.png"
-                alt="Logo NB"
+                alt="Logo BANDEV"
                 width={40}
                 height={40}
                 className="h-full w-full object-contain"
               />
             </div>
             <p className="text-lg font-semibold text-[var(--color-foreground)]">
-              Nicolas Banic
+              BANDEV
             </p>
           </div>
           <p className="leading-relaxed">
-            Développeur full-stack freelance spécialisé dans la création de sites web modernes, performants et accessibles pour artisans, TPE et PME.
+            Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure. Transformez vos idées en expériences digitales exceptionnelles.
+          </p>
+          <p className="text-xs text-[var(--color-muted)]">
+            SIRET : 841 375 652 00028
           </p>
           <Link href="/devis" className="btn-primary inline-flex">
             Demander un devis
@@ -116,9 +119,9 @@ export default function Footer() {
       </div>
       <div className="border-t border-[var(--color-border)] bg-transparent">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-6 py-6 text-xs text-[var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
-          <p>© {currentYear} Nicolas Banic. Tous droits réservés.</p>
+          <p>© {currentYear} BANDEV - Nicolas Banic. Tous droits réservés.</p>
           <p>
-            Développé avec <span className="text-[var(--color-accent)]">Next.js</span> & <span className="text-[var(--color-accent)]">TailwindCSS</span>
+            Développé avec <span className="text-[var(--color-accent)]">Next.js 15</span> & <span className="text-[var(--color-accent)]">React 19</span>
           </p>
         </div>
       </div>

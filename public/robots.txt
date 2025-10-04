@@ -1,0 +1,18 @@
+# robots.txt pour BANDEV.fr
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bandev.fr/sitemap.xml
+
+# Disallow admin/private areas (si vous en avez)
+Disallow: /api/
+Disallow: /_next/
+
+# Allow all images
+Allow: /images/
+Allow: /videos/
+
+# Crawl-delay (optionnel)
+Crawl-delay: 0

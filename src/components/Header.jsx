@@ -49,7 +49,7 @@ export default function Header() {
           <div className="relative h-10 w-10 transition-transform duration-300 group-hover:rotate-[360deg] motion-reduce:transition-none motion-reduce:group-hover:rotate-0">
             <Image
               src="/images/logoNB.png"
-              alt="Logo Nicolas Banic - Développeur Web Freelance"
+              alt="Logo BANDEV - Développeur Web Freelance"
               width={40}
               height={40}
               sizes="40px"
@@ -57,7 +57,7 @@ export default function Header() {
               priority
             />
           </div>
-          <span className="hidden sm:inline-flex">Nicolas Banic</span>
+          <span className="hidden sm:inline-flex">BANDEV</span>
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm font-medium lg:flex" aria-label="Navigation principale">
