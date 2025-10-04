@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import ThemeToggle from '@/components/ThemeToggle';
 import BackToTop from '@/components/BackToTop';
+import ScrollProgress from '@/components/ScrollProgress';
 
 import './globals.css';
 
@@ -112,6 +113,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} bg-[var(--color-background)] text-[var(--color-foreground)] antialiased transition-colors motion-reduce:transition-none`}
       >
+        <ScrollProgress />
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">

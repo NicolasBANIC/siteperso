@@ -75,10 +75,11 @@ export default function AproposPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-2xl">
               <Image
                 src="/images/avatar.jpg"
-                alt="Portrait professionnel de Nicolas Banic"
+                alt="Portrait professionnel de Nicolas Banic, développeur web freelance"
                 fill
                 className="object-cover"
-                sizes="(min-width: 1024px) 400px, 80vw"
+                sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
+                priority
               />
             </div>
           </div>
@@ -192,10 +193,10 @@ export default function AproposPage() {
             <div className="relative aspect-video overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-2xl">
               <Image
                 src="/images/about-workspace.jpg"
-                alt="Mon espace de travail"
+                alt="Espace de travail moderne pour le développement web - bureau avec ordinateur et outils de développement"
                 fill
                 className="object-cover"
-                sizes="(min-width: 1024px) 600px, 90vw"
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
               />
             </div>
           </div>

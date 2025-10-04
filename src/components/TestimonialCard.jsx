@@ -36,8 +36,9 @@ export default function TestimonialCard({
         <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
           <Image
             src={avatar}
-            alt={`Photo de ${name}`}
+            alt={`Photo de profil de ${name}, ${role} chez ${company}`}
             fill
+            sizes="48px"
             className="object-cover"
           />
         </div>

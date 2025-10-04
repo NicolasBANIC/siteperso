@@ -10,7 +10,7 @@ const projects = [
     id: 1,
     title: "GTravaux",
     category: "Site vitrine",
-    image: "/images/gtravaux.jpg",
+    image: "/images/portfolio-gtravaux.jpg",
     description: "Site vitrine pour une entreprise de travaux et rénovation.",
     longDescription: "Création d'un site vitrine moderne et responsive pour GTravaux, spécialisée dans les travaux de rénovation. Le site met en avant les services, le portfolio de réalisations et facilite la prise de contact.",
     technologies: ["Next.js", "TailwindCSS", "React"],
@@ -190,9 +190,10 @@ export default function PortfolioPage() {
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt={`Aperçu du projet ${project.title} - ${project.description}`}
                     width={600}
                     height={400}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -236,9 +237,10 @@ export default function PortfolioPage() {
             <div className="relative aspect-video overflow-hidden">
               <Image
                 src={selectedProject.image}
-                alt={selectedProject.title}
+                alt={`Aperçu détaillé du projet ${selectedProject.title} - ${selectedProject.description}`}
                 width={1200}
                 height={800}
+                sizes="(max-width: 768px) 100vw, 1200px"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -311,8 +313,3 @@ export default function PortfolioPage() {
     </>
   );
 }
-
-export const metadata = {
-  title: "Portfolio — Nicolas Banic",
-  description: "Découvrez mes réalisations : sites vitrines, e-commerce et applications web pour artisans, TPE et PME.",
-};

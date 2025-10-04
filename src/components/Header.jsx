@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 const links = [
   { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
+  { href: "/processus", label: "Processus" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/tarifs", label: "Tarifs" },
   { href: "/temoignages", label: "Témoignages" },
@@ -48,9 +49,10 @@ export default function Header() {
           <div className="relative h-10 w-10 transition-transform duration-300 group-hover:rotate-[360deg] motion-reduce:transition-none motion-reduce:group-hover:rotate-0">
             <Image
               src="/images/logoNB.png"
-              alt="Logo NB"
+              alt="Logo Nicolas Banic - Développeur Web Freelance"
               width={40}
               height={40}
+              sizes="40px"
               className="h-full w-full object-contain"
               priority
             />
