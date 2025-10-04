@@ -13,7 +13,7 @@ const testimonials = [
     content:
       "Nicolas a parfaitement compris l'esprit que je voulais transmettre. Le site reflète mon savoir-faire artisanal et m'apporte de nouvelles demandes chaque semaine. Un vrai professionnel à l'écoute !",
     rating: 5,
-    avatar: "/images/avatar-placeholder.jpg"
+    avatar: "/images/testimonial-avatar2.jpg"
   },
   {
     name: "Julien Dupont",
@@ -22,7 +22,7 @@ const testimonials = [
     content:
       "Un accompagnement au-delà de mes attentes : branding, boutique en ligne, automatisation des commandes… tout est fluide pour mes clients comme pour mon équipe. Je recommande vivement !",
     rating: 5,
-    avatar: "/images/avatar-placeholder.jpg"
+    avatar: "/images/testimonial-avatar1.jpg"
   },
   {
     name: "Claire Bernard",
@@ -31,7 +31,7 @@ const testimonials = [
     content:
       "En quelques semaines, le blog a boosté notre visibilité. Nous recevons des leads qualifiés quotidiennement avec un suivi analytique clair. Un investissement rentabilisé rapidement.",
     rating: 5,
-    avatar: "/images/avatar-placeholder.jpg"
+    avatar: "/images/testimonial-avatar2.jpg"
   },
   {
     name: "Marc Lefebvre",
@@ -40,7 +40,7 @@ const testimonials = [
     content:
       "Application web sur mesure développée dans les délais. Code propre, documentation complète, formation de l'équipe. Nicolas est un développeur de confiance.",
     rating: 5,
-    avatar: "/images/avatar-placeholder.jpg"
+    avatar: "/images/testimonial-avatar1.jpg"
   },
   {
     name: "Émilie Rousseau",
@@ -49,7 +49,7 @@ const testimonials = [
     content:
       "Refonte complète de notre site avec une attention particulière à l'UX et au SEO. Les résultats sont là : +150% de trafic en 3 mois. Merci Nicolas !",
     rating: 5,
-    avatar: "/images/avatar-placeholder.jpg"
+    avatar: "/images/testimonial-avatar2.jpg"
   },
   {
     name: "Thomas Moreau",
@@ -58,7 +58,7 @@ const testimonials = [
     content:
       "Maintenance et évolutions régulières de notre plateforme. Réactivité exemplaire, conseils pertinents. Un partenaire de longue durée.",
     rating: 5,
-    avatar: "/images/avatar-placeholder.jpg"
+    avatar: "/images/testimonial-avatar3.jpg"
   },
 ];
 

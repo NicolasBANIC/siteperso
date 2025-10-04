@@ -1,0 +1,56 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891B2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="100" cy="100" r="60" fill="white" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="80" fill="white" opacity="0.1"/>
+  <circle cx="950" cy="100" r="40" fill="white" opacity="0.15"/>
+  
+  <!-- Grid Pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Main Content Container -->
+  <rect x="100" y="150" width="1000" height="330" rx="20" fill="white" opacity="0.1" filter="url(#glow)"/>
+  
+  <!-- Code Brackets Decoration -->
+  <text x="150" y="250" font-family="monospace" font-size="120" fill="white" opacity="0.3" font-weight="bold">&lt;/&gt;</text>
+  
+  <!-- Main Text -->
+  <text x="600" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="72" fill="white" font-weight="bold" text-anchor="middle">
+    Nicolas Banic
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="42" fill="white" opacity="0.95" text-anchor="middle">
+    Développeur Web Freelance
+  </text>
+  
+  <!-- Tagline -->
+  <text x="600" y="410" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="white" opacity="0.85" text-anchor="middle">
+    Sites vitrines • E-commerce • Applications web
+  </text>
+  
+  <!-- Bottom Badge -->
+  <rect x="480" y="460" width="240" height="50" rx="25" fill="white" opacity="0.2"/>
+  <text x="600" y="493" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="white" font-weight="600" text-anchor="middle">
+    nicolasbanic.dev
+  </text>
+</svg>

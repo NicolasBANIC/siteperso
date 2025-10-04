@@ -9,7 +9,7 @@ const services = [
     title: "Sites vitrines premium",
     description:
       "Des sites qui valorisent votre savoir-faire artisanal ou PME, optimisés pour la conversion et le référencement local.",
-    icon: "/window.svg",
+    icon: "/images/service-vitrine.jpg",
     features: [
       "Design sur mesure et responsive",
       "Optimisation SEO avancée",
@@ -20,7 +20,7 @@ const services = [
     title: "E-commerce sur mesure",
     description:
       "Vendez en ligne avec une expérience fluide et sécurisée, adaptée à vos clients et à votre logistique.",
-    icon: "/file.svg",
+    icon: "/images/service-ecommerce.jpg",
     features: [
       "Paiement sécurisé intégré",
       "Gestion des stocks simplifiée",
@@ -31,11 +31,22 @@ const services = [
     title: "Applications web",
     description:
       "Automatisez vos processus métiers avec des solutions robustes, modernes et évolutives.",
-    icon: "/globe.svg",
+    icon: "/images/service-webapp.svg",
     features: [
       "Développement sur mesure",
       "Interface d'administration",
       "API et intégrations",
+    ],
+  },
+  {
+    title: "SEO & Référencement",
+    description:
+      "Améliorez votre visibilité sur Google et attirez plus de clients qualifiés grâce à une stratégie SEO sur mesure.",
+    icon: "/images/service-seo.jpg",
+    features: [
+      "Audit SEO complet",
+      "Optimisation technique",
+      "Stratégie de contenu",
     ],
   },
 ];
@@ -67,7 +78,9 @@ const technologies = [
   { name: "TailwindCSS", logo: "/images/logos/tailwind.svg" },
   { name: "Node.js", logo: "/images/logos/nodejs.svg" },
   { name: "TypeScript", logo: "/images/logos/typescript.svg" },
-  { name: "PostgreSQL", logo: "/images/logos/postgresql.svg" },
+  { name: "JavaScript", logo: "/images/logos/javascript.svg" },
+  { name: "Git", logo: "/images/logos/git.svg" },
+  { name: "Figma", logo: "/images/logos/figma.svg" },
 ];
 
 const stats = [
@@ -137,7 +150,7 @@ export default function HomePage() {
                 <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-20 blur-2xl" aria-hidden="true" />
                 <div className="relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-2xl">
                   <Image
-                    src="/images/hero-placeholder.jpg"
+                    src="/images/hero-main.jpg"
                     alt="Aperçu d'un site web moderne sur ordinateur et mobile"
                     width={720}
                     height={720}
@@ -230,7 +243,13 @@ export default function HomePage() {
                 className="group flex h-20 w-20 items-center justify-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 transition-all hover:scale-110 hover:border-[var(--color-accent)] hover:shadow-lg motion-reduce:transform-none"
                 title={tech.name}
               >
-                <div className="h-12 w-12 rounded-lg bg-[var(--color-accent)]/10" />
+                <Image
+                  src={tech.logo}
+                  alt={`Logo ${tech.name}`}
+                  width={48}
+                  height={48}
+                  className="h-12 w-12 object-contain"
+                />
               </div>
             ))}
           </div>

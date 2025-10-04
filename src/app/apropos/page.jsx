@@ -167,23 +167,40 @@ export default function AproposPage() {
       </ScrollReveal>
 
       {/* Ce qui m'anime */}
-      <ScrollReveal direction="up">
-        <section className="mb-24 card space-y-6">
-          <h2 className="text-2xl font-semibold text-[var(--color-foreground)]">Ce qui m'anime</h2>
-          <p className="leading-relaxed text-[var(--color-muted)]">
-            J'aime comprendre votre métier pour traduire vos enjeux business en solutions digitales concrètes. Chaque projet
-            est l'occasion d'apporter de la valeur à vos équipes et à vos clients.
-          </p>
-          <p className="leading-relaxed text-[var(--color-muted)]">
-            Qualité, transparence, réactivité et pédagogie sont au cœur de ma démarche. Je privilégie des cycles courts,
-            l'écoute et les retours réguliers pour avancer efficacement.
-          </p>
-          <p className="leading-relaxed text-[var(--color-muted)]">
-            Mon objectif : créer des sites web qui non seulement vous plaisent, mais qui génèrent aussi des résultats
-            mesurables pour votre activité.
-          </p>
-        </section>
-      </ScrollReveal>
+      <section className="mb-24 grid gap-8 lg:grid-cols-2 lg:items-center">
+        <ScrollReveal direction="up">
+          <div className="card space-y-6">
+            <h2 className="text-2xl font-semibold text-[var(--color-foreground)]">Ce qui m'anime</h2>
+            <p className="leading-relaxed text-[var(--color-muted)]">
+              J'aime comprendre votre métier pour traduire vos enjeux business en solutions digitales concrètes. Chaque projet
+              est l'occasion d'apporter de la valeur à vos équipes et à vos clients.
+            </p>
+            <p className="leading-relaxed text-[var(--color-muted)]">
+              Qualité, transparence, réactivité et pédagogie sont au cœur de ma démarche. Je privilégie des cycles courts,
+              l'écoute et les retours réguliers pour avancer efficacement.
+            </p>
+            <p className="leading-relaxed text-[var(--color-muted)]">
+              Mon objectif : créer des sites web qui non seulement vous plaisent, mais qui génèrent aussi des résultats
+              mesurables pour votre activité.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="right" delay={200}>
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-20 blur-2xl" />
+            <div className="relative aspect-video overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-2xl">
+              <Image
+                src="/images/about-workspace.jpg"
+                alt="Mon espace de travail"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 600px, 90vw"
+              />
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
 
       {/* CTA */}
       <ScrollReveal direction="up">
