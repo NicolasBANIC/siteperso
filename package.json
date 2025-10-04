@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "framer-motion": "^12.23.22",
+    "lightningcss": "^1.28.3",
     "lucide-react": "^0.544.0",
     "next": "15.5.4",
     "react": "19.1.0",
@@ -40,7 +41,6 @@
     "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "lightningcss": "^1.28.3",
     "postcss": "^8.5.6",
     "prettier": "^3.2.5",
     "sharp": "^0.33.5",
