@@ -61,10 +61,10 @@ export default function HeroContactForm() {
         
         <div className="relative">
           <div className="mb-6 text-center">
-            <h3 className="text-2xl font-bold text-white drop-shadow-lg">
+            <h3 className="text-heading-lg font-bold text-white drop-shadow-lg">
               Démarrons votre projet
             </h3>
-            <p className="mt-2 text-sm text-white/80">
+            <p className="mt-2 text-body-sm font-medium text-white/80">
               Réponse sous 24h • Devis gratuit
             </p>
           </div>
@@ -194,12 +194,12 @@ export default function HeroContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group relative w-full overflow-hidden rounded-xl bg-white py-3 font-semibold text-[var(--color-accent)] shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50"
+              className="group relative w-full overflow-hidden rounded-xl bg-white py-3 text-ui font-semibold text-[var(--color-accent)] shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transform-none"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 {isSubmitting ? (
                   <>
-                    <svg className="h-5 w-5 animate-spin" viewBox="0 0 24 24">
+                    <svg className="h-5 w-5 animate-spin" viewBox="0 0 24 24" aria-hidden="true">
                       <circle
                         className="opacity-25"
                         cx="12"
@@ -220,11 +220,11 @@ export default function HeroContactForm() {
                 ) : (
                   <>
                     Envoyer ma demande
-                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" />
                   </>
                 )}
               </span>
-              <div className="absolute inset-0 -z-0 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-0 transition-opacity group-hover:opacity-10" />
+              <div className="absolute inset-0 -z-0 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-0 transition-opacity group-hover:opacity-10" aria-hidden="true" />
             </button>
           </form>
 
@@ -235,9 +235,9 @@ export default function HeroContactForm() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="mt-4 flex items-center gap-2 rounded-xl bg-green-500/20 p-3 text-sm text-white backdrop-blur-sm"
+                className="mt-4 flex items-center gap-2 rounded-xl bg-[var(--color-accent-matrix)]/20 p-3 text-body-sm font-medium text-white backdrop-blur-sm"
               >
-                <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
+                <CheckCircle2 className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
                 <p>Message envoyé ! Je vous réponds sous 24h.</p>
               </motion.div>
             )}
@@ -246,23 +246,23 @@ export default function HeroContactForm() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="mt-4 flex items-center gap-2 rounded-xl bg-red-500/20 p-3 text-sm text-white backdrop-blur-sm"
+                className="mt-4 flex items-center gap-2 rounded-xl bg-red-500/20 p-3 text-body-sm font-medium text-white backdrop-blur-sm"
               >
-                <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                <AlertCircle className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
                 <p>Une erreur est survenue. Réessayez ou contactez-moi directement.</p>
               </motion.div>
             )}
           </AnimatePresence>
 
           {/* Trust indicators */}
-          <div className="mt-6 flex items-center justify-center gap-4 text-xs text-white/70">
+          <div className="mt-6 flex items-center justify-center gap-4 text-caption font-medium text-white/70">
             <div className="flex items-center gap-1">
-              <CheckCircle2 className="h-4 w-4" />
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
               <span>Sans engagement</span>
             </div>
-            <div className="h-4 w-px bg-white/30" />
+            <div className="h-4 w-px bg-white/30" aria-hidden="true" />
             <div className="flex items-center gap-1">
-              <CheckCircle2 className="h-4 w-4" />
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
               <span>Données sécurisées</span>
             </div>
           </div>

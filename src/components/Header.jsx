@@ -43,7 +43,7 @@ export default function Header() {
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-3">
         <Link
           href="/"
-          className="group inline-flex items-center gap-3 text-lg font-semibold text-[var(--color-foreground)]"
+          className="group inline-flex items-center gap-3 text-heading-sm font-semibold text-[var(--color-foreground)]"
           aria-label="Retour à l'accueil"
         >
           <div className="relative h-10 w-10 transition-transform duration-300 group-hover:rotate-[360deg] motion-reduce:transition-none motion-reduce:group-hover:rotate-0">
@@ -60,7 +60,7 @@ export default function Header() {
           <span className="hidden sm:inline-flex">BANDEV</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium lg:flex" aria-label="Navigation principale">
+        <nav className="hidden items-center gap-6 text-ui font-medium lg:flex" aria-label="Navigation principale">
           {links.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -108,7 +108,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-xl px-4 py-3 text-base font-medium transition-colors ${
+                className={`rounded-xl px-4 py-3 text-ui font-medium transition-colors ${
                   isActive
                     ? "bg-[var(--color-accent)]/10 text-[var(--color-accent)]"
                     : "text-[var(--color-muted)] hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]"

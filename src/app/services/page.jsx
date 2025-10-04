@@ -116,13 +116,13 @@ export default function ServicesPage() {
                     <Icon className="h-7 w-7" aria-hidden="true" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-semibold text-[var(--color-foreground)]">{service.title}</h2>
-                    <p className="mt-2 leading-relaxed text-[var(--color-muted)]">{service.description}</p>
+                    <h2 className="text-heading-lg font-semibold text-[var(--color-foreground)]">{service.title}</h2>
+                    <p className="mt-2 text-body leading-relaxed text-[var(--color-muted)]">{service.description}</p>
                   </div>
                 </div>
-                <ul className="grid gap-3 text-sm">
+                <ul className="grid gap-3">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-[var(--color-muted)]">
+                    <li key={feature} className="flex items-start gap-3 text-body-sm text-[var(--color-muted)]">
                       <span className="mt-1.5 inline-flex h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-accent)]" aria-hidden="true" />
                       {feature}
                     </li>
@@ -138,8 +138,8 @@ export default function ServicesPage() {
       <ScrollReveal direction="up">
         <section className="mb-24 rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 md:p-12">
           <div className="mb-8 space-y-3 text-center">
-            <h2 className="text-3xl font-bold text-[var(--color-foreground)]">Comment je travaille</h2>
-            <p className="text-lg text-[var(--color-muted)]">
+            <h2 className="text-heading-xl font-bold text-[var(--color-foreground)]">Comment je travaille</h2>
+            <p className="text-body-lg text-[var(--color-muted)]">
               Un processus transparent et collaboratif pour garantir votre satisfaction
             </p>
           </div>
@@ -164,11 +164,11 @@ export default function ServicesPage() {
             ].map((item, index) => (
               <ScrollReveal key={item.step} direction="up" delay={index * 100}>
                 <div className="text-center">
-                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-2xl font-bold text-[var(--color-accent)]">
+                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-heading-lg font-bold text-[var(--color-accent)]">
                     {item.step}
                   </div>
-                  <h3 className="text-lg font-semibold text-[var(--color-foreground)]">{item.title}</h3>
-                  <p className="mt-2 text-sm text-[var(--color-muted)]">{item.description}</p>
+                  <h3 className="text-heading-md font-semibold text-[var(--color-foreground)]">{item.title}</h3>
+                  <p className="mt-2 text-body-sm text-[var(--color-muted)]">{item.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -180,20 +180,20 @@ export default function ServicesPage() {
       <ScrollReveal direction="up">
         <section className="rounded-3xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-secondary)] px-8 py-12 text-white shadow-2xl">
           <div className="mx-auto max-w-2xl space-y-6 text-center">
-            <h2 className="text-3xl font-bold tracking-tight">Vous avez un projet particulier ?</h2>
-            <p className="text-lg text-white/90">
+            <h2 className="text-heading-xl font-bold tracking-tight">Vous avez un projet particulier ?</h2>
+            <p className="text-body-lg text-white/90">
               Contactez-moi pour un audit gratuit ou une estimation personnalisée. Je réponds sous 24 heures ouvrées.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/devis"
-                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-[var(--color-accent)] shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl motion-reduce:transform-none"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-ui font-semibold text-[var(--color-accent)] shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl motion-reduce:transform-none"
               >
                 Demander un devis gratuit
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white px-8 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white hover:text-[var(--color-accent)] motion-reduce:transform-none"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white px-8 py-3 text-ui font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white hover:text-[var(--color-accent)] motion-reduce:transform-none"
               >
                 Me contacter
               </Link>

@@ -20,20 +20,20 @@ export default function PricingCard({
       } motion-reduce:transform-none`}
     >
       {highlighted && (
-        <div className="absolute -right-12 top-6 rotate-45 bg-[var(--color-accent-matrix)] px-12 py-1 text-xs font-bold text-slate-900">
+        <div className="absolute -right-12 top-6 rotate-45 bg-[var(--color-accent-matrix)] px-12 py-1 text-caption font-bold text-slate-900 uppercase tracking-widest">
           POPULAIRE
         </div>
       )}
       
       <div className="space-y-4">
-        <h3 className="text-2xl font-bold text-[var(--color-foreground)]">{title}</h3>
+        <h3 className="text-heading-lg font-bold text-[var(--color-foreground)]">{title}</h3>
         
         <div className="flex items-baseline gap-2">
-          <span className="text-4xl font-bold text-[var(--color-accent)]">{price}</span>
-          {period && <span className="text-sm text-[var(--color-muted)]">/ {period}</span>}
+          <span className="text-display font-bold text-[var(--color-accent)]">{price}</span>
+          {period && <span className="text-body-sm text-[var(--color-muted)]">/ {period}</span>}
         </div>
         
-        <p className="text-sm text-[var(--color-muted)] leading-relaxed">{description}</p>
+        <p className="text-body-sm text-[var(--color-muted)] leading-relaxed">{description}</p>
       </div>
       
       <ul className="mt-8 space-y-3">
@@ -43,7 +43,7 @@ export default function PricingCard({
               className="h-5 w-5 flex-shrink-0 text-[var(--color-accent-matrix)] dark:text-[var(--color-accent-matrix)]" 
               aria-hidden="true" 
             />
-            <span className="text-sm text-[var(--color-foreground)]">{feature}</span>
+            <span className="text-body-sm text-[var(--color-foreground)]">{feature}</span>
           </li>
         ))}
       </ul>

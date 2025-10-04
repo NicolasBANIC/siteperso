@@ -18,8 +18,8 @@ export default function TestimonialCard({
             key={i}
             className={`w-5 h-5 ${
               i < rating 
-                ? 'fill-yellow-400 text-yellow-400' 
-                : 'text-gray-300 dark:text-gray-600'
+                ? 'fill-[var(--color-accent-matrix)] text-[var(--color-accent-matrix)]' 
+                : 'text-[var(--color-muted)]/30'
             }`}
             aria-hidden="true"
           />
@@ -27,12 +27,12 @@ export default function TestimonialCard({
       </div>
 
       {/* Content */}
-      <blockquote className="text-gray-700 dark:text-gray-300 mb-6 italic leading-relaxed">
+      <blockquote className="text-body text-[var(--color-foreground)] mb-6 italic leading-relaxed">
         "{content}"
       </blockquote>
 
       {/* Author */}
-      <div className="flex items-center gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="flex items-center gap-4 pt-4 border-t border-[var(--color-border)]">
         <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
           <Image
             src={avatar}
@@ -43,10 +43,10 @@ export default function TestimonialCard({
           />
         </div>
         <div>
-          <p className="font-semibold text-gray-900 dark:text-white">
+          <p className="text-ui font-semibold text-[var(--color-foreground)]">
             {name}
           </p>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-body-sm text-[var(--color-muted)]">
             {role} {company && `• ${company}`}
           </p>
         </div>

@@ -41,10 +41,10 @@ export default function TechBadge({ name, logo, description }) {
             className="absolute left-1/2 top-full z-50 mt-2 w-64 -translate-x-1/2"
           >
             <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-xl backdrop-blur-sm">
-              <div className="mb-2 font-semibold text-[var(--color-foreground)]">
+              <div className="mb-2 text-heading-sm font-semibold text-[var(--color-foreground)]">
                 {name}
               </div>
-              <p className="text-sm leading-relaxed text-[var(--color-muted)]">
+              <p className="text-body-sm leading-relaxed text-[var(--color-muted)]">
                 {description}
               </p>
               {/* Arrow */}

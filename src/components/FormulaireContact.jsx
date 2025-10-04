@@ -90,13 +90,13 @@ export default function FormulaireContact() {
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Success Message */}
       {status === 'success' && (
-        <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-start gap-3">
-          <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+        <div className="p-4 bg-[var(--color-accent-matrix)]/10 border border-[var(--color-accent-matrix)]/30 rounded-lg flex items-start gap-3">
+          <CheckCircle className="w-5 h-5 text-[var(--color-accent-matrix)] flex-shrink-0 mt-0.5" aria-hidden="true" />
           <div>
-            <p className="font-semibold text-green-900 dark:text-green-100">
+            <p className="text-ui font-semibold text-[var(--color-foreground)]">
               Message envoyé avec succès !
             </p>
-            <p className="text-sm text-green-700 dark:text-green-300 mt-1">
+            <p className="text-body-sm text-[var(--color-muted)] mt-1">
               Je vous répondrai dans les plus brefs délais.
             </p>
           </div>
@@ -105,13 +105,13 @@ export default function FormulaireContact() {
 
       {/* Error Message */}
       {status === 'error' && (
-        <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+        <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
           <div>
-            <p className="font-semibold text-red-900 dark:text-red-100">
+            <p className="text-ui font-semibold text-[var(--color-foreground)]">
               Une erreur est survenue
             </p>
-            <p className="text-sm text-red-700 dark:text-red-300 mt-1">
+            <p className="text-body-sm text-[var(--color-muted)] mt-1">
               Veuillez réessayer ou me contacter directement par email.
             </p>
           </div>
@@ -120,7 +120,7 @@ export default function FormulaireContact() {
 
       {/* Nom */}
       <div>
-        <label htmlFor="nom" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="nom" className="block text-ui-sm font-medium text-[var(--color-foreground)] mb-2">
           Nom complet <span className="text-red-500">*</span>
         </label>
         <input
@@ -129,21 +129,21 @@ export default function FormulaireContact() {
           name="nom"
           value={formData.nom}
           onChange={handleChange}
-          className={`w-full px-4 py-3 rounded-lg border ${
+          className={`w-full px-4 py-3 rounded-lg border text-body ${
             errors.nom 
               ? 'border-red-500 focus:ring-red-500' 
-              : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all`}
+              : 'border-[var(--color-border)] focus:ring-[var(--color-accent)]'
+          } bg-[var(--color-surface)] text-[var(--color-foreground)] focus:ring-2 focus:border-transparent transition-all`}
           placeholder="Jean Dupont"
         />
         {errors.nom && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.nom}</p>
+          <p className="mt-1 text-body-sm text-red-500">{errors.nom}</p>
         )}
       </div>
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="email" className="block text-ui-sm font-medium text-[var(--color-foreground)] mb-2">
           Email <span className="text-red-500">*</span>
         </label>
         <input
@@ -152,21 +152,21 @@ export default function FormulaireContact() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full px-4 py-3 rounded-lg border ${
+          className={`w-full px-4 py-3 rounded-lg border text-body ${
             errors.email 
               ? 'border-red-500 focus:ring-red-500' 
-              : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all`}
+              : 'border-[var(--color-border)] focus:ring-[var(--color-accent)]'
+          } bg-[var(--color-surface)] text-[var(--color-foreground)] focus:ring-2 focus:border-transparent transition-all`}
           placeholder="jean.dupont@email.com"
         />
         {errors.email && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</p>
+          <p className="mt-1 text-body-sm text-red-500">{errors.email}</p>
         )}
       </div>
 
       {/* Sujet */}
       <div>
-        <label htmlFor="sujet" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="sujet" className="block text-ui-sm font-medium text-[var(--color-foreground)] mb-2">
           Sujet <span className="text-red-500">*</span>
         </label>
         <input
@@ -175,21 +175,21 @@ export default function FormulaireContact() {
           name="sujet"
           value={formData.sujet}
           onChange={handleChange}
-          className={`w-full px-4 py-3 rounded-lg border ${
+          className={`w-full px-4 py-3 rounded-lg border text-body ${
             errors.sujet 
               ? 'border-red-500 focus:ring-red-500' 
-              : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all`}
+              : 'border-[var(--color-border)] focus:ring-[var(--color-accent)]'
+          } bg-[var(--color-surface)] text-[var(--color-foreground)] focus:ring-2 focus:border-transparent transition-all`}
           placeholder="Demande d'information"
         />
         {errors.sujet && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.sujet}</p>
+          <p className="mt-1 text-body-sm text-red-500">{errors.sujet}</p>
         )}
       </div>
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="message" className="block text-ui-sm font-medium text-[var(--color-foreground)] mb-2">
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -198,17 +198,17 @@ export default function FormulaireContact() {
           value={formData.message}
           onChange={handleChange}
           rows={6}
-          className={`w-full px-4 py-3 rounded-lg border ${
+          className={`w-full px-4 py-3 rounded-lg border text-body ${
             errors.message 
               ? 'border-red-500 focus:ring-red-500' 
-              : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all resize-none`}
+              : 'border-[var(--color-border)] focus:ring-[var(--color-accent)]'
+          } bg-[var(--color-surface)] text-[var(--color-foreground)] focus:ring-2 focus:border-transparent transition-all resize-none`}
           placeholder="Votre message..."
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.message}</p>
+          <p className="mt-1 text-body-sm text-red-500">{errors.message}</p>
         )}
-        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+        <p className="mt-1 text-body-sm text-[var(--color-muted)]">
           Minimum 10 caractères
         </p>
       </div>
@@ -221,18 +221,18 @@ export default function FormulaireContact() {
       >
         {status === 'loading' ? (
           <>
-            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true" />
             Envoi en cours...
           </>
         ) : (
           <>
-            <Send className="w-5 h-5" />
+            <Send className="w-5 h-5" aria-hidden="true" />
             Envoyer le message
           </>
         )}
       </button>
 
-      <p className="text-sm text-gray-500 dark:text-gray-400">
+      <p className="text-body-sm text-[var(--color-muted)]">
         <span className="text-red-500">*</span> Champs obligatoires
       </p>
     </form>

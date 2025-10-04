@@ -1,4 +1,4 @@
-import { Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import ThemeToggle from '@/components/ThemeToggle';
@@ -7,11 +7,11 @@ import ScrollProgress from '@/components/ScrollProgress';
 
 import './globals.css';
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-poppins',
+  variable: '--font-inter',
 });
 
 export const metadata = {
@@ -151,7 +151,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${poppins.variable} bg-[var(--color-background)] text-[var(--color-foreground)] antialiased transition-colors motion-reduce:transition-none`}
+        className={`${inter.variable} ${inter.className} bg-[var(--color-background)] text-[var(--color-foreground)] antialiased transition-colors motion-reduce:transition-none`}
       >
         <ScrollProgress />
         <div className="flex min-h-screen flex-col">

@@ -31,13 +31,79 @@
   }
 
   html {
-    font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     scroll-behavior: smooth;
     background-color: var(--color-background);
   }
 
   body {
     @apply bg-[var(--color-background)] text-[var(--color-foreground)] antialiased;
+    font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* Hiérarchie typographique Inter */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--color-foreground);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* 40-64px */
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem); /* 28-40px */
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem); /* 24-32px */
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* 20-24px */
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: clamp(1.125rem, 2vw, 1.25rem); /* 18-20px */
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
+    font-weight: 600;
+  }
+
+  p {
+    font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 1.5em;
+  }
+
+  /* Éléments UI */
+  button, .btn, a.button {
+    font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.005em;
+  }
+
+  /* Petits textes et labels */
+  small, .text-small {
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem); /* 14-15px */
+    font-weight: 400;
+    line-height: 1.5;
   }
 
   main {
@@ -79,27 +145,49 @@
   }
 
   .eyebrow {
-    @apply text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-accent)] dark:text-[var(--color-accent-matrix)];
+    @apply uppercase tracking-[0.08em] text-[var(--color-accent)] dark:text-[var(--color-accent-matrix)];
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* 12-14px */
+    font-weight: 600;
+    letter-spacing: 0.08em;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-[var(--color-accent-foreground)] shadow-lg shadow-[var(--color-accent)]/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[var(--color-accent)]/30 motion-reduce:transform-none motion-reduce:shadow-none;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-[var(--color-accent-foreground)] shadow-lg shadow-[var(--color-accent)]/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[var(--color-accent)]/30 motion-reduce:transform-none motion-reduce:shadow-none;
+    font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.005em;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-[var(--color-border)] bg-transparent px-6 py-3 text-sm font-semibold text-[var(--color-foreground)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] motion-reduce:transform-none;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-[var(--color-border)] bg-transparent px-6 py-3 text-[var(--color-foreground)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] motion-reduce:transform-none;
+    font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.005em;
   }
 
   .badge {
-    @apply inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-accent)]/10 px-3 py-1 text-xs font-medium text-[var(--color-accent)] dark:border-[var(--color-accent-matrix)]/30 dark:bg-[var(--color-accent-matrix)]/10 dark:text-[var(--color-accent-matrix)];
+    @apply inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-accent)]/10 px-3 py-1 text-[var(--color-accent)] dark:border-[var(--color-accent-matrix)]/30 dark:bg-[var(--color-accent-matrix)]/10 dark:text-[var(--color-accent-matrix)];
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* 12-14px */
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
   }
 
   .section-title {
-    @apply text-3xl font-bold tracking-tight text-[var(--color-foreground)] sm:text-4xl;
+    @apply text-[var(--color-foreground)];
+    font-size: clamp(1.75rem, 4vw, 2.5rem); /* 28-40px */
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
   }
 
   .section-subtitle {
-    @apply text-lg text-[var(--color-muted)] max-w-3xl;
+    @apply text-[var(--color-muted)] max-w-3xl;
+    font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
+    font-weight: 400;
+    line-height: 1.6;
   }
 
   .container-page {
@@ -110,6 +198,127 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Classes typographiques utilitaires */
+  .text-hero {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* 40-64px */
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-display {
+    font-size: clamp(2rem, 4.5vw, 3rem); /* 32-48px */
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+
+  .text-heading-xl {
+    font-size: clamp(1.75rem, 4vw, 2.5rem); /* 28-40px */
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .text-heading-lg {
+    font-size: clamp(1.5rem, 3vw, 2rem); /* 24-32px */
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+  }
+
+  .text-heading-md {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* 20-24px */
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .text-heading-sm {
+    font-size: clamp(1.125rem, 2vw, 1.25rem); /* 18-20px */
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .text-body-lg {
+    font-size: clamp(1.125rem, 2vw, 1.25rem); /* 18-20px */
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .text-body {
+    font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .text-body-sm {
+    font-size: clamp(0.875rem, 1.5vw, 1rem); /* 14-16px */
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .text-caption {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* 12-14px */
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .text-ui {
+    font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.005em;
+  }
+
+  .text-ui-sm {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* 12-14px */
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+  }
+
+  /* Graisses de police */
+  .font-regular {
+    font-weight: 400;
+  }
+
+  .font-medium {
+    font-weight: 500;
+  }
+
+  .font-semibold {
+    font-weight: 600;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  /* Letter-spacing optimisé */
+  .tracking-tighter {
+    letter-spacing: -0.02em;
+  }
+
+  .tracking-tight {
+    letter-spacing: -0.01em;
+  }
+
+  .tracking-normal {
+    letter-spacing: 0;
+  }
+
+  .tracking-wide {
+    letter-spacing: 0.005em;
+  }
+
+  .tracking-wider {
+    letter-spacing: 0.01em;
+  }
+
+  .tracking-widest {
+    letter-spacing: 0.08em;
   }
 
   /* Animations personnalisées */

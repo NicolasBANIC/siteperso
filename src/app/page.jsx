@@ -247,7 +247,7 @@ export default function HomePage() {
             {/* Left: Text Content */}
             <ScrollReveal direction="left">
               <div className="space-y-8 text-white">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm backdrop-blur-sm">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-ui-sm font-medium backdrop-blur-sm">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00FF41] opacity-75"></span>
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00FF41]"></span>
@@ -255,7 +255,7 @@ export default function HomePage() {
                   <span>Disponible pour de nouveaux projets</span>
                 </div>
 
-                <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+                <h1 className="text-hero font-bold tracking-tighter leading-tight">
                   Je construis vos{" "}
                   <span className="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">
                     applications web
@@ -263,37 +263,37 @@ export default function HomePage() {
                   modernes, performantes et élégantes
                 </h1>
 
-                <p className="text-xl leading-relaxed text-white/90">
-                  Développeur Full-Stack spécialisé en <strong>Next.js</strong>, <strong>React</strong> et <strong>Node.js</strong>.
+                <p className="text-body-lg leading-relaxed text-white/90 font-regular">
+                  Développeur Full-Stack spécialisé en <strong className="font-semibold">Next.js</strong>, <strong className="font-semibold">React</strong> et <strong className="font-semibold">Node.js</strong>.
                   Je transforme vos idées en solutions digitales qui impressionnent et performent.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link 
                     href="/devis" 
-                    className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/20"
+                    className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-ui font-semibold text-[#0047AB] shadow-2xl transition-all hover:scale-105 hover:shadow-white/20"
                   >
                     Demander un devis
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                   <Link 
                     href="/portfolio" 
-                    className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-lg font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
+                    className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-8 py-4 text-ui font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
                   >
                     Voir mes projets
                   </Link>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-6 pt-4">
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center gap-2 text-body-sm font-medium">
                     <CheckCircle2 className="h-5 w-5 text-[#00FF41]" aria-hidden="true" />
                     <span>Code de qualité production</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center gap-2 text-body-sm font-medium">
                     <CheckCircle2 className="h-5 w-5 text-[#00FF41]" aria-hidden="true" />
                     <span>Livraison dans les délais</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center gap-2 text-body-sm font-medium">
                     <CheckCircle2 className="h-5 w-5 text-[#00FF41]" aria-hidden="true" />
                     <span>Support technique inclus</span>
                   </div>
@@ -311,7 +311,7 @@ export default function HomePage() {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce">
           <div className="flex flex-col items-center gap-2 text-white/60">
-            <span className="text-xs uppercase tracking-wider">Découvrir</span>
+            <span className="text-caption uppercase tracking-widest font-medium">Découvrir</span>
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
@@ -326,13 +326,13 @@ export default function HomePage() {
             {stats.map((stat, index) => (
               <ScrollReveal key={stat.label} direction="up" delay={index * 100}>
                 <div className="text-center">
-                  <div className="mb-2 text-5xl font-bold text-[var(--color-accent)]">
+                  <div className="mb-2 text-display font-bold text-[var(--color-accent)]">
                     <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                   </div>
-                  <div className="text-lg font-semibold text-[var(--color-foreground)]">
+                  <div className="text-heading-sm font-semibold text-[var(--color-foreground)]">
                     {stat.label}
                   </div>
-                  <div className="mt-1 text-sm text-[var(--color-muted)]">
+                  <div className="mt-1 text-body-sm text-[var(--color-muted)]">
                     {stat.description}
                   </div>
                 </div>
@@ -373,11 +373,11 @@ export default function HomePage() {
                   />
                 </div>
 
-                <h3 className="mb-4 text-2xl font-bold text-[var(--color-foreground)]">
+                <h3 className="mb-4 text-heading-lg font-semibold text-[var(--color-foreground)]">
                   {service.title}
                 </h3>
 
-                <p className="mb-6 leading-relaxed text-[var(--color-muted)]">
+                <p className="mb-6 text-body leading-relaxed text-[var(--color-muted)]">
                   {service.description}
                 </p>
 
@@ -385,7 +385,7 @@ export default function HomePage() {
                   {service.features.map((feature) => (
                     <div key={feature} className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[var(--color-accent)]" />
-                      <span className="text-sm text-[var(--color-foreground)]">{feature}</span>
+                      <span className="text-body-sm text-[var(--color-foreground)]">{feature}</span>
                     </div>
                   ))}
                 </div>

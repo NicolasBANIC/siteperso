@@ -29,13 +29,13 @@ export default function NotFound() {
 
         {/* Texte */}
         <div className="space-y-4">
-          <h1 className="text-6xl md:text-8xl font-bold text-[var(--color-accent)]">
+          <h1 className="text-hero font-bold text-[var(--color-accent)] tracking-tighter">
             404
           </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-foreground)]">
+          <h2 className="text-heading-xl font-bold text-[var(--color-foreground)]">
             Page non trouvée
           </h2>
-          <p className="text-lg text-[var(--color-muted)] max-w-md mx-auto">
+          <p className="text-body-lg text-[var(--color-muted)] max-w-md mx-auto leading-relaxed">
             Oups ! La page que vous recherchez n'existe pas ou a été déplacée. 
             Pas de panique, vous pouvez retourner à l'accueil ou explorer le site.
           </p>
@@ -44,45 +44,45 @@ export default function NotFound() {
         {/* Actions */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <Link href="/" className="btn-primary">
-            <Home className="h-5 w-5" />
+            <Home className="h-5 w-5" aria-hidden="true" />
             Retour à l'accueil
           </Link>
           <Link href="/portfolio" className="btn-secondary">
-            <Search className="h-5 w-5" />
+            <Search className="h-5 w-5" aria-hidden="true" />
             Voir le portfolio
           </Link>
         </div>
 
         {/* Liens rapides */}
         <div className="pt-8 border-t border-[var(--color-border)]">
-          <p className="text-sm text-[var(--color-muted)] mb-4">
+          <p className="text-body-sm text-[var(--color-muted)] mb-4 font-medium">
             Liens rapides :
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link 
               href="/services" 
-              className="text-[var(--color-accent)] hover:underline"
+              className="text-ui text-[var(--color-accent)] hover:underline font-medium"
             >
               Services
             </Link>
-            <span className="text-[var(--color-border)]">•</span>
+            <span className="text-[var(--color-border)]" aria-hidden="true">•</span>
             <Link 
               href="/apropos" 
-              className="text-[var(--color-accent)] hover:underline"
+              className="text-ui text-[var(--color-accent)] hover:underline font-medium"
             >
               À propos
             </Link>
-            <span className="text-[var(--color-border)]">•</span>
+            <span className="text-[var(--color-border)]" aria-hidden="true">•</span>
             <Link 
               href="/contact" 
-              className="text-[var(--color-accent)] hover:underline"
+              className="text-ui text-[var(--color-accent)] hover:underline font-medium"
             >
               Contact
             </Link>
-            <span className="text-[var(--color-border)]">•</span>
+            <span className="text-[var(--color-border)]" aria-hidden="true">•</span>
             <Link 
               href="/devis" 
-              className="text-[var(--color-accent)] hover:underline"
+              className="text-ui text-[var(--color-accent)] hover:underline font-medium"
             >
               Devis gratuit
             </Link>
