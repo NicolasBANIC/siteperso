@@ -248,13 +248,49 @@
      DESIGN SYSTEM UTILITIES - REFONTE QUALITATIVE
      ======================================== */
 
-  /* Variables CSS globales pour sections héros unifiées */
+  /* Variables CSS globales pour unification complète du site */
   :root {
-    --hero-text-color: #ffffff;
-    --hero-accent-color: #16a34a;
-    --hero-overlay-dark: rgba(0,0,0,.45);
-    --hero-overlay-light: rgba(0,0,0,.25);
-    --hero-font-family: 'Inter', sans-serif;
+    /* Palette principale unifiée - héros et navigation */
+    --unified-text-color: #ffffff;
+    --unified-accent-color: #16a34a;
+    --unified-accent-hover: #10b981;
+    --unified-accent-dark: #059669;
+    --unified-overlay-dark: rgba(0,0,0,.45);
+    --unified-overlay-light: rgba(0,0,0,.25);
+    --unified-background-dark: rgba(17,24,39,.75);
+    --unified-background-darker: rgba(11,15,23,.95);
+    
+    /* Typographie unifiée */
+    --unified-font-family: 'Inter', system-ui, sans-serif;
+    --unified-font-weight-normal: 400;
+    --unified-font-weight-medium: 500;
+    --unified-font-weight-semibold: 600;
+    --unified-font-weight-bold: 700;
+    --unified-font-weight-extrabold: 800;
+    --unified-font-weight-black: 900;
+    
+    /* Espacement et géométrie unifiés */
+    --unified-border-radius: 12px;
+    --unified-border-radius-lg: 16px;
+    --unified-spacing-unit: 8px;
+    --unified-container-max-width: 1280px;
+    
+    /* Ombres et effets unifiés */
+    --unified-shadow-light: 0 2px 6px rgba(0,0,0,0.1);
+    --unified-shadow-medium: 0 8px 16px rgba(0,0,0,0.12);
+    --unified-shadow-heavy: 0 12px 24px rgba(0,0,0,0.15);
+    --unified-shadow-accent: 0 0 12px rgba(22,163,74,0.3);
+    --unified-shadow-accent-hover: 0 12px 24px rgba(22,163,74,0.35);
+    
+    /* Transitions unifiées */
+    --unified-transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --unified-transition-standard: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --unified-transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Glassmorphism unifié */
+    --unified-glass-background: rgba(255,255,255,0.1);
+    --unified-glass-border: rgba(255,255,255,0.2);
+    --unified-glass-backdrop: blur(12px);
   }
 
   /* Media overlay for improved text readability */
@@ -295,34 +331,102 @@
     }
   }
 
-  /* Primary button with enhanced interactions */
+  /* ========================================
+     COMPOSANTS UNIFIÉS POUR COHÉRENCE GLOBALE
+     ======================================== */
+
+  /* Bouton primaire unifié - cohérent partout */
+  .btn-unified,
   .btn-primary {
-    background: var(--color-accent);
-    color: var(--color-accent-foreground);
-    font-weight: 700;
-    border-radius: 12px;
-    padding: 12px 24px;
-    transition: all .3s ease-in-out;
+    font-family: var(--unified-font-family);
+    font-weight: var(--unified-font-weight-semibold);
+    color: var(--unified-text-color);
+    background: linear-gradient(to right, var(--unified-accent-color), var(--unified-accent-dark));
     border: none;
+    border-radius: var(--unified-border-radius-lg);
+    padding: 12px 24px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--unified-shadow-medium);
+    transition: all var(--unified-transition-standard);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 
+  .btn-unified:hover,
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(11, 138, 58, 0.35);
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
+    box-shadow: var(--unified-shadow-accent-hover);
+    background: linear-gradient(to right, var(--unified-accent-hover), var(--unified-accent-color));
   }
 
+  .btn-unified:active,
   .btn-primary:active {
-    transform: translateY(1px);
+    transform: translateY(0px);
   }
 
+  .btn-unified:disabled,
   .btn-primary:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none !important;
+  }
+
+  /* Navigation link unifié */
+  .nav-link-unified {
+    font-family: var(--unified-font-family);
+    font-weight: var(--unified-font-weight-medium);
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: var(--unified-border-radius);
+    transition: all var(--unified-transition-standard);
+    position: relative;
+  }
+
+  .nav-link-unified:hover {
+    color: var(--unified-text-color);
+    background: linear-gradient(to right, rgba(22, 163, 74, 0.1), rgba(5, 150, 105, 0.1));
+    transform: translateY(-2px);
+    box-shadow: var(--unified-shadow-accent);
+  }
+
+  .nav-link-unified.active {
+    color: var(--unified-text-color);
+    background: linear-gradient(to right, rgba(22, 163, 74, 0.2), rgba(5, 150, 105, 0.2));
+    box-shadow: var(--unified-shadow-accent);
+  }
+
+  .nav-link-unified.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: linear-gradient(to right, var(--unified-accent-color), var(--unified-accent-dark));
+    border-radius: 1px;
+  }
+
+  /* Card unifiée */
+  .card-unified {
+    background: var(--unified-glass-background);
+    border: 1px solid var(--unified-glass-border);
+    backdrop-filter: var(--unified-glass-backdrop);
+    border-radius: var(--unified-border-radius-lg);
+    padding: clamp(16px, 4vw, 32px);
+    box-shadow: var(--unified-shadow-medium);
+    transition: all var(--unified-transition-standard);
+  }
+
+  .card-unified:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--unified-shadow-heavy);
+    border-color: rgba(22, 163, 74, 0.3);
   }
 
   /* Accent text styling */
@@ -360,11 +464,42 @@
      ENHANCED TYPOGRAPHY - SITEWIDE READABILITY
      ======================================== */
 
-  /* Styles globaux pour toutes les sections héros */
+  /* ========================================
+     UNIFICATION COMPLÈTE DU DESIGN SYSTEM
+     ======================================== */
+
+  /* Classes utilitaires pour cohérence globale */
+  .unified-container {
+    max-width: var(--unified-container-max-width);
+    margin: 0 auto;
+    padding-inline: clamp(16px, 4vw, 32px);
+  }
+
+  .unified-text {
+    font-family: var(--unified-font-family);
+    color: var(--unified-text-color);
+  }
+
+  .unified-accent {
+    color: var(--unified-accent-color);
+  }
+
+  .unified-transition {
+    transition: all var(--unified-transition-standard);
+  }
+
+  .unified-glass {
+    background: var(--unified-glass-background);
+    border: 1px solid var(--unified-glass-border);
+    backdrop-filter: var(--unified-glass-backdrop);
+    border-radius: var(--unified-border-radius);
+  }
+
+  /* Styles globaux pour toutes les sections héros - UNIFIÉS */
   .hero,
   .hero-section,
   section[class*="hero"] {
-    font-family: var(--hero-font-family);
+    font-family: var(--unified-font-family);
     position: relative;
   }
 
@@ -375,7 +510,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, var(--hero-overlay-light) 0%, var(--hero-overlay-dark) 60%, var(--hero-overlay-light) 100%);
+    background: linear-gradient(180deg, var(--unified-overlay-light) 0%, var(--unified-overlay-dark) 60%, var(--unified-overlay-light) 100%);
     pointer-events: none;
     z-index: 5;
     mix-blend-mode: multiply;
@@ -387,17 +522,17 @@
     display: none;
   }
 
-  /* Hero title overlay styling for maximum readability */
+  /* Hero title overlay styling for maximum readability - UNIFIÉ */
   .hero h1,
   .hero-title,
   .hero-section h1,
   section[class*="hero"] h1 {
-    font-family: var(--hero-font-family);
-    font-weight: 800;
+    font-family: var(--unified-font-family);
+    font-weight: var(--unified-font-weight-extrabold);
     line-height: 1.1;
     letter-spacing: -0.02em;
     font-size: clamp(2rem, 4vw + 1rem, 4rem);
-    color: var(--hero-text-color);
+    color: var(--unified-text-color);
     text-shadow: 0 2px 6px rgba(0,0,0,.5);
     -webkit-text-stroke: 0.5px rgba(0,0,0,.8);
     opacity: 0.95;
