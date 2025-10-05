@@ -239,7 +239,7 @@ export default function HomePage() {
         {/* Vidéo de fond */}
         <div className="absolute inset-0 z-0">
           <OptimizedVideo
-            src="/videos/videolibreCodingWM.webm"
+            src="/videos/videolibreCodingWebm.webm"
             className=""
             opacity="opacity-70"
             disableOnMobile={false}

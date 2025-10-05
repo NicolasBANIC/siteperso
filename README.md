@@ -282,12 +282,6 @@ siteperso/
 
 ---
 
-## 📚 Documentation
-
-- [REFONTE_MODERNE_COMPLETE.md](./REFONTE_MODERNE_COMPLETE.md) - Documentation complète du projet
-- [CONFIGURATION_EMAIL.md](./CONFIGURATION_EMAIL.md) - Guide configuration email
-- [QUICK_START.md](./QUICK_START.md) - Guide de démarrage rapide
-
 ---
 
 ## 🐛 Résolution de problèmes
