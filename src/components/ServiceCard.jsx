@@ -1,25 +1,24 @@
 "use client";
 
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 
-export default function ServiceCard({ title, description, icon, features, href }) {
+function ServiceCard({ title, description, icon, features, href }) {
   const prefersReducedMotion = useReducedMotion();
 
   return (
     <motion.article 
-      className="group relative h-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-card transition-all duration-300"
+      className="group relative h-full rounded-lg border border-border bg-surface p-8 shadow-[var(--shadow-sm)] transition-all duration-300 hover:[box-shadow:var(--shadow-md)] hover:border-borderHover"
       whileHover={prefersReducedMotion ? {} : { 
-        y: -8, 
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-        borderColor: 'var(--color-accent)'
+        y: -8
       }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
     >
-      <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)] transition-colors duration-300 group-hover:bg-[var(--color-accent)] group-hover:text-white">
+      <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--color-anthracite)]/20 to-[var(--color-accent)]/10 text-[var(--color-accent)] transition-all duration-300 group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:text-white group-hover:shadow-matrix">
         {icon ? (
           <Image 
             src={icon} 
@@ -50,7 +49,7 @@ export default function ServiceCard({ title, description, icon, features, href }
       {href && (
         <Link
           href={href}
-          className="mt-6 inline-flex items-center gap-2 text-ui-sm font-medium text-[var(--color-accent)] transition-colors hover:text-[var(--color-accent-secondary)]"
+          className="mt-6 inline-flex items-center gap-2 text-caption font-medium text-[var(--color-accent)] transition-colors hover:text-[var(--color-accent-secondary)]"
         >
           En savoir plus
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" />
@@ -59,3 +58,5 @@ export default function ServiceCard({ title, description, icon, features, href }
     </motion.article>
   );
 }
+
+export default memo(ServiceCard);

@@ -28,7 +28,8 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl motion-reduce:transform-none"
+      className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-sm)] transition-all duration-300 hover:scale-[1.02] hover:border-[var(--color-border-hover)] hover:[box-shadow:var(--shadow-lg)] motion-reduce:transform-none"
+}
     >
       <Link href={`/portfolio/${slug}`} className="block">
         {/* Image */}
@@ -52,7 +53,7 @@ export default function ProjectCard({
 
           {/* CTA hover */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <div className="flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white shadow-lg">
+            <div className="flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-sm)]">
               <span>Voir le projet</span>
               <ArrowRight className="h-4 w-4" />
             </div>

@@ -66,8 +66,8 @@ export default function PortfolioPage() {
               onClick={() => setSelectedCategory(category)}
               className={`rounded-full px-6 py-2.5 text-sm font-medium transition-all ${
                 selectedCategory === category
-                  ? "bg-[var(--color-accent)] text-white shadow-lg"
-                  : "border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                  ? "bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] text-white shadow-matrix-lg"
+                  : "border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:shadow-matrix"
               }`}
             >
               {category}

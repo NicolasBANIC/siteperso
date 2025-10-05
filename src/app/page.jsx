@@ -234,37 +234,46 @@ const stats = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section - Refonte avec dégradé statique */}
-      <section className="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-accent-secondary via-accent to-accent-secondary">
-        {/* Gradient Background - Statique et performant */}
-        <div className="absolute inset-0">
-          <MeshGradient />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/40" />
+      {/* Hero Section - Design épuré avec vidéo et Matrix Rain */}
+      <section className="relative min-h-[90vh] overflow-hidden bg-[var(--color-anthracite)]">
+        {/* Vidéo de fond */}
+        <div className="absolute inset-0 z-0">
+          <OptimizedVideo
+            src="/videos/videolibreCodingWM.webm"
+            className=""
+            opacity="opacity-70"
+            disableOnMobile={false}
+          />
         </div>
 
+        {/* Matrix Rain par-dessus la vidéo */}
+        <div className="absolute inset-0 z-[1]">
+          <MatrixRain />
+        </div>
+        
         {/* Content */}
         <div className="container-page relative z-10 flex min-h-[90vh] items-center">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center w-full">
             {/* Left: Text Content */}
             <ScrollReveal direction="left">
-              <div className="space-y-8 text-white">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-ui-sm font-medium backdrop-blur-sm">
+              <div className="space-y-8">
+                <div className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--color-accent-matrix)]/50 bg-[var(--color-accent-matrix)]/20 px-4 py-2 text-caption font-medium backdrop-blur-sm">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-accent-matrix opacity-60 motion-safe:animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-matrix"></span>
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--color-accent-matrix)] opacity-75 motion-safe:animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-accent-matrix)] shadow-[0_0_8px_rgba(0,255,0,0.6)]"></span>
                   </span>
-                  <span>Disponible pour de nouveaux projets</span>
+                  <span className="text-white font-semibold drop-shadow-md">Disponible pour de nouveaux projets</span>
                 </div>
 
-                <h1 className="text-hero font-bold tracking-tighter leading-tight">
+                <h1 className="text-hero font-bold tracking-tighter leading-tight text-white drop-shadow-lg">
                   Créons ensemble votre{" "}
-                  <span className="bg-gradient-to-r from-accent-matrix to-white bg-clip-text text-transparent">
+                  <span className="text-[var(--color-accent-matrix)] drop-shadow-[0_0_15px_rgba(0,255,0,0.5)]">
                     présence digitale
                   </span>{" "}
                   de demain
                 </h1>
 
-                <p className="text-body-lg leading-relaxed text-white/90 font-regular max-w-xl">
+                <p className="text-body-lg leading-relaxed text-white/90 font-regular max-w-xl drop-shadow-md">
                   Développeur web passionné, je conçois des sites et applications sur mesure qui allient design moderne et performances techniques.
                 </p>
 
@@ -278,16 +287,16 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-6 pt-4">
-                  <div className="flex items-center gap-2 text-body-sm font-medium">
-                    <CheckCircle2 className="h-5 w-5 text-accent-matrix" aria-hidden="true" />
+                  <div className="flex items-center gap-2 text-body-sm font-medium text-white drop-shadow-md">
+                    <CheckCircle2 className="h-5 w-5 text-[var(--color-accent-matrix)] drop-shadow-[0_0_10px_rgba(0,255,0,0.5)]" aria-hidden="true" />
                     <span>Code de qualité</span>
                   </div>
-                  <div className="flex items-center gap-2 text-body-sm font-medium">
-                    <CheckCircle2 className="h-5 w-5 text-accent-matrix" aria-hidden="true" />
+                  <div className="flex items-center gap-2 text-body-sm font-medium text-white drop-shadow-md">
+                    <CheckCircle2 className="h-5 w-5 text-[var(--color-accent-matrix)] drop-shadow-[0_0_10px_rgba(0,255,0,0.5)]" aria-hidden="true" />
                     <span>Délais respectés</span>
                   </div>
-                  <div className="flex items-center gap-2 text-body-sm font-medium">
-                    <CheckCircle2 className="h-5 w-5 text-accent-matrix" aria-hidden="true" />
+                  <div className="flex items-center gap-2 text-body-sm font-medium text-white drop-shadow-md">
+                    <CheckCircle2 className="h-5 w-5 text-[var(--color-accent-matrix)] drop-shadow-[0_0_10px_rgba(0,255,0,0.5)]" aria-hidden="true" />
                     <span>Support inclus</span>
                   </div>
                 </div>
@@ -298,7 +307,7 @@ export default function HomePage() {
             <ScrollReveal direction="right" delay={200}>
               <div className="relative hidden lg:block">
                 <div className="relative aspect-square w-full max-w-md mx-auto">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent-matrix/20 to-white/10 blur-3xl"></div>
+                  <div className="absolute inset-0 rounded-full bg-[var(--color-accent-matrix)]/10 blur-3xl"></div>
                   <MockDashboard />
                 </div>
               </div>
@@ -318,7 +327,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section - Expertise */}
-      <section className="border-b border-border bg-surface py-16 md:py-24">
+      <section className="border-b border-border bg-white py-16 md:py-24">
         <div className="container-page">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
@@ -341,32 +350,33 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="container-page relative">
+      <section className="relative bg-white py-12 md:py-20">
         <ParticlesBackground />
         
-        <ScrollReveal direction="up">
-          <div className="relative z-10 mb-16 space-y-4 text-center">
-            <div className="eyebrow mx-auto">Services</div>
-            <h2 className="section-title">
-              Une expertise technique complète pour propulser votre activité
-            </h2>
-            <p className="section-subtitle mx-auto">
-              Du maquettage à la mise en production, je maîtrise toute la chaîne de développement web moderne.
-              Code propre, architecture scalable, et performances optimales garanties.
-            </p>
-          </div>
-        </ScrollReveal>
+        <div className="container-page-no-py">
+          <ScrollReveal direction="up">
+            <div className="relative z-10 mb-16 space-y-4 text-center">
+              <div className="eyebrow mx-auto">Services</div>
+              <h2 className="section-title">
+                Une expertise technique complète pour propulser votre activité
+              </h2>
+              <p className="section-subtitle mx-auto">
+                Du maquettage à la mise en production, je maîtrise toute la chaîne de développement web moderne.
+                Code propre, architecture scalable, et performances optimales garanties.
+              </p>
+            </div>
+          </ScrollReveal>
 
-        <div className="relative z-10 grid gap-8 md:grid-cols-2">
+          <div className="relative z-10 grid gap-8 md:grid-cols-2">
           {services.map((service, index) => (
             <ScrollReveal key={service.title} direction={index % 2 === 0 ? "left" : "right"} delay={index * 100}>
-              <article className="card group relative h-full overflow-hidden transition-all duration-300 hover:scale-[1.01] hover:border-[var(--color-accent)] hover:shadow-elevation motion-reduce:transform-none">
+              <article className="card group relative h-full overflow-hidden transition-all duration-300 hover:scale-[1.01] hover:border-[var(--color-accent)] hover:shadow-matrix-lg motion-reduce:transform-none">
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--color-accent)]/5 to-[var(--color-accent-secondary)]/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--color-accent)]/10 via-[var(--color-accent-secondary)]/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 {/* Numbered Icon Badge */}
                 <div className="mb-6 flex items-start justify-between gap-4">
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-accent-secondary text-2xl font-bold text-white shadow-lg transition-transform duration-300 group-hover:scale-110 motion-reduce:transform-none">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-anthracite to-accent text-2xl font-bold text-foreground shadow-matrix transition-all duration-300 group-hover:scale-110 group-hover:from-accent group-hover:to-accentTertiary group-hover:shadow-matrix-lg motion-reduce:transform-none">
                     {String(index + 1).padStart(2, '0')}
                   </div>
                   
@@ -405,7 +415,7 @@ export default function HomePage() {
                   {service.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-flex items-center rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1.5 text-xs font-medium text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                      className="inline-flex items-center rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1.5 text-xs font-medium text-[var(--color-muted)] transition-all hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:bg-gradient-to-br hover:from-[var(--color-accent)]/5 hover:to-[var(--color-accent-secondary)]/5 hover:shadow-matrix"
                     >
                       {tech}
                     </span>
@@ -414,20 +424,21 @@ export default function HomePage() {
               </article>
             </ScrollReveal>
           ))}
-        </div>
-
-        <ScrollReveal direction="up" delay={400}>
-          <div className="relative z-10 mt-12 text-center">
-            <Link href="/services" className="btn-primary">
-              Découvrir tous les services
-              <ArrowRight className="h-5 w-5" />
-            </Link>
           </div>
-        </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={400}>
+            <div className="relative z-10 mt-12 text-center">
+              <Link href="/services" className="btn-primary">
+                Découvrir tous les services
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* Process Section */}
-      <section className="bg-gradient-to-b from-[var(--color-background)] to-[var(--color-surface)] py-20">
+      <section className="bg-gradient-to-b from-white to-[var(--color-surface)] py-20">
         <div className="container-page">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -443,11 +454,11 @@ export default function HomePage() {
 
           <div className="relative space-y-6">
             {/* Vertical connecting line */}
-            <div className="absolute left-8 top-12 bottom-12 w-0.5 bg-gradient-to-b from-accent via-accent-secondary to-accent hidden lg:block" aria-hidden="true" />
+            <div className="absolute left-8 top-12 bottom-12 w-0.5 bg-gradient-to-b from-anthracite via-accent to-accentTertiary hidden lg:block" aria-hidden="true" />
             
             {processSteps.map((step, index) => (
               <ScrollReveal key={step.number} direction="up" delay={index * 100}>
-                <article className="card group relative overflow-hidden transition-all duration-300 hover:border-[var(--color-accent)] hover:shadow-elevation">
+                <article className="card group relative overflow-hidden transition-all duration-300 hover:border-[var(--color-accent)] hover:shadow-matrix-lg">
                   {/* Large background number */}
                   <div className="absolute right-4 top-4 text-[8rem] font-bold leading-none text-[var(--color-accent)]/5 select-none" aria-hidden="true">
                     {step.number}
@@ -456,10 +467,10 @@ export default function HomePage() {
                   <div className="relative grid gap-6 lg:grid-cols-[auto_1fr]">
                     {/* Left: Number Badge */}
                     <div className="flex flex-col items-center lg:items-start gap-3">
-                      <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-secondary text-2xl font-bold text-white shadow-lg ring-4 ring-background transition-transform duration-300 group-hover:scale-110 motion-reduce:transform-none">
+                      <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-anthracite to-accent text-2xl font-bold text-foreground shadow-matrix ring-4 ring-background transition-all duration-300 group-hover:scale-110 group-hover:from-accent group-hover:to-accentTertiary group-hover:shadow-matrix-lg motion-reduce:transform-none">
                         {step.number}
                       </div>
-                      <div className="rounded-full bg-surface px-3 py-1.5 text-xs font-semibold text-accent border border-accent/20">
+                      <div className="rounded-full bg-surface px-3 py-1.5 text-xs font-semibold text-accent border border-accent/20 transition-all group-hover:border-accent group-hover:shadow-matrix">
                         {step.duration}
                       </div>
                     </div>
@@ -508,7 +519,8 @@ export default function HomePage() {
       </section>
 
       {/* Technologies Section */}
-      <section className="container-page">
+      <section className="bg-white py-12 md:py-20">
+        <div className="container-page-no-py">
         <ScrollReveal direction="up">
           <div className="mb-16 space-y-4 text-center">
             <div className="eyebrow mx-auto">Stack Technique</div>
@@ -576,11 +588,11 @@ export default function HomePage() {
             </div>
           </div>
         </ScrollReveal>
+        </div>
       </section>
 
       {/* Tech Showcase Section - NEW */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[var(--color-background)] via-slate-900 to-[var(--color-background)] py-20 dark:via-slate-950">
-        <MeshGradient className="opacity-30" />
+      <section className="relative overflow-hidden bg-[var(--color-surface)] py-20">
         
         <div className="container-page relative z-10">
           <ScrollReveal direction="up">
@@ -601,10 +613,10 @@ export default function HomePage() {
             <ScrollReveal direction="left" delay={100}>
               <GlassmorphismCard className="p-6" variant="gradient">
                 <div className="mb-4">
-                  <h3 className="mb-2 text-heading-md font-semibold text-white">
+                  <h3 className="mb-2 text-heading-md font-semibold text-[var(--color-foreground)]">
                     Code en temps réel
                   </h3>
-                  <p className="text-body-sm text-white/70">
+                  <p className="text-body-sm text-[var(--color-muted)]">
                     Animation de code qui s'écrit automatiquement, parfait pour présenter 
                     vos solutions techniques de manière dynamique.
                   </p>
@@ -618,10 +630,10 @@ export default function HomePage() {
           <ScrollReveal direction="up" delay={200}>
             <div className="mt-8">
               <div className="mb-4 text-center">
-                <h3 className="mb-2 text-heading-md font-semibold text-white">
+                <h3 className="mb-2 text-heading-md font-semibold text-[var(--color-foreground)]">
                   Interfaces SaaS professionnelles
                 </h3>
-                <p className="text-body-sm text-white/70">
+                <p className="text-body-sm text-[var(--color-muted)]">
                   Dashboard interactif avec données en temps réel, graphiques animés, 
                   et design moderne pour vos applications métier.
                 </p>
@@ -634,37 +646,37 @@ export default function HomePage() {
           <ScrollReveal direction="up" delay={300}>
             <div className="mt-16 grid gap-6 md:grid-cols-3">
               <GlassmorphismCard className="p-6 text-center" hover={true}>
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-secondary)] shadow-matrix">
                   <Code2 className="h-8 w-8 text-white" />
                 </div>
-                <h4 className="mb-2 text-heading-sm font-semibold text-white">
+                <h4 className="mb-2 text-heading-sm font-semibold text-[var(--color-foreground)]">
                   Code Moderne
                 </h4>
-                <p className="text-body-sm text-white/70">
+                <p className="text-body-sm text-[var(--color-muted)]">
                   React 19, Next.js 15, TypeScript pour un code robuste et maintenable
                 </p>
               </GlassmorphismCard>
 
               <GlassmorphismCard className="p-6 text-center" hover={true}>
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-teal-500">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-anthracite)] to-[var(--color-accent)] shadow-matrix">
                   <Zap className="h-8 w-8 text-white" />
                 </div>
-                <h4 className="mb-2 text-heading-sm font-semibold text-white">
+                <h4 className="mb-2 text-heading-sm font-semibold text-[var(--color-foreground)]">
                   Performances Extrêmes
                 </h4>
-                <p className="text-body-sm text-white/70">
+                <p className="text-body-sm text-[var(--color-muted)]">
                   Optimisations avancées pour des temps de chargement ultra-rapides
                 </p>
               </GlassmorphismCard>
 
               <GlassmorphismCard className="p-6 text-center" hover={true}>
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-red-500">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-accent-secondary)] to-[var(--color-accent)] shadow-matrix">
                   <Rocket className="h-8 w-8 text-white" />
                 </div>
-                <h4 className="mb-2 text-heading-sm font-semibold text-white">
+                <h4 className="mb-2 text-heading-sm font-semibold text-[var(--color-foreground)]">
                   Animations Fluides
                 </h4>
-                <p className="text-body-sm text-white/70">
+                <p className="text-body-sm text-[var(--color-muted)]">
                   Transitions et animations 60fps pour une expérience premium
                 </p>
               </GlassmorphismCard>
@@ -674,7 +686,8 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="container-page py-20">
+      <section className="bg-white py-12 md:py-20">
+        <div className="container-page-no-py">
         <ScrollReveal direction="up">
           <div className="mb-16 space-y-4 text-center">
             <div className="eyebrow mx-auto">Tarifs</div>
@@ -782,10 +795,11 @@ export default function HomePage() {
             </Link>
           </div>
         </ScrollReveal>
+        </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-gradient-to-b from-[var(--color-surface)] to-[var(--color-background)] py-20">
+      <section className="bg-gradient-to-b from-[var(--color-surface)] to-white py-20">
         <div className="container-page">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -815,7 +829,8 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="container-page">
+      <section className="bg-white py-12 md:py-20">
+        <div className="container-page-no-py">
         <CTASection 
           title="Prêt à démarrer votre projet ?"
           description="Discutons de vos besoins et je vous proposerai une solution sur mesure adaptée à votre budget et vos objectifs."
@@ -824,6 +839,7 @@ export default function HomePage() {
           secondaryButtonText="Me contacter"
           secondaryButtonHref="/contact"
         />
+        </div>
       </section>
     </>
   );

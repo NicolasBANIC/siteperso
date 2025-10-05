@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -55,7 +55,7 @@ export default function HeroContactForm() {
       className="relative"
     >
       {/* Glassmorphism card */}
-      <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+      <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-xl">
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/10 via-transparent to-[var(--color-accent-secondary)]/10" aria-hidden="true" />
         

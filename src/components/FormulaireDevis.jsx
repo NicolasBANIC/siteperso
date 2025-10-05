@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
@@ -131,13 +131,13 @@ export default function FormulaireDevis() {
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Success Message */}
       {status === 'success' && (
-        <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-start gap-3">
-          <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+        <div className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
+          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-semibold text-green-900 dark:text-green-100">
+            <p className="font-semibold text-green-900">
               Demande envoyée avec succès !
             </p>
-            <p className="text-sm text-green-700 dark:text-green-300 mt-1">
+            <p className="text-sm text-green-700 mt-1">
               Je vous recontacterai dans les plus brefs délais.
             </p>
           </div>
@@ -146,13 +146,13 @@ export default function FormulaireDevis() {
 
       {/* Error Message */}
       {status === 'error' && (
-        <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+        <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-semibold text-red-900 dark:text-red-100">
+            <p className="font-semibold text-red-900">
               Une erreur est survenue
             </p>
-            <p className="text-sm text-red-700 dark:text-red-300 mt-1">
+            <p className="text-sm text-red-700 mt-1">
               Veuillez réessayer ou me contacter directement.
             </p>
           </div>
@@ -161,7 +161,7 @@ export default function FormulaireDevis() {
 
       {/* Nom */}
       <div>
-        <label htmlFor="nom" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="nom" className="block text-sm font-medium text-gray-700 mb-2">
           Nom complet <span className="text-red-500">*</span>
         </label>
         <input
@@ -173,19 +173,19 @@ export default function FormulaireDevis() {
           className={`w-full px-4 py-3 rounded-lg border ${
             errors.nom 
               ? 'border-red-500 focus:ring-red-500' 
-              : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all`}
+              : 'border-gray-300 focus:ring-[var(--color-accent)]'
+          } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
           placeholder="Jean Dupont"
         />
         {errors.nom && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.nom}</p>
+          <p className="mt-1 text-sm text-red-600">{errors.nom}</p>
         )}
       </div>
 
       {/* Email & Téléphone */}
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
             Email <span className="text-red-500">*</span>
           </label>
           <input
@@ -197,17 +197,17 @@ export default function FormulaireDevis() {
             className={`w-full px-4 py-3 rounded-lg border ${
               errors.email 
                 ? 'border-red-500 focus:ring-red-500' 
-                : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-            } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all`}
+                : 'border-gray-300 focus:ring-[var(--color-accent)]'
+            } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
             placeholder="jean.dupont@email.com"
           />
           {errors.email && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</p>
+            <p className="mt-1 text-sm text-red-600">{errors.email}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="telephone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="telephone" className="block text-sm font-medium text-gray-700 mb-2">
             Téléphone <span className="text-red-500">*</span>
           </label>
           <input
@@ -219,19 +219,19 @@ export default function FormulaireDevis() {
             className={`w-full px-4 py-3 rounded-lg border ${
               errors.telephone 
                 ? 'border-red-500 focus:ring-red-500' 
-                : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-            } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all`}
+                : 'border-gray-300 focus:ring-[var(--color-accent)]'
+            } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
             placeholder="06 12 34 56 78"
           />
           {errors.telephone && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.telephone}</p>
+            <p className="mt-1 text-sm text-red-600">{errors.telephone}</p>
           )}
         </div>
       </div>
 
       {/* Type de projet */}
       <div>
-        <label htmlFor="typeProjet" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="typeProjet" className="block text-sm font-medium text-gray-700 mb-2">
           Type de projet <span className="text-red-500">*</span>
         </label>
         <select
@@ -242,8 +242,8 @@ export default function FormulaireDevis() {
           className={`w-full px-4 py-3 rounded-lg border ${
             errors.typeProjet 
               ? 'border-red-500 focus:ring-red-500' 
-              : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all`}
+              : 'border-gray-300 focus:ring-[var(--color-accent)]'
+          } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
         >
           <option value="">Sélectionnez un type</option>
           {typesProjets.map(type => (
@@ -251,14 +251,14 @@ export default function FormulaireDevis() {
           ))}
         </select>
         {errors.typeProjet && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.typeProjet}</p>
+          <p className="mt-1 text-sm text-red-600">{errors.typeProjet}</p>
         )}
       </div>
 
       {/* Budget & Délai */}
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="budget" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
             Budget estimé <span className="text-red-500">*</span>
           </label>
           <select
@@ -269,8 +269,8 @@ export default function FormulaireDevis() {
             className={`w-full px-4 py-3 rounded-lg border ${
               errors.budget 
                 ? 'border-red-500 focus:ring-red-500' 
-                : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-            } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all`}
+                : 'border-gray-300 focus:ring-[var(--color-accent)]'
+            } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
           >
             <option value="">Sélectionnez un budget</option>
             {budgets.map(budget => (
@@ -278,12 +278,12 @@ export default function FormulaireDevis() {
             ))}
           </select>
           {errors.budget && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.budget}</p>
+            <p className="mt-1 text-sm text-red-600">{errors.budget}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="delai" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="delai" className="block text-sm font-medium text-gray-700 mb-2">
             Délai souhaité
           </label>
           <select
@@ -291,7 +291,7 @@ export default function FormulaireDevis() {
             name="delai"
             value={formData.delai}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent transition-all"
           >
             <option value="">Sélectionnez un délai</option>
             {delais.map(delai => (
@@ -303,7 +303,7 @@ export default function FormulaireDevis() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
           Description du projet <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -315,14 +315,14 @@ export default function FormulaireDevis() {
           className={`w-full px-4 py-3 rounded-lg border ${
             errors.message 
               ? 'border-red-500 focus:ring-red-500' 
-              : 'border-gray-300 dark:border-gray-600 focus:ring-blue-500'
-          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent transition-all resize-none`}
+              : 'border-gray-300 focus:ring-[var(--color-accent)]'
+          } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all resize-none`}
           placeholder="Décrivez votre projet, vos besoins, vos objectifs..."
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.message}</p>
+          <p className="mt-1 text-sm text-red-600">{errors.message}</p>
         )}
-        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+        <p className="mt-1 text-sm text-gray-500">
           Minimum 20 caractères
         </p>
       </div>
@@ -346,7 +346,7 @@ export default function FormulaireDevis() {
         )}
       </button>
 
-      <p className="text-sm text-gray-500 dark:text-gray-400">
+      <p className="text-sm text-gray-500">
         <span className="text-red-500">*</span> Champs obligatoires
       </p>
     </form>

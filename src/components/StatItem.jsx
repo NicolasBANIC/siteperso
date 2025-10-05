@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useSpring } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 
@@ -14,7 +14,7 @@ import { useReducedMotion } from '@/lib/useReducedMotion';
  * @param {string} suffix - Suffixe (ex: "+", "%", "h")
  * @param {string} description - Description optionnelle
  */
-export function StatItem({ icon, count, label, suffix = '', description }) {
+const StatItem = memo(function StatItem({ icon, count, label, suffix = '', description }) {
   const prefersReducedMotion = useReducedMotion();
   
   const [ref, inView] = useInView({
@@ -92,6 +92,7 @@ export function StatItem({ icon, count, label, suffix = '', description }) {
       )}
     </motion.div>
   );
-}
+});
 
+export { StatItem };
 export default StatItem;

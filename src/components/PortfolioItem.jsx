@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +10,7 @@ import { ExternalLink } from 'lucide-react';
  * Composant PortfolioItem
  * Props : title, category, image, stack, description, link
  */
-export function PortfolioItem({ 
+function PortfolioItemComponent({ 
   title, 
   category, 
   image, 
@@ -20,12 +21,12 @@ export function PortfolioItem({
 }) {
   return (
     <motion.article
-      className="group relative overflow-hidden rounded-lg bg-surface border border-border"
+      className="group relative overflow-hidden rounded-lg bg-surface border border-border shadow-[var(--shadow-sm)] hover:border-borderHover hover:[box-shadow:var(--shadow-md)] transition-all duration-300"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      whileHover={{ y: -6, boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }}
+      whileHover={{ y: -6 }}
     >
       {/* Image */}
       <div className="relative h-64 w-full overflow-hidden">
@@ -49,7 +50,7 @@ export function PortfolioItem({
       <div className="p-6">
         {/* Category */}
         <div className="mb-3">
-          <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-ui-sm font-medium text-accent">
+          <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-caption font-medium text-accent">
             {category}
           </span>
         </div>
@@ -65,7 +66,7 @@ export function PortfolioItem({
             {stack.map((tech, index) => (
               <span
                 key={index}
-                className="text-ui-sm text-muted"
+                className="text-caption text-muted"
               >
                 {tech}
               </span>
@@ -88,4 +89,5 @@ export function PortfolioItem({
   );
 }
 
+export const PortfolioItem = memo(PortfolioItemComponent);
 export default PortfolioItem;

@@ -46,12 +46,12 @@ export default function MatrixRain() {
     const draw = () => {
       if (!isVisible) return; // Pause si non visible
 
-      // Fade effect
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      // Fade effect - Utiliser anthracite au lieu de blanc pour éviter le voile gris
+      ctx.fillStyle = 'rgba(26, 26, 26, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = '#00FF41'; // Matrix green
-      ctx.font = `${fontSize}px monospace`;
+      ctx.fillStyle = '#00FF41'; // Matrix green intense (#00FF41 = vert Matrix authentique)
+      ctx.font = `bold ${fontSize}px monospace`;
 
       // Dessiner seulement une partie des drops pour économiser CPU
       for (let i = 0; i < drops.length; i++) {
@@ -85,7 +85,7 @@ export default function MatrixRain() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+      className="absolute inset-0 opacity-[0.08]"
       aria-hidden="true"
     />
   );

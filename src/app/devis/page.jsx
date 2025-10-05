@@ -1,4 +1,4 @@
-import FormulaireDevis from "@/components/FormulaireDevis";
+﻿import FormulaireDevis from "@/components/FormulaireDevis";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -62,15 +62,15 @@ export default function DevisPage() {
                 return (
                   <div 
                     key={index}
-                    className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700"
+                    className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-200 hover:border-[var(--color-accent)] hover:shadow-matrix transition-all duration-300 group"
                   >
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg mb-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[var(--color-anthracite)]/20 to-[var(--color-accent)]/10 text-[var(--color-accent)] rounded-lg mb-4 group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:text-white group-hover:shadow-matrix transition-all duration-300">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                    <h3 className="font-semibold text-gray-900 mb-2">
                       {avantage.title}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-gray-600">
                       {avantage.description}
                     </p>
                   </div>
@@ -88,10 +88,10 @@ export default function DevisPage() {
             <ScrollReveal>
               <div className="card">
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
                     Parlez-moi de votre projet
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Plus vous serez précis, plus mon devis sera adapté à vos besoins.
                   </p>
                 </div>
@@ -107,10 +107,10 @@ export default function DevisPage() {
         <Container>
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Comment ça se passe ensuite ?
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600">
                 Un processus simple et transparent pour démarrer votre projet sereinement.
               </p>
             </div>
@@ -135,14 +135,14 @@ export default function DevisPage() {
               }
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 dark:bg-blue-500 text-white rounded-full text-2xl font-bold mb-4">
+                <div className="text-center group">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[var(--color-anthracite)] to-[var(--color-accent)] text-white rounded-full text-2xl font-bold mb-4 shadow-matrix group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:shadow-matrix-lg transition-all duration-300">
                     {item.step}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     {item.description}
                   </p>
                 </div>

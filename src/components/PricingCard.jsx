@@ -26,8 +26,8 @@ export default function PricingCard({
     <motion.article 
       className={`relative overflow-hidden rounded-lg bg-surface border p-8 transition-all duration-300 ${
         highlight 
-          ? "border-accent shadow-card scale-105" 
-          : "border-border hover:shadow-card hover:scale-[1.02]"
+          ? "border-accent shadow-matrix-lg scale-105" 
+          : "border-border hover:shadow-matrix-lg hover:border-accent/50 hover:scale-[1.02]"
       } motion-reduce:transform-none`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}

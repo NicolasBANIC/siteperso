@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 
-export default function AnimatedCounter({ end, duration = 2000, suffix = '', prefix = '', className = '' }) {
+const AnimatedCounter = memo(function AnimatedCounter({ end, duration = 2000, suffix = '', prefix = '', className = '' }) {
   const [count, setCount] = useState(0);
   const prefersReducedMotion = useReducedMotion();
   
@@ -57,4 +57,6 @@ export default function AnimatedCounter({ end, duration = 2000, suffix = '', pre
       {prefix}{count}{suffix}
     </span>
   );
-}
+});
+
+export default AnimatedCounter;

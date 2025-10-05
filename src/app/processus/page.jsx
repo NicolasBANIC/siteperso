@@ -198,7 +198,7 @@ export default function ProcessusPage() {
           <div className="grid-auto-fit gap-6">
             {benefits.map((benefit, index) => (
               <ScrollReveal key={benefit.title} direction="up" delay={index * 50}>
-                <div className="section-card group hover:border-[var(--color-accent)] transition-all duration-300 gpu-accelerated">
+                <div className="section-card group hover:border-[var(--color-accent)] hover:shadow-matrix-lg transition-all duration-300 gpu-accelerated">
                   <h3 className="heading-tertiary">{benefit.title}</h3>
                   <p className="mt-3 body-small">{benefit.description}</p>
                 </div>
@@ -259,7 +259,7 @@ export default function ProcessusPage() {
               },
             ].map((faq, index) => (
               <ScrollReveal key={index} direction="up" delay={index * 50}>
-                <details className="section-card group cursor-pointer gpu-accelerated">
+                <details className="section-card group cursor-pointer hover:border-[var(--color-accent)] hover:shadow-matrix gpu-accelerated">
                   <summary className="flex cursor-pointer items-center justify-between heading-tertiary list-none">
                     {faq.question}
                     <span className="text-[var(--color-accent)] transition-transform group-open:rotate-180">▼</span>

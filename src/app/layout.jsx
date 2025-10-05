@@ -1,10 +1,9 @@
 import { Inter, Space_Grotesk, Fira_Code } from 'next/font/google';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import ThemeToggle from '@/components/ThemeToggle';
 import BackToTop from '@/components/BackToTop';
 import ScrollProgress from '@/components/ScrollProgress';
-import ThemeProvider from '@/components/ThemeProvider';
+import MatrixRain from '@/components/MatrixRain';
 
 import './globals.css';
 
@@ -160,7 +159,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr">
       <head>
         {/* Meta tags essentiels */}
         <meta charSet="utf-8" />
@@ -177,28 +176,25 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${firaCode.variable} ${inter.className} bg-[var(--color-background)] text-[var(--color-foreground)] antialiased transition-colors motion-reduce:transition-none`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${firaCode.variable} ${inter.className} text-[var(--color-foreground)]`}
       >
-        <ThemeProvider>
-          {/* TODO: AA - Skip link pour accessibilité clavier (WCAG AA) */}
-          <a 
-            href="#main" 
-            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-black focus:text-white focus:px-3 focus:py-2"
-          >
-            Aller au contenu
-          </a>
-          
-          <ScrollProgress />
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main id="main" className="flex-1">
-              {children}
-            </main>
-            <Footer />
-          </div>
-          <ThemeToggle />
-          <BackToTop />
-        </ThemeProvider>
+        {/* TODO: AA - Skip link pour accessibilité clavier (WCAG AA) */}
+        <a 
+          href="#main" 
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-black focus:text-white focus:px-3 focus:py-2"
+        >
+          Aller au contenu
+        </a>
+        
+        <ScrollProgress />
+        <div className="relative z-10 flex min-h-screen flex-col">
+          <Header />
+          <main id="main" className="flex-1 pt-[73px]">
+            {children}
+          </main>
+          <Footer />
+        </div>
+        <BackToTop />
       </body>
     </html>
   );

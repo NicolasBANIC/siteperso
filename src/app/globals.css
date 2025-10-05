@@ -9,67 +9,63 @@
     box-sizing: border-box;
   }
 
-  /* Design Tokens - Refonte alignée avec mathieu-crevoulin.com */
+  /* Design Tokens - Charte Matrix : Anthracite, Blanc, Vert Matrix */
   :root {
-    color-scheme: dark;
-    /* Palette principale - Mode sombre par défaut */
-    --color-background: #0A192F;
-    --color-surface: #10253E;
-    --color-border: rgba(160, 174, 192, 0.16);
-    --color-foreground: #F5F7FA;
-    --color-muted: #A0AEC0;
+    color-scheme: light;
     
-    /* Accents */
-    --color-accent: #0D99FF;
-    --color-accent-secondary: #10B981;
-    --color-accent-tertiary: #9333EA;
-    --color-accent-matrix: #00FFBC;
-    --color-accent-foreground: #0A192F;
-    --color-error: #E53E3E;
+    /* Couleurs primaires - Charte Matrix */
+    --color-anthracite: #1A1A1A;
+    --color-white: #FFFFFF;
+    --color-matrix: #0B8A3A;
+    --color-matrix-2: #0E5F3B;
     
-    /* Focus & interactions */
-    --color-ring: rgba(13, 153, 255, 0.45);
+    /* Palette principale - Fond blanc pour contraste avec Matrix Rain */
+    --color-background: #FFFFFF;
+    --color-surface: #F8FAFB;
+    --color-surface-hover: #EFF3F6;
+    --color-border: rgba(26, 26, 26, 0.12);
+    --color-border-hover: rgba(11, 138, 58, 0.4);
+    --color-foreground: #1A1A1A;
+    --color-muted: #475569;
+    
+    /* Accents - Palette Matrix harmonisée */
+    --color-accent: #0B8A3A;
+    --color-accent-hover: #0E5F3B;
+    --color-accent-secondary: #0B8A3A;
+    --color-accent-secondary-hover: #0E5F3B;
+    --color-accent-tertiary: #0B8A3A;
+    --color-accent-matrix: #0B8A3A;
+    --color-accent-matrix-hover: #0E5F3B;
+    --color-accent-foreground: #FFFFFF;
+
+    --color-error: #DC2626;
+    
+    /* Or métallique */
+    --color-gold: #D4AF37;
+    --color-gold-light: #FFD700;
+    --color-gold-dark: #B8860B;
+    
+    /* Focus & interactions - Vert Matrix */
+    --color-ring: rgba(11, 138, 58, 0.35);
+    --color-ring-gold: rgba(212, 175, 55, 0.45);
     
     /* Radius */
-    --radius-md: 6px;
-    --radius-lg: 12px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
     
-    /* Shadows */
-    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --shadow-elevation: 0 4px 20px rgba(0, 0, 0, 0.25);
+    /* Shadows - Charte Matrix */
+    --shadow-sm: 0 8px 16px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 16px 32px rgba(11, 138, 58, 0.18);
+    --shadow-lg: 0 24px 48px rgba(11, 138, 58, 0.24);
+    --shadow-ring: 0 0 0 3px rgba(11, 138, 58, 0.35);
     
     /* Logo BANDEV tokens */
-    --logo-gold: #E5C461;
-    --logo-green: #00FF45;
-    --logo-ink: #FFFFFF;
-    --logo-keyline: rgba(0, 0, 0, 0.65);
-  }
-
-  .light {
-    color-scheme: light;
-    /* Palette principale - Mode clair */
-    --color-background: #F5F7FA;
-    --color-surface: #FFFFFF;
-    --color-border: rgba(10, 25, 47, 0.12);
-    --color-foreground: #0A192F;
-    --color-muted: #64748B;
-    
-    /* Accents */
-    --color-accent: #0D99FF;
-    --color-accent-secondary: #10B981;
-    --color-accent-tertiary: #9333EA;
-    --color-accent-matrix: #00C49A;
-    --color-accent-foreground: #FFFFFF;
-    --color-error: #E53E3E;
-    
-    /* Focus & interactions */
-    --color-ring: rgba(13, 153, 255, 0.45);
-    
-    /* Logo BANDEV tokens (light mode) */
-    --logo-gold: #8C6A18;
-    --logo-green: #00C49A;
+    --logo-gold: #D4AF37;
+    --logo-green: #00FF41;
+    --logo-blue: #0D99FF;
     --logo-ink: #0A192F;
-    --logo-keyline: rgba(255, 255, 255, 0.85);
   }
 
   html {
@@ -85,10 +81,13 @@
   }
 
   body {
-    @apply bg-[var(--color-background)] text-[var(--color-foreground)] antialiased;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
     font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
     line-height: 1.6;
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     /* CRITIQUE : Empêcher le scroll horizontal */
     overflow-x: hidden;
     max-width: 100vw;
@@ -168,15 +167,68 @@
   }
 
   *:focus-visible {
-    @apply outline-none ring-2 ring-[var(--color-ring)] ring-offset-2 ring-offset-white dark:ring-offset-slate-900;
+    @apply outline-none ring-2 ring-[var(--color-ring)] ring-offset-2 ring-offset-white;
   }
 
   ::selection {
-    background-color: rgba(0, 71, 171, 0.2);
+    background-color: rgba(11, 138, 58, 0.15);
+    color: var(--color-foreground);
   }
-
-  .dark ::selection {
-    background-color: rgba(0, 255, 65, 0.15);
+  
+  /* Styles améliorés pour les inputs et formulaires */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  textarea,
+  select {
+    @apply w-full rounded-lg border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-foreground)] transition-all duration-300;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  input[type="tel"]:hover,
+  input[type="url"]:hover,
+  input[type="password"]:hover,
+  input[type="number"]:hover,
+  input[type="date"]:hover,
+  textarea:hover,
+  select:hover {
+    border-color: var(--color-border-hover);
+    background-color: var(--color-surface-hover);
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  input[type="number"]:focus,
+  input[type="date"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--color-matrix-2);
+    background-color: var(--color-background);
+    box-shadow: 0 0 0 3px rgba(11, 138, 58, 0.15);
+    outline: none;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-muted);
+    opacity: 0.7;
+  }
+  
+  label {
+    @apply block font-medium text-[var(--color-foreground)] mb-2;
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* 12-14px */
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
   }
 }
 
@@ -285,38 +337,96 @@
   }
 
   .card {
-    @apply rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-sm transition-shadow duration-200 hover:shadow-md dark:shadow-none;
+    @apply rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 transition-all duration-300;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .card:hover {
+    border-color: var(--color-border-hover);
+    background-color: var(--color-surface-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .card:hover {
+      transform: none;
+    }
   }
 
   .eyebrow {
-    @apply uppercase tracking-[0.08em] text-[var(--color-accent)] dark:text-[var(--color-accent-matrix)];
+    @apply uppercase tracking-[0.08em] text-[var(--color-accent-matrix)];
     font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* 12-14px */
     font-weight: 600;
     letter-spacing: 0.08em;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-[var(--color-accent-foreground)] shadow-lg shadow-[var(--color-accent)]/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[var(--color-accent)]/30 motion-reduce:transform-none motion-reduce:shadow-none;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 transition-all duration-300;
+    background: linear-gradient(135deg, var(--color-anthracite) 0%, var(--color-accent) 100%);
+    color: var(--color-foreground);
     font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
     font-weight: 600;
     line-height: 1.4;
     letter-spacing: 0.005em;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-[var(--color-border)] bg-transparent px-6 py-3 text-[var(--color-foreground)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] motion-reduce:transform-none;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-[var(--color-border)] bg-transparent px-6 py-3 text-[var(--color-foreground)] transition-all duration-300;
     font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: 0.005em;
   }
+  
+  .btn-secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: linear-gradient(135deg, rgba(0, 255, 65, 0.05) 0%, rgba(0, 255, 188, 0.1) 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-matrix);
+  }
+  
+  .btn-secondary:active {
+    transform: translateY(0);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: none;
+    }
+  }
 
   .badge {
-    @apply inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-accent)]/10 px-3 py-1 text-[var(--color-accent)] dark:border-[var(--color-accent-matrix)]/30 dark:bg-[var(--color-accent-matrix)]/10 dark:text-[var(--color-accent-matrix)];
+    @apply inline-flex items-center gap-2 rounded-full border border-[var(--color-accent-matrix)]/30 bg-[var(--color-accent-matrix)]/10 px-3 py-1 text-[var(--color-accent-matrix)] transition-all duration-300;
     font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* 12-14px */
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: 0.01em;
+  }
+  
+  .badge:hover {
+    border-color: var(--color-accent-matrix);
+    background-color: var(--color-accent-matrix)/20;
+    transform: scale(1.05);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .badge:hover {
+      transform: none;
+    }
   }
 
   .section-title {
@@ -338,6 +448,12 @@
 
   .container-page {
     @apply mx-auto max-w-7xl space-y-16 px-6 py-12 md:space-y-24 md:py-20;
+    width: 100%;
+  }
+
+  /* Container sans padding vertical pour les sections qui gèrent leur propre padding */
+  .container-page-no-py {
+    @apply mx-auto max-w-7xl px-6;
     width: 100%;
   }
 

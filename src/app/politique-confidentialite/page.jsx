@@ -1,5 +1,3 @@
-import { Metadata } from "next";
-
 export const metadata = {
   title: "Politique de Confidentialité | BANDEV - Nicolas Banic",
   description: "Politique de confidentialité et protection des données personnelles du site BANDEV.",

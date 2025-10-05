@@ -116,9 +116,9 @@ export default function ServicesPage() {
           const Icon = service.icon;
           return (
             <ScrollReveal key={service.title} direction="up" delay={index * 50}>
-              <article className="card group flex flex-col gap-6 hover:border-[var(--color-accent)] transition-all duration-300">
+              <article className="card group flex flex-col gap-6 hover:border-[var(--color-accent)] hover:shadow-matrix-lg transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)] transition-colors group-hover:bg-[var(--color-accent)] group-hover:text-white">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-anthracite)]/20 to-[var(--color-accent)]/10 text-[var(--color-accent)] transition-all group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:text-[var(--color-foreground)] group-hover:shadow-matrix">
                     <Icon className="h-7 w-7" aria-hidden="true" />
                   </div>
                   <div>
@@ -169,8 +169,8 @@ export default function ServicesPage() {
               },
             ].map((item, index) => (
               <ScrollReveal key={item.step} direction="up" delay={index * 100}>
-                <div className="text-center">
-                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-heading-lg font-bold text-[var(--color-accent)]">
+                <div className="text-center group">
+                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-anthracite)] to-[var(--color-accent)] text-heading-lg font-bold text-[var(--color-foreground)] shadow-matrix transition-all duration-300 group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:shadow-matrix-lg">
                     {item.step}
                   </div>
                   <h3 className="heading-tertiary">{item.title}</h3>

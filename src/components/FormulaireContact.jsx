@@ -172,7 +172,7 @@ export default function FormulaireContact() {
 
       {/* Nom */}
       <div>
-        <label htmlFor="nom" className="block text-ui-sm font-medium text-[var(--color-foreground)] mb-2">
+        <label htmlFor="nom" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
           Nom complet <span className="text-red-500">*</span>
         </label>
         <input
@@ -197,7 +197,7 @@ export default function FormulaireContact() {
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-ui-sm font-medium text-[var(--color-foreground)] mb-2">
+        <label htmlFor="email" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
           Email <span className="text-red-500">*</span>
         </label>
         <input
@@ -220,7 +220,7 @@ export default function FormulaireContact() {
 
       {/* Sujet */}
       <div>
-        <label htmlFor="sujet" className="block text-ui-sm font-medium text-[var(--color-foreground)] mb-2">
+        <label htmlFor="sujet" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
           Sujet <span className="text-red-500">*</span>
         </label>
         <input
@@ -243,7 +243,7 @@ export default function FormulaireContact() {
 
       {/* Budget (optionnel) */}
       <div>
-        <label htmlFor="budget" className="block text-ui-sm font-medium text-[var(--color-foreground)] mb-2">
+        <label htmlFor="budget" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
           Budget estimé <span className="text-[var(--color-muted)] text-body-sm">(optionnel)</span>
         </label>
         <select
@@ -268,7 +268,7 @@ export default function FormulaireContact() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-ui-sm font-medium text-[var(--color-foreground)] mb-2">
+        <label htmlFor="message" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -296,7 +296,7 @@ export default function FormulaireContact() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="btn-primary w-full md:w-auto flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-lg)] bg-[var(--color-anthracite)] px-6 py-3 text-ui font-semibold text-white shadow-[var(--shadow-sm)] transition-all md:w-auto disabled:cursor-not-allowed disabled:opacity-50 focus-visible:[box-shadow:var(--shadow-ring)] focus-visible:ring-0 hover:bg-gradient-to-br hover:from-[var(--color-matrix)] hover:to-[var(--color-matrix-2)] hover:[box-shadow:var(--shadow-md)]"
       >
         {status === 'loading' ? (
           <>

@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 
-export default function TechBadge({ name, logo, description }) {
+const TechBadge = memo(function TechBadge({ name, logo, description }) {
   const [isHovered, setIsHovered] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
@@ -63,4 +63,6 @@ export default function TechBadge({ name, logo, description }) {
       </AnimatePresence>
     </div>
   );
-}
+});
+
+export default TechBadge;

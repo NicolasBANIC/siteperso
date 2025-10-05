@@ -35,19 +35,19 @@ export default function CTASection({
 
   return (
     <ScrollReveal direction="up">
-      <section className={`rounded-lg bg-gradient-to-r from-accent to-accentSecondary px-8 py-12 md:py-16 text-white shadow-card ${className}`}>
+      <section className={`rounded-lg bg-gradient-to-r from-[var(--color-anthracite)] to-[var(--color-accent)] px-8 py-12 md:py-16 text-[var(--color-foreground)] shadow-[var(--shadow-lg)] ${className}`}>
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-heading-xl md:text-display font-bold tracking-tight font-heading">
             {title}
           </h2>
-          <p className="text-body-lg text-white/90 max-w-2xl mx-auto">
+          <p className="text-body-lg text-foreground/90 max-w-2xl mx-auto">
             {description}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <motion.div {...buttonHoverProps}>
               <Link
                 href={primaryButtonHref}
-                className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-ui font-semibold text-accent shadow-lg hover:shadow-xl transition-shadow motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent"
+                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-tertiary)] px-8 py-3 text-ui font-semibold text-[var(--color-foreground)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] hover:from-[var(--color-accent-tertiary)] hover:to-[var(--color-accent)] transition-all motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-anthracite)]"
               >
                 {primaryButtonText}
               </Link>
@@ -56,7 +56,8 @@ export default function CTASection({
               <motion.div {...buttonHoverProps}>
                 <Link
                   href={secondaryButtonHref}
-                  className="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-3 text-ui font-semibold text-white hover:bg-white hover:text-accent transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent"
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-[var(--color-border)] px-8 py-3 text-ui font-semibold text-[var(--color-foreground)] shadow-[var(--shadow-sm)] hover:border-[var(--color-border-hover)] hover:bg-gradient-to-r hover:from-[var(--color-accent)] hover:to-[var(--color-accent-tertiary)] hover:text-[var(--color-foreground)] hover:shadow-[var(--shadow-md)] transition-all motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-anthracite)]"
+}
                 >
                   {secondaryButtonText}
                 </Link>

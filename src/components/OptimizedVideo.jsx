@@ -53,7 +53,7 @@ export default function OptimizedVideo({
   if (disableOnMobile && isMobile) {
     return (
       <div 
-        className={`h-full w-full bg-gradient-to-br from-[#0047AB]/20 via-[#006D77]/20 to-[#0047AB]/20 ${className}`}
+        className={`h-full w-full bg-gradient-to-br from-[var(--color-anthracite)]/20 via-[var(--color-accent)]/20 to-[var(--color-anthracite)]/20 ${className}`}
         aria-hidden="true"
       />
     );
@@ -73,7 +73,7 @@ export default function OptimizedVideo({
         backfaceVisibility: 'hidden'
       }}
     >
-      <source src={src} type="video/mp4" />
+      <source src={src} type={src.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
     </video>
   );
 }

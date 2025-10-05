@@ -1,5 +1,3 @@
-import { Metadata } from "next";
-
 export const metadata = {
   title: "Mentions Légales | BANDEV - Nicolas Banic",
   description: "Mentions légales du site BANDEV, développeur web freelance.",

@@ -142,8 +142,8 @@ export default function AproposPage() {
               const Icon = value.icon;
               return (
                 <ScrollReveal key={value.title} direction="up" delay={index * 100}>
-                  <div className="section-card center-content gpu-accelerated">
-                    <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
+                  <div className="section-card center-content gpu-accelerated group hover:shadow-matrix-lg transition-all duration-300">
+                    <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-anthracite)]/20 to-[var(--color-accent)]/10 text-[var(--color-accent)] transition-all duration-300 group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:text-[var(--color-foreground)] group-hover:shadow-matrix">
                       <Icon className="h-7 w-7" aria-hidden="true" />
                     </div>
                     <h3 className="heading-tertiary">{value.title}</h3>

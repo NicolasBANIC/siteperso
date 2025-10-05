@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useReducedMotion } from '@/lib/useReducedMotion';
@@ -9,7 +10,7 @@ import { useReducedMotion } from '@/lib/useReducedMotion';
  * Variantes : service, project, price, testimonial
  * Props : title, description, icon/image, actions, tags
  */
-export function Card({ 
+const Card = memo(function Card({ 
   variant = 'service',
   title,
   description,
@@ -23,13 +24,13 @@ export function Card({
 }) {
   const prefersReducedMotion = useReducedMotion();
   
-  const baseStyles = 'rounded-lg bg-surface border border-border p-8 transition-all duration-300 motion-reduce:transition-none';
+  const baseStyles = 'rounded-lg bg-surface border border-border p-8 shadow-[var(--shadow-sm)] transition-all duration-300 motion-reduce:transition-none';
   
   const variantStyles = {
-    service: 'hover:shadow-card hover:border-accent',
-    project: 'overflow-hidden hover:shadow-card',
-    price: 'relative hover:shadow-xl',
-    testimonial: 'bg-surface/50 backdrop-blur-sm',
+    service: 'hover:[box-shadow:var(--shadow-md)] hover:border-borderHover',
+    project: 'overflow-hidden hover:[box-shadow:var(--shadow-md)] hover:border-borderHover',
+    price: 'relative hover:[box-shadow:var(--shadow-lg)] hover:border-borderHover',
+    testimonial: 'bg-surface/50 backdrop-blur-sm shadow-[var(--shadow-sm)]',
   };
   
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
@@ -77,7 +78,7 @@ export function Card({
       
       {/* Title */}
       {title && (
-        <h3 className="text-xl font-heading font-semibold text-foreground mb-4">
+        <h3 className="mb-4 text-heading-md font-heading font-semibold text-foreground">
           {title}
         </h3>
       )}
@@ -114,6 +115,7 @@ export function Card({
       )}
     </motion.div>
   );
-}
+});
 
+export { Card };
 export default Card;

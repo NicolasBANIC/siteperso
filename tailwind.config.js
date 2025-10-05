@@ -8,18 +8,29 @@ module.exports = {
         mono: ['var(--font-fira-code)', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
       },
       colors: {
-        background: '#0A192F',
-        surface: '#10253E',
-        foreground: '#F5F7FA',
-        muted: '#A0AEC0',
-        accent: '#0D99FF',
-        accentSecondary: '#10B981',
-        accentTertiary: '#9333EA',
-        error: '#E53E3E',
-        // Compatibilité avec les variables CSS existantes
-        'accent-secondary': 'var(--color-accent-secondary, #10B981)',
-        'accent-matrix': 'var(--color-accent-matrix, #00FFBC)',
+        // Charte Matrix : Anthracite, Blanc, Vert Matrix
+        anthracite: 'var(--color-anthracite)',
+        white: 'var(--color-white)',
+        matrix: 'var(--color-matrix)',
+        matrix2: 'var(--color-matrix-2)',
+        
+        // Palette étendue
+        background: 'var(--color-background)',
+        surface: 'var(--color-surface)',
+        surfaceHover: 'var(--color-surface-hover)',
+        foreground: 'var(--color-foreground)',
+        muted: 'var(--color-muted)',
         border: 'var(--color-border)',
+        borderHover: 'var(--color-border-hover)',
+        accent: 'var(--color-accent)',
+        accentHover: 'var(--color-accent-hover)',
+        accentSecondary: 'var(--color-accent-secondary)',
+        accentTertiary: 'var(--color-accent-tertiary)',
+        accentMatrix: 'var(--color-accent-matrix)',
+        accentMatrixHover: 'var(--color-accent-matrix-hover)',
+        ring: 'var(--color-ring)',
+
+        error: 'var(--color-error)',
       },
       fontSize: {
         'hero': 'clamp(2.5rem, 5vw, 4rem)', // 40-64px
@@ -47,15 +58,39 @@ module.exports = {
         '48': '3rem',
       },
       borderRadius: {
-        'md': '6px',
-        'lg': '12px',
-        'xl': '1.5rem',
-        '2xl': '2rem',
+        'sm': 'var(--radius-sm)',
+        'md': 'var(--radius-md)',
+        'lg': 'var(--radius-lg)',
+        'xl': 'var(--radius-xl)',
+        '2xl': 'var(--radius-xl)',
+      },
+      transitionDuration: {
+        'fast': '200ms',
       },
       boxShadow: {
-        'card': '0 4px 12px rgba(0, 0, 0, 0.1)',
-        'elevation': '0 4px 20px rgba(0, 0, 0, 0.25)',
-        'card-hover': '0 8px 32px rgba(0, 0, 0, 0.12)',
+        'matrix-sm': 'var(--shadow-sm)',
+        'matrix-md': 'var(--shadow-md)',
+        'matrix-lg': 'var(--shadow-lg)',
+        'matrix-ring': 'var(--shadow-ring)',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        shimmer: 'shimmer 3s ease-in-out infinite',
+        'fade-in': 'fade-in 0.5s ease-out',
+        'slide-up': 'slide-up 0.6s ease-out',
       },
     },
   },

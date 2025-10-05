@@ -106,7 +106,7 @@ export default function MockDashboard({ className = "" }) {
             <button className="rounded-md bg-white/10 px-3 py-1 text-xs text-white transition-colors hover:bg-white/20">
               Jour
             </button>
-            <button className="rounded-md bg-blue-500/20 px-3 py-1 text-xs text-blue-400">
+            <button className="rounded-md bg-[var(--color-accent)]/20 px-3 py-1 text-xs text-[var(--color-accent)]">
               Semaine
             </button>
             <button className="rounded-md bg-white/10 px-3 py-1 text-xs text-white transition-colors hover:bg-white/20">
@@ -123,7 +123,7 @@ export default function MockDashboard({ className = "" }) {
               className="group relative flex-1 transition-all duration-500"
             >
               <div
-                className="w-full rounded-t-lg bg-gradient-to-t from-blue-500 to-purple-500 transition-all duration-500 group-hover:from-blue-400 group-hover:to-purple-400"
+                className="w-full rounded-t-lg bg-gradient-to-t from-[var(--color-accent)] to-[var(--color-accent-secondary)] transition-all duration-500 group-hover:from-[var(--color-accent-secondary)] group-hover:to-[var(--color-accent)]"
                 style={{ height: `${value}%` }}
               />
               <div className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-black/80 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
@@ -145,8 +145,8 @@ export default function MockDashboard({ className = "" }) {
       </div>
 
       {/* Glow effect */}
-      <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-blue-500 opacity-20 blur-3xl" />
-      <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-purple-500 opacity-20 blur-3xl" />
+      <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-[var(--color-accent)] opacity-20 blur-3xl" />
+      <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-[var(--color-accent-secondary)] opacity-20 blur-3xl" />
     </div>
   );
 }

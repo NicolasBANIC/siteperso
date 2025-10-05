@@ -205,7 +205,7 @@ export default function ParticlesBackground({ interactive = false }) { // Désac
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 opacity-40 dark:opacity-30"
+      className="absolute inset-0 opacity-40"
       aria-hidden="true"
     />
   );

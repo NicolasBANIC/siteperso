@@ -1,4 +1,4 @@
-import FormulaireContact from "@/components/FormulaireContact";
+﻿import FormulaireContact from "@/components/FormulaireContact";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -38,13 +38,13 @@ const reseaux = [
     icon: Linkedin,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/nicolasbanic",
-    color: "hover:text-blue-600 dark:hover:text-blue-400"
+    color: "hover:text-[var(--color-accent)]"
   },
   {
     icon: Github,
     label: "GitHub",
     href: "https://github.com/nicolasbanic",
-    color: "hover:text-gray-900 dark:hover:text-white"
+    color: "hover:text-[var(--color-accent)]"
   }
 ];
 
@@ -80,10 +80,10 @@ export default function ContactPage() {
             <ScrollReveal>
               <div className="card">
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
                     Envoyez-moi un message
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600">
                     Je vous répondrai dans les plus brefs délais.
                   </p>
                 </div>
@@ -95,35 +95,35 @@ export default function ContactPage() {
             <div className="space-y-6">
               <ScrollReveal delay={0.1}>
                 <div className="card">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+                  <h2 className="text-xl font-bold text-gray-900 mb-6">
                     Coordonnées
                   </h2>
                   <div className="space-y-6">
                     {coordonnees.map((item, index) => {
                       const Icon = item.icon;
                       return (
-                        <div key={index} className="flex items-start gap-4">
-                          <div className="flex-shrink-0 w-10 h-10 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg flex items-center justify-center">
+                        <div key={index} className="flex items-start gap-4 group">
+                          <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[var(--color-anthracite)]/20 to-[var(--color-accent)]/10 text-[var(--color-accent)] rounded-lg flex items-center justify-center transition-all duration-300 group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:text-[var(--color-foreground)] group-hover:shadow-matrix">
                             <Icon className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                            <p className="text-sm text-gray-500 mb-1">
                               {item.label}
                             </p>
                             {item.href ? (
                               <a 
                                 href={item.href}
-                                className="font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                className="font-medium text-gray-900 hover:text-[var(--color-accent)] transition-colors"
                               >
                                 {item.value}
                               </a>
                             ) : (
-                              <p className="font-medium text-gray-900 dark:text-white">
+                              <p className="font-medium text-gray-900">
                                 {item.value}
                               </p>
                             )}
                             {item.subtext && (
-                              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                              <p className="text-sm text-gray-500 mt-1">
                                 {item.subtext}
                               </p>
                             )}
@@ -137,7 +137,7 @@ export default function ContactPage() {
 
               <ScrollReveal delay={0.2}>
                 <div className="card">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+                  <h2 className="text-xl font-bold text-gray-900 mb-6">
                     Réseaux sociaux
                   </h2>
                   <div className="flex gap-4">
@@ -149,7 +149,7 @@ export default function ContactPage() {
                           href={reseau.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex items-center justify-center w-12 h-12 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg transition-all hover:scale-110 hover:shadow-md ${reseau.color}`}
+                          className={`flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[var(--color-anthracite)]/20 to-[var(--color-accent)]/10 text-[var(--color-accent)] rounded-lg transition-all hover:scale-110 hover:shadow-matrix hover:from-[var(--color-accent)] hover:to-[var(--color-accent-secondary)] hover:text-[var(--color-foreground)] ${reseau.color}`}
                           aria-label={reseau.label}
                         >
                           <Icon className="w-6 h-6" />
@@ -161,11 +161,11 @@ export default function ContactPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
-                <div className="card bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                <div className="card bg-gradient-to-br from-[var(--color-anthracite)]/5 to-[var(--color-accent)]/5 border-[var(--color-accent)]/20 hover:shadow-matrix transition-all duration-300">
+                  <h3 className="font-semibold text-gray-900 mb-2">
                     Vous préférez un devis détaillé ?
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <p className="text-sm text-gray-600 mb-4">
                     Remplissez le formulaire de demande de devis pour recevoir une proposition personnalisée sous 24h.
                   </p>
                   <Link href="/devis" className="btn-primary text-sm">

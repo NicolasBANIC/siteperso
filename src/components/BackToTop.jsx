@@ -50,7 +50,7 @@ export default function BackToTop() {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-accent to-accentSecondary text-white shadow-card hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="fixed bottom-8 right-8 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-anthracite to-accent text-foreground shadow-matrix hover:from-accent hover:to-accentTertiary hover:shadow-matrix-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
           aria-label="Retour en haut de la page"
           {...animationProps}
           {...hoverProps}

@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import { Star } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -15,7 +16,7 @@ import { useReducedMotion } from '@/lib/useReducedMotion';
  * @param {number} rating - Note sur 5 (défaut: 5)
  * @param {string} avatar - URL de l'avatar (défaut: placeholder)
  */
-export default function TestimonialCard({ 
+function TestimonialCard({ 
   name, 
   role, 
   company, 
@@ -32,7 +33,7 @@ export default function TestimonialCard({
 
   return (
     <motion.div 
-      className="bg-surface border border-border rounded-lg p-6 shadow-card hover:shadow-xl transition-shadow motion-reduce:transition-none"
+      className="bg-surface border border-border rounded-lg p-6 shadow-card hover:shadow-matrix-lg hover:border-accent transition-all duration-300 motion-reduce:transition-none"
       {...cardAnimationProps}
     >
       {/* Rating */}
@@ -78,3 +79,5 @@ export default function TestimonialCard({
     </motion.div>
   );
 }
+
+export default memo(TestimonialCard);

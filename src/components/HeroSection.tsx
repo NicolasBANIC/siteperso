@@ -116,7 +116,7 @@ export default function HeroSection({
           {badge && (
             <ScrollReveal direction="up">
               <div className={`flex ${textAlign === "center" ? "justify-center" : textAlign === "right" ? "justify-end" : "justify-start"}`}>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-ui-sm font-medium text-white backdrop-blur-sm">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-caption font-medium text-white backdrop-blur-sm">
                   {typeof badge === "object" && badge.icon ? (
                     <>
                       {/* Render icon from iconMap */}

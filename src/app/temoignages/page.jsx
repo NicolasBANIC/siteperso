@@ -1,4 +1,4 @@
-import TestimonialCard from "@/components/TestimonialCard";
+﻿import TestimonialCard from "@/components/TestimonialCard";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -107,7 +107,7 @@ export default function TemoignagesPage() {
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="gpu-accelerated text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-[var(--color-border)]"
+                  className="gpu-accelerated text-center p-6 bg-white rounded-xl shadow-sm border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:shadow-matrix transition-all duration-300"
                 >
                   <div className="text-3xl md:text-4xl font-bold text-[var(--color-accent)] mb-2">
                     {stat.value}
@@ -140,11 +140,11 @@ export default function TemoignagesPage() {
         <Container>
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center">
-              <Quote className="w-16 h-16 text-blue-600 dark:text-blue-400 mx-auto mb-6 opacity-50" />
-              <blockquote className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-8 leading-relaxed">
+              <Quote className="w-16 h-16 text-[var(--color-accent)] mx-auto mb-6 opacity-50" />
+              <blockquote className="text-2xl md:text-3xl font-light text-gray-900 mb-8 leading-relaxed">
                 "La satisfaction de mes clients est ma priorité absolue. Chaque projet est une opportunité de créer une solution qui dépasse les attentes."
               </blockquote>
-              <p className="text-gray-600 dark:text-gray-400 font-medium">
+              <p className="text-gray-600 font-medium">
                 Nicolas Banic — Développeur Web Freelance
               </p>
             </div>
