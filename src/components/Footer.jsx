@@ -78,7 +78,6 @@ export default function Footer() {
             <Link 
               href="/devis" 
               className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-matrix-2)] to-[var(--color-matrix)] px-6 py-3 text-sm font-medium text-white shadow-[var(--shadow-sm)] transition-all duration-fast hover:shadow-[var(--shadow-md)] hover:[box-shadow:var(--shadow-ring)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
-}
             >
               Demander un devis
             </Link>
@@ -151,7 +150,6 @@ export default function Footer() {
                       key={link.href}
                       href={link.href}
                       className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-[var(--color-matrix)] transition-all duration-fast hover:border-[var(--color-accent)] hover:bg-gradient-to-br hover:from-[var(--color-matrix-2)] hover:to-[var(--color-matrix)] hover:text-white hover:scale-110 hover:[box-shadow:var(--shadow-ring)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2 motion-reduce:hover:scale-100"
-}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}

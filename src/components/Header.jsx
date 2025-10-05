@@ -179,7 +179,6 @@ export default function Header() {
         <motion.button
           type="button"
           className="relative z-[10000] inline-flex items-center justify-center rounded-full border border-transparent bg-white/10 p-2 text-white transition hover:bg-gradient-to-br hover:from-[var(--color-matrix-2)]/20 hover:to-[var(--color-matrix)]/20 hover:[box-shadow:var(--shadow-ring)] lg:hidden"
-}
           style={{ zIndex: 10000 }}
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-label="Ouvrir ou fermer le menu"

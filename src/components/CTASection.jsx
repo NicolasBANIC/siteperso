@@ -57,7 +57,6 @@ export default function CTASection({
                 <Link
                   href={secondaryButtonHref}
                   className="inline-flex items-center justify-center rounded-lg border-2 border-[var(--color-border)] px-8 py-3 text-ui font-semibold text-[var(--color-foreground)] shadow-[var(--shadow-sm)] hover:border-[var(--color-border-hover)] hover:bg-gradient-to-r hover:from-[var(--color-accent)] hover:to-[var(--color-accent-tertiary)] hover:text-[var(--color-foreground)] hover:shadow-[var(--shadow-md)] transition-all motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-anthracite)]"
-}
                 >
                   {secondaryButtonText}
                 </Link>

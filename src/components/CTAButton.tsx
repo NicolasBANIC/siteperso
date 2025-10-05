@@ -41,7 +41,6 @@ export default function CTAButton({
         <Link 
           href={href}
           className={`group relative inline-flex items-center gap-2 overflow-hidden rounded-full border-2 border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 px-8 py-4 text-ui font-semibold text-[var(--color-accent-foreground)] backdrop-blur-sm transition-all hover:border-[var(--color-accent)] hover:bg-gradient-to-br hover:from-[var(--color-accent)]/20 hover:to-[var(--color-accent-secondary)]/20 hover:[box-shadow:var(--shadow-sm)] hover:[box-shadow:var(--shadow-md)] focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-background)] ${className}`}
-}
         >
           {/* Glow effect */}
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-40" />

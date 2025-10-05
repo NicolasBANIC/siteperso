@@ -29,7 +29,6 @@ export default function ProjectCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-sm)] transition-all duration-300 hover:scale-[1.02] hover:border-[var(--color-border-hover)] hover:[box-shadow:var(--shadow-lg)] motion-reduce:transform-none"
-}
     >
       <Link href={`/portfolio/${slug}`} className="block">
         {/* Image */}
