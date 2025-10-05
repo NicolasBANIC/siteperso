@@ -15,13 +15,13 @@ import {
 import ScrollReveal from "@/components/ScrollReveal";
 import ServiceCard from "@/components/ServiceCard";
 import HeroContactForm from "@/components/HeroContactForm";
+import HeroContactFormNew from "@/components/HeroContactFormNew";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import TechBadge from "@/components/TechBadge";
 import MatrixRain from "@/components/MatrixRain";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import CodeTypingAnimation from "@/components/CodeTypingAnimation";
-import MockDashboard from "@/components/MockDashboard";
 import GlassmorphismCard from "@/components/GlassmorphismCard";
 import MeshGradient from "@/components/MeshGradient";
 import OptimizedVideo from "@/components/OptimizedVideo";
@@ -234,8 +234,8 @@ const stats = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section - Design épuré avec vidéo et Matrix Rain */}
-      <section className="relative min-h-[90vh] overflow-hidden bg-[var(--color-anthracite)]">
+      {/* Hero Section - Enhanced with media overlay and contact form */}
+      <section className="hero relative min-h-[90vh] overflow-hidden bg-[var(--color-anthracite)]">
         {/* Vidéo de fond */}
         <div className="absolute inset-0 z-0">
           <OptimizedVideo
@@ -243,20 +243,24 @@ export default function HomePage() {
             className=""
             opacity="opacity-70"
             disableOnMobile={false}
+            poster="/images/hero-placeholder.jpg"
           />
         </div>
 
-        {/* Matrix Rain par-dessus la vidéo */}
-        <div className="absolute inset-0 z-[1]">
+        {/* Media overlay for enhanced text readability */}
+        <div className="media-overlay"></div>
+
+        {/* Matrix Rain par-dessus l'overlay */}
+        <div className="absolute inset-0 z-[2]">
           <MatrixRain />
         </div>
         
         {/* Content */}
         <div className="container-page relative z-10 flex min-h-[90vh] items-center">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center w-full">
-            {/* Left: Text Content */}
+          <div className="grid gap-6 lg:gap-12 xl:gap-16 w-full xl:grid-cols-2 xl:items-center">
+            {/* Left: Text Content with enhanced readability */}
             <ScrollReveal direction="left">
-              <div className="space-y-8">
+              <div className="copy-wrap space-y-8 xl:max-w-none">
                 <div className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--color-accent-matrix)]/50 bg-[var(--color-accent-matrix)]/20 px-4 py-2 text-caption font-medium backdrop-blur-sm">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--color-accent-matrix)] opacity-75 motion-safe:animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
@@ -265,23 +269,23 @@ export default function HomePage() {
                   <span className="text-white font-semibold drop-shadow-md">Disponible pour de nouveaux projets</span>
                 </div>
 
-                <h1 className="text-hero font-bold tracking-tighter leading-tight text-white drop-shadow-lg">
+                <h1 className="hero-title text-hero font-black tracking-tighter leading-tight">
                   Créons ensemble votre{" "}
-                  <span className="text-[var(--color-accent-matrix)] drop-shadow-[0_0_15px_rgba(0,255,0,0.5)]">
+                  <span className="accent-word text-[var(--color-accent-matrix)] drop-shadow-[0_0_15px_rgba(0,255,0,0.5)]">
                     présence digitale
                   </span>{" "}
                   de demain
                 </h1>
 
-                <p className="text-body-lg leading-relaxed text-white/90 font-regular max-w-xl drop-shadow-md">
+                <p className="subtitle text-body-lg leading-relaxed max-w-xl">
                   Développeur web passionné, je conçois des sites et applications sur mesure qui allient design moderne et performances techniques.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
-                  <CTAButton href="/devis">
+                  <CTAButton href="/devis" className="btn overlay-btn">
                     Demander un devis
                   </CTAButton>
-                  <CTAButton href="/portfolio" variant="secondary" showIcon={false}>
+                  <CTAButton href="/portfolio" variant="secondary" showIcon={false} className="btn overlay-btn">
                     Voir mes projets
                   </CTAButton>
                 </div>
@@ -303,13 +307,10 @@ export default function HomePage() {
               </div>
             </ScrollReveal>
 
-            {/* Right: Visual or Illustration */}
+            {/* Right: Contact Form (replaces MockDashboard) */}
             <ScrollReveal direction="right" delay={200}>
-              <div className="relative hidden lg:block">
-                <div className="relative aspect-square w-full max-w-md mx-auto">
-                  <div className="absolute inset-0 rounded-full bg-[var(--color-accent-matrix)]/10 blur-3xl"></div>
-                  <MockDashboard />
-                </div>
+              <div className="relative flex justify-center xl:justify-end">
+                <HeroContactFormNew />
               </div>
             </ScrollReveal>
           </div>
@@ -626,19 +627,22 @@ export default function HomePage() {
             </ScrollReveal>
           </div>
 
-          {/* Dashboard Demo - Full Width */}
+          {/* Contact Invitation - Full Width */}
           <ScrollReveal direction="up" delay={200}>
             <div className="mt-8">
-              <div className="mb-4 text-center">
+              <div className="mb-6 text-center">
                 <h3 className="mb-2 text-heading-md font-semibold text-[var(--color-foreground)]">
-                  Interfaces SaaS professionnelles
+                  Prêt à transformer votre <span className="accent text-[var(--color-accent)]">vision digitale</span> ?
                 </h3>
-                <p className="text-body-sm text-[var(--color-muted)]">
-                  Dashboard interactif avec données en temps réel, graphiques animés, 
-                  et design moderne pour vos applications métier.
+                <p className="text-body-sm text-[var(--color-muted)] max-w-2xl mx-auto">
+                  Discutons de votre projet et créons ensemble une solution sur mesure qui répond parfaitement à vos besoins business.
                 </p>
               </div>
-              <MockDashboard />
+              <div className="text-center">
+                <CTAButton href="/contact" className="elevated">
+                  Démarrer votre projet
+                </CTAButton>
+              </div>
             </div>
           </ScrollReveal>
 

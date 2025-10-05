@@ -38,6 +38,9 @@
 - `next/image` obligatoire pour les visuels, avec placeholders locaux (`/images/...`) en fallback.
 - Optimisations : images adaptées, chargement paresseux par défaut, alt text informatif.
 
+# Testing
+- **targetFramework**: Playwright
+
 # Rappels
 - Supprimer ou ignorer tout dossier `pages/` pour éviter les conflits avec l'App Router.
 - Éviter les conflits de lockfiles (préférer `package-lock.json`).

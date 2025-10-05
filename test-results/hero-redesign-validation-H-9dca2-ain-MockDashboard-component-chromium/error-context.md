@@ -1,0 +1,684 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Aller au contenu" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Accueil BAN.DEV" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "BAN.DEV" [ref=e7] [cursor=pointer]
+        - navigation "Navigation principale" [ref=e8]:
+          - link "Accueil" [ref=e9] [cursor=pointer]:
+            - /url: /
+          - link "Services" [ref=e10] [cursor=pointer]:
+            - /url: /services
+          - link "Processus" [ref=e11] [cursor=pointer]:
+            - /url: /processus
+          - link "Portfolio" [ref=e12] [cursor=pointer]:
+            - /url: /portfolio
+          - link "Tarifs" [ref=e13] [cursor=pointer]:
+            - /url: /tarifs
+          - link "Témoignages" [ref=e14] [cursor=pointer]:
+            - /url: /temoignages
+          - link "À propos" [ref=e15] [cursor=pointer]:
+            - /url: /apropos
+          - link "Contact" [ref=e16] [cursor=pointer]:
+            - /url: /contact
+        - link "Demander un devis" [ref=e18] [cursor=pointer]:
+          - /url: /devis
+    - main [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e26]:
+          - generic [ref=e28]:
+            - generic [ref=e33]: Disponible pour de nouveaux projets
+            - heading "Créons ensemble votre présence digitale de demain" [level=1] [ref=e34]:
+              - text: Créons ensemble votre
+              - generic [ref=e35]: présence digitale
+              - text: de demain
+            - paragraph [ref=e36]: Développeur web passionné, je conçois des sites et applications sur mesure qui allient design moderne et performances techniques.
+            - generic [ref=e37]:
+              - link "Demander un devis" [ref=e39] [cursor=pointer]:
+                - /url: /devis
+                - generic [ref=e41] [cursor=pointer]: Demander un devis
+                - img [ref=e42] [cursor=pointer]
+              - link "Voir mes projets" [ref=e45] [cursor=pointer]:
+                - /url: /portfolio
+                - generic [ref=e47] [cursor=pointer]: Voir mes projets
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - img [ref=e50]
+                - generic [ref=e53]: Code de qualité
+              - generic [ref=e54]:
+                - img [ref=e55]
+                - generic [ref=e58]: Délais respectés
+              - generic [ref=e59]:
+                - img [ref=e60]
+                - generic [ref=e63]: Support inclus
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - heading "Contact rapide" [level=3] [ref=e72]
+              - paragraph [ref=e73]: Réponse sous 24h • Devis gratuit
+            - generic [ref=e74]:
+              - textbox [ref=e75]
+              - generic [ref=e76]:
+                - generic [ref=e77]: Votre nom *
+                - generic [ref=e78]:
+                  - generic:
+                    - img
+                  - textbox "Votre nom *" [ref=e79]
+              - generic [ref=e80]:
+                - generic [ref=e81]: Votre email *
+                - generic [ref=e82]:
+                  - generic:
+                    - img
+                  - textbox "Votre email *" [ref=e83]
+              - generic [ref=e84]:
+                - generic [ref=e85]: Votre message (facultatif)
+                - generic [ref=e86]:
+                  - generic:
+                    - img
+                  - textbox "Votre message (facultatif)" [ref=e87]
+              - generic [ref=e88]:
+                - checkbox "J'accepte que mes données soient utilisées pour me recontacter (RGPD) *" [ref=e90]
+                - generic [ref=e92] [cursor=pointer]: J'accepte que mes données soient utilisées pour me recontacter (RGPD) *
+              - button "Envoyer" [ref=e93] [cursor=pointer]:
+                - generic [ref=e94] [cursor=pointer]:
+                  - text: Envoyer
+                  - img [ref=e95] [cursor=pointer]
+            - generic [ref=e99]:
+              - generic [ref=e100]:
+                - img [ref=e101]
+                - generic [ref=e103]: Sans engagement
+              - generic [ref=e105]:
+                - img [ref=e106]
+                - generic [ref=e109]: Données sécurisées
+        - generic [ref=e111]:
+          - generic [ref=e112]: Découvrir
+          - img [ref=e113]
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - img [ref=e120]
+          - generic [ref=e126]: 0+
+          - generic [ref=e127]: Projets réalisés
+          - generic [ref=e128]: Sites et applications livrés
+        - generic [ref=e129]:
+          - img [ref=e131]
+          - generic [ref=e135]: 0%
+          - generic [ref=e136]: Satisfaction client
+          - generic [ref=e137]: Note moyenne sur tous les projets
+        - generic [ref=e138]:
+          - img [ref=e140]
+          - generic [ref=e143]: 0h
+          - generic [ref=e144]: Délai de réponse
+          - generic [ref=e145]: Réponse garantie sous 24h
+        - generic [ref=e146]:
+          - img [ref=e148]
+          - generic [ref=e151]: 0+
+          - generic [ref=e152]: Score Lighthouse
+          - generic [ref=e153]: Performance moyenne des sites
+      - generic [ref=e156]:
+        - generic [ref=e158]:
+          - generic [ref=e159]: Services
+          - heading "Une expertise technique complète pour propulser votre activité" [level=2] [ref=e160]
+          - paragraph [ref=e161]: Du maquettage à la mise en production, je maîtrise toute la chaîne de développement web moderne. Code propre, architecture scalable, et performances optimales garanties.
+        - generic [ref=e162]:
+          - article [ref=e164]:
+            - generic [ref=e166]:
+              - generic [ref=e167]: "01"
+              - img "Sites Vitrines Premium" [ref=e169]
+            - heading "Sites Vitrines Premium" [level=3] [ref=e170]
+            - paragraph [ref=e171]: Créez une présence en ligne professionnelle qui convertit vos visiteurs en clients. Architecture Next.js 14 avec App Router pour des performances optimales (score Lighthouse >95), SEO technique avancé avec métadonnées dynamiques, et design responsive mobile-first.
+            - generic [ref=e172]:
+              - generic [ref=e173]:
+                - img [ref=e174]
+                - generic [ref=e177]: Next.js 14 + React 19 pour des performances maximales
+              - generic [ref=e178]:
+                - img [ref=e179]
+                - generic [ref=e182]: "SEO technique : Schema.org, Open Graph, sitemap XML"
+              - generic [ref=e183]:
+                - img [ref=e184]
+                - generic [ref=e187]: Design System avec Tailwind CSS 4 et composants réutilisables
+              - generic [ref=e188]:
+                - img [ref=e189]
+                - generic [ref=e192]: Optimisation images WebP/AVIF avec lazy loading intelligent
+              - generic [ref=e193]:
+                - img [ref=e194]
+                - generic [ref=e197]: Accessibilité WCAG 2.1 niveau AA garantie
+            - generic [ref=e198]:
+              - generic [ref=e199]: Next.js
+              - generic [ref=e200]: React
+              - generic [ref=e201]: Tailwind CSS
+              - generic [ref=e202]: TypeScript
+          - article [ref=e204]:
+            - generic [ref=e206]:
+              - generic [ref=e207]: "02"
+              - img "E-commerce Sur Mesure" [ref=e209]
+            - heading "E-commerce Sur Mesure" [level=3] [ref=e210]
+            - paragraph [ref=e211]: Plateforme de vente en ligne complète avec gestion avancée. Intégration Stripe/PayPal pour paiements sécurisés, système de gestion de stock en temps réel, tableau de bord analytics avec métriques business, et architecture scalable pour supporter la croissance.
+            - generic [ref=e212]:
+              - generic [ref=e213]:
+                - img [ref=e214]
+                - generic [ref=e217]: "Paiements sécurisés : Stripe, PayPal, 3D Secure"
+              - generic [ref=e218]:
+                - img [ref=e219]
+                - generic [ref=e222]: Gestion de stock avec alertes automatiques
+              - generic [ref=e223]:
+                - img [ref=e224]
+                - generic [ref=e227]: "Dashboard admin : analytics, commandes, clients"
+              - generic [ref=e228]:
+                - img [ref=e229]
+                - generic [ref=e232]: Panier persistant avec Redis pour performances
+              - generic [ref=e233]:
+                - img [ref=e234]
+                - generic [ref=e237]: Email transactionnel automatisé (confirmations, tracking)
+            - generic [ref=e238]:
+              - generic [ref=e239]: Next.js
+              - generic [ref=e240]: Node.js
+              - generic [ref=e241]: PostgreSQL
+              - generic [ref=e242]: Stripe API
+          - article [ref=e244]:
+            - generic [ref=e246]:
+              - generic [ref=e247]: "03"
+              - img "Applications Web Métier" [ref=e249]
+            - heading "Applications Web Métier" [level=3] [ref=e250]
+            - paragraph [ref=e251]: Solutions sur mesure pour automatiser vos processus. Architecture microservices avec API REST/GraphQL, authentification JWT sécurisée avec refresh tokens, base de données relationnelle optimisée (PostgreSQL), et tests automatisés (Jest, Cypress) pour garantir la fiabilité.
+            - generic [ref=e252]:
+              - generic [ref=e253]:
+                - img [ref=e254]
+                - generic [ref=e257]: Architecture microservices modulaire et évolutive
+              - generic [ref=e258]:
+                - img [ref=e259]
+                - generic [ref=e262]: API REST/GraphQL documentée (Swagger/OpenAPI)
+              - generic [ref=e263]:
+                - img [ref=e264]
+                - generic [ref=e267]: Authentification JWT + OAuth2 pour sécurité maximale
+              - generic [ref=e268]:
+                - img [ref=e269]
+                - generic [ref=e272]: Base de données PostgreSQL avec migrations versionnées
+              - generic [ref=e273]:
+                - img [ref=e274]
+                - generic [ref=e277]: "CI/CD automatisé : tests, build, déploiement"
+            - generic [ref=e278]:
+              - generic [ref=e279]: React
+              - generic [ref=e280]: Node.js
+              - generic [ref=e281]: PostgreSQL
+              - generic [ref=e282]: Docker
+          - article [ref=e284]:
+            - generic [ref=e286]:
+              - generic [ref=e287]: "04"
+              - img "SEO & Performance" [ref=e289]
+            - heading "SEO & Performance" [level=3] [ref=e290]
+            - paragraph [ref=e291]: Optimisation technique complète pour dominer les résultats de recherche. Audit SEO technique approfondi (Core Web Vitals, indexation, structure), optimisation du code pour temps de chargement <1s, stratégie de contenu avec recherche de mots-clés, et suivi analytics avec rapports mensuels.
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - img [ref=e294]
+                - generic [ref=e297]: "Audit technique : Core Web Vitals, indexation, crawl"
+              - generic [ref=e298]:
+                - img [ref=e299]
+                - generic [ref=e302]: "Optimisation code : code splitting, tree shaking, compression"
+              - generic [ref=e303]:
+                - img [ref=e304]
+                - generic [ref=e307]: "Stratégie contenu : recherche mots-clés, maillage interne"
+              - generic [ref=e308]:
+                - img [ref=e309]
+                - generic [ref=e312]: Schema markup pour rich snippets Google
+              - generic [ref=e313]:
+                - img [ref=e314]
+                - generic [ref=e317]: "Suivi analytics : Google Analytics 4, Search Console"
+            - generic [ref=e318]:
+              - generic [ref=e319]: Google Analytics
+              - generic [ref=e320]: Search Console
+              - generic [ref=e321]: Lighthouse
+              - generic [ref=e322]: Screaming Frog
+        - link "Découvrir tous les services" [ref=e325] [cursor=pointer]:
+          - /url: /services
+          - text: Découvrir tous les services
+          - img [ref=e326] [cursor=pointer]
+      - generic [ref=e329]:
+        - generic [ref=e331]:
+          - generic [ref=e332]: Processus
+          - heading "Un processus éprouvé en 5 étapes pour garantir votre succès" [level=2] [ref=e333]
+          - paragraph [ref=e334]: Méthodologie agile, communication transparente, et livraison itérative pour un projet maîtrisé de bout en bout.
+        - generic [ref=e335]:
+          - article [ref=e338]:
+            - generic [ref=e339]: "01"
+            - generic [ref=e340]:
+              - generic [ref=e341]:
+                - generic [ref=e342]: "01"
+                - generic [ref=e343]: 3-5 jours
+              - generic [ref=e344]:
+                - generic [ref=e345]:
+                  - heading "Analyse & Cahier des Charges" [level=3] [ref=e346]
+                  - paragraph [ref=e347]: Étude approfondie de vos besoins métier, analyse de la concurrence, définition des user stories et des parcours utilisateurs. Création d'un cahier des charges technique détaillé avec architecture système, stack technologique, et planning de développement.
+                - generic [ref=e348]:
+                  - heading "Livrables" [level=4] [ref=e349]:
+                    - img [ref=e350]
+                    - text: Livrables
+                  - list [ref=e353]:
+                    - listitem [ref=e354]:
+                      - generic [ref=e356]: Cahier des charges technique complet
+                    - listitem [ref=e357]:
+                      - generic [ref=e359]: Analyse concurrentielle et benchmark
+                    - listitem [ref=e360]:
+                      - generic [ref=e362]: User stories et parcours utilisateurs
+                    - listitem [ref=e363]:
+                      - generic [ref=e365]: Architecture système et diagrammes
+                    - listitem [ref=e366]:
+                      - generic [ref=e368]: Planning détaillé avec jalons
+          - article [ref=e370]:
+            - generic [ref=e371]: "02"
+            - generic [ref=e372]:
+              - generic [ref=e373]:
+                - generic [ref=e374]: "02"
+                - generic [ref=e375]: 5-7 jours
+              - generic [ref=e376]:
+                - generic [ref=e377]:
+                  - heading "Design & Prototypage UI/UX" [level=3] [ref=e378]
+                  - paragraph [ref=e379]: Conception d'interfaces modernes et intuitives avec Figma. Création de wireframes, maquettes haute-fidélité, design system complet (couleurs, typographie, composants), et prototypes interactifs pour validation avant développement.
+                - generic [ref=e380]:
+                  - heading "Livrables" [level=4] [ref=e381]:
+                    - img [ref=e382]
+                    - text: Livrables
+                  - list [ref=e385]:
+                    - listitem [ref=e386]:
+                      - generic [ref=e388]: Wireframes et maquettes Figma
+                    - listitem [ref=e389]:
+                      - generic [ref=e391]: Design system complet et documenté
+                    - listitem [ref=e392]:
+                      - generic [ref=e394]: Prototypes interactifs cliquables
+                    - listitem [ref=e395]:
+                      - generic [ref=e397]: Guide de style et charte graphique
+                    - listitem [ref=e398]:
+                      - generic [ref=e400]: Assets optimisés (SVG, WebP, icônes)
+          - article [ref=e402]:
+            - generic [ref=e403]: "03"
+            - generic [ref=e404]:
+              - generic [ref=e405]:
+                - generic [ref=e406]: "03"
+                - generic [ref=e407]: 2-4 semaines
+              - generic [ref=e408]:
+                - generic [ref=e409]:
+                  - heading "Développement & Intégration" [level=3] [ref=e410]
+                  - paragraph [ref=e411]: "Développement avec les technologies les plus récentes : Next.js 14, React 19, TypeScript pour la robustesse. Code propre et maintenable suivant les best practices (SOLID, DRY), architecture modulaire, et intégration continue avec tests automatisés."
+                - generic [ref=e412]:
+                  - heading "Livrables" [level=4] [ref=e413]:
+                    - img [ref=e414]
+                    - text: Livrables
+                  - list [ref=e417]:
+                    - listitem [ref=e418]:
+                      - generic [ref=e420]: Code source versionné (Git) et documenté
+                    - listitem [ref=e421]:
+                      - generic [ref=e423]: Architecture modulaire et scalable
+                    - listitem [ref=e424]:
+                      - generic [ref=e426]: Tests unitaires et d'intégration (Jest, Cypress)
+                    - listitem [ref=e427]:
+                      - generic [ref=e429]: Documentation technique complète
+                    - listitem [ref=e430]:
+                      - generic [ref=e432]: Environnements dev, staging, production
+          - article [ref=e434]:
+            - generic [ref=e435]: "04"
+            - generic [ref=e436]:
+              - generic [ref=e437]:
+                - generic [ref=e438]: "04"
+                - generic [ref=e439]: 3-5 jours
+              - generic [ref=e440]:
+                - generic [ref=e441]:
+                  - heading "Tests & Assurance Qualité" [level=3] [ref=e442]
+                  - paragraph [ref=e443]: "Phase de QA rigoureuse : tests fonctionnels sur tous les navigateurs et devices, tests de performance (Lighthouse, WebPageTest), tests de sécurité (OWASP), et tests d'accessibilité (WCAG 2.1). Correction de tous les bugs avant mise en production."
+                - generic [ref=e444]:
+                  - heading "Livrables" [level=4] [ref=e445]:
+                    - img [ref=e446]
+                    - text: Livrables
+                  - list [ref=e449]:
+                    - listitem [ref=e450]:
+                      - generic [ref=e452]: Tests cross-browser (Chrome, Firefox, Safari, Edge)
+                    - listitem [ref=e453]:
+                      - generic [ref=e455]: Tests responsive (mobile, tablette, desktop)
+                    - listitem [ref=e456]:
+                      - generic [ref=e458]: Audit performance (Lighthouse score >90)
+                    - listitem [ref=e459]:
+                      - generic [ref=e461]: Tests sécurité (OWASP Top 10)
+                    - listitem [ref=e462]:
+                      - generic [ref=e464]: Rapport QA complet avec corrections
+          - article [ref=e466]:
+            - generic [ref=e467]: "05"
+            - generic [ref=e468]:
+              - generic [ref=e469]:
+                - generic [ref=e470]: "05"
+                - generic [ref=e471]: 2-3 jours + support continu
+              - generic [ref=e472]:
+                - generic [ref=e473]:
+                  - heading "Déploiement & Maintenance" [level=3] [ref=e474]
+                  - paragraph [ref=e475]: Mise en production sur infrastructure optimisée (Vercel, AWS, ou votre hébergeur). Configuration SSL, CDN, monitoring, et sauvegardes automatiques. Formation à l'utilisation, documentation utilisateur, et support technique pendant 3 mois inclus.
+                - generic [ref=e476]:
+                  - heading "Livrables" [level=4] [ref=e477]:
+                    - img [ref=e478]
+                    - text: Livrables
+                  - list [ref=e481]:
+                    - listitem [ref=e482]:
+                      - generic [ref=e484]: Déploiement sur infrastructure sécurisée
+                    - listitem [ref=e485]:
+                      - generic [ref=e487]: Configuration SSL, CDN, monitoring
+                    - listitem [ref=e488]:
+                      - generic [ref=e490]: Formation utilisateur et documentation
+                    - listitem [ref=e491]:
+                      - generic [ref=e493]: Support technique 3 mois inclus
+                    - listitem [ref=e494]:
+                      - generic [ref=e496]: Maintenance et mises à jour de sécurité
+        - link "En savoir plus sur mon processus" [ref=e499] [cursor=pointer]:
+          - /url: /processus
+          - text: En savoir plus sur mon processus
+          - img [ref=e500] [cursor=pointer]
+      - generic [ref=e503]:
+        - generic [ref=e505]:
+          - generic [ref=e506]: Stack Technique
+          - heading "Technologies modernes et performantes" [level=2] [ref=e507]
+          - paragraph [ref=e508]: J'utilise les meilleurs outils de l'écosystème JavaScript/TypeScript pour créer des applications rapides, sécurisées et évolutives.
+        - generic [ref=e510]:
+          - img "Logo Next.js" [ref=e514] [cursor=pointer]
+          - img "Logo React" [ref=e518] [cursor=pointer]
+          - img "Logo TypeScript" [ref=e522] [cursor=pointer]
+          - img "Logo Tailwind CSS" [ref=e526] [cursor=pointer]
+          - img "Logo Node.js" [ref=e530] [cursor=pointer]
+          - img "Logo PostgreSQL" [ref=e534] [cursor=pointer]
+          - img "Logo Git" [ref=e538] [cursor=pointer]
+          - img "Logo Figma" [ref=e542] [cursor=pointer]
+        - generic [ref=e545]:
+          - generic [ref=e546]:
+            - img [ref=e548]
+            - heading "Performances Optimales" [level=3] [ref=e550]
+            - paragraph [ref=e551]: Code splitting, lazy loading, et optimisations avancées pour des temps de chargement <1s
+          - generic [ref=e552]:
+            - img [ref=e554]
+            - heading "Sécurité Renforcée" [level=3] [ref=e556]
+            - paragraph [ref=e557]: HTTPS, authentification JWT, protection CSRF/XSS, et conformité RGPD garantie
+          - generic [ref=e558]:
+            - img [ref=e560]
+            - heading "Scalabilité Assurée" [level=3] [ref=e565]
+            - paragraph [ref=e566]: Architecture modulaire et microservices pour supporter votre croissance sans limites
+      - generic [ref=e568]:
+        - generic [ref=e570]:
+          - generic [ref=e571]: Innovation Technologique
+          - heading "Des solutions qui impressionnent par leur technologie" [level=2] [ref=e572]
+          - paragraph [ref=e573]: "Découvrez des exemples concrets de ce que je peux créer pour vous : interfaces modernes, animations fluides, et expériences utilisateur exceptionnelles."
+        - generic [ref=e578]:
+          - generic [ref=e579]:
+            - heading "Code en temps réel" [level=3] [ref=e580]
+            - paragraph [ref=e581]: Animation de code qui s'écrit automatiquement, parfait pour présenter vos solutions techniques de manière dynamique.
+          - generic [ref=e582]:
+            - generic [ref=e588]: JavaScript
+            - code [ref=e590]: "// Next.js API Route export async function GET(request) { const data = await fetchDat"
+        - generic [ref=e594]:
+          - generic [ref=e595]:
+            - heading "Prêt à transformer votre vision digitale ?" [level=3] [ref=e596]:
+              - text: Prêt à transformer votre
+              - generic [ref=e597]: vision digitale
+              - text: "?"
+            - paragraph [ref=e598]: Discutons de votre projet et créons ensemble une solution sur mesure qui répond parfaitement à vos besoins business.
+          - link "Démarrer votre projet" [ref=e601] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e603] [cursor=pointer]: Démarrer votre projet
+            - img [ref=e604] [cursor=pointer]
+        - generic [ref=e607]:
+          - generic [ref=e610]:
+            - img [ref=e612]
+            - heading "Code Moderne" [level=4] [ref=e616]
+            - paragraph [ref=e617]: React 19, Next.js 15, TypeScript pour un code robuste et maintenable
+          - generic [ref=e620]:
+            - img [ref=e622]
+            - heading "Performances Extrêmes" [level=4] [ref=e624]
+            - paragraph [ref=e625]: Optimisations avancées pour des temps de chargement ultra-rapides
+          - generic [ref=e628]:
+            - img [ref=e630]
+            - heading "Animations Fluides" [level=4] [ref=e635]
+            - paragraph [ref=e636]: Transitions et animations 60fps pour une expérience premium
+      - generic [ref=e638]:
+        - generic [ref=e640]:
+          - generic [ref=e641]: Tarifs
+          - heading "Des formules adaptées à vos besoins" [level=2] [ref=e642]
+          - paragraph [ref=e643]: Choisissez la formule qui correspond le mieux à votre projet. Tous les tarifs incluent un accompagnement personnalisé et un support de 3 mois.
+        - generic [ref=e644]:
+          - article [ref=e646]:
+            - generic [ref=e647]:
+              - heading "Starter" [level=3] [ref=e648]
+              - generic [ref=e649]:
+                - generic [ref=e650]: 2 500€
+                - generic [ref=e651]: / projet
+              - paragraph [ref=e652]: Idéal pour les petits projets et sites vitrines. Une solution clé en main pour démarrer votre présence en ligne.
+            - list [ref=e653]:
+              - listitem [ref=e654]:
+                - img [ref=e655]
+                - generic [ref=e657]: Site vitrine 5 pages maximum
+              - listitem [ref=e658]:
+                - img [ref=e659]
+                - generic [ref=e661]: Design responsive (mobile, tablette, desktop)
+              - listitem [ref=e662]:
+                - img [ref=e663]
+                - generic [ref=e665]: Optimisation SEO de base
+              - listitem [ref=e666]:
+                - img [ref=e667]
+                - generic [ref=e669]: Formulaire de contact
+              - listitem [ref=e670]:
+                - img [ref=e671]
+                - generic [ref=e673]: Hébergement 1 an inclus
+              - listitem [ref=e674]:
+                - img [ref=e675]
+                - generic [ref=e677]: Formation à la gestion du contenu
+              - listitem [ref=e678]:
+                - img [ref=e679]
+                - generic [ref=e681]: Support 3 mois inclus
+            - link "Choisir Starter" [ref=e683] [cursor=pointer]:
+              - /url: /devis?plan=starter
+              - generic [ref=e685] [cursor=pointer]: Choisir Starter
+          - article [ref=e687]:
+            - generic [ref=e688]:
+              - img [ref=e689]
+              - generic [ref=e691]: Populaire
+            - generic [ref=e692]:
+              - heading "Business" [level=3] [ref=e693]
+              - generic [ref=e694]:
+                - generic [ref=e695]: 5 500€
+                - generic [ref=e696]: / projet
+              - paragraph [ref=e697]: Pour les entreprises qui veulent se démarquer avec un site professionnel et performant.
+            - list [ref=e698]:
+              - listitem [ref=e699]:
+                - img [ref=e700]
+                - generic [ref=e702]: Site sur mesure jusqu'à 15 pages
+              - listitem [ref=e703]:
+                - img [ref=e704]
+                - generic [ref=e706]: Design personnalisé et moderne
+              - listitem [ref=e707]:
+                - img [ref=e708]
+                - generic [ref=e710]: Optimisation SEO avancée
+              - listitem [ref=e711]:
+                - img [ref=e712]
+                - generic [ref=e714]: Intégration CMS (WordPress/Strapi)
+              - listitem [ref=e715]:
+                - img [ref=e716]
+                - generic [ref=e718]: Animations et interactions
+              - listitem [ref=e719]:
+                - img [ref=e720]
+                - generic [ref=e722]: Tableau de bord analytics
+              - listitem [ref=e723]:
+                - img [ref=e724]
+                - generic [ref=e726]: Formation complète
+              - listitem [ref=e727]:
+                - img [ref=e728]
+                - generic [ref=e730]: Support 3 mois inclus
+            - link "Choisir Business" [ref=e732] [cursor=pointer]:
+              - /url: /devis?plan=business
+              - generic [ref=e734] [cursor=pointer]: Choisir Business
+          - article [ref=e736]:
+            - generic [ref=e737]:
+              - heading "Premium" [level=3] [ref=e738]
+              - generic [ref=e740]: Sur devis
+              - paragraph [ref=e741]: Pour les projets complexes nécessitant des fonctionnalités avancées et une architecture sur mesure.
+            - list [ref=e742]:
+              - listitem [ref=e743]:
+                - img [ref=e744]
+                - generic [ref=e746]: Application web complexe
+              - listitem [ref=e747]:
+                - img [ref=e748]
+                - generic [ref=e750]: Architecture scalable et sécurisée
+              - listitem [ref=e751]:
+                - img [ref=e752]
+                - generic [ref=e754]: Intégrations API tierces
+              - listitem [ref=e755]:
+                - img [ref=e756]
+                - generic [ref=e758]: Espace membre / authentification
+              - listitem [ref=e759]:
+                - img [ref=e760]
+                - generic [ref=e762]: Paiement en ligne (Stripe)
+              - listitem [ref=e763]:
+                - img [ref=e764]
+                - generic [ref=e766]: Dashboard admin personnalisé
+              - listitem [ref=e767]:
+                - img [ref=e768]
+                - generic [ref=e770]: Tests automatisés
+              - listitem [ref=e771]:
+                - img [ref=e772]
+                - generic [ref=e774]: Support prioritaire 6 mois
+            - link "Demander un devis" [ref=e776] [cursor=pointer]:
+              - /url: /devis?plan=premium
+              - generic [ref=e778] [cursor=pointer]: Demander un devis
+        - generic [ref=e781]:
+          - heading "Taux Journalier Moyen (TJM)" [level=3] [ref=e782]
+          - generic [ref=e783]:
+            - generic [ref=e784]: 450€
+            - generic [ref=e785]: / jour
+          - paragraph [ref=e786]: Pour les missions en régie ou les projets nécessitant une facturation au temps passé. Idéal pour les collaborations longue durée et les projets évolutifs.
+          - link "Discuter de votre projet" [ref=e788] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e790] [cursor=pointer]: Discuter de votre projet
+        - link "Voir tous les détails tarifaires" [ref=e793] [cursor=pointer]:
+          - /url: /tarifs
+          - text: Voir tous les détails tarifaires
+          - img [ref=e794] [cursor=pointer]
+      - generic [ref=e797]:
+        - generic [ref=e799]:
+          - generic [ref=e800]: Témoignages
+          - heading "Ils m'ont fait confiance" [level=2] [ref=e801]
+          - paragraph [ref=e802]: Découvrez les retours de mes clients sur la qualité de mon travail et mon accompagnement.
+        - generic [ref=e804]:
+          - generic [ref=e806]:
+            - img [ref=e807]
+            - generic [ref=e810]:
+              - img "Photo de Sophie Martin" [ref=e813]
+              - generic [ref=e814]:
+                - img [ref=e815]
+                - img [ref=e817]
+                - img [ref=e819]
+                - img [ref=e821]
+                - img [ref=e823]
+              - blockquote [ref=e825]: "\"Nicolas a transformé notre présence en ligne. Notre site vitrine reflète parfaitement notre savoir-faire artisanal. Les demandes de devis ont augmenté de 60% en 3 mois !\""
+              - generic [ref=e826]:
+                - paragraph [ref=e827]: Sophie Martin
+                - paragraph [ref=e828]: Gérante, Atelier Bois Créatif
+                - paragraph [ref=e829]: Site vitrine premium
+          - generic [ref=e830]:
+            - button "Témoignage précédent" [ref=e831]:
+              - img [ref=e832]
+            - generic [ref=e834]:
+              - button "Aller au témoignage 1" [ref=e835]
+              - button "Aller au témoignage 2" [ref=e836]
+              - button "Aller au témoignage 3" [ref=e837]
+            - button "Témoignage suivant" [ref=e838]:
+              - img [ref=e839]
+        - link "Voir tous les témoignages" [ref=e843] [cursor=pointer]:
+          - /url: /temoignages
+          - text: Voir tous les témoignages
+          - img [ref=e844] [cursor=pointer]
+      - generic [ref=e850]:
+        - heading "Prêt à démarrer votre projet ?" [level=2] [ref=e851]
+        - paragraph [ref=e852]: Discutons de vos besoins et je vous proposerai une solution sur mesure adaptée à votre budget et vos objectifs.
+        - generic [ref=e853]:
+          - link "Demander un devis gratuit" [ref=e855] [cursor=pointer]:
+            - /url: /devis
+          - link "Me contacter" [ref=e857] [cursor=pointer]:
+            - /url: /contact
+    - contentinfo [ref=e858]:
+      - generic [ref=e859]:
+        - generic [ref=e860]:
+          - generic [ref=e861]:
+            - img "BANDEV" [ref=e863]
+            - paragraph [ref=e864]: Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
+            - paragraph [ref=e865]: "SIRET : 841 375 652 00028"
+            - link "Demander un devis" [ref=e866] [cursor=pointer]:
+              - /url: /devis
+          - generic [ref=e867]:
+            - heading "Navigation" [level=2] [ref=e868]
+            - list [ref=e869]:
+              - listitem [ref=e870]:
+                - link "Accueil" [ref=e871] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e872]:
+                - link "Services" [ref=e873] [cursor=pointer]:
+                  - /url: /services
+              - listitem [ref=e874]:
+                - link "Processus" [ref=e875] [cursor=pointer]:
+                  - /url: /processus
+              - listitem [ref=e876]:
+                - link "Portfolio" [ref=e877] [cursor=pointer]:
+                  - /url: /portfolio
+              - listitem [ref=e878]:
+                - link "Tarifs" [ref=e879] [cursor=pointer]:
+                  - /url: /tarifs
+              - listitem [ref=e880]:
+                - link "Témoignages" [ref=e881] [cursor=pointer]:
+                  - /url: /temoignages
+              - listitem [ref=e882]:
+                - link "À propos" [ref=e883] [cursor=pointer]:
+                  - /url: /apropos
+              - listitem [ref=e884]:
+                - link "Contact" [ref=e885] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e886]:
+            - heading "Contact" [level=2] [ref=e887]
+            - list [ref=e888]:
+              - listitem [ref=e889]:
+                - link "Email contact@bandev.fr" [ref=e890] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - generic [ref=e891] [cursor=pointer]:
+                    - img [ref=e892] [cursor=pointer]
+                    - generic [ref=e895] [cursor=pointer]:
+                      - paragraph [ref=e896] [cursor=pointer]: Email
+                      - paragraph [ref=e897] [cursor=pointer]: contact@bandev.fr
+              - listitem [ref=e898]:
+                - generic [ref=e899]:
+                  - img [ref=e900]
+                  - generic [ref=e903]:
+                    - paragraph [ref=e904]: Localisation
+                    - paragraph [ref=e905]: France
+            - generic [ref=e906]:
+              - heading "Réseaux sociaux" [level=3] [ref=e907]
+              - generic [ref=e908]:
+                - link "LinkedIn" [ref=e909] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/nicolasbanic
+                  - img [ref=e910] [cursor=pointer]
+                - link "GitHub" [ref=e914] [cursor=pointer]:
+                  - /url: https://github.com/NicolasBANIC
+                  - img [ref=e915] [cursor=pointer]
+                - link "Email" [ref=e918] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - img [ref=e919] [cursor=pointer]
+        - generic [ref=e923]:
+          - generic [ref=e924]:
+            - link "Mentions légales" [ref=e925] [cursor=pointer]:
+              - /url: /mentions-legales
+            - generic [ref=e926]: •
+          - link "Politique de confidentialité" [ref=e928] [cursor=pointer]:
+            - /url: /politique-confidentialite
+      - generic [ref=e930]:
+        - paragraph [ref=e931]: © 2025 BANDEV - Nicolas Banic. Tous droits réservés.
+        - paragraph [ref=e932]:
+          - text: Développé avec
+          - generic [ref=e933]: Next.js 15
+          - text: "&"
+          - generic [ref=e934]: React 19
+  - button "Open Next.js Dev Tools" [ref=e940] [cursor=pointer]:
+    - img [ref=e941] [cursor=pointer]
+  - alert [ref=e944]
+```
