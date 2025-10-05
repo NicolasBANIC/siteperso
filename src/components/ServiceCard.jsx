@@ -1,11 +1,25 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 export default function ServiceCard({ title, description, icon, features, href }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <article className="group card gpu-accelerated hover:scale-[1.02] transition-all duration-300 motion-reduce:transform-none">
-      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)] transition-colors duration-300 group-hover:bg-[var(--color-accent)] group-hover:text-white">
+    <motion.article 
+      className="group relative h-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-card transition-all duration-300"
+      whileHover={prefersReducedMotion ? {} : { 
+        y: -8, 
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+        borderColor: 'var(--color-accent)'
+      }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
+    >
+      <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-[var(--color-accent)]/10 text-[var(--color-accent)] transition-colors duration-300 group-hover:bg-[var(--color-accent)] group-hover:text-white">
         {icon ? (
           <Image 
             src={icon} 
@@ -19,7 +33,7 @@ export default function ServiceCard({ title, description, icon, features, href }
         )}
       </div>
       
-      <h3 className="mt-6 text-heading-md font-semibold text-[var(--color-foreground)]">{title}</h3>
+      <h3 className="mt-6 font-heading text-heading-md font-semibold text-[var(--color-foreground)]">{title}</h3>
       <p className="mt-3 text-body-sm leading-relaxed text-[var(--color-muted)]">{description}</p>
       
       {features && features.length > 0 && (
@@ -42,6 +56,6 @@ export default function ServiceCard({ title, description, icon, features, href }
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" />
         </Link>
       )}
-    </article>
+    </motion.article>
   );
 }

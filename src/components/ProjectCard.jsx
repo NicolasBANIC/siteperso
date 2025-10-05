@@ -1,5 +1,9 @@
+'use client';
+
 import Image from 'next/image';
-import { ExternalLink, Github } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
+import { useReducedMotion } from '@/lib/useReducedMotion';
 
 export default function ProjectCard({ 
   title, 
@@ -9,10 +13,14 @@ export default function ProjectCard({
   technologies = [],
   onClick 
 }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <div 
+    <motion.div 
       onClick={onClick}
-      className="card group cursor-pointer overflow-hidden gpu-accelerated"
+      className="card group cursor-pointer overflow-hidden"
+      whileHover={prefersReducedMotion ? {} : { y: -8 }}
+      transition={{ duration: 0.2 }}
     >
       {/* Image */}
       <div className="relative h-64 overflow-hidden rounded-lg mb-4">
@@ -20,10 +28,10 @@ export default function ProjectCard({
           src={image}
           alt={title}
           fill
-          className="object-cover img-optimized transition-transform duration-500 group-hover:scale-110 motion-reduce:transform-none"
+          className="object-cover transition-transform duration-500 group-hover:scale-110 motion-reduce:transform-none"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-foreground)]/80 via-[var(--color-foreground)]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-          <span className="text-white font-medium flex items-center gap-2 text-ui">
+        <div className="absolute inset-0 bg-gradient-to-t from-accent/80 via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+          <span className="text-white font-medium flex items-center gap-2 text-sm">
             <ExternalLink className="w-5 h-5" aria-hidden="true" />
             Voir le projet
           </span>
@@ -33,16 +41,16 @@ export default function ProjectCard({
       {/* Content */}
       <div>
         <div className="flex items-center justify-between mb-2">
-          <span className="badge">
+          <span className="inline-flex items-center rounded-md bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
             {category}
           </span>
         </div>
 
-        <h3 className="text-heading-md font-semibold text-[var(--color-foreground)] mb-2 group-hover:text-[var(--color-accent)] dark:group-hover:text-[var(--color-accent-matrix)] transition-colors">
+        <h3 className="text-lg font-heading font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
           {title}
         </h3>
 
-        <p className="text-body-sm text-[var(--color-muted)] mb-4 line-clamp-2 leading-relaxed">
+        <p className="text-sm text-muted mb-4 line-clamp-2 leading-relaxed">
           {description}
         </p>
 
@@ -52,19 +60,19 @@ export default function ProjectCard({
             {technologies.slice(0, 3).map((tech, index) => (
               <span 
                 key={index}
-                className="text-caption font-medium px-2 py-1 bg-[var(--color-accent)]/10 text-[var(--color-accent)] dark:bg-[var(--color-accent-matrix)]/10 dark:text-[var(--color-accent-matrix)] rounded"
+                className="text-xs font-medium px-2 py-1 bg-accentSecondary/10 text-accentSecondary rounded-md"
               >
                 {tech}
               </span>
             ))}
             {technologies.length > 3 && (
-              <span className="text-caption font-medium px-2 py-1 text-[var(--color-muted)]">
+              <span className="text-xs font-medium px-2 py-1 text-muted">
                 +{technologies.length - 3}
               </span>
             )}
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

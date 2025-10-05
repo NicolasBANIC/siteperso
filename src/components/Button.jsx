@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useReducedMotion } from '@/lib/useReducedMotion';
 
 /**
  * Composant Button réutilisable avec accessibilité WCAG AA
@@ -19,23 +20,31 @@ export function Button({
   'aria-label': ariaLabel,
   ...props 
 }) {
-  const baseStyles = 'inline-flex items-center justify-center gap-2 rounded-full font-medium outline-none transition-all duration-200 motion-reduce:transition-none';
+  const prefersReducedMotion = useReducedMotion();
+  
+  const baseStyles = 'inline-flex items-center justify-center gap-2 rounded-lg font-medium outline-none transition-all duration-200 motion-reduce:transition-none';
   
   const variantStyles = {
-    primary: 'bg-accent text-accent-foreground hover:bg-accent/90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent shadow-lg hover:shadow-xl',
-    secondary: 'bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent',
-    outline: 'bg-transparent border-2 border-muted text-accent hover:border-accent hover:text-accent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent',
+    primary: 'bg-gradient-to-r from-accent to-accentSecondary text-white hover:opacity-90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent shadow-card hover:shadow-xl',
+    secondary: 'bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent',
+    outline: 'bg-transparent border-2 border-border text-foreground hover:border-accent hover:text-accent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent',
   };
   
   const sizeStyles = {
-    sm: 'h-9 px-4 text-ui-sm',
-    md: 'h-11 px-6 text-ui',
-    lg: 'h-12 px-8 text-body',
+    sm: 'h-9 px-4 text-sm',
+    md: 'h-11 px-6 text-base',
+    lg: 'h-12 px-8 text-lg',
   };
   
   const widthStyles = fullWidth ? 'w-full' : '';
   
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyles} ${className}`;
+  
+  const animationProps = prefersReducedMotion ? {} : {
+    whileHover: { scale: 1.05 },
+    whileTap: { scale: 0.95 },
+    transition: { type: 'spring', stiffness: 300, damping: 20 }
+  };
   
   const content = (
     <>
@@ -55,9 +64,7 @@ export function Button({
       >
         <motion.span
           className="inline-flex items-center justify-center gap-2"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+          {...animationProps}
         >
           {content}
         </motion.span>
@@ -70,9 +77,7 @@ export function Button({
     <motion.button
       className={combinedClassName}
       aria-label={ariaLabel || (typeof children === 'string' ? children : undefined)}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      {...animationProps}
       {...props}
     >
       {content}
@@ -92,12 +97,14 @@ export function ButtonLink({
   'aria-label': ariaLabel,
   ...props 
 }) {
-  const baseStyles = 'inline-flex items-center justify-center rounded-xl font-medium outline-none transition-all duration-200 motion-reduce:transition-none';
+  const prefersReducedMotion = useReducedMotion();
+  
+  const baseStyles = 'inline-flex items-center justify-center rounded-lg font-medium outline-none transition-all duration-200 motion-reduce:transition-none';
   
   const variantStyles = {
-    primary: 'bg-[var(--color-accent)] text-white hover:opacity-95 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-accent)] shadow-lg hover:shadow-xl',
-    secondary: 'bg-transparent border-2 border-[var(--color-border)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-accent)]',
-    ghost: 'bg-transparent hover:bg-black/5 dark:hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-accent)]',
+    primary: 'bg-gradient-to-r from-accent to-accentSecondary text-white hover:opacity-90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent shadow-card hover:shadow-xl',
+    secondary: 'bg-transparent border-2 border-border hover:border-accent hover:text-accent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent',
+    ghost: 'bg-transparent hover:bg-surface focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent',
   };
   
   const sizeStyles = {
@@ -108,14 +115,21 @@ export function ButtonLink({
   
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
   
+  const animationProps = prefersReducedMotion ? {} : {
+    whileHover: { scale: 1.05 },
+    whileTap: { scale: 0.95 },
+    transition: { type: 'spring', stiffness: 300, damping: 20 }
+  };
+  
   return (
-    <a 
+    <motion.a 
       href={href}
       className={combinedClassName}
       aria-label={ariaLabel || (typeof children === 'string' ? children : undefined)}
+      {...animationProps}
       {...props}
     >
       {children}
-    </a>
+    </motion.a>
   );
 }

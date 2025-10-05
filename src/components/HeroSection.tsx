@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import OptimizedImage from "./OptimizedImage";
 import { Clock, CheckCircle, AlertCircle, Info } from "lucide-react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 // Map icon names to components
 const iconMap = {
@@ -53,48 +55,27 @@ export default function HeroSection({
   textAlign = "center",
 }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const scrollPosition = window.scrollY;
-
-      // Effet parallax uniquement si la section est visible
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        const parallaxOffset = scrollPosition * 0.5;
-        setOffset(parallaxOffset);
-      }
-    };
-
-    // Vérifier si l'utilisateur préfère réduire les animations
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (!prefersReducedMotion) {
-      handleScroll();
-      window.addEventListener("scroll", handleScroll, { passive: true });
-
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, []);
+  const prefersReducedMotion = useReducedMotion();
+  
+  // Framer Motion parallax avec useScroll et useTransform
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, -150]);
+  
+  // Désactiver le parallax sur mobile et si prefers-reduced-motion
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const shouldParallax = !prefersReducedMotion && !isMobile;
 
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden"
+      className="relative overflow-hidden bg-background"
       style={{ minHeight: height }}
     >
-      {/* Image de fond avec parallax */}
-      <div
-        className="absolute inset-0 gpu-accelerated"
+      {/* Image de fond avec parallax Framer Motion */}
+      <motion.div
+        className="absolute inset-0"
         style={{
-          transform: `translate3d(0, ${offset}px, 0)`,
-          transition: "transform 0.1s ease-out",
-          willChange: "transform",
+          y: shouldParallax ? y : 0,
           zIndex: 0,
         }}
       >
@@ -109,7 +90,7 @@ export default function HeroSection({
             transform: "scale(1.15)",
           }}
         />
-      </div>
+      </motion.div>
 
       {/* Overlay gradient */}
       <div
@@ -162,7 +143,7 @@ export default function HeroSection({
           {/* Titre */}
           <ScrollReveal direction="up" delay={100}>
             <h1
-              className="text-hero font-bold tracking-tighter leading-tight text-white"
+              className="text-hero font-heading font-bold tracking-tighter leading-tight text-white"
               dangerouslySetInnerHTML={{ __html: title }}
             />
           </ScrollReveal>

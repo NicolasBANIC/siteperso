@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Inter, Space_Grotesk, Fira_Code } from 'next/font/google';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import ThemeToggle from '@/components/ThemeToggle';
@@ -13,6 +13,20 @@ const inter = Inter({
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-inter',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-space-grotesk',
+});
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-fira-code',
 });
 
 // TODO: SEO - Metadata optimisé selon prompt Zencoder (Lighthouse SEO ≥95)
@@ -152,6 +166,10 @@ export default function RootLayout({ children }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         
+        {/* Preconnect pour les polices Google */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         {/* JSON-LD pour le SEO */}
         <script
           type="application/ld+json"
@@ -159,7 +177,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.variable} ${inter.className} bg-[var(--color-background)] text-[var(--color-foreground)] antialiased transition-colors motion-reduce:transition-none`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${firaCode.variable} ${inter.className} bg-[var(--color-background)] text-[var(--color-foreground)] antialiased transition-colors motion-reduce:transition-none`}
       >
         <ThemeProvider>
           {/* TODO: AA - Skip link pour accessibilité clavier (WCAG AA) */}

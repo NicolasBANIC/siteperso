@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Button } from './Button';
+import { useReducedMotion } from '@/lib/useReducedMotion';
 
 /**
  * Composant Card réutilisable
@@ -21,24 +21,38 @@ export function Card({
   children,
   ...props 
 }) {
-  const baseStyles = 'rounded-lg bg-surface border border-border p-8 transition-all duration-300';
+  const prefersReducedMotion = useReducedMotion();
+  
+  const baseStyles = 'rounded-lg bg-surface border border-border p-8 transition-all duration-300 motion-reduce:transition-none';
   
   const variantStyles = {
-    service: 'hover:shadow-card-hover hover:-translate-y-1',
-    project: 'overflow-hidden hover:shadow-card-hover',
-    price: 'relative hover:shadow-elevation hover:scale-105',
+    service: 'hover:shadow-card hover:border-accent',
+    project: 'overflow-hidden hover:shadow-card',
+    price: 'relative hover:shadow-xl',
     testimonial: 'bg-surface/50 backdrop-blur-sm',
   };
   
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
   
+  const animationProps = prefersReducedMotion ? {
+    initial: { opacity: 1 },
+    whileInView: { opacity: 1 },
+  } : {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: 'easeOut' }
+  };
+  
+  const hoverProps = prefersReducedMotion ? {} : {
+    whileHover: variant === 'service' ? { y: -8 } : variant === 'price' ? { scale: 1.02 } : {}
+  };
+  
   return (
     <motion.div
       className={combinedClassName}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      {...animationProps}
+      {...hoverProps}
       {...props}
     >
       {/* Image pour project variant */}
@@ -48,7 +62,7 @@ export function Card({
             src={image}
             alt={title || 'Project image'}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-300 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -56,21 +70,21 @@ export function Card({
       
       {/* Icon pour service variant */}
       {variant === 'service' && icon && (
-        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-accent/10 text-accent text-2xl">
           {icon}
         </div>
       )}
       
       {/* Title */}
       {title && (
-        <h3 className="text-heading-md font-semibold text-foreground mb-4">
+        <h3 className="text-xl font-heading font-semibold text-foreground mb-4">
           {title}
         </h3>
       )}
       
       {/* Description */}
       {description && (
-        <p className="text-body text-muted mb-6 leading-relaxed">
+        <p className="text-base text-muted mb-6 leading-relaxed">
           {description}
         </p>
       )}
@@ -81,7 +95,7 @@ export function Card({
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-ui-sm font-medium text-accent"
+              className="inline-flex items-center rounded-md bg-accentSecondary/10 px-3 py-1 text-sm font-medium text-accentSecondary"
             >
               {tag}
             </span>

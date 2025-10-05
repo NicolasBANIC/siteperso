@@ -1,238 +1,377 @@
-# 🎉 Refonte Zencoder - Résumé Exécutif
+# 📚 Documentation Refonte Front-End BANDEV
 
-## ✅ Statut : COMPLÉTÉ AVEC SUCCÈS
-
-Le prompt Zencoder a été appliqué avec succès. Votre site est maintenant optimisé pour atteindre **Lighthouse ≥95** sur tous les critères.
+**Index complet de la documentation du projet de refonte**
 
 ---
 
-## 📊 Ce Qui a Été Fait
+## 🎯 Vue d'Ensemble
 
-### 🔴 Corrections Critiques (100% Complété)
+Ce projet vise à refondre complètement le front-end du site BANDEV pour l'aligner sur les principes visuels modernes et professionnels du site de référence mathieu-crevoulin.com.
 
-1. ✅ **Statistiques réalistes** : 40+ projets, 98% satisfaction, 24h délai, 95+ Lighthouse
-2. ✅ **SEO complet** : Metadata, OG/Twitter, sitemap, robots.txt
-3. ✅ **Performance LCP** : Images avec `priority`, `sizes`, optimisation WebP/AVIF
-4. ✅ **CLS < 0.1** : Aspect-ratio, placeholders, font optimization
-5. ✅ **INP < 200ms** : Dynamic imports, composants client optimisés
-6. ✅ **Accessibilité AA** : Skip link, aria attributes, focus-visible, contrastes
-7. ✅ **Formulaire accessible** : Labels, aria-invalid, aria-live, validation
+**Technologies :**
+- Next.js 15
+- React 19
+- Tailwind CSS 4
+- Framer Motion
+- TypeScript
 
-### 🟠 Améliorations UI/UX (100% Complété)
-
-8. ✅ **Design tokens Tailwind v4** : Couleurs, borderRadius, boxShadow
-9. ✅ **Header sticky + ThemeToggle** : Navigation optimale, dark/light mode
-10. ✅ **Animations Framer Motion** : Sobres, respectant prefers-reduced-motion
-11. ✅ **Portfolio complet** : Filtres, pages dynamiques, metadata SEO
-
-### 🟢 Finitions (85% Complété)
-
-12. ✅ **Structured data JSON-LD** : ProfessionalService, CreativeWork
-13. ⚠️ **Images OG** : À créer (voir section ci-dessous)
-14. ✅ **Micro-interactions** : Hovers, transitions, glow effects
+**Progression actuelle :** 42% des composants refactorisés (17/40)
 
 ---
 
-## 🚀 Build Réussi
+## 📖 Documents Principaux
 
-```bash
-✓ Compiled successfully in 4.3s
-✓ Linting and checking validity of types
-✓ Collecting page data
-✓ Generating static pages (24/24)
-✓ Finalizing page optimization
+### 1. **REFONTE_PROGRESS.md** 📊
+**Description :** Document de suivi de la progression globale  
+**Contenu :**
+- État d'avancement par phase
+- Liste des composants refactorisés
+- Métriques de qualité
+- Prochaines étapes
+- Issues connues
+
+**Quand consulter :** Avant chaque session pour connaître l'état actuel
+
+---
+
+### 2. **SESSION_RECAP_FINAL.md** 📝
+**Description :** Récapitulatif détaillé de la dernière session  
+**Contenu :**
+- Composants refactorisés (détails)
+- Patterns techniques appliqués
+- Design system appliqué
+- Issues résolues
+- Insights techniques
+
+**Quand consulter :** Pour comprendre ce qui a été fait récemment
+
+---
+
+### 3. **QUICK_START_NEXT_SESSION.md** 🚀
+**Description :** Guide de démarrage rapide pour la prochaine session  
+**Contenu :**
+- État actuel
+- Prochains composants à refactoriser (priorités)
+- Checklist de refactorisation
+- Commandes utiles
+- Tokens de référence rapide
+
+**Quand consulter :** Au début de chaque nouvelle session
+
+---
+
+### 4. **ANIMATION_PATTERNS_GUIDE.md** 🎬
+**Description :** Guide complet des patterns d'animation Framer Motion  
+**Contenu :**
+- 15 patterns d'animation avec code
+- Exemples concrets
+- Anti-patterns à éviter
+- Checklist accessibilité
+- Classes CSS utilitaires
+
+**Quand consulter :** Lors de l'implémentation d'animations
+
+---
+
+### 5. **IMAGES_HERO_SECTIONS.md** 📸
+**Description :** Spécifications détaillées des images hero à générer  
+**Contenu :**
+- Descriptions ultra-précises pour chaque page
+- Palette de couleurs
+- Spécifications techniques
+- Prompts pour DALL-E
+- Checklist de validation
+
+**Quand consulter :** Lors de la génération/optimisation des images
+
+---
+
+### 6. **SESSION_PHASE2_SUMMARY.md** 📋
+**Description :** Résumé détaillé de la session Phase 2  
+**Contenu :**
+- Composants refactorisés (détails techniques)
+- Patterns appliqués
+- Métriques de progression
+- Prochaines actions
+
+**Quand consulter :** Pour référence historique de la Phase 2
+
+---
+
+## 🔧 Fichiers de Configuration
+
+### 1. **tailwind.config.js**
+**Description :** Configuration complète des design tokens  
+**Contenu :**
+- Palette de couleurs
+- Typographie (fonts)
+- Espacements
+- Border radius
+- Ombres
+
+**Localisation :** `C:\Users\Banic\Documents\siteperso\tailwind.config.js`
+
+---
+
+### 2. **src/lib/useReducedMotion.js**
+**Description :** Hook React pour détecter prefers-reduced-motion  
+**Usage :**
+```javascript
+import { useReducedMotion } from '@/lib/useReducedMotion';
+const prefersReducedMotion = useReducedMotion();
 ```
 
-**Toutes les pages sont générées sans erreur !**
+**Localisation :** `C:\Users\Banic\Documents\siteperso\src\lib\useReducedMotion.js`
 
 ---
 
-## 📝 Fichiers Modifiés
+## 📂 Structure du Projet
 
-### Modifications Principales
-- `src/app/layout.jsx` - Metadata SEO + skip link accessibilité
-- `src/app/sitemap.js` - URL Vercel + toutes les routes
-- `src/app/robots.js` - Configuration optimale
-- `tailwind.config.js` - Design tokens (primary, accent, borderRadius, boxShadow)
-- `src/app/globals.css` - Variables CSS RGB pour thèmes
-- `src/components/FormulaireContact.jsx` - Aria attributes complets
-
-### Nouveaux Composants Créés
-- `src/components/Button.jsx` - Composant bouton accessible réutilisable
-- `src/components/PortfolioGrid.jsx` - Grille portfolio avec filtres
-- `src/components/CaseStudyModal.jsx` - Modal études de cas
-- `src/lib/cn.js` - Utilitaire pour merger classes CSS
-- `src/lib/projects.js` - Données projets (référence alternative)
-
----
-
-## ⚠️ Action Requise : Images OG
-
-Pour finaliser le SEO, créez les images Open Graph :
-
-### Images à Créer
-
-1. **`/public/og/og-home.png`** (1200x630px)
-   - Titre : "BANDEV - Développeur Web Freelance"
-   - Sous-titre : "Next.js, React, Node.js - Performances & SEO"
-   - Style : Moderne, bleu roi (#0047AB), vert Matrix (#00FF41)
-
-2. **`/public/og/og-services.png`** (1200x630px)
-3. **`/public/og/og-portfolio.png`** (1200x630px)
-4. **`/public/og/og-contact.png`** (1200x630px)
-
-### Outils Recommandés
-- **Canva** : Templates OG prêts à l'emploi
-- **Figma** : Design personnalisé
-- **OG Image Generator** : https://og-image.vercel.app/
-
----
-
-## 🎯 Objectifs Lighthouse
-
-| Métrique | Objectif | État | Statut |
-|----------|----------|------|--------|
-| Performance | ≥95 | Optimisé | ✅ |
-| Accessibility | ≥95 | AA | ✅ |
-| SEO | ≥95 | Complet | ✅ |
-| Best Practices | ≥95 | Next.js 15 | ✅ |
-| LCP | <2.5s | Priority images | ✅ |
-| CLS | <0.1 | Aspect-ratio | ✅ |
-| INP | <200ms | Dynamic imports | ✅ |
-
----
-
-## 🧪 Tester Maintenant
-
-### 1. Lancer le serveur de développement
-```bash
-npm run dev
 ```
-Ouvrir http://localhost:3000
-
-### 2. Tester l'accessibilité
-- Appuyer sur **Tab** → Le skip link doit apparaître
-- Naviguer au clavier dans le formulaire
-- Tester avec un lecteur d'écran (NVDA, JAWS)
-
-### 3. Tester le dark mode
-- Cliquer sur le bouton en bas à droite
-- Vérifier la transition smooth
-- Vérifier que le choix persiste au rechargement
-
-### 4. Tester les performances (optionnel)
-```bash
-npm run lighthouse
+siteperso/
+├── src/
+│   ├── app/                    # Pages Next.js (App Router)
+│   │   ├── page.jsx           # Page d'accueil
+│   │   ├── services/          # Page services
+│   │   ├── portfolio/         # Page portfolio
+│   │   ├── tarifs/            # Page tarifs
+│   │   └── ...
+│   ├── components/            # Composants React
+│   │   ├── Button.jsx         # ✅ Refactorisé
+│   │   ├── Card.jsx           # ✅ Refactorisé
+│   │   ├── Header.jsx         # ✅ Refactorisé
+│   │   ├── Footer.jsx         # ✅ Refactorisé
+│   │   └── ...
+│   └── lib/                   # Utilitaires
+│       └── useReducedMotion.js
+├── public/
+│   └── images/                # Images statiques
+├── tailwind.config.js         # Configuration Tailwind
+├── package.json               # Dépendances
+└── Documentation/
+    ├── REFONTE_PROGRESS.md
+    ├── SESSION_RECAP_FINAL.md
+    ├── QUICK_START_NEXT_SESSION.md
+    ├── ANIMATION_PATTERNS_GUIDE.md
+    ├── IMAGES_HERO_SECTIONS.md
+    └── README_REFONTE.md (ce fichier)
 ```
 
 ---
 
-## 📚 Documentation Créée
-
-1. **`REFONTE_ZENCODER_APPLIQUEE.md`** - Documentation technique complète
-2. **`PROMPT_ZENCODER_STATUS.md`** - Statut ligne par ligne du prompt
-3. **`README_REFONTE.md`** - Ce fichier (résumé exécutif)
-
----
-
-## 🎨 Design Tokens Ajoutés
+## 🎨 Design System - Référence Rapide
 
 ### Couleurs
-```js
-primary: { DEFAULT: '#4F46E5', foreground: '#FFFFFF' }
-accent: { DEFAULT: '#06B6D4', foreground: '#001015' }
-muted: '#0B1220'
+```javascript
+background: '#0A192F'      // Fond principal
+surface: '#10253E'         // Cartes
+foreground: '#F5F7FA'      // Texte principal
+muted: '#A0AEC0'           // Texte secondaire
+accent: '#0D99FF'          // Bleu principal
+accentSecondary: '#10B981' // Vert Matrix
+accentTertiary: '#9333EA'  // Violet
+```
+
+### Typographie
+```javascript
+font-sans: Inter           // Corps de texte
+font-heading: Space Grotesk // Titres
+font-mono: Fira Code       // Code
+```
+
+### Espacements
+```javascript
+py-section: 100px          // Espacement vertical sections
+px-gutter: 24px            // Padding horizontal
 ```
 
 ### Border Radius
-```js
-xl: '1rem'
-'2xl': '1.5rem'
-```
-
-### Box Shadow
-```js
-card: '0 6px 24px rgba(0,0,0,0.08)'
+```javascript
+rounded-md: 6px            // Petits éléments
+rounded-lg: 12px           // Cartes, boutons
+rounded-xl: 16px           // Grandes cartes
 ```
 
 ---
 
-## 🔧 Composant Button Réutilisable
+## ✅ Composants Refactorisés (17/40)
 
-Nouveau composant accessible créé :
-
-```jsx
-import Button from '@/components/Button';
-
-// Variants
-<Button variant="primary">Demander un devis</Button>
-<Button variant="secondary">En savoir plus</Button>
-<Button variant="ghost">Annuler</Button>
-
-// Tailles
-<Button size="sm">Petit</Button>
-<Button size="md">Moyen</Button>
-<Button size="lg">Grand</Button>
-
-// Avec aria-label
-<Button aria-label="Fermer la fenêtre">×</Button>
-```
-
----
-
-## ✨ Points Forts du Projet
-
-1. ✅ **Architecture Next.js 15** moderne avec App Router
-2. ✅ **Performance optimale** : Images, fonts, dynamic imports
-3. ✅ **Accessibilité WCAG AA** : Skip link, aria, focus-visible
-4. ✅ **SEO complet** : Metadata, sitemap, structured data
-5. ✅ **Design System** : Tailwind v4, tokens, dark/light mode
-6. ✅ **Portfolio professionnel** : 5 projets avec pages détaillées
-7. ✅ **Animations sobres** : Framer Motion, prefers-reduced-motion
-8. ✅ **Composants réutilisables** : Button, OptimizedImage, etc.
+### Phase 1 & 2
+1. ✅ Header.jsx
+2. ✅ ServiceCard.jsx
+3. ✅ PopularBadge.jsx (nouveau)
+4. ✅ TestimonialCarousel.jsx (nouveau)
+5. ✅ CTAButton.tsx
+6. ✅ PricingCard.jsx
+7. ✅ HeroSection.tsx
+8. ✅ Footer.jsx
+9. ✅ PortfolioGrid.jsx
+10. ✅ ProjectCard.jsx
+11. ✅ Preloader.jsx (nouveau)
+12. ✅ Button.jsx
+13. ✅ Card.jsx
+14. ✅ TechBadge.jsx
+15. ✅ Section.jsx
+16. ✅ AnimatedCounter.jsx
+17. ✅ BackToTop.jsx
 
 ---
 
-## 🚀 Déploiement Vercel
+## 🎯 Prochains Composants (Priorités)
 
-Votre site est prêt pour le déploiement :
+### Priorité Haute
+1. TestimonialCard.jsx
+2. StatItem.jsx
+3. CTASection.jsx
 
+### Priorité Moyenne
+4. FormulaireContact.jsx
+5. FormulaireDevis.jsx
+6. GlassmorphismCard.jsx
+7. MockDashboard.jsx
+
+---
+
+## 🚀 Commandes Utiles
+
+### Développement
 ```bash
-# Vérifier le build
-npm run build
-
-# Déployer sur Vercel
-vercel --prod
+npm run dev          # Lancer le serveur de développement
+npm run build        # Build de production
+npm run start        # Lancer le build de production
+npm run lint         # Linter le code
 ```
 
-L'URL de production est déjà configurée : `https://siteperso-wsu8.vercel.app`
+### Recherche
+```bash
+# Rechercher variables CSS obsolètes
+rg "var\(--color-" src/
+
+# Lister tous les composants
+Get-ChildItem -Path "src/components" -Filter "*.jsx" -Recurse
+```
+
+---
+
+## 📊 Métriques de Qualité
+
+### Accessibilité
+- ✅ useReducedMotion dans 100% des composants animés
+- ✅ Classes motion-reduce pour fallback CSS
+- ✅ Focus-visible avec ring accent
+- ✅ ARIA labels maintenus
+
+### Performance
+- ✅ Animations conditionnelles
+- ✅ Code splitting automatique
+- ✅ Lazy loading images
+- ✅ Build optimisé Next.js
+
+### Maintenabilité
+- ✅ Tokens centralisés
+- ✅ Composants modulaires
+- ✅ Documentation complète
+- ✅ Patterns cohérents
+
+---
+
+## 🐛 Issues Connues
+
+### 1. Build en Cours
+**Status :** En cours de vérification  
+**Action :** Vérifier les erreurs avant de continuer
+
+### 2. Variables CSS Restantes
+**Localisation :** `src/app/page.jsx`  
+**Action :** Refactoriser après composants prioritaires
+
+### 3. Images Hero Manquantes
+**Référence :** `IMAGES_HERO_SECTIONS.md`  
+**Action :** Générer avec DALL-E
+
+---
+
+## 📚 Ressources Externes
+
+### Documentation Officielle
+- [Next.js 15 Docs](https://nextjs.org/docs)
+- [React 19 Docs](https://react.dev)
+- [Tailwind CSS 4 Docs](https://tailwindcss.com/docs)
+- [Framer Motion Docs](https://www.framer.com/motion/)
+
+### Guides
+- [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
+- [MDN: prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+
+---
+
+## 🤝 Workflow de Refactorisation
+
+### 1. Préparation
+- [ ] Lire `QUICK_START_NEXT_SESSION.md`
+- [ ] Vérifier `REFONTE_PROGRESS.md`
+- [ ] Identifier le composant prioritaire
+
+### 2. Refactorisation
+- [ ] Ouvrir le composant
+- [ ] Suivre la checklist de `QUICK_START_NEXT_SESSION.md`
+- [ ] Consulter `ANIMATION_PATTERNS_GUIDE.md` si animations
+- [ ] Tester en local (`npm run dev`)
+
+### 3. Validation
+- [ ] Vérifier accessibilité (prefers-reduced-motion)
+- [ ] Tester responsive (mobile, tablette, desktop)
+- [ ] Vérifier focus-visible
+- [ ] Build de test (`npm run build`)
+
+### 4. Documentation
+- [ ] Mettre à jour `REFONTE_PROGRESS.md`
+- [ ] Ajouter notes dans `SESSION_RECAP_FINAL.md`
+- [ ] Commit avec message descriptif
+
+---
+
+## 🎉 Objectifs Finaux
+
+### Court Terme (Cette Semaine)
+- [ ] Atteindre 60% de composants refactorisés
+- [ ] Refactoriser tous les composants priorité haute
+- [ ] Effectuer audit Lighthouse
+
+### Moyen Terme (Semaine Prochaine)
+- [ ] Atteindre 80% de composants refactorisés
+- [ ] Générer toutes les images hero
+- [ ] Optimiser images (AVIF/WebP)
+- [ ] Tests accessibilité complets
+
+### Long Terme (Fin du Mois)
+- [ ] 100% des composants refactorisés
+- [ ] Score Lighthouse ≥95 (Performance)
+- [ ] Score Lighthouse 100 (Accessibilité)
+- [ ] Tests responsive validés
+- [ ] Documentation utilisateur complète
 
 ---
 
 ## 📞 Support
 
-Si vous avez des questions sur les modifications :
+**Questions sur la refonte ?**
+- Consulter `QUICK_START_NEXT_SESSION.md` pour démarrage rapide
+- Consulter `ANIMATION_PATTERNS_GUIDE.md` pour animations
+- Consulter `REFONTE_PROGRESS.md` pour état global
 
-1. Consultez `REFONTE_ZENCODER_APPLIQUEE.md` pour les détails techniques
-2. Consultez `PROMPT_ZENCODER_STATUS.md` pour le statut ligne par ligne
-3. Tous les changements sont commentés avec `// TODO: SEO/AA/UX/Perf`
-
----
-
-## 🎉 Félicitations !
-
-Votre site est maintenant :
-- ✅ **Performant** (Lighthouse ≥95)
-- ✅ **Accessible** (WCAG AA)
-- ✅ **SEO-optimisé** (Metadata complète)
-- ✅ **Moderne** (Next.js 15, Tailwind v4)
-- ✅ **Professionnel** (Portfolio complet)
-
-**Prochaine étape** : Créer les images OG et déployer sur Vercel ! 🚀
+**Besoin d'aide sur un pattern ?**
+- Voir les exemples dans les composants déjà refactorisés
+- Consulter la documentation Framer Motion
 
 ---
 
-**Date de refonte** : $(date)
-**Version Next.js** : 15.5.4
-**Version Tailwind** : 4.1.14
-**Statut** : 🟢 Production Ready
+**Dernière mise à jour :** $(date)  
+**Version :** 1.0  
+**Progression :** 42% (17/40 composants)
+
+---
+
+## 🚀 Let's Build Something Amazing!
+
+**Prochaine étape :** Ouvrir `QUICK_START_NEXT_SESSION.md` et commencer ! 💪

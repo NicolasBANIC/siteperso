@@ -4,18 +4,21 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        display: ['var(--font-space-grotesk)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-space-grotesk)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-fira-code)', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
       },
       colors: {
-        background: 'var(--color-background)',
-        surface: 'var(--color-surface)',
-        foreground: 'var(--color-foreground)',
-        muted: 'var(--color-muted)',
-        accent: {
-          DEFAULT: 'var(--color-accent)',
-          secondary: 'var(--color-accent-secondary)',
-          matrix: 'var(--color-accent-matrix)',
-        },
+        background: '#0A192F',
+        surface: '#10253E',
+        foreground: '#F5F7FA',
+        muted: '#A0AEC0',
+        accent: '#0D99FF',
+        accentSecondary: '#10B981',
+        accentTertiary: '#9333EA',
+        error: '#E53E3E',
+        // Compatibilité avec les variables CSS existantes
+        'accent-secondary': 'var(--color-accent-secondary, #10B981)',
+        'accent-matrix': 'var(--color-accent-matrix, #00FFBC)',
         border: 'var(--color-border)',
       },
       fontSize: {
@@ -33,23 +36,25 @@ module.exports = {
         'ui-sm': 'clamp(0.75rem, 1.5vw, 0.875rem)', // 12-14px
       },
       spacing: {
-        '4': '0.25rem',   // 4px
-        '8': '0.5rem',    // 8px
-        '12': '0.75rem',  // 12px
-        '16': '1rem',     // 16px
-        '24': '1.5rem',   // 24px
-        '32': '2rem',     // 32px
-        '48': '3rem',     // 48px
+        'section': '100px',
+        'gutter': '24px',
+        '4': '0.25rem',
+        '8': '0.5rem',
+        '12': '0.75rem',
+        '16': '1rem',
+        '24': '1.5rem',
+        '32': '2rem',
+        '48': '3rem',
       },
       borderRadius: {
-        'sm': '0.5rem',   // 8px
-        'lg': '1rem',     // 16px
-        'xl': '1.5rem',   // 24px
-        '2xl': '2rem',    // 32px
+        'md': '6px',
+        'lg': '12px',
+        'xl': '1.5rem',
+        '2xl': '2rem',
       },
       boxShadow: {
+        'card': '0 4px 12px rgba(0, 0, 0, 0.1)',
         'elevation': '0 4px 20px rgba(0, 0, 0, 0.25)',
-        'card': '0 6px 24px rgba(0, 0, 0, 0.08)',
         'card-hover': '0 8px 32px rgba(0, 0, 0, 0.12)',
       },
     },

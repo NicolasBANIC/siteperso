@@ -11,59 +11,65 @@
 
   /* Design Tokens - Refonte alignée avec mathieu-crevoulin.com */
   :root {
-    color-scheme: light;
-    /* Palette principale */
-    --color-background: #F5F7FA;
-    --color-surface: #FFFFFF;
-    --color-border: rgba(31, 42, 71, 0.12);
-    --color-foreground: #0B132B;
-    --color-muted: #A6B0CF;
+    color-scheme: dark;
+    /* Palette principale - Mode sombre par défaut */
+    --color-background: #0A192F;
+    --color-surface: #10253E;
+    --color-border: rgba(160, 174, 192, 0.16);
+    --color-foreground: #F5F7FA;
+    --color-muted: #A0AEC0;
     
     /* Accents */
-    --color-accent: #00C49A;
-    --color-accent-secondary: #0084C8;
+    --color-accent: #0D99FF;
+    --color-accent-secondary: #10B981;
+    --color-accent-tertiary: #9333EA;
     --color-accent-matrix: #00FFBC;
-    --color-accent-foreground: #0B132B;
+    --color-accent-foreground: #0A192F;
+    --color-error: #E53E3E;
     
     /* Focus & interactions */
-    --color-ring: rgba(0, 196, 154, 0.45);
+    --color-ring: rgba(13, 153, 255, 0.45);
     
     /* Radius */
-    --radius-sm: 0.5rem;
-    --radius-lg: 1rem;
+    --radius-md: 6px;
+    --radius-lg: 12px;
     
     /* Shadows */
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
     --shadow-elevation: 0 4px 20px rgba(0, 0, 0, 0.25);
     
     /* Logo BANDEV tokens */
-    --logo-gold: #8C6A18;
-    --logo-green: #00FF45;
-    --logo-ink: #0B0B0B;
-    --logo-keyline: rgba(255, 255, 255, 0.85);
-  }
-
-  .dark {
-    color-scheme: dark;
-    /* Palette principale */
-    --color-background: #0B132B;
-    --color-surface: #1F2A47;
-    --color-border: rgba(166, 176, 207, 0.16);
-    --color-foreground: #F5F7FA;
-    --color-muted: #A6B0CF;
-    
-    /* Accents */
-    --color-accent: #00C49A;
-    --color-accent-secondary: #0084C8;
-    --color-accent-matrix: #00FFBC;
-    --color-accent-foreground: #0B132B;
-    
-    /* Focus & interactions */
-    --color-ring: rgba(0, 255, 188, 0.45);
-    
-    /* Logo BANDEV tokens (dark mode) */
     --logo-gold: #E5C461;
+    --logo-green: #00FF45;
     --logo-ink: #FFFFFF;
     --logo-keyline: rgba(0, 0, 0, 0.65);
+  }
+
+  .light {
+    color-scheme: light;
+    /* Palette principale - Mode clair */
+    --color-background: #F5F7FA;
+    --color-surface: #FFFFFF;
+    --color-border: rgba(10, 25, 47, 0.12);
+    --color-foreground: #0A192F;
+    --color-muted: #64748B;
+    
+    /* Accents */
+    --color-accent: #0D99FF;
+    --color-accent-secondary: #10B981;
+    --color-accent-tertiary: #9333EA;
+    --color-accent-matrix: #00C49A;
+    --color-accent-foreground: #FFFFFF;
+    --color-error: #E53E3E;
+    
+    /* Focus & interactions */
+    --color-ring: rgba(13, 153, 255, 0.45);
+    
+    /* Logo BANDEV tokens (light mode) */
+    --logo-gold: #8C6A18;
+    --logo-green: #00C49A;
+    --logo-ink: #0A192F;
+    --logo-keyline: rgba(255, 255, 255, 0.85);
   }
 
   html {

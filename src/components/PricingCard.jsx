@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { Check } from "lucide-react";
 import { Button } from './Button';
+import PopularBadge from './PopularBadge';
+import { useReducedMotion } from '@/lib/useReducedMotion';
 
 /**
  * Composant PricingCard
@@ -18,23 +20,21 @@ export default function PricingCard({
   buttonLabel = "Demander un devis",
   buttonHref = "/devis"
 }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.article 
       className={`relative overflow-hidden rounded-lg bg-surface border p-8 transition-all duration-300 ${
         highlight 
-          ? "border-accent shadow-elevation scale-105" 
-          : "border-border hover:shadow-card-hover hover:scale-105"
+          ? "border-accent shadow-card scale-105" 
+          : "border-border hover:shadow-card hover:scale-[1.02]"
       } motion-reduce:transform-none`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
-      {highlight && (
-        <div className="absolute -right-12 top-6 rotate-45 bg-accent-matrix px-12 py-1 text-caption font-bold text-accent-foreground uppercase tracking-widest">
-          POPULAIRE
-        </div>
-      )}
+      {highlight && <PopularBadge />}
       
       <div className="space-y-4">
         <h3 className="text-heading-lg font-bold text-foreground">{title}</h3>
@@ -51,7 +51,7 @@ export default function PricingCard({
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
             <Check 
-              className="h-5 w-5 flex-shrink-0 text-accent" 
+              className="h-5 w-5 flex-shrink-0 text-accentSecondary" 
               aria-hidden="true" 
             />
             <span className="text-body-sm text-foreground">{feature}</span>

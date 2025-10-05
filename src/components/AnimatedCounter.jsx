@@ -1,10 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useReducedMotion } from '@/lib/useReducedMotion';
 
-export default function AnimatedCounter({ end, duration = 2000, suffix = '', prefix = '' }) {
+export default function AnimatedCounter({ end, duration = 2000, suffix = '', prefix = '', className = '' }) {
   const [count, setCount] = useState(0);
+  const prefersReducedMotion = useReducedMotion();
+  
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -12,6 +15,12 @@ export default function AnimatedCounter({ end, duration = 2000, suffix = '', pre
 
   useEffect(() => {
     if (!inView) return;
+
+    // Si l'utilisateur préfère réduire les animations, afficher directement la valeur finale
+    if (prefersReducedMotion) {
+      setCount(end);
+      return;
+    }
 
     let startTime;
     let animationFrame;
@@ -41,10 +50,10 @@ export default function AnimatedCounter({ end, duration = 2000, suffix = '', pre
         cancelAnimationFrame(animationFrame);
       }
     };
-  }, [inView, end, duration]);
+  }, [inView, end, duration, prefersReducedMotion]);
 
   return (
-    <span ref={ref}>
+    <span ref={ref} className={className}>
       {prefix}{count}{suffix}
     </span>
   );

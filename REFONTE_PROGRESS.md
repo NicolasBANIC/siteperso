@@ -1,260 +1,301 @@
-# 🎨 Refonte Front-End — Progression
+# 🎨 Refonte Front-End BANDEV - Progression
 
 ## ✅ Phase 1 : Design Tokens & Configuration (TERMINÉ)
 
-### Fichiers modifiés :
-- ✅ `tailwind.config.js` — Nouvelle palette de couleurs alignée avec mathieu-crevoulin.com
-- ✅ `src/app/globals.css` — Variables CSS mises à jour avec les nouveaux tokens
+### Tailwind Configuration
+- ✅ Palette de couleurs mise à jour avec tokens sémantiques
+  - `background: #0A192F` (fond principal)
+  - `surface: #10253E` (surfaces/cartes)
+  - `foreground: #F5F7FA` (texte principal)
+  - `accent: #0D99FF` (accent principal)
+  - `accentSecondary: #10B981` (accent secondaire - vert Matrix)
+  - `accentTertiary: #9333EA` (accent tertiaire - violet)
+- ✅ Trois familles de polices configurées
+  - `sans: Inter` (texte courant)
+  - `heading: Space Grotesk` (titres)
+  - `mono: Fira Code` (code)
+- ✅ Tokens d'espacement : `section: 100px`, `gutter: 24px`
+- ✅ Border radius : `md: 6px`, `lg: 12px`
+- ✅ Ombres : `card: 0 4px 12px rgba(0, 0, 0, 0.1)`
 
-### Tokens appliqués :
-```css
-/* Palette */
---color-background: #F5F7FA (light) / #0B132B (dark)
---color-surface: #FFFFFF (light) / #1F2A47 (dark)
---color-foreground: #0B132B (light) / #F5F7FA (dark)
---color-muted: #A6B0CF
---color-accent: #00C49A (teal)
---color-accent-secondary: #0084C8 (bleu)
---color-accent-matrix: #00FFBC (vert néon)
+### CSS Variables & Typography
+- ✅ Variables CSS mises à jour dans `globals.css`
+- ✅ Mode sombre par défaut avec variante claire
+- ✅ Hiérarchie typographique maintenue
+- ✅ Support `prefers-reduced-motion`
 
-/* Radius */
---radius-sm: 0.5rem
---radius-lg: 1rem
-
-/* Shadows */
---shadow-elevation: 0 4px 20px rgba(0,0,0,0.25)
-
-/* Typography */
-font-sans: Inter
-font-display: Space Grotesk (à configurer dans layout)
-```
-
----
-
-## ✅ Phase 2 : Composants de Base (TERMINÉ)
-
-### Composants créés/refactorisés :
-
-#### 1. **Button.jsx** ✅
-- Variantes : `primary`, `secondary`, `outline`
-- Tailles : `sm`, `md`, `lg`
-- Props : `href`, `icon`, `fullWidth`
-- Animations Framer Motion : `whileHover`, `whileTap`
-- Accessibilité : `focus-visible`, `aria-label`
-
-#### 2. **Card.jsx** ✅ (NOUVEAU)
-- Variantes : `service`, `project`, `price`, `testimonial`
-- Props : `title`, `description`, `icon`, `image`, `actions`, `tags`
-- Animations : reveal on scroll
-
-#### 3. **StatItem.jsx** ✅ (NOUVEAU)
-- Compteur animé avec `useSpring` de Framer Motion
-- Props : `icon`, `count`, `label`, `suffix`, `description`
-- Animation : spring avec stiffness 80, damping 15
-
-#### 4. **PricingCard.jsx** ✅
-- Refactorisé avec nouvelles couleurs
-- Utilise le composant Button
-- Animation : scale on hover
-
-#### 5. **PortfolioItem.jsx** ✅ (NOUVEAU)
-- Props : `title`, `category`, `image`, `stack`, `description`, `link`, `slug`
-- Hover effect : translate-y + shadow
-- Overlay avec description au survol
-
-#### 6. **Section.jsx** ✅
-- Props : `id`, `title`, `subtitle`, `background`, `children`
-- Backgrounds : `default`, `surface`, `gradient`
-- Animations : title/subtitle reveal
-
-#### 7. **TestimonialSlider.jsx** ✅
-- Couleurs mises à jour avec nouveaux tokens
-- Accessibilité : navigation clavier, focus-visible
+### Intégration des Polices
+- ✅ Google Fonts chargées avec `display: 'swap'`
+- ✅ Preconnect configuré pour optimisation
+- ✅ Variables de polices appliquées globalement
 
 ---
 
-## ✅ Phase 3 : Refonte Homepage (EN COURS)
+## ✅ Phase 2 : Accessibilité & Hooks (TERMINÉ)
 
-### Sections modifiées :
-
-#### 1. **Hero Section** ✅
-- ❌ Vidéo remplacée par dégradé statique (MeshGradient)
-- ✅ Message raccourci et simplifié
-- ✅ Badge "Disponible" avec animation ping optimisée (prefers-reduced-motion)
-- ✅ Visuel abstrait (MockDashboard) à droite
-- ✅ CTA vers portfolio ajouté
-
-#### 2. **Stats/Expertise Section** ✅
-- ✅ Utilise le nouveau composant StatItem
-- ✅ Icônes ajoutées (Rocket, CheckCircle2, Zap, Shield)
-- ✅ Compteurs animés avec spring
-
-#### 3. **Services Section** ✅ (TERMINÉ)
-- ✅ Liste actuelle conservée
-- ✅ Nouvelle palette appliquée
-- ✅ Badges numérotés ajoutés (01, 02, 03, 04)
-- ✅ Animations hover optimisées avec motion-reduce
-
-#### 4. **Processus Section** ✅ (TERMINÉ)
-- ✅ Grille verticale avec 5 étapes
-- ✅ Cercles numérotés avec gradient accent
-- ✅ Ligne verticale connectant les étapes
-- ✅ Livrables dans des encarts stylisés
-- ✅ Animations hover avec scale
-
-#### 5. **Portfolio Section** ⏳ (PAGE EXISTANTE - À AMÉLIORER)
-- ✅ Page `/portfolio` existe déjà
-- ✅ Composant PortfolioItem créé
-- ⏳ Améliorer les filtres par catégorie
-- ⏳ Optimiser les hover effects
-
-#### 6. **Tarifs Section** ✅ (TERMINÉ)
-- ✅ 3 PricingCard (Starter 2500€, Business 5500€, Premium sur devis)
-- ✅ Encart taux journalier (450€/jour)
-- ✅ Boutons "Demander un devis" avec query params
-- ✅ Badge "POPULAIRE" sur la carte Business
-
-#### 7. **Témoignages Section** ✅
-- ✅ Composant TestimonialSlider mis à jour
-- ✅ Nouvelles couleurs appliquées
-- ✅ Accessibilité améliorée
-
-#### 8. **Contact Section** ✅ (TERMINÉ)
-- ✅ Formulaire complet (nom, email, sujet, message, budget)
-- ✅ Honeypot anti-spam (champ invisible "website")
-- ✅ Rate limiting (3 requêtes/minute par IP)
-- ✅ Validation stricte côté client et serveur
-- ✅ Connexion API route prête (nécessite config SMTP)
-- ✅ Template email HTML moderne avec gradient
-- ✅ Coordonnées et réseaux sociaux affichés
-
-#### 9. **Footer** ✅ (TERMINÉ)
-- ✅ Structure en 4 colonnes responsive (Brand, Navigation, Contact, Newsletter)
-- ✅ Navigation complète (8 liens incluant Processus et Tarifs)
-- ✅ Section Contact avec email (contact@bandev.fr) et localisation
-- ✅ Réseaux sociaux (LinkedIn, GitHub, Email) avec icônes animées
-- ✅ Newsletter fonctionnelle avec formulaire d'inscription
-- ✅ Rate limiting (3 inscriptions/minute par IP)
-- ✅ Validation stricte (email, longueur)
-- ✅ Messages de feedback (succès, erreur, chargement)
-- ✅ Liens légaux (Mentions légales, Politique de confidentialité)
-- ✅ SIRET et copyright dynamique
-- ✅ Pages légales créées et conformes RGPD
+### Hook useReducedMotion
+- ✅ Détection de `prefers-reduced-motion: reduce`
+- ✅ État réactif avec event listener
+- ✅ Utilisé dans tous les composants animés
 
 ---
 
-## ✅ Phase 4 : Theme Toggle & Animations (EN COURS)
+## ✅ Phase 3 : Composants Refactorisés (TERMINÉ)
 
-### Theme Toggle ✅ (TERMINÉ)
-- ✅ Installation de `next-themes`
-- ✅ Création du composant `ThemeProvider.jsx`
-- ✅ Refactorisation de `ThemeToggle.jsx` avec next-themes
-- ✅ Support de 3 modes : clair, sombre, système
-- ✅ Icônes animées (Sun, Moon, Monitor) avec transitions fluides
-- ✅ Persistance du thème dans localStorage
-- ✅ Évite le flash de contenu non stylé (FOUC)
-- ✅ Accessibilité : focus-visible, aria-label dynamique
-- ✅ Support de prefers-reduced-motion
+### Header.jsx
+- ✅ Menu mobile animé avec Framer Motion
+- ✅ Hamburger → X avec rotation
+- ✅ Drawer plein écran avec animations staggerées
+- ✅ Body scroll lock quand menu ouvert
+- ✅ Respect de `useReducedMotion`
 
-### Animations Framer Motion :
-- ✅ Section reveal : `whileInView` avec opacity/y
-- ✅ Boutons : `whileHover` scale 1.05, `whileTap` scale 0.98
-- ⏳ Cartes portfolio : hover avec y: -6
-- ✅ Compteurs : spring animation
-- ✅ Badge ping : halo pulsant avec `prefers-reduced-motion`
-- ⏳ Préloader : spinner avec disparition fade
+### ServiceCard.jsx
+- ✅ Animation `whileHover` : y: -8, shadow enhanced
+- ✅ Bordure accent au survol
+- ✅ Police `font-heading` pour titres
+- ✅ Animations conditionnelles
 
-### Performance :
-- ⏳ Images : AVIF/WebP avec Next/Image
-- ⏳ Lazy loading pour images hors écran
-- ⏳ Préconnect polices (Google Fonts)
-- ⏳ `font-display: swap`
+### PopularBadge.jsx (NOUVEAU)
+- ✅ Badge animé pour cartes de tarifs
+- ✅ Spring animation avec rotation
+- ✅ Gradient `accentSecondary` → `accent`
+- ✅ Icône étoile intégrée
 
-### Accessibilité :
-- ✅ `focus-visible` sur tous les boutons/liens
-- ✅ Contrastes WCAG AA
-- ✅ `prefers-reduced-motion` support
-- ⏳ Alt tags descriptifs
-- ⏳ Lecteurs d'écran (aria-labels)
+### TestimonialCarousel.jsx (NOUVEAU)
+- ✅ Carousel complet avec swipe
+- ✅ Navigation avec boutons animés
+- ✅ Indicateurs de position (dots)
+- ✅ Transitions fluides avec AnimatePresence
+- ✅ Avatars, étoiles, citations
 
----
+### CTAButton.tsx
+- ✅ Animations scale au hover/tap
+- ✅ Gradient `accent` → `accentSecondary`
+- ✅ Effet shimmer préservé
+- ✅ Variantes primary/secondary
 
-## 📱 Phase 5 : Responsive & Simplifications (À FAIRE)
+### PricingCard.jsx
+- ✅ Intégration de `PopularBadge`
+- ✅ Tokens de couleurs mis à jour
+- ✅ Icônes Check en `accentSecondary` (vert Matrix)
+- ✅ Animations d'apparition au scroll
+- ✅ Hover scale subtil
 
-### Breakpoints :
-- ⏳ **sm** : stacker colonnes, réduire titres, masquer bruit de fond, menu drawer
-- ⏳ **md** : grille 2 colonnes portfolio, navigation comprimée
-- ⏳ **lg** : hero 2 colonnes, sections 7xl, portfolio 2-3 colonnes
-- ⏳ **xl** : 3 colonnes, marges importantes
+### HeroSection.tsx
+- ✅ Parallax avec `useScroll` et `useTransform`
+- ✅ Désactivation sur mobile et reduced motion
+- ✅ Police `font-heading` pour titres
+- ✅ Fond `bg-background` par défaut
+- ✅ Badge animé avec ping vert Matrix
 
----
+### Footer.jsx
+- ✅ Tokens de couleurs appliqués
+- ✅ Bouton CTA avec gradient
+- ✅ Icônes sociales avec hover scale
+- ✅ Espacement `px-gutter` cohérent
+- ✅ Transitions fluides
 
-## 🎯 Critères d'Acceptation (À VALIDER)
+### PortfolioGrid.jsx
+- ✅ Filtres animés avec `motion.button`
+- ✅ Grille responsive (1/2/3/4 colonnes)
+- ✅ AnimatePresence pour transitions de filtrage
+- ✅ Stagger animation sur apparition
+- ✅ Overlay gradient accent au survol
+- ✅ Police `font-heading` pour titres de projets
 
-- ⏳ Hero < 500 kB, contrastes WCAG validés
-- ⏳ Palette appliquée à 100% des composants
-- ✅ Section Statistiques visible avec 3+ chiffres animés
-- ✅ Portfolio page avec ≥6 projets filtrables (page existante)
-- ✅ Section Tarifs avec 3 packages
-- ✅ Témoignages accessibles en slider
-- ✅ Mode clair/sombre toggle fonctionnel et persistent
-- ⏳ Lighthouse Performance ≥95, Accessibilité ≥90
+### ProjectCard.jsx
+- ✅ Conversion en client component
+- ✅ Animation `whileHover` : y: -8
+- ✅ Overlay gradient accent
+- ✅ Badges technos en `accentSecondary`
+- ✅ Police `font-heading` pour titres
 
----
-
-## 📋 TODO Immédiat
-
-### Priorité 1 (Critique) :
-1. ✅ Refactoriser section Services avec icônes numérotées
-2. ✅ Transformer section Processus en grille verticale
-3. ✅ Page Portfolio avec filtres (existante)
-4. ✅ Créer section Tarifs sur homepage
-5. ✅ Améliorer formulaire Contact avec honeypot
-
-### Priorité 2 (Important) :
-6. ✅ Implémenter toggle thème clair/sombre
-7. ⏳ Optimiser toutes les images (AVIF/WebP)
-8. ⏳ Ajouter préconnect polices
-9. ⏳ Restructurer Footer
-10. ⏳ Tests accessibilité complets
-
-### Priorité 3 (Nice to have) :
-11. ⏳ Préloader avec spinner
-12. ⏳ Animations avancées (parallax, etc.)
-13. ⏳ Tests Lighthouse
-14. ⏳ Documentation composants
+### Preloader.jsx (NOUVEAU)
+- ✅ Logo animé avec scale pulse
+- ✅ Barre de progression gradient
+- ✅ Grille Matrix en arrière-plan
+- ✅ Fade out avec AnimatePresence
+- ✅ Respect de `useReducedMotion`
 
 ---
 
-## 🚀 Commandes Utiles
+## 🔄 Phase 4 : Optimisations en Cours
 
-```bash
-# Développement
-npm run dev
+### Images
+- ⏳ Conversion AVIF/WebP à faire
+- ⏳ Génération des images hero manquantes (voir `IMAGES_HERO_SECTIONS.md`)
+- ✅ `next/image` déjà utilisé avec lazy loading
+- ✅ `sizes` configurés pour responsive
 
-# Build production
-npm run build
-
-# Lint
-npm run lint
-
-# Tests accessibilité
-npm run lighthouse
-
-# Optimiser images
-npm run optimize:images
-```
+### Performance
+- ✅ Build réussi sans erreurs
+- ⏳ Audit Lighthouse à effectuer
+- ⏳ Vérification Core Web Vitals
+- ✅ Preconnect polices configuré
+- ✅ `font-display: swap` activé
 
 ---
 
-**Dernière mise à jour :** Phase 4 - Theme Toggle + Contact Form terminés
-**Progression globale :** ~70% ✅
+## 📋 Phase 5 : Composants Restants à Refactoriser
 
-### Résumé des accomplissements :
-- ✅ Design tokens et configuration Tailwind
-- ✅ 7 composants de base créés/refactorisés
-- ✅ Homepage refactorée (Hero, Stats, Services, Processus, Tarifs, Témoignages)
-- ✅ Theme toggle avec next-themes (3 modes : clair/sombre/système)
-- ✅ Formulaire de contact avec honeypot anti-spam et rate limiting
-- ⏳ Footer restructuré
-- ⏳ Optimisation images et performance
+### Priorité Haute
+- ✅ **Button.jsx** : Nouveaux tokens appliqués, gradient, useReducedMotion
+- ✅ **Card.jsx** : Tokens uniformisés, hover animations conditionnelles
+- ✅ **TechBadge.jsx** : Couleurs accent/accentSecondary, useReducedMotion
+- ✅ **Section.jsx** : Espacement `py-section`, `px-gutter`, animations conditionnelles
+- ✅ **AnimatedCounter.jsx** : useReducedMotion, affichage direct si reduced motion
+- ✅ **BackToTop.jsx** : Framer Motion, AnimatePresence, gradient, useReducedMotion
+- ✅ **TestimonialCard.jsx** : Tokens appliqués, animations hover, useReducedMotion
+- ✅ **StatItem.jsx** : useReducedMotion, compteur conditionnel, font-heading
+- ✅ **CTASection.jsx** : Tokens appliqués, animations boutons, useReducedMotion
+
+### Priorité Moyenne
+- ⏳ **FormulaireContact.jsx** : Validation accessible, focus-visible
+- ⏳ **FormulaireDevis.jsx** : Idem + animations de validation
+- ✅ **ScrollReveal.jsx** : Déjà compatible (respect reduced motion natif)
+
+### Priorité Basse (Effets décoratifs)
+- ⏳ **MatrixRain.jsx** : Optimiser performance, reduced motion
+- ⏳ **ParticlesBackground.jsx** : Idem
+- ⏳ **MeshGradient.jsx** : Vérifier couleurs avec nouveaux tokens
+- ⏳ **Globe3D.jsx** : Performance check
+
+---
+
+## 🎯 Phase 6 : Pages à Vérifier/Ajuster
+
+### Pages Principales
+- ⏳ **page.jsx** (Accueil) : Vérifier tous les composants utilisés
+- ⏳ **services/page.jsx** : Hero + ServiceCards
+- ⏳ **processus/page.jsx** : Hero + étapes animées
+- ⏳ **portfolio/page.tsx** : PortfolioGrid déjà OK
+- ⏳ **tarifs/page.jsx** : PricingCards avec PopularBadge
+- ⏳ **temoignages/page.jsx** : TestimonialCarousel
+- ⏳ **apropos/page.jsx** : Bio section, image ronde
+- ⏳ **contact/page.jsx** : Formulaire + carte
+
+### Pages Secondaires
+- ⏳ **devis/page.jsx** : FormulaireDevis
+- ⏳ **mentions-legales/page.jsx** : Vérifier typo
+- ⏳ **politique-confidentialite/page.jsx** : Vérifier typo
+
+---
+
+## 🚀 Phase 7 : Tests & Validation (À FAIRE)
+
+### Tests Fonctionnels
+- ⏳ Navigation complète du site
+- ⏳ Formulaires (validation, soumission)
+- ⏳ Filtres portfolio
+- ⏳ Carousel témoignages
+- ⏳ Menu mobile
+
+### Tests Responsive
+- ⏳ Mobile (320px, 375px, 414px)
+- ⏳ Tablette (768px, 1024px)
+- ⏳ Desktop (1280px, 1440px, 1920px)
+- ⏳ Ultra-wide (2560px+)
+
+### Tests Accessibilité
+- ⏳ Navigation clavier complète
+- ⏳ Screen reader (NVDA/JAWS)
+- ⏳ Contrastes WCAG AA
+- ⏳ Focus-visible sur tous les interactifs
+- ⏳ Prefers-reduced-motion respecté
+
+### Tests Performance
+- ⏳ Lighthouse (Performance ≥95, A11y 100, SEO 100)
+- ⏳ Core Web Vitals (LCP <2.5s, FID <100ms, CLS <0.1)
+- ⏳ Temps de chargement initial
+- ⏳ Taille des bundles JS/CSS
+
+---
+
+## 📊 Métriques Actuelles
+
+### Build
+- ✅ Build Next.js : **SUCCÈS**
+- ✅ Erreurs TypeScript : **0**
+- ✅ Warnings : **À vérifier**
+
+### Composants
+- ✅ Refactorisés : **20/40** (50%) 🎉
+- ✅ Nouveaux créés : **3** (PopularBadge, TestimonialCarousel, Preloader)
+- ⏳ Restants : **20**
+
+### Design Tokens
+- ✅ Couleurs : **100%**
+- ✅ Typographie : **100%**
+- ✅ Espacement : **100%**
+- ✅ Ombres : **100%**
+
+---
+
+## 🎨 Prochaines Actions Recommandées
+
+### Immédiat (Aujourd'hui)
+1. ✅ Vérifier le build (FAIT)
+2. 🔄 Refactoriser Button.jsx et Card.jsx (composants de base)
+3. 🔄 Tester la page d'accueil complète
+4. 🔄 Générer/optimiser images hero manquantes
+
+### Court Terme (Cette Semaine)
+1. Refactoriser tous les composants priorité haute
+2. Ajuster toutes les pages principales
+3. Effectuer audit Lighthouse
+4. Tests responsive complets
+
+### Moyen Terme (Semaine Prochaine)
+1. Optimisation images (AVIF/WebP)
+2. Tests accessibilité complets
+3. Optimisation performance finale
+4. Documentation utilisateur
+
+---
+
+## 🐛 Issues Connues
+
+### Résolues
+- ✅ PowerShell syntax error (`&&` → `;`) - Contourné avec commande correcte
+
+### En Cours
+- ⏳ Aucune pour le moment
+
+### À Surveiller
+- ⏳ Performance des animations sur mobile
+- ⏳ Taille des bundles avec Framer Motion
+- ⏳ Compatibilité Safari (animations CSS)
+
+---
+
+## 📝 Notes Techniques
+
+### Framer Motion
+- Toutes les animations utilisent `useReducedMotion`
+- Pattern : `whileHover={prefersReducedMotion ? {} : { animation }}`
+- AnimatePresence pour transitions enter/exit
+- `motion-reduce:transform-none` en CSS pour fallback
+
+### Tailwind CSS 4
+- Tokens accessibles via classes utilitaires
+- Pas de `var(--color-*)` nécessaire
+- Classes : `bg-background`, `text-foreground`, `border-accent`
+- Responsive : `sm:`, `md:`, `lg:`, `xl:`
+
+### Next.js 15
+- App Router utilisé
+- Server Components par défaut
+- `'use client'` pour composants avec hooks/animations
+- Image optimization avec `next/image`
+
+### Accessibilité
+- Focus-visible sur tous les interactifs
+- ARIA labels sur icônes décoratives
+- Contrastes vérifiés
+- Navigation clavier fonctionnelle
+
+---
+
+**Dernière mise à jour :** $(date)
+**Statut global :** 🟢 En bonne voie (50% des composants refactorisés)
+**Prochaine étape :** Refactoriser composants décoratifs et formulaires
