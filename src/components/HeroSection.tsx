@@ -68,7 +68,7 @@ export default function HeroSection({
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-background"
+      className="hero-section relative overflow-hidden bg-background"
       style={{ minHeight: height }}
     >
       {/* Image de fond avec parallax Framer Motion */}
@@ -92,9 +92,9 @@ export default function HeroSection({
         />
       </motion.div>
 
-      {/* Overlay gradient */}
+      {/* Overlay gradient (remplacé par CSS ::after unifié mais gardé pour compatibilité) */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"
+        className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/20"
         style={{ opacity: Number(overlayOpacity) / 100, zIndex: 1 }}
       />
 
@@ -110,7 +110,7 @@ export default function HeroSection({
       />
 
       {/* Contenu */}
-      <div className="container-page relative flex min-h-[inherit] items-center" style={{ zIndex: 10 }}>
+      <div className="container-page relative flex min-h-[inherit] items-center" style={{ zIndex: 20 }}>
         <div className={`w-full space-y-6 text-${textAlign}`}>
           {/* Badge */}
           {badge && (

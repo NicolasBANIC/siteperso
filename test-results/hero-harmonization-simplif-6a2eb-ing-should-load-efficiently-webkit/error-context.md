@@ -393,275 +393,275 @@
             - paragraph [ref=e572]: Animation de code qui s'écrit automatiquement, parfait pour présenter vos solutions techniques de manière dynamique.
           - generic [ref=e573]:
             - generic [ref=e579]: JavaScript
-            - code [ref=e581]: "// Next.js API Route export async function GET(request) { const data = await fetchData(); return Response.json(data); }"
-        - generic [ref=e584]:
-          - generic [ref=e585]:
-            - heading "Prêt à transformer votre vision digitale ?" [level=3] [ref=e586]:
+            - code [ref=e581]: "// Next.js API Route export async function GET(request) { cons"
+        - generic [ref=e585]:
+          - generic [ref=e586]:
+            - heading "Prêt à transformer votre vision digitale ?" [level=3] [ref=e587]:
               - text: Prêt à transformer votre
-              - generic [ref=e587]: vision digitale
+              - generic [ref=e588]: vision digitale
               - text: "?"
-            - paragraph [ref=e588]: Discutons de votre projet et créons ensemble une solution sur mesure qui répond parfaitement à vos besoins business.
-          - link "Démarrer votre projet" [ref=e591]:
+            - paragraph [ref=e589]: Discutons de votre projet et créons ensemble une solution sur mesure qui répond parfaitement à vos besoins business.
+          - link "Démarrer votre projet" [ref=e592]:
             - /url: /contact
-            - generic [ref=e593]: Démarrer votre projet
-            - img [ref=e594]
-        - generic [ref=e597]:
-          - generic [ref=e600]:
-            - img [ref=e602]
-            - heading "Code Moderne" [level=4] [ref=e606]
-            - paragraph [ref=e607]: React 19, Next.js 15, TypeScript pour un code robuste et maintenable
-          - generic [ref=e610]:
-            - img [ref=e612]
-            - heading "Performances Extrêmes" [level=4] [ref=e614]
-            - paragraph [ref=e615]: Optimisations avancées pour des temps de chargement ultra-rapides
-          - generic [ref=e618]:
-            - img [ref=e620]
-            - heading "Animations Fluides" [level=4] [ref=e625]
-            - paragraph [ref=e626]: Transitions et animations 60fps pour une expérience premium
-      - generic [ref=e628]:
-        - generic [ref=e630]:
-          - generic [ref=e631]: Tarifs
-          - heading "Des formules adaptées à vos besoins" [level=2] [ref=e632]
-          - paragraph [ref=e633]: Choisissez la formule qui correspond le mieux à votre projet. Tous les tarifs incluent un accompagnement personnalisé et un support de 3 mois.
-        - generic [ref=e634]:
-          - article [ref=e636]:
-            - generic [ref=e637]:
-              - heading "Starter" [level=3] [ref=e638]
-              - generic [ref=e639]:
-                - generic [ref=e640]: 2 500€
-                - generic [ref=e641]: / projet
-              - paragraph [ref=e642]: Idéal pour les petits projets et sites vitrines. Une solution clé en main pour démarrer votre présence en ligne.
-            - list [ref=e643]:
-              - listitem [ref=e644]:
-                - img [ref=e645]
-                - generic [ref=e647]: Site vitrine 5 pages maximum
-              - listitem [ref=e648]:
-                - img [ref=e649]
-                - generic [ref=e651]: Design responsive (mobile, tablette, desktop)
-              - listitem [ref=e652]:
-                - img [ref=e653]
-                - generic [ref=e655]: Optimisation SEO de base
-              - listitem [ref=e656]:
-                - img [ref=e657]
-                - generic [ref=e659]: Formulaire de contact
-              - listitem [ref=e660]:
-                - img [ref=e661]
-                - generic [ref=e663]: Hébergement 1 an inclus
-              - listitem [ref=e664]:
-                - img [ref=e665]
-                - generic [ref=e667]: Formation à la gestion du contenu
-              - listitem [ref=e668]:
-                - img [ref=e669]
-                - generic [ref=e671]: Support 3 mois inclus
-            - link "Choisir Starter" [ref=e673]:
+            - generic [ref=e594]: Démarrer votre projet
+            - img [ref=e595]
+        - generic [ref=e598]:
+          - generic [ref=e601]:
+            - img [ref=e603]
+            - heading "Code Moderne" [level=4] [ref=e607]
+            - paragraph [ref=e608]: React 19, Next.js 15, TypeScript pour un code robuste et maintenable
+          - generic [ref=e611]:
+            - img [ref=e613]
+            - heading "Performances Extrêmes" [level=4] [ref=e615]
+            - paragraph [ref=e616]: Optimisations avancées pour des temps de chargement ultra-rapides
+          - generic [ref=e619]:
+            - img [ref=e621]
+            - heading "Animations Fluides" [level=4] [ref=e626]
+            - paragraph [ref=e627]: Transitions et animations 60fps pour une expérience premium
+      - generic [ref=e629]:
+        - generic [ref=e631]:
+          - generic [ref=e632]: Tarifs
+          - heading "Des formules adaptées à vos besoins" [level=2] [ref=e633]
+          - paragraph [ref=e634]: Choisissez la formule qui correspond le mieux à votre projet. Tous les tarifs incluent un accompagnement personnalisé et un support de 3 mois.
+        - generic [ref=e635]:
+          - article [ref=e637]:
+            - generic [ref=e638]:
+              - heading "Starter" [level=3] [ref=e639]
+              - generic [ref=e640]:
+                - generic [ref=e641]: 2 500€
+                - generic [ref=e642]: / projet
+              - paragraph [ref=e643]: Idéal pour les petits projets et sites vitrines. Une solution clé en main pour démarrer votre présence en ligne.
+            - list [ref=e644]:
+              - listitem [ref=e645]:
+                - img [ref=e646]
+                - generic [ref=e648]: Site vitrine 5 pages maximum
+              - listitem [ref=e649]:
+                - img [ref=e650]
+                - generic [ref=e652]: Design responsive (mobile, tablette, desktop)
+              - listitem [ref=e653]:
+                - img [ref=e654]
+                - generic [ref=e656]: Optimisation SEO de base
+              - listitem [ref=e657]:
+                - img [ref=e658]
+                - generic [ref=e660]: Formulaire de contact
+              - listitem [ref=e661]:
+                - img [ref=e662]
+                - generic [ref=e664]: Hébergement 1 an inclus
+              - listitem [ref=e665]:
+                - img [ref=e666]
+                - generic [ref=e668]: Formation à la gestion du contenu
+              - listitem [ref=e669]:
+                - img [ref=e670]
+                - generic [ref=e672]: Support 3 mois inclus
+            - link "Choisir Starter" [ref=e674]:
               - /url: /devis?plan=starter
-              - generic [ref=e675]: Choisir Starter
-          - article [ref=e677]:
-            - generic [ref=e678]:
-              - img [ref=e679]
-              - generic [ref=e681]: Populaire
-            - generic [ref=e682]:
-              - heading "Business" [level=3] [ref=e683]
-              - generic [ref=e684]:
-                - generic [ref=e685]: 5 500€
-                - generic [ref=e686]: / projet
-              - paragraph [ref=e687]: Pour les entreprises qui veulent se démarquer avec un site professionnel et performant.
-            - list [ref=e688]:
-              - listitem [ref=e689]:
-                - img [ref=e690]
-                - generic [ref=e692]: Site sur mesure jusqu'à 15 pages
-              - listitem [ref=e693]:
-                - img [ref=e694]
-                - generic [ref=e696]: Design personnalisé et moderne
-              - listitem [ref=e697]:
-                - img [ref=e698]
-                - generic [ref=e700]: Optimisation SEO avancée
-              - listitem [ref=e701]:
-                - img [ref=e702]
-                - generic [ref=e704]: Intégration CMS (WordPress/Strapi)
-              - listitem [ref=e705]:
-                - img [ref=e706]
-                - generic [ref=e708]: Animations et interactions
-              - listitem [ref=e709]:
-                - img [ref=e710]
-                - generic [ref=e712]: Tableau de bord analytics
-              - listitem [ref=e713]:
-                - img [ref=e714]
-                - generic [ref=e716]: Formation complète
-              - listitem [ref=e717]:
-                - img [ref=e718]
-                - generic [ref=e720]: Support 3 mois inclus
-            - link "Choisir Business" [ref=e722]:
+              - generic [ref=e676]: Choisir Starter
+          - article [ref=e678]:
+            - generic [ref=e679]:
+              - img [ref=e680]
+              - generic [ref=e682]: Populaire
+            - generic [ref=e683]:
+              - heading "Business" [level=3] [ref=e684]
+              - generic [ref=e685]:
+                - generic [ref=e686]: 5 500€
+                - generic [ref=e687]: / projet
+              - paragraph [ref=e688]: Pour les entreprises qui veulent se démarquer avec un site professionnel et performant.
+            - list [ref=e689]:
+              - listitem [ref=e690]:
+                - img [ref=e691]
+                - generic [ref=e693]: Site sur mesure jusqu'à 15 pages
+              - listitem [ref=e694]:
+                - img [ref=e695]
+                - generic [ref=e697]: Design personnalisé et moderne
+              - listitem [ref=e698]:
+                - img [ref=e699]
+                - generic [ref=e701]: Optimisation SEO avancée
+              - listitem [ref=e702]:
+                - img [ref=e703]
+                - generic [ref=e705]: Intégration CMS (WordPress/Strapi)
+              - listitem [ref=e706]:
+                - img [ref=e707]
+                - generic [ref=e709]: Animations et interactions
+              - listitem [ref=e710]:
+                - img [ref=e711]
+                - generic [ref=e713]: Tableau de bord analytics
+              - listitem [ref=e714]:
+                - img [ref=e715]
+                - generic [ref=e717]: Formation complète
+              - listitem [ref=e718]:
+                - img [ref=e719]
+                - generic [ref=e721]: Support 3 mois inclus
+            - link "Choisir Business" [ref=e723]:
               - /url: /devis?plan=business
-              - generic [ref=e724]: Choisir Business
-          - article [ref=e726]:
-            - generic [ref=e727]:
-              - heading "Premium" [level=3] [ref=e728]
-              - generic [ref=e730]: Sur devis
-              - paragraph [ref=e731]: Pour les projets complexes nécessitant des fonctionnalités avancées et une architecture sur mesure.
-            - list [ref=e732]:
-              - listitem [ref=e733]:
-                - img [ref=e734]
-                - generic [ref=e736]: Application web complexe
-              - listitem [ref=e737]:
-                - img [ref=e738]
-                - generic [ref=e740]: Architecture scalable et sécurisée
-              - listitem [ref=e741]:
-                - img [ref=e742]
-                - generic [ref=e744]: Intégrations API tierces
-              - listitem [ref=e745]:
-                - img [ref=e746]
-                - generic [ref=e748]: Espace membre / authentification
-              - listitem [ref=e749]:
-                - img [ref=e750]
-                - generic [ref=e752]: Paiement en ligne (Stripe)
-              - listitem [ref=e753]:
-                - img [ref=e754]
-                - generic [ref=e756]: Dashboard admin personnalisé
-              - listitem [ref=e757]:
-                - img [ref=e758]
-                - generic [ref=e760]: Tests automatisés
-              - listitem [ref=e761]:
-                - img [ref=e762]
-                - generic [ref=e764]: Support prioritaire 6 mois
-            - link "Demander un devis" [ref=e766]:
+              - generic [ref=e725]: Choisir Business
+          - article [ref=e727]:
+            - generic [ref=e728]:
+              - heading "Premium" [level=3] [ref=e729]
+              - generic [ref=e731]: Sur devis
+              - paragraph [ref=e732]: Pour les projets complexes nécessitant des fonctionnalités avancées et une architecture sur mesure.
+            - list [ref=e733]:
+              - listitem [ref=e734]:
+                - img [ref=e735]
+                - generic [ref=e737]: Application web complexe
+              - listitem [ref=e738]:
+                - img [ref=e739]
+                - generic [ref=e741]: Architecture scalable et sécurisée
+              - listitem [ref=e742]:
+                - img [ref=e743]
+                - generic [ref=e745]: Intégrations API tierces
+              - listitem [ref=e746]:
+                - img [ref=e747]
+                - generic [ref=e749]: Espace membre / authentification
+              - listitem [ref=e750]:
+                - img [ref=e751]
+                - generic [ref=e753]: Paiement en ligne (Stripe)
+              - listitem [ref=e754]:
+                - img [ref=e755]
+                - generic [ref=e757]: Dashboard admin personnalisé
+              - listitem [ref=e758]:
+                - img [ref=e759]
+                - generic [ref=e761]: Tests automatisés
+              - listitem [ref=e762]:
+                - img [ref=e763]
+                - generic [ref=e765]: Support prioritaire 6 mois
+            - link "Demander un devis" [ref=e767]:
               - /url: /devis?plan=premium
-              - generic [ref=e768]: Demander un devis
-        - generic [ref=e771]:
-          - heading "Taux Journalier Moyen (TJM)" [level=3] [ref=e772]
-          - generic [ref=e773]:
-            - generic [ref=e774]: 450€
-            - generic [ref=e775]: / jour
-          - paragraph [ref=e776]: Pour les missions en régie ou les projets nécessitant une facturation au temps passé. Idéal pour les collaborations longue durée et les projets évolutifs.
-          - link "Discuter de votre projet" [ref=e778]:
+              - generic [ref=e769]: Demander un devis
+        - generic [ref=e772]:
+          - heading "Taux Journalier Moyen (TJM)" [level=3] [ref=e773]
+          - generic [ref=e774]:
+            - generic [ref=e775]: 450€
+            - generic [ref=e776]: / jour
+          - paragraph [ref=e777]: Pour les missions en régie ou les projets nécessitant une facturation au temps passé. Idéal pour les collaborations longue durée et les projets évolutifs.
+          - link "Discuter de votre projet" [ref=e779]:
             - /url: /contact
-            - generic [ref=e780]: Discuter de votre projet
-        - link "Voir tous les détails tarifaires" [ref=e783]:
+            - generic [ref=e781]: Discuter de votre projet
+        - link "Voir tous les détails tarifaires" [ref=e784]:
           - /url: /tarifs
           - text: Voir tous les détails tarifaires
-          - img [ref=e784]
-      - generic [ref=e787]:
-        - generic [ref=e789]:
-          - generic [ref=e790]: Témoignages
-          - heading "Ils m'ont fait confiance" [level=2] [ref=e791]
-          - paragraph [ref=e792]: Découvrez les retours de mes clients sur la qualité de mon travail et mon accompagnement.
-        - generic [ref=e794]:
-          - generic [ref=e796]:
-            - img [ref=e797]
-            - generic [ref=e800]:
-              - img "Photo de Léa Rousseau" [ref=e803]
-              - generic [ref=e804]:
-                - img [ref=e805]
-                - img [ref=e807]
-                - img [ref=e809]
-                - img [ref=e811]
-                - img [ref=e813]
-              - blockquote [ref=e815]: "\"Grâce à Nicolas, je vends mes créations en ligne avec une boutique magnifique et facile à gérer. Le système de paiement est sécurisé et mes clients adorent l'expérience d'achat.\""
-              - generic [ref=e816]:
-                - paragraph [ref=e817]: Léa Rousseau
-                - paragraph [ref=e818]: Créatrice, Douceurs de Léa
-                - paragraph [ref=e819]: E-commerce sur mesure
-          - generic [ref=e820]:
-            - button "Témoignage précédent" [ref=e821]:
-              - img [ref=e822]
-            - generic [ref=e824]:
-              - button "Aller au témoignage 1" [ref=e825]
-              - button "Aller au témoignage 2" [ref=e826]
-              - button "Aller au témoignage 3" [ref=e827]
-            - button "Témoignage suivant" [ref=e828]:
-              - img [ref=e829]
-        - link "Voir tous les témoignages" [ref=e833]:
+          - img [ref=e785]
+      - generic [ref=e788]:
+        - generic [ref=e790]:
+          - generic [ref=e791]: Témoignages
+          - heading "Ils m'ont fait confiance" [level=2] [ref=e792]
+          - paragraph [ref=e793]: Découvrez les retours de mes clients sur la qualité de mon travail et mon accompagnement.
+        - generic [ref=e795]:
+          - generic [ref=e797]:
+            - img [ref=e798]
+            - generic [ref=e801]:
+              - img "Photo de Sophie Martin" [ref=e804]
+              - generic [ref=e805]:
+                - img [ref=e806]
+                - img [ref=e808]
+                - img [ref=e810]
+                - img [ref=e812]
+                - img [ref=e814]
+              - blockquote [ref=e816]: "\"Nicolas a transformé notre présence en ligne. Notre site vitrine reflète parfaitement notre savoir-faire artisanal. Les demandes de devis ont augmenté de 60% en 3 mois !\""
+              - generic [ref=e817]:
+                - paragraph [ref=e818]: Sophie Martin
+                - paragraph [ref=e819]: Gérante, Atelier Bois Créatif
+                - paragraph [ref=e820]: Site vitrine premium
+          - generic [ref=e821]:
+            - button "Témoignage précédent" [ref=e822]:
+              - img [ref=e823]
+            - generic [ref=e825]:
+              - button "Aller au témoignage 1" [ref=e826]
+              - button "Aller au témoignage 2" [ref=e827]
+              - button "Aller au témoignage 3" [ref=e828]
+            - button "Témoignage suivant" [ref=e829]:
+              - img [ref=e830]
+        - link "Voir tous les témoignages" [ref=e834]:
           - /url: /temoignages
           - text: Voir tous les témoignages
-          - img [ref=e834]
-      - generic [ref=e840]:
-        - heading "Prêt à démarrer votre projet ?" [level=2] [ref=e841]
-        - paragraph [ref=e842]: Discutons de vos besoins et je vous proposerai une solution sur mesure adaptée à votre budget et vos objectifs.
-        - generic [ref=e843]:
-          - link "Demander un devis gratuit" [ref=e845]:
+          - img [ref=e835]
+      - generic [ref=e841]:
+        - heading "Prêt à démarrer votre projet ?" [level=2] [ref=e842]
+        - paragraph [ref=e843]: Discutons de vos besoins et je vous proposerai une solution sur mesure adaptée à votre budget et vos objectifs.
+        - generic [ref=e844]:
+          - link "Demander un devis gratuit" [ref=e846]:
             - /url: /devis
-          - link "Me contacter" [ref=e847]:
+          - link "Me contacter" [ref=e848]:
             - /url: /contact
-    - contentinfo [ref=e848]:
-      - generic [ref=e849]:
-        - generic [ref=e850]:
-          - generic [ref=e851]:
-            - img "BANDEV" [ref=e853]
-            - paragraph [ref=e854]: Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
-            - paragraph [ref=e855]: "SIRET : 841 375 652 00028"
-            - link "Demander un devis" [ref=e856]:
+    - contentinfo [ref=e849]:
+      - generic [ref=e850]:
+        - generic [ref=e851]:
+          - generic [ref=e852]:
+            - img "BANDEV" [ref=e854]
+            - paragraph [ref=e855]: Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
+            - paragraph [ref=e856]: "SIRET : 841 375 652 00028"
+            - link "Demander un devis" [ref=e857]:
               - /url: /devis
-          - generic [ref=e857]:
-            - heading "Navigation" [level=2] [ref=e858]
-            - list [ref=e859]:
-              - listitem [ref=e860]:
-                - link "Accueil" [ref=e861]:
+          - generic [ref=e858]:
+            - heading "Navigation" [level=2] [ref=e859]
+            - list [ref=e860]:
+              - listitem [ref=e861]:
+                - link "Accueil" [ref=e862]:
                   - /url: /
-              - listitem [ref=e862]:
-                - link "Services" [ref=e863]:
+              - listitem [ref=e863]:
+                - link "Services" [ref=e864]:
                   - /url: /services
-              - listitem [ref=e864]:
-                - link "Processus" [ref=e865]:
+              - listitem [ref=e865]:
+                - link "Processus" [ref=e866]:
                   - /url: /processus
-              - listitem [ref=e866]:
-                - link "Portfolio" [ref=e867]:
+              - listitem [ref=e867]:
+                - link "Portfolio" [ref=e868]:
                   - /url: /portfolio
-              - listitem [ref=e868]:
-                - link "Tarifs" [ref=e869]:
+              - listitem [ref=e869]:
+                - link "Tarifs" [ref=e870]:
                   - /url: /tarifs
-              - listitem [ref=e870]:
-                - link "Témoignages" [ref=e871]:
+              - listitem [ref=e871]:
+                - link "Témoignages" [ref=e872]:
                   - /url: /temoignages
-              - listitem [ref=e872]:
-                - link "À propos" [ref=e873]:
+              - listitem [ref=e873]:
+                - link "À propos" [ref=e874]:
                   - /url: /apropos
-              - listitem [ref=e874]:
-                - link "Contact" [ref=e875]:
+              - listitem [ref=e875]:
+                - link "Contact" [ref=e876]:
                   - /url: /contact
-          - generic [ref=e876]:
-            - heading "Contact" [level=2] [ref=e877]
-            - list [ref=e878]:
-              - listitem [ref=e879]:
-                - link "Email contact@bandev.fr" [ref=e880]:
+          - generic [ref=e877]:
+            - heading "Contact" [level=2] [ref=e878]
+            - list [ref=e879]:
+              - listitem [ref=e880]:
+                - link "Email contact@bandev.fr" [ref=e881]:
                   - /url: mailto:contact@bandev.fr
-                  - generic [ref=e881]:
-                    - img [ref=e882]
-                    - generic [ref=e885]:
-                      - paragraph [ref=e886]: Email
-                      - paragraph [ref=e887]: contact@bandev.fr
-              - listitem [ref=e888]:
-                - generic [ref=e889]:
-                  - img [ref=e890]
-                  - generic [ref=e893]:
-                    - paragraph [ref=e894]: Localisation
-                    - paragraph [ref=e895]: France
-            - generic [ref=e896]:
-              - heading "Réseaux sociaux" [level=3] [ref=e897]
-              - generic [ref=e898]:
-                - link "LinkedIn" [ref=e899]:
+                  - generic [ref=e882]:
+                    - img [ref=e883]
+                    - generic [ref=e886]:
+                      - paragraph [ref=e887]: Email
+                      - paragraph [ref=e888]: contact@bandev.fr
+              - listitem [ref=e889]:
+                - generic [ref=e890]:
+                  - img [ref=e891]
+                  - generic [ref=e894]:
+                    - paragraph [ref=e895]: Localisation
+                    - paragraph [ref=e896]: France
+            - generic [ref=e897]:
+              - heading "Réseaux sociaux" [level=3] [ref=e898]
+              - generic [ref=e899]:
+                - link "LinkedIn" [ref=e900]:
                   - /url: https://www.linkedin.com/in/nicolasbanic
-                  - img [ref=e900]
-                - link "GitHub" [ref=e904]:
+                  - img [ref=e901]
+                - link "GitHub" [ref=e905]:
                   - /url: https://github.com/NicolasBANIC
-                  - img [ref=e905]
-                - link "Email" [ref=e908]:
+                  - img [ref=e906]
+                - link "Email" [ref=e909]:
                   - /url: mailto:contact@bandev.fr
-                  - img [ref=e909]
-        - generic [ref=e913]:
-          - generic [ref=e914]:
-            - link "Mentions légales" [ref=e915]:
+                  - img [ref=e910]
+        - generic [ref=e914]:
+          - generic [ref=e915]:
+            - link "Mentions légales" [ref=e916]:
               - /url: /mentions-legales
-            - generic [ref=e916]: •
-          - link "Politique de confidentialité" [ref=e918]:
+            - generic [ref=e917]: •
+          - link "Politique de confidentialité" [ref=e919]:
             - /url: /politique-confidentialite
-      - generic [ref=e920]:
-        - paragraph [ref=e921]: © 2025 BANDEV - Nicolas Banic. Tous droits réservés.
-        - paragraph [ref=e922]:
+      - generic [ref=e921]:
+        - paragraph [ref=e922]: © 2025 BANDEV - Nicolas Banic. Tous droits réservés.
+        - paragraph [ref=e923]:
           - text: Développé avec
-          - generic [ref=e923]: Next.js 15
+          - generic [ref=e924]: Next.js 15
           - text: "&"
-          - generic [ref=e924]: React 19
-  - button "Open Next.js Dev Tools" [ref=e930] [cursor=pointer]:
-    - img [ref=e931] [cursor=pointer]
-  - alert [ref=e936]
+          - generic [ref=e925]: React 19
+  - button "Open Next.js Dev Tools" [ref=e931] [cursor=pointer]:
+    - img [ref=e932] [cursor=pointer]
+  - alert [ref=e937]
 ```

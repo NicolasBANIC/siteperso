@@ -410,7 +410,7 @@
             - paragraph [ref=e581]: Animation de code qui s'écrit automatiquement, parfait pour présenter vos solutions techniques de manière dynamique.
           - generic [ref=e582]:
             - generic [ref=e588]: JavaScript
-            - code [ref=e590]: "// Next.js API Route export async function GET(request) { const data = await fetchDat"
+            - code [ref=e590]: //
         - generic [ref=e594]:
           - generic [ref=e595]:
             - heading "Prêt à transformer votre vision digitale ?" [level=3] [ref=e596]:

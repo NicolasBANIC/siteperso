@@ -393,7 +393,7 @@
             - paragraph [ref=e572]: Animation de code qui s'écrit automatiquement, parfait pour présenter vos solutions techniques de manière dynamique.
           - generic [ref=e573]:
             - generic [ref=e579]: JavaScript
-            - code [ref=e581]: // Nex
+            - code [ref=e581]: "// Next.js API Route export async function GET(request) { const data = await fetchData();"
         - generic [ref=e585]:
           - generic [ref=e586]:
             - heading "Prêt à transformer votre vision digitale ?" [level=3] [ref=e587]:
@@ -549,18 +549,18 @@
           - generic [ref=e797]:
             - img [ref=e798]
             - generic [ref=e801]:
-              - img "Photo de Sophie Martin" [ref=e804]
+              - img "Photo de Thomas Dubois" [ref=e804]
               - generic [ref=e805]:
                 - img [ref=e806]
                 - img [ref=e808]
                 - img [ref=e810]
                 - img [ref=e812]
                 - img [ref=e814]
-              - blockquote [ref=e816]: "\"Nicolas a transformé notre présence en ligne. Notre site vitrine reflète parfaitement notre savoir-faire artisanal. Les demandes de devis ont augmenté de 60% en 3 mois !\""
+              - blockquote [ref=e816]: "\"Un développeur à l'écoute et très professionnel. Notre plateforme de mise en relation fonctionne parfaitement. Le code est propre, documenté et évolutif. Je recommande vivement !\""
               - generic [ref=e817]:
-                - paragraph [ref=e818]: Sophie Martin
-                - paragraph [ref=e819]: Gérante, Atelier Bois Créatif
-                - paragraph [ref=e820]: Site vitrine premium
+                - paragraph [ref=e818]: Thomas Dubois
+                - paragraph [ref=e819]: Fondateur, GTravaux
+                - paragraph [ref=e820]: Application web sur mesure
           - generic [ref=e821]:
             - button "Témoignage précédent" [ref=e822]:
               - img [ref=e823]

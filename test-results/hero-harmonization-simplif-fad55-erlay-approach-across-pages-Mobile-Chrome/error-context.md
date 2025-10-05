@@ -1,0 +1,208 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Aller au contenu" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Accueil BAN.DEV" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "BAN.DEV" [ref=e7] [cursor=pointer]
+        - button "Ouvrir ou fermer le menu" [ref=e8]:
+          - img [ref=e10]
+    - main [ref=e11]:
+      - generic [ref=e17]:
+        - generic [ref=e24]: Expertise Full-Stack
+        - heading "Des services web pensés pour votre réussite" [level=1] [ref=e26]:
+          - text: Des services web
+          - generic [ref=e27]: pensés pour votre réussite
+        - paragraph [ref=e29]: Du site vitrine à l'application sur mesure, je vous accompagne à chaque étape pour créer un outil digital performant, moderne et à la hauteur de vos ambitions.
+        - generic [ref=e31]:
+          - link "Demander un devis" [ref=e33] [cursor=pointer]:
+            - /url: /devis
+            - generic [ref=e35] [cursor=pointer]: Demander un devis
+            - img [ref=e36] [cursor=pointer]
+          - link "Voir mes réalisations" [ref=e39] [cursor=pointer]:
+            - /url: /portfolio
+            - generic [ref=e41] [cursor=pointer]: Voir mes réalisations
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - article [ref=e46]:
+            - generic [ref=e47]:
+              - img [ref=e49]
+              - generic [ref=e55]:
+                - heading "Site vitrine premium" [level=2] [ref=e56]
+                - paragraph [ref=e57]: Une présence en ligne élégante, responsive et optimisée pour vos clients locaux. Idéal pour artisans, TPE et PME.
+            - list [ref=e58]:
+              - listitem [ref=e59]: Conception personnalisée et responsive
+              - listitem [ref=e61]: Optimisation SEO locale avancée
+              - listitem [ref=e63]: Intégration des avis et témoignages
+              - listitem [ref=e65]: Formation à la prise en main
+              - listitem [ref=e67]: Hébergement et maintenance inclus
+          - article [ref=e70]:
+            - generic [ref=e71]:
+              - img [ref=e73]
+              - generic [ref=e77]:
+                - heading "Site e-commerce" [level=2] [ref=e78]
+                - paragraph [ref=e79]: Vendez vos produits en ligne avec une boutique fluide, sécurisée et connectée à vos outils du quotidien.
+            - list [ref=e80]:
+              - listitem [ref=e81]: Catalogue produits évolutif
+              - listitem [ref=e83]: Paiements sécurisés (Stripe, PayPal)
+              - listitem [ref=e85]: Gestion des stocks et livraisons
+              - listitem [ref=e87]: Automatisation des emails
+              - listitem [ref=e89]: Tableau de bord analytique
+          - article [ref=e92]:
+            - generic [ref=e93]:
+              - img [ref=e95]
+              - generic [ref=e99]:
+                - heading "Front-end sur mesure" [level=2] [ref=e100]
+                - paragraph [ref=e101]: Interfaces modernes, rapides et accessibles pour une expérience utilisateur irréprochable.
+            - list [ref=e102]:
+              - listitem [ref=e103]: Next.js et React dernière génération
+              - listitem [ref=e105]: Design system personnalisé
+              - listitem [ref=e107]: Animations fluides et micro-interactions
+              - listitem [ref=e109]: Performance Web Vitals optimale
+              - listitem [ref=e111]: Accessibilité WCAG 2.1 AA
+          - article [ref=e114]:
+            - generic [ref=e115]:
+              - img [ref=e117]
+              - generic [ref=e121]:
+                - heading "Back-end & API" [level=2] [ref=e122]
+                - paragraph [ref=e123]: Automatisation, intégrations et API robustes pour soutenir votre activité et vos applications métiers.
+            - list [ref=e124]:
+              - listitem [ref=e125]: Node.js et architectures modernes
+              - listitem [ref=e127]: Bases de données SQL/NoSQL
+              - listitem [ref=e129]: Intégrations tierces (CRM, ERP)
+              - listitem [ref=e131]: Tests automatisés et sécurité
+              - listitem [ref=e133]: Documentation complète
+          - article [ref=e136]:
+            - generic [ref=e137]:
+              - img [ref=e139]
+              - generic [ref=e141]:
+                - heading "Maintenance & évolutions" [level=2] [ref=e142]
+                - paragraph [ref=e143]: Gardez un site performant et sécurisé dans la durée avec des forfaits flexibles adaptés à vos besoins.
+            - list [ref=e144]:
+              - listitem [ref=e145]: Mises à jour techniques régulières
+              - listitem [ref=e147]: Monitoring et alertes
+              - listitem [ref=e149]: Corrections rapides sous 48h
+              - listitem [ref=e151]: Optimisations continues
+              - listitem [ref=e153]: Support prioritaire
+          - article [ref=e156]:
+            - generic [ref=e157]:
+              - img [ref=e159]
+              - generic [ref=e161]:
+                - heading "Conseil & audit" [level=2] [ref=e162]
+                - paragraph [ref=e163]: "Bénéficiez d'un regard expert sur votre projet web : performance, SEO, accessibilité et stratégie digitale."
+            - list [ref=e164]:
+              - listitem [ref=e165]: Audit technique complet
+              - listitem [ref=e167]: Recommandations SEO
+              - listitem [ref=e169]: Analyse de performance
+              - listitem [ref=e171]: Stratégie d'amélioration
+              - listitem [ref=e173]: Rapport détaillé
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - heading "Comment je travaille" [level=2] [ref=e178]
+            - paragraph [ref=e179]: Un processus transparent et collaboratif pour garantir votre satisfaction
+          - generic [ref=e180]:
+            - generic [ref=e182]:
+              - generic [ref=e183]: "01"
+              - heading "Écoute & Analyse" [level=3] [ref=e184]
+              - paragraph [ref=e185]: Je prends le temps de comprendre vos besoins, vos objectifs et votre cible.
+            - generic [ref=e187]:
+              - generic [ref=e188]: "02"
+              - heading "Conception & Développement" [level=3] [ref=e189]
+              - paragraph [ref=e190]: Je crée une solution sur mesure, moderne et performante, en vous tenant informé.
+            - generic [ref=e192]:
+              - generic [ref=e193]: "03"
+              - heading "Lancement & Accompagnement" [level=3] [ref=e194]
+              - paragraph [ref=e195]: Mise en ligne, formation et suivi pour assurer le succès de votre projet.
+        - generic [ref=e198]:
+          - heading "Vous avez un projet particulier ?" [level=2] [ref=e199]
+          - paragraph [ref=e200]: Contactez-moi pour un audit gratuit ou une estimation personnalisée. Je réponds sous 24 heures ouvrées.
+          - generic [ref=e201]:
+            - link "Demander un devis gratuit" [ref=e203] [cursor=pointer]:
+              - /url: /devis
+            - link "Me contacter" [ref=e205] [cursor=pointer]:
+              - /url: /contact
+    - contentinfo [ref=e206]:
+      - generic [ref=e207]:
+        - generic [ref=e208]:
+          - generic [ref=e209]:
+            - img "BANDEV" [ref=e211]
+            - paragraph [ref=e212]: Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
+            - paragraph [ref=e213]: "SIRET : 841 375 652 00028"
+            - link "Demander un devis" [ref=e214] [cursor=pointer]:
+              - /url: /devis
+          - generic [ref=e215]:
+            - heading "Navigation" [level=2] [ref=e216]
+            - list [ref=e217]:
+              - listitem [ref=e218]:
+                - link "Accueil" [ref=e219] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e220]:
+                - link "Services" [ref=e221] [cursor=pointer]:
+                  - /url: /services
+              - listitem [ref=e222]:
+                - link "Processus" [ref=e223] [cursor=pointer]:
+                  - /url: /processus
+              - listitem [ref=e224]:
+                - link "Portfolio" [ref=e225] [cursor=pointer]:
+                  - /url: /portfolio
+              - listitem [ref=e226]:
+                - link "Tarifs" [ref=e227] [cursor=pointer]:
+                  - /url: /tarifs
+              - listitem [ref=e228]:
+                - link "Témoignages" [ref=e229] [cursor=pointer]:
+                  - /url: /temoignages
+              - listitem [ref=e230]:
+                - link "À propos" [ref=e231] [cursor=pointer]:
+                  - /url: /apropos
+              - listitem [ref=e232]:
+                - link "Contact" [ref=e233] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e234]:
+            - heading "Contact" [level=2] [ref=e235]
+            - list [ref=e236]:
+              - listitem [ref=e237]:
+                - link "Email contact@bandev.fr" [ref=e238] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - generic [ref=e239] [cursor=pointer]:
+                    - img [ref=e240] [cursor=pointer]
+                    - generic [ref=e243] [cursor=pointer]:
+                      - paragraph [ref=e244] [cursor=pointer]: Email
+                      - paragraph [ref=e245] [cursor=pointer]: contact@bandev.fr
+              - listitem [ref=e246]:
+                - generic [ref=e247]:
+                  - img [ref=e248]
+                  - generic [ref=e251]:
+                    - paragraph [ref=e252]: Localisation
+                    - paragraph [ref=e253]: France
+            - generic [ref=e254]:
+              - heading "Réseaux sociaux" [level=3] [ref=e255]
+              - generic [ref=e256]:
+                - link "LinkedIn" [ref=e257] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/nicolasbanic
+                  - img [ref=e258] [cursor=pointer]
+                - link "GitHub" [ref=e262] [cursor=pointer]:
+                  - /url: https://github.com/NicolasBANIC
+                  - img [ref=e263] [cursor=pointer]
+                - link "Email" [ref=e266] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - img [ref=e267] [cursor=pointer]
+        - generic [ref=e271]:
+          - generic [ref=e272]:
+            - link "Mentions légales" [ref=e273] [cursor=pointer]:
+              - /url: /mentions-legales
+            - generic [ref=e274]: •
+          - link "Politique de confidentialité" [ref=e276] [cursor=pointer]:
+            - /url: /politique-confidentialite
+      - generic [ref=e278]:
+        - paragraph [ref=e279]: © 2025 BANDEV - Nicolas Banic. Tous droits réservés.
+        - paragraph [ref=e280]:
+          - text: Développé avec
+          - generic [ref=e281]: Next.js 15
+          - text: "&"
+          - generic [ref=e282]: React 19
+```
