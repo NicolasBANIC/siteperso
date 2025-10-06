@@ -1,9 +1,9 @@
 "use client";
 
+import { memo, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useReducedMotion } from "@/lib/useReducedMotion";
@@ -20,7 +20,7 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-export default function Header() {
+function Header() {
   const pathname = usePathname();
   const scrolled = useScrolled(1);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -211,3 +211,5 @@ export default function Header() {
     </>
   );
 }
+
+export default memo(Header);

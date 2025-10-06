@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Link from "next/link";
 import { Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
 import { LogoFooter } from "./Logo";
@@ -50,7 +51,7 @@ const contactInfo = [
   },
 ];
 
-export default function Footer() {
+function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -190,3 +191,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default memo(Footer);

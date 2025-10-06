@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/lib/useReducedMotion";
@@ -16,7 +17,7 @@ import ScrollReveal from "./ScrollReveal";
  * @param {string} secondaryButtonHref - URL du bouton secondaire (optionnel)
  * @param {string} className - Classes CSS additionnelles
  */
-export default function CTASection({
+function CTASection({
   title = "Vous avez un projet particulier ?",
   description = "Contactez-moi pour un audit gratuit ou une estimation personnalisée. Je réponds sous 24 heures ouvrées.",
   primaryButtonText = "Demander un devis gratuit",
@@ -68,3 +69,5 @@ export default function CTASection({
     </ScrollReveal>
   );
 }
+
+export default memo(CTASection);

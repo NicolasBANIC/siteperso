@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 
-export default function BackToTop() {
+function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
@@ -61,3 +61,5 @@ export default function BackToTop() {
     </AnimatePresence>
   );
 }
+
+export default memo(BackToTop);

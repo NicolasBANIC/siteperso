@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 
-export default function OptimizedVideo({ 
+function OptimizedVideo({ 
   src, 
   className = "",
   opacity = "opacity-30",
@@ -125,3 +125,5 @@ export default function OptimizedVideo({
     </video>
   );
 }
+
+export default memo(OptimizedVideo);

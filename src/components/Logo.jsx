@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 
@@ -13,7 +14,7 @@ import { useReducedMotion } from "@/lib/useReducedMotion";
  * @param {boolean} props.withGlow - Active l'effet glow au hover
  * @returns {JSX.Element}
  */
-export default function Logo({ 
+const Logo = memo(function Logo({ 
   variant = 'default',
   height = 48,
   className = '',
@@ -118,7 +119,9 @@ export default function Logo({
       </svg>
     </motion.div>
   );
-}
+});
+
+export default Logo;
 
 /**
  * Variantes spécialisées du logo pour différents contextes

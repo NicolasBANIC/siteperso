@@ -1,11 +1,12 @@
 'use client';
 
+import { memo } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 
-export default function ProjectCard({ 
+function ProjectCard({ 
   title, 
   category, 
   description, 
@@ -76,3 +77,5 @@ export default function ProjectCard({
     </motion.div>
   );
 }
+
+export default memo(ProjectCard);

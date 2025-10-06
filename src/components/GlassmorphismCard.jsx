@@ -1,6 +1,8 @@
 "use client";
 
-export default function GlassmorphismCard({ 
+import { memo } from 'react';
+
+function GlassmorphismCard({ 
   children, 
   className = "",
   variant = "default", // "default", "accent", "gradient"
@@ -43,3 +45,5 @@ export default function GlassmorphismCard({
     </div>
   );
 }
+
+export default memo(GlassmorphismCard);
