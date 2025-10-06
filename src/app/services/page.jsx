@@ -98,7 +98,7 @@ export default function ServicesPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title='Des services web <span className="accent-word">pensés pour votre réussite</span>'
+        title='Des services web <span className="k">pensés pour votre réussite</span>'
         subtitle="Du site vitrine à l'application sur mesure, je vous accompagne à chaque étape pour créer un outil digital performant, moderne et à la hauteur de vos ambitions."
         backgroundImage="/images/services-hero.png"
         badge="Expertise Full-Stack"

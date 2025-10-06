@@ -24,13 +24,13 @@ const Card = memo(function Card({
 }) {
   const prefersReducedMotion = useReducedMotion();
   
-  const baseStyles = 'rounded-lg bg-surface border border-border p-8 shadow-[var(--shadow-sm)] transition-all duration-300 motion-reduce:transition-none';
+  const baseStyles = 'rounded-lg bg-surface border border-border p-8 shadow-sm transition-all duration-300 ease-out motion-reduce:transition-none';
   
   const variantStyles = {
-    service: 'hover:[box-shadow:var(--shadow-md)] hover:border-borderHover',
-    project: 'overflow-hidden hover:[box-shadow:var(--shadow-md)] hover:border-borderHover',
-    price: 'relative hover:[box-shadow:var(--shadow-lg)] hover:border-borderHover',
-    testimonial: 'bg-surface/50 backdrop-blur-sm shadow-[var(--shadow-sm)]',
+    service: 'hover:shadow-lg hover:shadow-emerald/10 hover:border-emerald/30 hover:-translate-y-1',
+    project: 'overflow-hidden hover:shadow-lg hover:shadow-emerald/10 hover:border-emerald/30',
+    price: 'relative hover:shadow-xl hover:shadow-emerald/15 hover:border-emerald/30 hover:scale-[1.02]',
+    testimonial: 'bg-surface/95 backdrop-blur-sm shadow-sm border-emerald/10',
   };
   
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
@@ -71,7 +71,7 @@ const Card = memo(function Card({
       
       {/* Icon pour service variant */}
       {variant === 'service' && icon && (
-        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-accent/10 text-accent text-2xl">
+        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald/10 text-emerald text-2xl shadow-sm">
           {icon}
         </div>
       )}
@@ -96,7 +96,7 @@ const Card = memo(function Card({
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="inline-flex items-center rounded-md bg-accentSecondary/10 px-3 py-1 text-sm font-medium text-accentSecondary"
+              className="inline-flex items-center rounded-md bg-teal/10 px-3 py-1 text-sm font-medium text-teal border border-teal/20"
             >
               {tag}
             </span>

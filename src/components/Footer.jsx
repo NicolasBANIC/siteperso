@@ -9,7 +9,6 @@ const navigationLinks = [
   { href: "/portfolio", label: "Portfolio" },
   { href: "/tarifs", label: "Tarifs" },
   { href: "/temoignages", label: "Témoignages" },
-  { href: "/apropos", label: "À propos" },
   { href: "/contact", label: "Contact" },
 ];
 

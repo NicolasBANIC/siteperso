@@ -1,9 +1,9 @@
-import { Inter, Space_Grotesk, Fira_Code } from 'next/font/google';
+import { Inter, Montserrat, Space_Grotesk, Fira_Code } from 'next/font/google';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import BackToTop from '@/components/BackToTop';
 import ScrollProgress from '@/components/ScrollProgress';
-import MatrixRain from '@/components/MatrixRain';
+
 
 import './globals.css';
 
@@ -12,6 +12,13 @@ const inter = Inter({
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-inter',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-montserrat',
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -176,7 +183,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${firaCode.variable} ${inter.className} text-[var(--color-foreground)]`}
+        className={`${inter.variable} ${montserrat.variable} ${spaceGrotesk.variable} ${firaCode.variable} ${montserrat.className} text-[var(--color-foreground)]`}
       >
         {/* TODO: AA - Skip link pour accessibilité clavier (WCAG AA) */}
         <a 

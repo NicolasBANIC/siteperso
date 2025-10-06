@@ -22,7 +22,7 @@ export default function TarifsPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title='Tarifs <span className="accent-word">transparents et adaptés</span>'
+        title='Tarifs <span className="k">transparents et adaptés</span>'
         subtitle="Des formules claires pour tous les budgets. Paiement en plusieurs fois possible. Devis personnalisé gratuit sous 24h."
         backgroundImage="/images/tarifs-hero.png"
         badge="Devis Gratuit"

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/forms";
 
 /* Import du système de titres unifiés */
 @import "../../styles/headings.css";
@@ -32,17 +31,18 @@
     --section-padding-y: clamp(56px, 6vw, 96px);
     --section-extra-margin: min(3vh, 48px);
     
-    /* Palette Émeraude Profond Principale - UPDATED to match specifications */
-    --color-primary: #006B4B;           /* Deep emerald as specified */
-    --color-primary-dark: #003D2E;      /* Matrix dark as specified */
-    --color-turquoise: #00A8A8;         /* Updated turquoise accent */
-    --color-emerald-accent: #00C896;    /* Emerald accent as specified */
+    /* Système de couleurs harmonisé émeraude → turquoise selon spécifications */
+    --color-primary: #10B981;          /* emerald */
+    --color-primary-dark: #0F172A;     /* neutral-dark */
+    --color-turquoise: #06B6D4;        /* turquoise */
+    --color-emerald-accent: #10B981;   /* emerald */
+    --text-dark: #0F172A;              /* neutral-dark */
     
-    /* Global Background Design Tokens - WHITE OVERRIDE */
+    /* Global Background Design Tokens harmonisés */
     --bg_white: #FFFFFF;
-    --emerald_dark: #006B4B;
-    --emerald_core: #00C896;
-    --text_dark: #0E1116;
+    --emerald_dark: #10B981;
+    --emerald_core: #10B981;
+    --text_dark: #0F172A;
     --text_light: #FFFFFF;
     
     /* Global background - WHITE with Matrix rain */
@@ -65,23 +65,23 @@
     --hero-text-secondary: #E8ECF0;        /* couleur secondaire premium */
     --hero-text-muted: rgba(245, 247, 250, 0.8); /* pour les sous-titres avec opacité */
     
-    /* Palette principale - Fond pour contraste - Émeraude Profond */
-    --color-background: #F8FAFC;
+    /* Palette principale harmonisée selon spécifications */
+    --color-background: #F1F5F9;
     --color-surface: #FFFFFF;
-    --color-surface-hover: #EFF3F6;
-    --color-border: rgba(0, 122, 94, 0.15);
-    --color-border-hover: rgba(0, 122, 94, 0.4);
-    --color-foreground: #1A1A1A;
-    --color-muted: #475569;
+    --color-surface-hover: #F8FAFC;
+    --color-border: rgba(16, 185, 129, 0.15);
+    --color-border-hover: rgba(16, 185, 129, 0.3);
+    --color-foreground: #0F172A;
+    --color-muted: #64748B;
     
-    /* Accents - Palette Émeraude Profond harmonisée - UPDATED */
-    --color-accent: #006B4B;
-    --color-accent-hover: #00C896;
-    --color-accent-secondary: #00A8A8;
-    --color-accent-secondary-hover: #003D2E;
-    --color-accent-tertiary: #006B4B;
-    --color-accent-matrix: #006B4B;
-    --color-accent-matrix-hover: #00C896;
+    /* Accents harmonisés émeraude → turquoise selon spécifications */
+    --color-accent: #10B981;
+    --color-accent-hover: #06B6D4;
+    --color-accent-secondary: #14B8A6;
+    --color-accent-secondary-hover: #0F172A;
+    --color-accent-tertiary: #3B82F6;
+    --color-accent-matrix: #10B981;
+    --color-accent-matrix-hover: #06B6D4;
     --color-accent-foreground: #FFFFFF;
 
     --color-error: #DC2626;
@@ -91,8 +91,8 @@
     --color-gold-light: #FFD700;
     --color-gold-dark: #B8860B;
     
-    /* Focus & interactions - Vert Matrix */
-    --color-ring: rgba(11, 138, 58, 0.35);
+    /* Focus & interactions - Émeraude harmonisé */
+    --color-ring: rgba(16, 185, 129, 0.35);
     --color-ring-gold: rgba(212, 175, 55, 0.45);
     
     /* Tokens globaux unifiés */
@@ -102,13 +102,13 @@
     --radius-lg: 16px;
     --radius-xl: 24px;
     
-    /* Shadows - Charte Émeraude Profond Unifiée */
+    /* Shadows harmonisés émeraude → turquoise */
     --shadow: 0 4px 20px rgba(0,0,0,0.25);
     --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.20);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.25);
-    --shadow-emerald: 0 8px 24px rgba(0, 122, 94, 0.20);
-    --shadow-ring: 0 0 0 3px rgba(0, 122, 94, 0.35);
+    --shadow-emerald: 0 8px 24px rgba(16, 185, 129, 0.20);
+    --shadow-ring: 0 0 0 3px rgba(16, 185, 129, 0.35);
     
     /* CORRECTED: Transitions uniformisées */
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
@@ -216,7 +216,7 @@
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   }
 
-  /* Éléments UI harmonisés - Émeraude Profond */
+  /* Éléments UI harmonisés selon spécifications */
   button, .btn, a.button {
     font-family: 'Inter', 'Poppins', sans-serif;
     font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
@@ -224,18 +224,19 @@
     line-height: 1.4;
     letter-spacing: 0.005em;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #007A5E, #00CFC1);
-    border-radius: 12px;
+    background: linear-gradient(135deg, #10B981, #06B6D4);
+    border-radius: 9999px;
     padding: 12px 24px;
     border: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
   }
   
   button:hover, .btn:hover, a.button:hover {
-    box-shadow: 0 0 12px rgba(0, 207, 193, 0.6);
-    filter: brightness(1.1);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+    filter: brightness(1.05);
+    transform: translateY(-2px) scale(1.02);
   }
 
   /* Petits textes et labels */
@@ -313,11 +314,18 @@
   }
 
   *:focus-visible {
-    @apply outline-none ring-2 ring-[var(--color-ring)] ring-offset-2 ring-offset-white;
+    @apply outline-none ring-2 ring-offset-2 ring-offset-white;
+    --tw-ring-color: #10B981;
+  }
+  
+  button:focus-visible, .btn:focus-visible, a.button:focus-visible {
+    @apply ring-2 ring-offset-2 ring-offset-white;
+    --tw-ring-color: #10B981;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(16, 185, 129, 0.6);
   }
 
   ::selection {
-    background-color: rgba(11, 138, 58, 0.15);
+    background-color: rgba(16, 185, 129, 0.2);
     color: var(--color-foreground);
   }
   
@@ -390,6 +398,32 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@layer utilities {
+  /* Skip link utility - WCAG AA accessible implementation */
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+  
+  .focus\:not-sr-only:focus {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: inherit !important;
+    margin: inherit !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
   }
 }
 
@@ -510,12 +544,12 @@
     --unified-background-dark: rgba(11,15,16,.75);  /* noir bleuté */
     --unified-background-darker: rgba(11,15,16,.95);
     
-    /* Unified Card Styling - As specified in directives */
-    --card-background: linear-gradient(180deg, #005B47 0%, #F8FFF9 100%);
-    --card-shadow: 0px 8px 20px rgba(0,122,94,0.10);
-    --card-border-radius: 20px;
-    --card-text-color: #1C1C1C;
-    --card-title-color: #003D2E;
+    /* Unified Card Styling - According to exact specifications */
+    --card-background: linear-gradient(180deg, rgba(15,143,114,0.9) 0%, rgba(0,200,180,0.75) 50%, rgba(255,255,255,0.98) 100%);
+    --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --card-border-radius: 16px;
+    --card-text-color: #0B1324;
+    --card-title-color: #003B2F;
     
     /* Typographie unifiée */
     --unified-font-family: 'Inter', system-ui, sans-serif;
@@ -593,85 +627,27 @@
       width: 100%;
     }
   }
-  
-  /* Values grid - Fixed layout for About page */
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(16px, 2vw, 28px);
-  }
-  
-  @media (max-width: 1200px) {
-    .values-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .values-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  /* Value card stable design */
-  .value-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    min-height: 320px;
-    padding: clamp(16px, 3vw, 28px);
-    border-radius: 16px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.05));
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow-wrap: anywhere;
-  }
-  
-  .value-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-  }
-  
-  .value-card .icon {
-    position: static;
-    margin-bottom: 8px;
-    width: 28px;
-    height: 28px;
-    color: #007A5E;
-  }
-  
-  .value-card h3 {
-    margin: 8px 0 6px;
-    line-height: 1.25;
-  }
-  
-  .value-card p {
-    line-height: 1.6;
-    color: rgba(255,255,255,0.85);
-    overflow-wrap: anywhere;
-  }
+
+
 
   /* ========================================
      COMPOSANTS UNIFIÉS POUR COHÉRENCE GLOBALE
      ======================================== */
 
-  /* Bouton primaire unifié - gradient émeraude profond → turquoise */
+  /* Bouton primaire unifié - gradient emerald→turquoise avec radius arrondi */
   .btn-unified,
   .btn-primary {
     font-family: 'Inter', 'Poppins', sans-serif;
     font-weight: 600;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #007A5E, #00CFC1);
+    background: linear-gradient(135deg, #0F8F72, #00C8B4);
     border: none;
-    border-radius: 12px;
+    border-radius: 9999px;
     padding: 12px 24px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-flex;
@@ -684,7 +660,7 @@
   .btn-unified:hover,
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 12px rgba(0, 207, 193, 0.6);
+    box-shadow: 0 12px 40px rgba(0,200,180,0.4);
     filter: brightness(1.1);
   }
 

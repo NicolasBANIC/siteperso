@@ -8,6 +8,7 @@ import {
   Code2,
   Smartphone,
   Search,
+  Palette,
   ShoppingCart,
   Layers,
   ArrowRight,
@@ -268,31 +269,30 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section - Clean video background sans overlay sombre */}
-      <section className="hero relative min-h-[90vh] overflow-hidden">
+      <section className="hero relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden min-h-[80vh]">
         {/* Vidéo de fond - clean without dark filters */}
         <div className="absolute inset-0 z-0">
           <OptimizedVideo
             src="/videos/videolibreCodingWebm.webm"
             className=""
-            opacity="opacity-80"
+            opacity="opacity-90"
             disableOnMobile={false}
             poster="/images/hero-placeholder.jpg"
           />
         </div>
 
-        {/* Semi-transparent black overlay behind text only as specified */}
-        <div className="absolute inset-0 z-[1] opacity-35 bg-black"></div>
+        {/* NO FULL-SCREEN OVERLAY - Removed as per specifications */}
 
         {/* Matrix Rain effect now handled by global CSS */}
 
         {/* Content */}
-        <div className="container-page relative z-10 flex min-h-[90vh] items-center">
+        <div className="container-page relative z-10 flex min-h-[60vh] items-center px-4 sm:px-6 md:px-8 mx-auto max-w-screen-xl">
           <div className="grid gap-6 lg:gap-12 xl:gap-16 w-full xl:grid-cols-2 xl:items-center">
             {/* Left: Text Content with enhanced readability and semi-transparent overlay */}
             <ScrollReveal direction="left">
               <div className="copy-wrap space-y-8 xl:max-w-none relative">
-                {/* Semi-transparent background specifically behind text */}
-                <div className="absolute inset-0 -m-8 bg-black/35 backdrop-blur-sm rounded-2xl"></div>
+                {/* Overlay léger émeraude → turquoise selon spécifications */}
+                <div className="absolute inset-0 -m-8 bg-gradient-to-br from-emerald/10 to-turquoise/15 backdrop-blur-[6px] rounded-2xl"></div>
                 <div className="relative z-10">
                   <div className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--color-accent-matrix)]/50 bg-[var(--color-accent-matrix)]/20 px-4 py-2 text-caption font-medium backdrop-blur-sm">
                     <span className="relative flex h-2 w-2">
@@ -305,18 +305,16 @@ export default function HomePage() {
                   </div>
 
                   <h1 className="hero-title">
-                    Créons ensemble votre <span className="k">présence digitale</span> de
-                    demain
+                    Je conçois des <span className="k">interfaces modernes</span>, performantes et centrées sur l'humain
                   </h1>
 
                   <p className="subtitle text-body-lg leading-relaxed max-w-xl">
-                    Développeur web passionné, je conçois des sites et applications sur mesure qui
-                    allient design moderne et performances techniques.
+                    Développeur web expert, je transforme vos idées en expériences digitales exceptionnelles qui génèrent des résultats concrets.
                   </p>
 
                   <div className="flex flex-wrap items-center gap-4">
                     <CTAButton href="/devis" className="btn overlay-btn">
-                      Demander un devis
+                      Démarrer un projet
                     </CTAButton>
                     <CTAButton
                       href="/portfolio"
@@ -324,7 +322,7 @@ export default function HomePage() {
                       showIcon={false}
                       className="btn overlay-btn"
                     >
-                      Voir mes projets
+                      Voir mes réalisations
                     </CTAButton>
                   </div>
 
@@ -669,6 +667,68 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Workflow Section - NEW */}
+      <section className="py-16 md:py-24">
+        <div className="container-page">
+          <ScrollReveal direction="up">
+            <div className="mb-16 space-y-4 text-center">
+              <div className="eyebrow mx-auto">Méthode de travail</div>
+              <h2 className="section-title">
+                Un <span className="k">processus maîtrisé</span> pour des résultats garantis
+              </h2>
+              <p className="section-subtitle mx-auto">
+                De l'analyse initiale au déploiement final, chaque étape est pensée pour maximiser
+                votre retour sur investissement et minimiser les risques.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                step: '01',
+                title: 'Analyse',
+                description: 'Audit technique, définition des besoins, étude de la concurrence et identification des opportunités.',
+                icon: <Search className="h-8 w-8" />
+              },
+              {
+                step: '02',
+                title: 'Design',
+                description: 'Maquettage interactif, design system, prototypage et validation des concepts UX/UI.',
+                icon: <Palette className="h-8 w-8" />
+              },
+              {
+                step: '03',
+                title: 'Développement',
+                description: 'Code propre, architecture scalable, tests automatisés et intégration continue.',
+                icon: <Code2 className="h-8 w-8" />
+              },
+              {
+                step: '04',
+                title: 'Déploiement',
+                description: 'Mise en production, optimisation performances, formation et accompagnement post-lancement.',
+                icon: <Rocket className="h-8 w-8" />
+              }
+            ].map((item, index) => (
+              <ScrollReveal key={item.step} direction="up" delay={index * 100}>
+                <div className="card group text-center transition-all duration-300 hover:scale-[1.02] hover:border-accent hover:shadow-emerald/10">
+                  <div className="mb-6 flex flex-col items-center gap-4">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald to-turquoise text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-emerald/20">
+                      {item.icon}
+                    </div>
+                    <span className="text-2xl font-bold text-accent">{item.step}</span>
+                  </div>
+                  <h3 className="card-title mb-3">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">
+                    {item.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Tech Showcase Section - NEW */}
       <section className="relative overflow-hidden py-20">
         <div className="container-page relative z-10">
@@ -862,6 +922,113 @@ export default function HomePage() {
               </Link>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 md:py-24">
+        <div className="container-page">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            {/* Left: Content */}
+            <ScrollReveal direction="left">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <div className="eyebrow">À propos</div>
+                  <h2 className="section-title">
+                    Une <span className="k">passion pour l'excellence</span> au service de votre réussite
+                  </h2>
+                </div>
+                
+                <div className="space-y-4 text-body text-muted">
+                  <p>
+                    Développeur passionné depuis plus de 8 ans, je transforme vos idées en solutions 
+                    digitales performantes qui génèrent de la valeur pour votre business.
+                  </p>
+                  <p>
+                    Ma philosophie ? Créer des expériences utilisateur exceptionnelles tout en respectant 
+                    les standards les plus exigeants : code propre, performances optimales, et accessibilité 
+                    universelle.
+                  </p>
+                  <p>
+                    Chaque projet est une opportunité de dépasser vos attentes et de construire ensemble 
+                    votre succès digital.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <div className="flex items-center gap-2 text-sm text-accent">
+                    <CheckCircle2 className="h-5 w-5" />
+                    <span>+100 projets livrés</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-accent">
+                    <CheckCircle2 className="h-5 w-5" />
+                    <span>Code 100% sur-mesure</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-accent">
+                    <CheckCircle2 className="h-5 w-5" />
+                    <span>Support 3 mois inclus</span>
+                  </div>
+                </div>
+
+                <div className="pt-6">
+                  <CTAButton href="/contact">
+                    Discutons de votre projet
+                  </CTAButton>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Right: Skills Grid */}
+            <ScrollReveal direction="right">
+              <div className="space-y-8">
+                <div className="card bg-gradient-to-br from-emerald/5 to-turquoise/5 border-emerald/20">
+                  <h3 className="card-title mb-6 text-center">Compétences Techniques</h3>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">Front-end</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {['React', 'Next.js', 'TypeScript', 'Tailwind CSS'].map(skill => (
+                          <span key={skill} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald/10 text-emerald border border-emerald/20">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">Design</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {['UX/UI', 'Figma', 'Photoshop', 'Motion'].map(skill => (
+                          <span key={skill} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-turquoise/10 text-turquoise border border-turquoise/20">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">Back-end</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {['Node.js', 'Python', 'PostgreSQL', 'MongoDB'].map(skill => (
+                          <span key={skill} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-teal/10 text-teal border border-teal/20">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">Outils</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {['Git', 'Docker', 'AWS', 'Vercel'].map(skill => (
+                          <span key={skill} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-accent/10 text-blue-accent border border-blue-accent/20">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 

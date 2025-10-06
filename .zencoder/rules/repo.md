@@ -4,7 +4,7 @@
 - **Langue**: Contenus et interface 100 % francophones
 
 # Organisation du projet
-1. `src/app` : pages App Router (`/`, `/services`, `/portfolio`, `/temoignages`, `/apropos`, `/devis`, `/contact`).
+1. `src/app` : pages App Router (`/`, `/services`, `/portfolio`, `/temoignages`, `/devis`, `/contact`).
 2. `src/components` : composants réutilisables (Header, Footer, ThemeToggle, ProjectCard, TestimonialCard, FormulaireDevis, FormulaireContact, etc.).
 3. `public/images` : assets d'illustration et placeholders utilisés via `next/image`.
 
@@ -19,7 +19,6 @@
 - `/services`
 - `/portfolio`
 - `/temoignages`
-- `/apropos`
 - `/devis`
 - `/contact`
 

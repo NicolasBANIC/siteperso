@@ -62,7 +62,7 @@ export default function ContactPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title={`Entrons en <span className="accent-word">contact</span>`}
+        title={`Entrons en <span className="k">contact</span>`}
         subtitle="Discutons de vos objectifs, de vos contraintes et de la meilleure façon de vous accompagner dans votre projet digital."
         badge={{
           icon: "clock",

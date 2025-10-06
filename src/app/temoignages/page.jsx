@@ -85,7 +85,7 @@ export default function TemoignagesPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title='Ils me font <span class="bg-gradient-to-r from-[#007A5E] via-[#00CFC1] to-[#003B32] bg-clip-text text-transparent">confiance</span>'
+        title='Ils me font <span class="k">confiance</span>'
         subtitle="Une collaboration fondée sur l'écoute, la transparence et des résultats concrets pour chaque entreprise accompagnée. Découvrez les témoignages de mes clients satisfaits."
         backgroundImage="/images/temoignages-hero.png"
         badge="Note moyenne : 4.9/5 ⭐"

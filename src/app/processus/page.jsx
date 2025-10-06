@@ -102,7 +102,7 @@ export default function ProcessusPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title='Un processus <span class="bg-gradient-to-r from-[#00D27F] via-[#00BFA6] to-[#009EEB] bg-clip-text text-transparent">éprouvé en 5 étapes</span>'
+        title='Un processus <span class="k">éprouvé en 5 étapes</span>'
         subtitle="De l'idée à la mise en ligne, je vous accompagne à chaque étape avec une méthodologie structurée et transparente pour garantir le succès de votre projet web."
         backgroundImage="/images/processus-hero.png"
         badge="Méthodologie Agile"
