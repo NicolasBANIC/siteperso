@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
+/* Import du système de titres unifiés */
+@import "../../styles/headings.css";
+
 @layer base {
   /* Box-sizing universel pour un layout prévisible */
   *,
@@ -13,22 +16,49 @@
   :root {
     color-scheme: light;
     
-    /* Palette Émeraude Profond Principale */
-    --color-primary: #007A5E;           /* vert émeraude profond */
-    --color-primary-dark: #003B32;      /* Matrix sombre pour hover et accents */
-    --color-turquoise: #00CFC1;         /* turquoise accent */
-    --gradient-emerald: linear-gradient(180deg, #FFFFFF 0%, #009E7A 50%, #007A5E 100%);
+    /* White Background with Matrix Rain Design Tokens */
+    --bg-white: #FFFFFF;
+    --rain-far-color: #00C896;
+    --rain-mid-color: #00A8A8;
+    --rain-near-color: #00FF41;
+    --rain-far-opacity: 0.05;
+    --rain-mid-opacity: 0.07;
+    --rain-near-opacity: 0.10;
+    --rain-far-speed: 45s;
+    --rain-mid-speed: 30s;
+    --rain-near-speed: 20s;
+    
+    /* Section Height Adjustments */
+    --section-padding-y: clamp(56px, 6vw, 96px);
+    --section-extra-margin: min(3vh, 48px);
+    
+    /* Palette Émeraude Profond Principale - UPDATED to match specifications */
+    --color-primary: #006B4B;           /* Deep emerald as specified */
+    --color-primary-dark: #003D2E;      /* Matrix dark as specified */
+    --color-turquoise: #00A8A8;         /* Updated turquoise accent */
+    --color-emerald-accent: #00C896;    /* Emerald accent as specified */
+    
+    /* Global Background Design Tokens - WHITE OVERRIDE */
+    --bg_white: #FFFFFF;
+    --emerald_dark: #006B4B;
+    --emerald_core: #00C896;
+    --text_dark: #0E1116;
+    --text_light: #FFFFFF;
+    
+    /* Global background - WHITE with Matrix rain */
+    --global_bg: var(--bg-white);
+    --gradient-emerald: var(--bg-white);
     --bg-dark: #0B0F10;                 /* noir bleuté (sections sombres) */
     --bg-light: #F8FAFC;
-    --text: #FFFFFF;
-    --text-sub: #D1D5DB;
+    --text: #0E1116;
+    --text-sub: #475569;
     --highlight: #C9A227;               /* doré subtil, parcimonieux */
     
-    /* Variables CSS legacy pour compatibilité */
+    /* Variables CSS legacy pour compatibilité - UPDATED */
     --color-anthracite: #0B0F10;
     --color-white: #FFFFFF;
-    --color-matrix: #007A5E;
-    --color-matrix-2: #007A5E;
+    --color-matrix: #006B4B;
+    --color-matrix-2: #006B4B;
     
     /* Couleurs premium pour textes des sections héros */
     --hero-text-primary: #F5F7FA;          /* couleur principale premium et lisible */
@@ -44,14 +74,14 @@
     --color-foreground: #1A1A1A;
     --color-muted: #475569;
     
-    /* Accents - Palette Émeraude Profond harmonisée */
-    --color-accent: #007A5E;
-    --color-accent-hover: #00CFC1;
-    --color-accent-secondary: #00CFC1;
-    --color-accent-secondary-hover: #003B32;
-    --color-accent-tertiary: #007A5E;
-    --color-accent-matrix: #007A5E;
-    --color-accent-matrix-hover: #00CFC1;
+    /* Accents - Palette Émeraude Profond harmonisée - UPDATED */
+    --color-accent: #006B4B;
+    --color-accent-hover: #00C896;
+    --color-accent-secondary: #00A8A8;
+    --color-accent-secondary-hover: #003D2E;
+    --color-accent-tertiary: #006B4B;
+    --color-accent-matrix: #006B4B;
+    --color-accent-matrix-hover: #00C896;
     --color-accent-foreground: #FFFFFF;
 
     --color-error: #DC2626;
@@ -94,7 +124,7 @@
   }
 
   html {
-    font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: var(--font-montserrat), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     scroll-behavior: smooth;
     background-color: var(--color-background);
     /* Support des safe-area pour notch/encoche */
@@ -107,10 +137,11 @@
 
   body {
     color: var(--color-foreground);
-    /* NOUVEAU : Fond global dégradé blanc → émeraude profond pour profondeur et élégance */
-    background: linear-gradient(180deg, #FFFFFF 0%, #009E7A 50%, #007A5E 100%);
+    /* WHITE background with subtle Matrix rain effect */
+    background-color: var(--bg-white) !important;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    min-height: 100vh;
     font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
     line-height: 1.6;
     font-weight: 400;
@@ -123,53 +154,52 @@
     /* CRITIQUE : Remove any unwanted margins/padding that cause white gaps */
     margin: 0 !important;
     padding: 0 !important;
+    isolation: isolate;
   }
 
-  /* Hiérarchie typographique harmonisée - palette Emerald-Turquoise */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', 'Poppins', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    color: #1A1A1A; /* Sombre pour lisibilité sur fond clair */
-    text-rendering: geometricPrecision;
-    -webkit-font-smoothing: antialiased;
-    /* Ombre subtile pour améliorer le contraste */
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  /* Matrix Rain Effect - CSS-only, subtle and elegant */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='%2300C896' fill-opacity='0.05'%3E%3Ctext x='8' y='16' font-family='monospace' font-size='12'%3E01%3C/text%3E%3Ctext x='40' y='40' font-family='monospace' font-size='12'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E"),
+                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='%2300A8A8' fill-opacity='0.07'%3E%3Ctext x='4' y='14' font-family='monospace' font-size='10'%3E01%3C/text%3E%3Ctext x='28' y='34' font-family='monospace' font-size='10'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E"),
+                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cg fill='%2300FF41' fill-opacity='0.10'%3E%3Ctext x='2' y='10' font-family='monospace' font-size='9'%3E0%3C/text%3E%3Ctext x='18' y='26' font-family='monospace' font-size='9'%3E1%3C/text%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat, repeat, repeat;
+    background-size: 64px 128px, 48px 96px, 32px 64px;
+    animation: rainFar var(--rain-far-speed) linear infinite,
+               rainMid var(--rain-mid-speed) linear infinite,
+               rainNear var(--rain-near-speed) linear infinite;
+    opacity: 1;
+    mix-blend-mode: normal;
   }
 
-  h1 {
-    font-size: clamp(2.5rem, 5vw + 0.5rem, 4.5rem); /* 40-72px */
-    font-weight: 900;
-    line-height: clamp(1.1, 3vw, 1.3);
-    letter-spacing: -0.02em;
+  @keyframes rainFar {
+    from { background-position: 0 -100%, 0 -100%, 0 -100%; }
+    to { background-position: 0 100%, 0 100%, 0 100%; }
   }
 
-  h2 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem); /* 28-40px */
-    font-weight: 600;
-    line-height: 1.2;
+  @keyframes rainMid {
+    from { background-position: 0 -100%, 0 -100%, 0 -100%; }
+    to { background-position: 0 100%, 0 100%, 0 100%; }
   }
 
-  h3 {
-    font-size: clamp(1.5rem, 3vw, 2rem); /* 24-32px */
-    font-weight: 600;
+  @keyframes rainNear {
+    from { background-position: 0 -100%, 0 -100%, 0 -100%; }
+    to { background-position: 0 100%, 0 100%, 0 100%; }
   }
 
-  h4 {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* 20-24px */
-    font-weight: 600;
+  /* Disable animation for reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    body::before {
+      animation: none;
+      opacity: 0.05;
+    }
   }
 
-  h5 {
-    font-size: clamp(1.125rem, 2vw, 1.25rem); /* 18-20px */
-    font-weight: 600;
-  }
-
-  h6 {
-    font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
-    font-weight: 600;
-  }
+  /* Base heading styles integrated into unified heading system - see headings.css */
 
   p {
     font-family: 'Inter', 'Poppins', sans-serif;
@@ -220,8 +250,10 @@
     /* CRITICAL: Remove ALL margins and paddings that create gaps between sections */
     margin: 0 !important;
     padding-top: 0 !important;
-    /* Inherit the global gradient background */
-    background: transparent;
+    /* White background */
+    background-color: var(--bg-white) !important;
+    position: relative;
+    isolation: isolate;
     min-height: 100vh;
   }
   
@@ -363,20 +395,127 @@
 
 @layer components {
   /* ========================================
+     WHITE BACKGROUND ENFORCEMENT FOR ALL SECTIONS
+     ======================================== */
+  
+  /* Apply white background to main content wrapper */
+  body, 
+  main, 
+  .page-content, 
+  [data-section]:not(.hero):not(.hero-section) {
+    background-color: var(--bg-white) !important;
+    position: relative;
+    isolation: isolate;
+  }
+  
+  /* Force reset all section backgrounds to white */
+  section:not(.hero):not(.hero-section):not([class*="hero"]), 
+  .section:not(.hero):not(.hero-section), 
+  [data-section]:not(.hero):not(.hero-section),
+  section[class*="py-"]:not(.hero):not(.hero-section) {
+    border: 0 !important;
+    background-image: none !important;
+    background-color: var(--bg-white) !important;
+    background: var(--bg-white) !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* ========================================
+     RESPONSIVE SECTION HEIGHT ADJUSTMENTS
+     ======================================== */
+  
+  /* Section height adjustments for fluid, proportional layout */
+  section,
+  [data-section],
+  .content-container,
+  .page-block {
+    height: auto !important;
+    min-height: calc(100% + var(--section-extra-margin));
+    padding-block: var(--section-padding-y);
+    margin-bottom: var(--section-extra-margin);
+    transition: margin 0.6s ease, padding 0.4s ease;
+  }
+  
+  /* Ensure hero sections maintain their specific styling */
+  .hero,
+  .hero-section,
+  section[class*="hero"] {
+    margin-bottom: 0 !important;
+    padding-bottom: var(--section-padding-y);
+  }
+  
+  /* Remove any separator pseudo-elements */
+  section::before,
+  section::after,
+  .section-separator,
+  .band, 
+  .band--green, 
+  .band--grey, 
+  .separator,
+  .gradient-strip, 
+  .divider, 
+  .section-divider {
+    display: none !important;
+  }
+
+  /* ========================================
      DESIGN SYSTEM UTILITIES - REFONTE QUALITATIVE
      ======================================== */
 
-  /* Variables CSS globales pour unification complète du site */
+  /* Unified Card Styling - Applied to all card components */
+  .card,
+  .service-card,
+  .project-card,
+  .pricing-card,
+  .testimonial-card,
+  article[class*="card"],
+  [class*="card"]:not(.header):not(.footer):not(.nav) {
+    background: var(--card-background) !important;
+    box-shadow: var(--card-shadow) !important;
+    border-radius: var(--card-border-radius) !important;
+    color: var(--card-text-color) !important;
+    border: none !important;
+  }
+  
+  .card h1, .card h2, .card h3, .card h4, .card h5, .card h6,
+  .service-card h1, .service-card h2, .service-card h3, .service-card h4, .service-card h5, .service-card h6,
+  .project-card h1, .project-card h2, .project-card h3, .project-card h4, .project-card h5, .project-card h6,
+  .pricing-card h1, .pricing-card h2, .pricing-card h3, .pricing-card h4, .pricing-card h5, .pricing-card h6,
+  .testimonial-card h1, .testimonial-card h2, .testimonial-card h3, .testimonial-card h4, .testimonial-card h5, .testimonial-card h6,
+  article[class*="card"] h1, article[class*="card"] h2, article[class*="card"] h3, article[class*="card"] h4, article[class*="card"] h5, article[class*="card"] h6 {
+    color: var(--card-title-color) !important;
+  }
+
+  /* Hover effect for cards with emerald accent */
+  .card:hover,
+  .service-card:hover,
+  .project-card:hover,
+  .pricing-card:hover,
+  .testimonial-card:hover,
+  article[class*="card"]:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0px 12px 28px rgba(0,0,0,0.12), 0 0 20px rgba(0, 200, 150, 0.15) !important;
+  }
+
+  /* Variables CSS globales pour unification complète du site - UPDATED */
   :root {
     /* Palette principale unifiée - Émeraude Profond */
     --unified-text-color: #ffffff;
-    --unified-accent-color: #007A5E;    /* émeraude profond */
-    --unified-accent-hover: #00CFC1;    /* turquoise accent */
-    --unified-accent-dark: #003B32;     /* Matrix sombre */
-    --unified-overlay-dark: rgba(0,0,0,.45);
+    --unified-accent-color: #006B4B;    /* Deep emerald as specified */
+    --unified-accent-hover: #00C896;    /* Emerald accent */
+    --unified-accent-dark: #003D2E;     /* Matrix dark */
+    --unified-overlay-dark: rgba(0,0,0,.35);
     --unified-overlay-light: rgba(0,0,0,.25);
     --unified-background-dark: rgba(11,15,16,.75);  /* noir bleuté */
     --unified-background-darker: rgba(11,15,16,.95);
+    
+    /* Unified Card Styling - As specified in directives */
+    --card-background: linear-gradient(180deg, #005B47 0%, #F8FFF9 100%);
+    --card-shadow: 0px 8px 20px rgba(0,122,94,0.10);
+    --card-border-radius: 20px;
+    --card-text-color: #1C1C1C;
+    --card-title-color: #003D2E;
     
     /* Typographie unifiée */
     --unified-font-family: 'Inter', system-ui, sans-serif;
@@ -422,24 +561,7 @@
     display: none; /* Completely removed as requested */
   }
   
-  /* ENHANCED: Hero text with improved readability - ombres de texte optimales */
-  .hero h1, .hero h2, .hero-title {
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
-    font-family: 'Inter', 'Poppins', sans-serif;
-    font-weight: 900;
-    line-height: 1.1;
-    color: #FFFFFF;
-  }
-  
-  .hero h1 span, .hero h2 span, .accent-word {
-    background: linear-gradient(135deg, #007A5E, #00CFC1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
-    filter: drop-shadow(0 2px 6px rgba(0,122,94,0.4));
-  }
+  /* Legacy hero styles removed - using unified heading system from headings.css */
 
   /* Hero subtitle and general text readability */
   .hero p, .hero .subtitle, .hero-section p, .hero-section .subtitle {
@@ -804,40 +926,9 @@
     display: none; /* Complètement supprimé pour restaurer la clarté */
   }
 
-  /* Hero title overlay styling for maximum readability - UNIFIÉ */
-  .hero h1,
-  .hero-title,
-  .hero-section h1,
-  section[class*="hero"] h1 {
-    font-family: 'Inter', 'Poppins', sans-serif;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    font-size: clamp(2rem, 4vw + 1rem, 4rem);
-    color: var(--hero-text-primary);
-    text-shadow: 0 2px 6px rgba(0,0,0,.5);
-    -webkit-text-stroke: 0.5px rgba(0,0,0,.8);
-    opacity: 0.95;
-    /* Rendu de qualité */
-    font-smooth: antialiased;
-    text-rendering: optimizeLegibility;
-    /* Animation d'entrée */
-    transform: translateY(10px);
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
+  /* Legacy hero title styles removed - using unified heading system */
 
-  /* Hero h2 styling */
-  .hero h2,
-  .hero-section h2,
-  section[class*="hero"] h2 {
-    font-family: 'Inter', 'Poppins', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0;
-    color: var(--hero-text-secondary);
-    text-shadow: 0 2px 6px rgba(0,0,0,.5);
-    opacity: 0.95;
-  }
+  /* Legacy hero h2 styles removed - using unified heading system */
 
   /* Unified hero paragraph styling with enhanced readability */
   .hero p,
@@ -858,14 +949,15 @@
     animation: fadeInUp 0.6s ease-out 0.2s forwards;
   }
 
-  /* Unified premium gradient for accent words across all hero sections */
+  /* Unified premium gradient for accent words across all hero sections - UPDATED */
   .hero .accent-word,
   .hero-section .accent-word,
   section[class*="hero"] .accent-word,
   .text-accent-green,
   .hero h1 span,
   .hero h2 span {
-    background: linear-gradient(135deg, #007A5E 0%, #00CFC1 100%);
+    /* Updated: emerald to turquoise gradient as specified */
+    background: linear-gradient(135deg, #00C896 0%, #00A8A8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1191,14 +1283,7 @@
     }
   }
 
-  .section-title {
-    @apply text-[var(--color-foreground)] text-center;
-    font-size: clamp(1.75rem, 4vw, 2.5rem); /* 28-40px */
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    margin-bottom: 1rem;
-  }
+  /* Legacy section-title removed - using unified heading system */
 
   .section-subtitle {
     @apply text-[var(--color-muted)] max-w-3xl text-center mx-auto;
