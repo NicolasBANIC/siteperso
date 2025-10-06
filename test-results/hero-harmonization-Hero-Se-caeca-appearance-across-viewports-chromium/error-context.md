@@ -1,0 +1,131 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Aller au contenu" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Accueil BANDEV - Développeur Web Freelance" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "BANDEV - Développeur Web Freelance" [ref=e8] [cursor=pointer]:
+            - generic [ref=e9] [cursor=pointer]: BAN
+            - generic [ref=e10] [cursor=pointer]: DEV
+        - button "Ouvrir ou fermer le menu" [ref=e11]:
+          - img [ref=e13]
+    - main [ref=e14]:
+      - generic [ref=e16]:
+        - img "Illustration d'erreur 404 - page non trouvée" [ref=e20]
+        - generic [ref=e21]:
+          - heading "404" [level=1] [ref=e22]
+          - heading "Page non trouvée" [level=2] [ref=e23]
+          - paragraph [ref=e24]: Oups ! La page que vous recherchez n'existe pas ou a été déplacée. Pas de panique, vous pouvez retourner à l'accueil ou explorer le site.
+        - generic [ref=e25]:
+          - link "Retour à l'accueil" [ref=e26] [cursor=pointer]:
+            - /url: /
+            - img [ref=e27] [cursor=pointer]
+            - text: Retour à l'accueil
+          - link "Voir le portfolio" [ref=e30] [cursor=pointer]:
+            - /url: /portfolio
+            - img [ref=e31] [cursor=pointer]
+            - text: Voir le portfolio
+        - generic [ref=e34]:
+          - paragraph [ref=e35]: "Liens rapides :"
+          - generic [ref=e36]:
+            - link "Services" [ref=e37] [cursor=pointer]:
+              - /url: /services
+            - generic [ref=e38]: •
+            - link "À propos" [ref=e39] [cursor=pointer]:
+              - /url: /apropos
+            - generic [ref=e40]: •
+            - link "Contact" [ref=e41] [cursor=pointer]:
+              - /url: /contact
+            - generic [ref=e42]: •
+            - link "Devis gratuit" [ref=e43] [cursor=pointer]:
+              - /url: /devis
+    - contentinfo [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - img "BANDEV - Développeur Web Freelance" [ref=e50]:
+              - generic [ref=e51]: BAN
+              - generic [ref=e52]: DEV
+            - paragraph [ref=e53]: Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
+            - paragraph [ref=e54]: "SIRET : 841 375 652 00028"
+            - link "Demander un devis" [ref=e55] [cursor=pointer]:
+              - /url: /devis
+          - generic [ref=e56]:
+            - heading "Navigation" [level=2] [ref=e57]
+            - list [ref=e58]:
+              - listitem [ref=e59]:
+                - link "Accueil" [ref=e60] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e61]:
+                - link "Services" [ref=e62] [cursor=pointer]:
+                  - /url: /services
+              - listitem [ref=e63]:
+                - link "Processus" [ref=e64] [cursor=pointer]:
+                  - /url: /processus
+              - listitem [ref=e65]:
+                - link "Portfolio" [ref=e66] [cursor=pointer]:
+                  - /url: /portfolio
+              - listitem [ref=e67]:
+                - link "Tarifs" [ref=e68] [cursor=pointer]:
+                  - /url: /tarifs
+              - listitem [ref=e69]:
+                - link "Témoignages" [ref=e70] [cursor=pointer]:
+                  - /url: /temoignages
+              - listitem [ref=e71]:
+                - link "À propos" [ref=e72] [cursor=pointer]:
+                  - /url: /apropos
+              - listitem [ref=e73]:
+                - link "Contact" [ref=e74] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e75]:
+            - heading "Contact" [level=2] [ref=e76]
+            - list [ref=e77]:
+              - listitem [ref=e78]:
+                - link "Email contact@bandev.fr" [ref=e79] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - generic [ref=e80] [cursor=pointer]:
+                    - img [ref=e81] [cursor=pointer]
+                    - generic [ref=e84] [cursor=pointer]:
+                      - paragraph [ref=e85] [cursor=pointer]: Email
+                      - paragraph [ref=e86] [cursor=pointer]: contact@bandev.fr
+              - listitem [ref=e87]:
+                - generic [ref=e88]:
+                  - img [ref=e89]
+                  - generic [ref=e92]:
+                    - paragraph [ref=e93]: Localisation
+                    - paragraph [ref=e94]: France
+            - generic [ref=e95]:
+              - heading "Réseaux sociaux" [level=3] [ref=e96]
+              - generic [ref=e97]:
+                - link "LinkedIn" [ref=e98] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/nicolasbanic
+                  - img [ref=e99] [cursor=pointer]
+                - link "GitHub" [ref=e103] [cursor=pointer]:
+                  - /url: https://github.com/NicolasBANIC
+                  - img [ref=e104] [cursor=pointer]
+                - link "Email" [ref=e107] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - img [ref=e108] [cursor=pointer]
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - link "Mentions légales" [ref=e114] [cursor=pointer]:
+              - /url: /mentions-legales
+            - generic [ref=e115]: •
+          - link "Politique de confidentialité" [ref=e117] [cursor=pointer]:
+            - /url: /politique-confidentialite
+      - generic [ref=e119]:
+        - paragraph [ref=e120]: © 2025 BANDEV - Nicolas Banic. Tous droits réservés.
+        - paragraph [ref=e121]:
+          - text: Développé avec
+          - generic [ref=e122]: Next.js 15
+          - text: "&"
+          - generic [ref=e123]: React 19
+  - button "Open Next.js Dev Tools" [ref=e129] [cursor=pointer]:
+    - img [ref=e130] [cursor=pointer]
+  - alert [ref=e133]
+```

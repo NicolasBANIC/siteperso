@@ -5,101 +5,12 @@ import PricingCard from "@/components/PricingCard";
 import HeroSection from "@/components/HeroSection";
 import CTAButton from "@/components/CTAButton";
 import CTASection from "@/components/CTASection";
+import pricingData from "@/data/pricing.json";
 
-const pricingPlans = [
-  {
-    title: "Site Vitrine Standard",
-    price: "À partir de 1 299€",
-    period: "projet",
-    description: "Idéal pour artisans et TPE souhaitant une présence en ligne professionnelle et efficace.",
-    features: [
-      "Design responsive moderne",
-      "Jusqu'à 5 pages personnalisées",
-      "Formulaire de contact",
-      "Optimisation SEO de base",
-      "Hébergement 1 an inclus",
-      "Formation à la gestion du site",
-      "Support 30 jours",
-    ],
-    highlighted: false,
-  },
-  {
-    title: "Site Vitrine Premium",
-    price: "À partir de 2 499€",
-    period: "projet",
-    description: "La solution complète pour les entreprises exigeantes qui veulent se démarquer.",
-    features: [
-      "Design 100% sur mesure",
-      "Pages illimitées",
-      "Blog intégré",
-      "Optimisation SEO avancée",
-      "Animations et micro-interactions",
-      "Hébergement 1 an inclus",
-      "Formation complète",
-      "Support 90 jours",
-      "Maintenance 3 mois offerte",
-    ],
-    highlighted: true,
-  },
-  {
-    title: "E-commerce",
-    price: "À partir de 3 999€",
-    period: "projet",
-    description: "Boutique en ligne complète pour vendre vos produits avec une expérience client optimale.",
-    features: [
-      "Design e-commerce sur mesure",
-      "Catalogue produits illimité",
-      "Paiement sécurisé (Stripe/PayPal)",
-      "Gestion des stocks",
-      "Tableau de bord admin",
-      "Optimisation SEO e-commerce",
-      "Hébergement 1 an inclus",
-      "Formation complète",
-      "Support 90 jours",
-    ],
-    highlighted: false,
-  },
-];
-
-const maintenancePlans = [
-  {
-    title: "Maintenance Essentielle",
-    price: "49€",
-    period: "mois",
-    description: "Pour garder votre site à jour et sécurisé.",
-    features: [
-      "Mises à jour techniques mensuelles",
-      "Sauvegardes hebdomadaires",
-      "Monitoring de disponibilité",
-      "Support par email",
-      "1h de modifications incluse",
-    ],
-  },
-  {
-    title: "Maintenance Premium",
-    price: "149€",
-    period: "mois",
-    description: "Accompagnement complet pour une tranquillité totale.",
-    features: [
-      "Tout du plan Essentielle",
-      "Mises à jour hebdomadaires",
-      "Sauvegardes quotidiennes",
-      "Support prioritaire",
-      "3h de modifications incluses",
-      "Optimisations mensuelles",
-      "Rapports de performance",
-    ],
-    highlighted: true,
-  },
-];
-
-const additionalServices = [
-  { name: "Développement sur mesure", price: "500€/jour" },
-  { name: "Audit technique complet", price: "À partir de 299€" },
-  { name: "Optimisation SEO avancée", price: "À partir de 499€" },
-  { name: "Migration de site", price: "À partir de 399€" },
-  { name: "Formation personnalisée", price: "80€/heure" },
-];
+// Use centralized pricing data
+const pricingPlans = pricingData.pricingPlans;
+const maintenancePlans = pricingData.maintenancePlans;
+const additionalServices = pricingData.additionalServices;
 
 export const metadata = {
   title: "Tarifs — Nicolas Banic",
@@ -111,7 +22,7 @@ export default function TarifsPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title='Tarifs <span class="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">transparents et adaptés</span>'
+        title='Tarifs <span className="accent-word">transparents et adaptés</span>'
         subtitle="Des formules claires pour tous les budgets. Paiement en plusieurs fois possible. Devis personnalisé gratuit sous 24h."
         backgroundImage="/images/tarifs-hero.png"
         badge="Devis Gratuit"

@@ -33,7 +33,7 @@ export default function Logo({
     hover: {
       scale: prefersReducedMotion ? 1 : 1.05,
       filter: withGlow 
-        ? "drop-shadow(0 2px 6px rgba(0,0,0,0.5)) drop-shadow(0 0 12px rgba(22,163,74,0.4))" 
+        ? "drop-shadow(0 2px 6px rgba(0,0,0,0.5)) drop-shadow(0 0 12px rgba(0,122,94,0.4))" 
         : "drop-shadow(0 4px 8px rgba(0,0,0,0.4))",
     },
   };
@@ -64,9 +64,9 @@ export default function Logo({
         <defs>
           {/* Gradient émeraude unifié */}
           <linearGradient id={`emerald-gradient-${variant}`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style={{stopColor: '#10b981', stopOpacity: 1}} />
-            <stop offset="50%" style={{stopColor: '#16a34a', stopOpacity: 1}} />
-            <stop offset="100%" style={{stopColor: '#059669', stopOpacity: 1}} />
+            <stop offset="0%" style={{stopColor: '#007A5E', stopOpacity: 1}} />
+            <stop offset="50%" style={{stopColor: '#10b981', stopOpacity: 1}} />
+            <stop offset="100%" style={{stopColor: '#007A5E', stopOpacity: 1}} />
           </linearGradient>
           
           {/* Filtre pour ombre textuelle */}
@@ -110,7 +110,7 @@ export default function Logo({
             y1="40" 
             x2="164" 
             y2="40" 
-            stroke="#16a34a" 
+            stroke="#007A5E" 
             strokeWidth="2" 
             opacity="0.4"
           />

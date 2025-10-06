@@ -62,7 +62,7 @@ export default function ContactPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title="Entrons en contact"
+        title={`Entrons en <span className="accent-word">contact</span>`}
         subtitle="Discutons de vos objectifs, de vos contraintes et de la meilleure façon de vous accompagner dans votre projet digital."
         badge={{
           icon: "clock",
@@ -80,10 +80,10 @@ export default function ContactPage() {
             <ScrollReveal>
               <div className="card">
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-2xl font-bold text-white mb-2">
                     Envoyez-moi un message
                   </h2>
-                  <p className="text-gray-600">
+                  <p className="text-[#D1D5DB]">
                     Je vous répondrai dans les plus brefs délais.
                   </p>
                 </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
             <div className="space-y-6">
               <ScrollReveal delay={0.1}>
                 <div className="card">
-                  <h2 className="text-xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-xl font-bold text-white mb-6">
                     Coordonnées
                   </h2>
                   <div className="space-y-6">
@@ -107,23 +107,23 @@ export default function ContactPage() {
                             <Icon className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="text-sm text-gray-500 mb-1">
+                            <p className="text-sm text-[#D1D5DB] mb-1">
                               {item.label}
                             </p>
                             {item.href ? (
                               <a 
                                 href={item.href}
-                                className="font-medium text-gray-900 hover:text-[var(--color-accent)] transition-colors"
+                                className="font-medium text-white hover:text-[var(--color-accent)] transition-colors"
                               >
                                 {item.value}
                               </a>
                             ) : (
-                              <p className="font-medium text-gray-900">
+                              <p className="font-medium text-white">
                                 {item.value}
                               </p>
                             )}
                             {item.subtext && (
-                              <p className="text-sm text-gray-500 mt-1">
+                              <p className="text-sm text-[#D1D5DB] mt-1">
                                 {item.subtext}
                               </p>
                             )}
@@ -137,7 +137,7 @@ export default function ContactPage() {
 
               <ScrollReveal delay={0.2}>
                 <div className="card">
-                  <h2 className="text-xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-xl font-bold text-white mb-6">
                     Réseaux sociaux
                   </h2>
                   <div className="flex gap-4">
@@ -162,10 +162,10 @@ export default function ContactPage() {
 
               <ScrollReveal delay={0.3}>
                 <div className="card bg-gradient-to-br from-[var(--color-anthracite)]/5 to-[var(--color-accent)]/5 border-[var(--color-accent)]/20 hover:shadow-matrix transition-all duration-300">
-                  <h3 className="font-semibold text-gray-900 mb-2">
+                  <h3 className="font-semibold text-white mb-2">
                     Vous préférez un devis détaillé ?
                   </h3>
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-sm text-[#D1D5DB] mb-4">
                     Remplissez le formulaire de demande de devis pour recevoir une proposition personnalisée sous 24h.
                   </p>
                   <Link href="/devis" className="btn-primary text-sm">

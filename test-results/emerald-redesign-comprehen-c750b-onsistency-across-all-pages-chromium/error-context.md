@@ -1,0 +1,221 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Aller au contenu" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Accueil BANDEV - Développeur Web Freelance" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "BANDEV - Développeur Web Freelance" [ref=e8] [cursor=pointer]:
+            - generic [ref=e9] [cursor=pointer]: BAN
+            - generic [ref=e10] [cursor=pointer]: DEV
+        - navigation "Navigation principale" [ref=e11]:
+          - link "Accueil" [ref=e12] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e13] [cursor=pointer]: Accueil
+          - link "Services" [ref=e14] [cursor=pointer]:
+            - /url: /services
+            - generic [ref=e15] [cursor=pointer]: Services
+          - link "Processus" [ref=e16] [cursor=pointer]:
+            - /url: /processus
+            - generic [ref=e17] [cursor=pointer]: Processus
+          - link "Portfolio" [ref=e18] [cursor=pointer]:
+            - /url: /portfolio
+            - generic [ref=e19] [cursor=pointer]: Portfolio
+          - link "Tarifs" [ref=e20] [cursor=pointer]:
+            - /url: /tarifs
+            - generic [ref=e21] [cursor=pointer]: Tarifs
+          - link "Témoignages" [ref=e22] [cursor=pointer]:
+            - /url: /temoignages
+            - generic [ref=e23] [cursor=pointer]: Témoignages
+          - link "À propos" [ref=e24] [cursor=pointer]:
+            - /url: /apropos
+            - generic [ref=e25] [cursor=pointer]: À propos
+          - link "Contact" [ref=e26] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e27] [cursor=pointer]: Contact
+        - link "Demander un devis" [ref=e29] [cursor=pointer]:
+          - /url: /devis
+          - generic [ref=e30] [cursor=pointer]: Demander un devis
+    - main [ref=e32]:
+      - generic [ref=e37]:
+        - generic [ref=e40]:
+          - img [ref=e41]
+          - generic [ref=e44]: Réponse sous 24h ouvrées
+        - heading "Entrons en contact" [level=1] [ref=e46]:
+          - text: Entrons en
+          - generic [ref=e47]: contact
+        - paragraph [ref=e49]: Discutons de vos objectifs, de vos contraintes et de la meilleure façon de vous accompagner dans votre projet digital.
+      - generic [ref=e53]:
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - heading "Envoyez-moi un message" [level=2] [ref=e57]
+            - paragraph [ref=e58]: Je vous répondrai dans les plus brefs délais.
+          - form "Formulaire de contact" [ref=e59]:
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - text: Nom complet
+                - generic [ref=e62]: "*"
+              - textbox "Nom complet *" [ref=e63]
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - text: Email
+                - generic [ref=e66]: "*"
+              - textbox "Email *" [ref=e67]
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - text: Sujet
+                - generic [ref=e70]: "*"
+              - textbox "Sujet *" [ref=e71]
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - text: Budget estimé
+                - generic [ref=e74]: (optionnel)
+              - combobox "Budget estimé (optionnel)" [ref=e75]:
+                - option "Sélectionnez une fourchette" [selected]
+                - option "Moins de 2 000€"
+                - option "2 000€ - 5 000€"
+                - option "5 000€ - 10 000€"
+                - option "10 000€ - 20 000€"
+                - option "Plus de 20 000€"
+                - option "À discuter"
+              - paragraph [ref=e76]: Cela m'aide à mieux comprendre vos besoins
+            - generic [ref=e77]:
+              - generic [ref=e78]:
+                - text: Message
+                - generic [ref=e79]: "*"
+              - textbox "Message *" [ref=e80]
+              - paragraph [ref=e81]: Minimum 10 caractères
+            - button "Envoyer le message" [ref=e82]:
+              - img [ref=e83]
+              - text: Envoyer le message
+            - paragraph [ref=e86]:
+              - generic [ref=e87]: "*"
+              - text: Champs obligatoires
+        - generic [ref=e88]:
+          - generic [ref=e90]:
+            - heading "Coordonnées" [level=2] [ref=e91]
+            - generic [ref=e92]:
+              - generic [ref=e93]:
+                - img [ref=e95]
+                - generic [ref=e98]:
+                  - paragraph [ref=e99]: Email
+                  - link "bonjour@nicolasbanic.dev" [ref=e100] [cursor=pointer]:
+                    - /url: mailto:bonjour@nicolasbanic.dev
+              - generic [ref=e101]:
+                - img [ref=e103]
+                - generic [ref=e105]:
+                  - paragraph [ref=e106]: Téléphone
+                  - link "06 12 34 56 78" [ref=e107] [cursor=pointer]:
+                    - /url: tel:+33612345678
+              - generic [ref=e108]:
+                - img [ref=e110]
+                - generic [ref=e113]:
+                  - paragraph [ref=e114]: Localisation
+                  - paragraph [ref=e115]: Lyon, France
+                  - paragraph [ref=e116]: Interventions partout en France
+              - generic [ref=e117]:
+                - img [ref=e119]
+                - generic [ref=e122]:
+                  - paragraph [ref=e123]: Disponibilité
+                  - paragraph [ref=e124]: "Lun - Ven : 9h - 18h"
+                  - paragraph [ref=e125]: Réponse sous 24h ouvrées
+          - generic [ref=e127]:
+            - heading "Réseaux sociaux" [level=2] [ref=e128]
+            - generic [ref=e129]:
+              - link "LinkedIn" [ref=e130] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/nicolasbanic
+                - img [ref=e131] [cursor=pointer]
+              - link "GitHub" [ref=e135] [cursor=pointer]:
+                - /url: https://github.com/nicolasbanic
+                - img [ref=e136] [cursor=pointer]
+          - generic [ref=e140]:
+            - heading "Vous préférez un devis détaillé ?" [level=3] [ref=e141]
+            - paragraph [ref=e142]: Remplissez le formulaire de demande de devis pour recevoir une proposition personnalisée sous 24h.
+            - link "Demander un devis" [ref=e143] [cursor=pointer]:
+              - /url: /devis
+    - contentinfo [ref=e144]:
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - generic [ref=e147]:
+            - img "BANDEV - Développeur Web Freelance" [ref=e150]:
+              - generic [ref=e151]: BAN
+              - generic [ref=e152]: DEV
+            - paragraph [ref=e153]: Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
+            - paragraph [ref=e154]: "SIRET : 841 375 652 00028"
+            - link "Demander un devis" [ref=e155] [cursor=pointer]:
+              - /url: /devis
+          - generic [ref=e156]:
+            - heading "Navigation" [level=2] [ref=e157]
+            - list [ref=e158]:
+              - listitem [ref=e159]:
+                - link "Accueil" [ref=e160] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e161]:
+                - link "Services" [ref=e162] [cursor=pointer]:
+                  - /url: /services
+              - listitem [ref=e163]:
+                - link "Processus" [ref=e164] [cursor=pointer]:
+                  - /url: /processus
+              - listitem [ref=e165]:
+                - link "Portfolio" [ref=e166] [cursor=pointer]:
+                  - /url: /portfolio
+              - listitem [ref=e167]:
+                - link "Tarifs" [ref=e168] [cursor=pointer]:
+                  - /url: /tarifs
+              - listitem [ref=e169]:
+                - link "Témoignages" [ref=e170] [cursor=pointer]:
+                  - /url: /temoignages
+              - listitem [ref=e171]:
+                - link "À propos" [ref=e172] [cursor=pointer]:
+                  - /url: /apropos
+              - listitem [ref=e173]:
+                - link "Contact" [ref=e174] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e175]:
+            - heading "Contact" [level=2] [ref=e176]
+            - list [ref=e177]:
+              - listitem [ref=e178]:
+                - link "Email contact@bandev.fr" [ref=e179] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - generic [ref=e180] [cursor=pointer]:
+                    - img [ref=e181] [cursor=pointer]
+                    - generic [ref=e184] [cursor=pointer]:
+                      - paragraph [ref=e185] [cursor=pointer]: Email
+                      - paragraph [ref=e186] [cursor=pointer]: contact@bandev.fr
+              - listitem [ref=e187]:
+                - generic [ref=e188]:
+                  - img [ref=e189]
+                  - generic [ref=e192]:
+                    - paragraph [ref=e193]: Localisation
+                    - paragraph [ref=e194]: France
+            - generic [ref=e195]:
+              - heading "Réseaux sociaux" [level=3] [ref=e196]
+              - generic [ref=e197]:
+                - link "LinkedIn" [ref=e198] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/nicolasbanic
+                  - img [ref=e199] [cursor=pointer]
+                - link "GitHub" [ref=e203] [cursor=pointer]:
+                  - /url: https://github.com/NicolasBANIC
+                  - img [ref=e204] [cursor=pointer]
+                - link "Email" [ref=e207] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - img [ref=e208] [cursor=pointer]
+        - generic [ref=e212]:
+          - generic [ref=e213]:
+            - link "Mentions légales" [ref=e214] [cursor=pointer]:
+              - /url: /mentions-legales
+            - generic [ref=e215]: •
+          - link "Politique de confidentialité" [ref=e217] [cursor=pointer]:
+            - /url: /politique-confidentialite
+      - generic [ref=e219]:
+        - paragraph [ref=e220]: © 2025 BANDEV - Nicolas Banic. Tous droits réservés.
+        - paragraph [ref=e221]:
+          - text: Développé avec
+          - generic [ref=e222]: Next.js 15
+          - text: "&"
+          - generic [ref=e223]: React 19
+```

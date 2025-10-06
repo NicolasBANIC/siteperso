@@ -102,8 +102,8 @@ export default function ParticlesBackground({ interactive = false }) { // Désac
       draw() {
         // Gradient for particles
         const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
-        gradient.addColorStop(0, `rgba(0, 71, 171, ${this.opacity})`);
-        gradient.addColorStop(1, `rgba(0, 109, 119, ${this.opacity * 0.5})`);
+        gradient.addColorStop(0, `rgba(0, 122, 94, ${this.opacity})`);
+        gradient.addColorStop(1, `rgba(0, 207, 193, ${this.opacity * 0.5})`);
         
         ctx.fillStyle = gradient;
         ctx.beginPath();

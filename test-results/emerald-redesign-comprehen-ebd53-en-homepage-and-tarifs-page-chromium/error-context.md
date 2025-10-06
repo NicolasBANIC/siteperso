@@ -1,0 +1,363 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Aller au contenu" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Accueil BANDEV - Développeur Web Freelance" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "BANDEV - Développeur Web Freelance" [ref=e8] [cursor=pointer]:
+            - generic [ref=e9] [cursor=pointer]: BAN
+            - generic [ref=e10] [cursor=pointer]: DEV
+        - navigation "Navigation principale" [ref=e11]:
+          - link "Accueil" [ref=e12] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e13] [cursor=pointer]: Accueil
+          - link "Services" [ref=e14] [cursor=pointer]:
+            - /url: /services
+            - generic [ref=e15] [cursor=pointer]: Services
+          - link "Processus" [ref=e16] [cursor=pointer]:
+            - /url: /processus
+            - generic [ref=e17] [cursor=pointer]: Processus
+          - link "Portfolio" [ref=e18] [cursor=pointer]:
+            - /url: /portfolio
+            - generic [ref=e19] [cursor=pointer]: Portfolio
+          - link "Tarifs" [ref=e20] [cursor=pointer]:
+            - /url: /tarifs
+            - generic [ref=e21] [cursor=pointer]: Tarifs
+          - link "Témoignages" [ref=e22] [cursor=pointer]:
+            - /url: /temoignages
+            - generic [ref=e23] [cursor=pointer]: Témoignages
+          - link "À propos" [ref=e24] [cursor=pointer]:
+            - /url: /apropos
+            - generic [ref=e25] [cursor=pointer]: À propos
+          - link "Contact" [ref=e26] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e27] [cursor=pointer]: Contact
+        - link "Demander un devis" [ref=e29] [cursor=pointer]:
+          - /url: /devis
+          - generic [ref=e30] [cursor=pointer]: Demander un devis
+    - main [ref=e32]:
+      - generic [ref=e37]:
+        - generic [ref=e44]: Devis Gratuit
+        - heading "Tarifs transparents et adaptés" [level=1] [ref=e46]:
+          - text: Tarifs
+          - generic [ref=e47]: transparents et adaptés
+        - paragraph [ref=e49]: Des formules claires pour tous les budgets. Paiement en plusieurs fois possible. Devis personnalisé gratuit sous 24h.
+        - generic [ref=e51]:
+          - link "Demander un devis gratuit" [ref=e53] [cursor=pointer]:
+            - /url: /devis
+            - generic [ref=e55] [cursor=pointer]: Demander un devis gratuit
+            - img [ref=e56] [cursor=pointer]
+          - link "Poser une question" [ref=e59] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e61] [cursor=pointer]: Poser une question
+            - img [ref=e62] [cursor=pointer]
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - heading "Création de sites web" [level=2] [ref=e67]
+          - generic [ref=e68]:
+            - article [ref=e70]:
+              - generic [ref=e71]:
+                - heading "Site Vitrine Standard" [level=3] [ref=e72]
+                - generic [ref=e73]:
+                  - generic [ref=e74]: À partir de 1 299€
+                  - generic [ref=e75]: / projet
+                - paragraph [ref=e76]: Idéal pour artisans et TPE souhaitant une présence en ligne professionnelle et efficace.
+              - list [ref=e77]:
+                - listitem [ref=e78]:
+                  - img [ref=e79]
+                  - generic [ref=e81]: Design responsive moderne
+                - listitem [ref=e82]:
+                  - img [ref=e83]
+                  - generic [ref=e85]: Jusqu'à 5 pages personnalisées
+                - listitem [ref=e86]:
+                  - img [ref=e87]
+                  - generic [ref=e89]: Formulaire de contact
+                - listitem [ref=e90]:
+                  - img [ref=e91]
+                  - generic [ref=e93]: Optimisation SEO de base
+                - listitem [ref=e94]:
+                  - img [ref=e95]
+                  - generic [ref=e97]: Hébergement 1 an inclus
+                - listitem [ref=e98]:
+                  - img [ref=e99]
+                  - generic [ref=e101]: Formation à la gestion du site
+                - listitem [ref=e102]:
+                  - img [ref=e103]
+                  - generic [ref=e105]: Support 30 jours
+              - link "Demander un devis" [ref=e107] [cursor=pointer]:
+                - /url: /devis
+                - generic [ref=e109] [cursor=pointer]: Demander un devis
+            - article [ref=e111]:
+              - generic [ref=e112]:
+                - heading "Site Vitrine Premium" [level=3] [ref=e113]
+                - generic [ref=e114]:
+                  - generic [ref=e115]: À partir de 2 499€
+                  - generic [ref=e116]: / projet
+                - paragraph [ref=e117]: La solution complète pour les entreprises exigeantes qui veulent se démarquer.
+              - list [ref=e118]:
+                - listitem [ref=e119]:
+                  - img [ref=e120]
+                  - generic [ref=e122]: Design 100% sur mesure
+                - listitem [ref=e123]:
+                  - img [ref=e124]
+                  - generic [ref=e126]: Pages illimitées
+                - listitem [ref=e127]:
+                  - img [ref=e128]
+                  - generic [ref=e130]: Blog intégré
+                - listitem [ref=e131]:
+                  - img [ref=e132]
+                  - generic [ref=e134]: Optimisation SEO avancée
+                - listitem [ref=e135]:
+                  - img [ref=e136]
+                  - generic [ref=e138]: Animations et micro-interactions
+                - listitem [ref=e139]:
+                  - img [ref=e140]
+                  - generic [ref=e142]: Hébergement 1 an inclus
+                - listitem [ref=e143]:
+                  - img [ref=e144]
+                  - generic [ref=e146]: Formation complète
+                - listitem [ref=e147]:
+                  - img [ref=e148]
+                  - generic [ref=e150]: Support 90 jours
+                - listitem [ref=e151]:
+                  - img [ref=e152]
+                  - generic [ref=e154]: Maintenance 3 mois offerte
+              - link "Demander un devis" [ref=e156] [cursor=pointer]:
+                - /url: /devis
+                - generic [ref=e158] [cursor=pointer]: Demander un devis
+            - article [ref=e160]:
+              - generic [ref=e161]:
+                - heading "E-commerce" [level=3] [ref=e162]
+                - generic [ref=e163]:
+                  - generic [ref=e164]: À partir de 3 999€
+                  - generic [ref=e165]: / projet
+                - paragraph [ref=e166]: Boutique en ligne complète pour vendre vos produits avec une expérience client optimale.
+              - list [ref=e167]:
+                - listitem [ref=e168]:
+                  - img [ref=e169]
+                  - generic [ref=e171]: Design e-commerce sur mesure
+                - listitem [ref=e172]:
+                  - img [ref=e173]
+                  - generic [ref=e175]: Catalogue produits illimité
+                - listitem [ref=e176]:
+                  - img [ref=e177]
+                  - generic [ref=e179]: Paiement sécurisé (Stripe/PayPal)
+                - listitem [ref=e180]:
+                  - img [ref=e181]
+                  - generic [ref=e183]: Gestion des stocks
+                - listitem [ref=e184]:
+                  - img [ref=e185]
+                  - generic [ref=e187]: Tableau de bord admin
+                - listitem [ref=e188]:
+                  - img [ref=e189]
+                  - generic [ref=e191]: Optimisation SEO e-commerce
+                - listitem [ref=e192]:
+                  - img [ref=e193]
+                  - generic [ref=e195]: Hébergement 1 an inclus
+                - listitem [ref=e196]:
+                  - img [ref=e197]
+                  - generic [ref=e199]: Formation complète
+                - listitem [ref=e200]:
+                  - img [ref=e201]
+                  - generic [ref=e203]: Support 90 jours
+              - link "Demander un devis" [ref=e205] [cursor=pointer]:
+                - /url: /devis
+                - generic [ref=e207] [cursor=pointer]: Demander un devis
+          - paragraph [ref=e210]: "* Prix indicatifs H.T. Le tarif final dépend de vos besoins spécifiques."
+        - generic [ref=e211]:
+          - heading "Forfaits de maintenance" [level=2] [ref=e213]
+          - generic [ref=e214]:
+            - article [ref=e216]:
+              - generic [ref=e217]:
+                - heading "Maintenance Essentielle" [level=3] [ref=e218]
+                - generic [ref=e219]:
+                  - generic [ref=e220]: 49€
+                  - generic [ref=e221]: / mois
+                - paragraph [ref=e222]: Pour garder votre site à jour et sécurisé.
+              - list [ref=e223]:
+                - listitem [ref=e224]:
+                  - img [ref=e225]
+                  - generic [ref=e227]: Mises à jour techniques mensuelles
+                - listitem [ref=e228]:
+                  - img [ref=e229]
+                  - generic [ref=e231]: Sauvegardes hebdomadaires
+                - listitem [ref=e232]:
+                  - img [ref=e233]
+                  - generic [ref=e235]: Monitoring de disponibilité
+                - listitem [ref=e236]:
+                  - img [ref=e237]
+                  - generic [ref=e239]: Support par email
+                - listitem [ref=e240]:
+                  - img [ref=e241]
+                  - generic [ref=e243]: 1h de modifications incluse
+              - link "Demander un devis" [ref=e245] [cursor=pointer]:
+                - /url: /devis
+                - generic [ref=e247] [cursor=pointer]: Demander un devis
+            - article [ref=e249]:
+              - generic [ref=e250]:
+                - heading "Maintenance Premium" [level=3] [ref=e251]
+                - generic [ref=e252]:
+                  - generic [ref=e253]: 149€
+                  - generic [ref=e254]: / mois
+                - paragraph [ref=e255]: Accompagnement complet pour une tranquillité totale.
+              - list [ref=e256]:
+                - listitem [ref=e257]:
+                  - img [ref=e258]
+                  - generic [ref=e260]: Tout du plan Essentielle
+                - listitem [ref=e261]:
+                  - img [ref=e262]
+                  - generic [ref=e264]: Mises à jour hebdomadaires
+                - listitem [ref=e265]:
+                  - img [ref=e266]
+                  - generic [ref=e268]: Sauvegardes quotidiennes
+                - listitem [ref=e269]:
+                  - img [ref=e270]
+                  - generic [ref=e272]: Support prioritaire
+                - listitem [ref=e273]:
+                  - img [ref=e274]
+                  - generic [ref=e276]: 3h de modifications incluses
+                - listitem [ref=e277]:
+                  - img [ref=e278]
+                  - generic [ref=e280]: Optimisations mensuelles
+                - listitem [ref=e281]:
+                  - img [ref=e282]
+                  - generic [ref=e284]: Rapports de performance
+              - link "Demander un devis" [ref=e286] [cursor=pointer]:
+                - /url: /devis
+                - generic [ref=e288] [cursor=pointer]: Demander un devis
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - heading "Services complémentaires" [level=2] [ref=e292]
+            - paragraph [ref=e293]: Des prestations à la carte pour répondre à tous vos besoins
+          - generic [ref=e294]:
+            - generic [ref=e296]:
+              - generic [ref=e297]: Développement sur mesure
+              - generic [ref=e298]: 500€/jour
+            - generic [ref=e300]:
+              - generic [ref=e301]: Audit technique complet
+              - generic [ref=e302]: À partir de 299€
+            - generic [ref=e304]:
+              - generic [ref=e305]: Optimisation SEO avancée
+              - generic [ref=e306]: À partir de 499€
+            - generic [ref=e308]:
+              - generic [ref=e309]: Migration de site
+              - generic [ref=e310]: À partir de 399€
+            - generic [ref=e312]:
+              - generic [ref=e313]: Formation personnalisée
+              - generic [ref=e314]: 150€/heure
+            - generic [ref=e316]:
+              - generic [ref=e317]: Support technique d'urgence
+              - generic [ref=e318]: 100€/heure
+        - generic [ref=e320]:
+          - heading "Pourquoi me choisir ?" [level=2] [ref=e322]
+          - generic [ref=e323]:
+            - generic [ref=e325]:
+              - img [ref=e327]
+              - heading "Qualité garantie" [level=3] [ref=e329]
+              - paragraph [ref=e330]: Sites performants, accessibles et optimisés pour le référencement.
+            - generic [ref=e332]:
+              - img [ref=e334]
+              - heading "Accompagnement complet" [level=3] [ref=e336]
+              - paragraph [ref=e337]: De l'analyse à la mise en ligne, je suis à vos côtés à chaque étape.
+            - generic [ref=e339]:
+              - img [ref=e341]
+              - heading "Tarifs transparents" [level=3] [ref=e343]
+              - paragraph [ref=e344]: Pas de frais cachés. Devis détaillé et paiement en plusieurs fois possible.
+        - generic [ref=e347]:
+          - heading "Prêt à démarrer votre projet ?" [level=2] [ref=e348]
+          - paragraph [ref=e349]: Recevez un devis personnalisé et gratuit sous 24h. Aucun engagement.
+          - generic [ref=e350]:
+            - link "Demander un devis gratuit" [ref=e352] [cursor=pointer]:
+              - /url: /devis
+            - link "Me contacter" [ref=e354] [cursor=pointer]:
+              - /url: /contact
+    - contentinfo [ref=e355]:
+      - generic [ref=e356]:
+        - generic [ref=e357]:
+          - generic [ref=e358]:
+            - img "BANDEV - Développeur Web Freelance" [ref=e361]:
+              - generic [ref=e362]: BAN
+              - generic [ref=e363]: DEV
+            - paragraph [ref=e364]: Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
+            - paragraph [ref=e365]: "SIRET : 841 375 652 00028"
+            - link "Demander un devis" [ref=e366] [cursor=pointer]:
+              - /url: /devis
+          - generic [ref=e367]:
+            - heading "Navigation" [level=2] [ref=e368]
+            - list [ref=e369]:
+              - listitem [ref=e370]:
+                - link "Accueil" [ref=e371] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e372]:
+                - link "Services" [ref=e373] [cursor=pointer]:
+                  - /url: /services
+              - listitem [ref=e374]:
+                - link "Processus" [ref=e375] [cursor=pointer]:
+                  - /url: /processus
+              - listitem [ref=e376]:
+                - link "Portfolio" [ref=e377] [cursor=pointer]:
+                  - /url: /portfolio
+              - listitem [ref=e378]:
+                - link "Tarifs" [ref=e379] [cursor=pointer]:
+                  - /url: /tarifs
+              - listitem [ref=e380]:
+                - link "Témoignages" [ref=e381] [cursor=pointer]:
+                  - /url: /temoignages
+              - listitem [ref=e382]:
+                - link "À propos" [ref=e383] [cursor=pointer]:
+                  - /url: /apropos
+              - listitem [ref=e384]:
+                - link "Contact" [ref=e385] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e386]:
+            - heading "Contact" [level=2] [ref=e387]
+            - list [ref=e388]:
+              - listitem [ref=e389]:
+                - link "Email contact@bandev.fr" [ref=e390] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - generic [ref=e391] [cursor=pointer]:
+                    - img [ref=e392] [cursor=pointer]
+                    - generic [ref=e395] [cursor=pointer]:
+                      - paragraph [ref=e396] [cursor=pointer]: Email
+                      - paragraph [ref=e397] [cursor=pointer]: contact@bandev.fr
+              - listitem [ref=e398]:
+                - generic [ref=e399]:
+                  - img [ref=e400]
+                  - generic [ref=e403]:
+                    - paragraph [ref=e404]: Localisation
+                    - paragraph [ref=e405]: France
+            - generic [ref=e406]:
+              - heading "Réseaux sociaux" [level=3] [ref=e407]
+              - generic [ref=e408]:
+                - link "LinkedIn" [ref=e409] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/nicolasbanic
+                  - img [ref=e410] [cursor=pointer]
+                - link "GitHub" [ref=e414] [cursor=pointer]:
+                  - /url: https://github.com/NicolasBANIC
+                  - img [ref=e415] [cursor=pointer]
+                - link "Email" [ref=e418] [cursor=pointer]:
+                  - /url: mailto:contact@bandev.fr
+                  - img [ref=e419] [cursor=pointer]
+        - generic [ref=e423]:
+          - generic [ref=e424]:
+            - link "Mentions légales" [ref=e425] [cursor=pointer]:
+              - /url: /mentions-legales
+            - generic [ref=e426]: •
+          - link "Politique de confidentialité" [ref=e428] [cursor=pointer]:
+            - /url: /politique-confidentialite
+      - generic [ref=e430]:
+        - paragraph [ref=e431]: © 2025 BANDEV - Nicolas Banic. Tous droits réservés.
+        - paragraph [ref=e432]:
+          - text: Développé avec
+          - generic [ref=e433]: Next.js 15
+          - text: "&"
+          - generic [ref=e434]: React 19
+  - button "Open Next.js Dev Tools" [ref=e440] [cursor=pointer]:
+    - img [ref=e441] [cursor=pointer]
+  - alert [ref=e444]
+```

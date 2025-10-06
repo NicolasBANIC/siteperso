@@ -93,8 +93,8 @@ export default function TestimonialSlider() {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 }
+              x: { type: "spring", stiffness: 280, damping: 35 },
+              opacity: { duration: 0.3, ease: "easeInOut" }
             }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}

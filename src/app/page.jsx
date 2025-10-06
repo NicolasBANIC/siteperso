@@ -32,6 +32,7 @@ import { Button } from "@/components/Button";
 import Card from "@/components/Card";
 import Section from "@/components/Section";
 import PricingCard from "@/components/PricingCard";
+import pricingData from "@/data/pricing.json";
 
 const services = [
   {
@@ -234,21 +235,20 @@ const stats = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section - Enhanced with media overlay and contact form */}
-      <section className="hero relative min-h-[90vh] overflow-hidden bg-[var(--color-anthracite)]">
-        {/* Vidéo de fond */}
+      {/* Hero Section - Clean video background sans overlay sombre */}
+      <section className="hero relative min-h-[90vh] overflow-hidden">
+        {/* Vidéo de fond - clean without dark filters */}
         <div className="absolute inset-0 z-0">
           <OptimizedVideo
             src="/videos/videolibreCodingWebm.webm"
             className=""
-            opacity="opacity-70"
+            opacity="opacity-80"
             disableOnMobile={false}
             poster="/images/hero-placeholder.jpg"
           />
         </div>
 
-        {/* Media overlay for enhanced text readability */}
-        <div className="media-overlay"></div>
+        {/* Removed media overlay - using enhanced text shadows instead */}
 
         {/* Matrix Rain par-dessus l'overlay */}
         <div className="absolute inset-0 z-[2]">
@@ -269,9 +269,9 @@ export default function HomePage() {
                   <span className="text-white font-semibold drop-shadow-md">Disponible pour de nouveaux projets</span>
                 </div>
 
-                <h1 className="hero-title text-hero font-black tracking-tighter leading-tight">
+                <h1 className="hero-title text-hero font-black tracking-tighter leading-tight text-white">
                   Créons ensemble votre{" "}
-                  <span className="accent-word text-[var(--color-accent-matrix)] drop-shadow-[0_0_15px_rgba(0,255,0,0.5)]">
+                  <span className="accent-word">
                     présence digitale
                   </span>{" "}
                   de demain
@@ -705,68 +705,23 @@ export default function HomePage() {
         </ScrollReveal>
 
         <div className="grid gap-8 md:grid-cols-3 mb-12">
-          <ScrollReveal direction="left" delay={100}>
-            <PricingCard
-              title="Starter"
-              price="2 500€"
-              period="projet"
-              description="Idéal pour les petits projets et sites vitrines. Une solution clé en main pour démarrer votre présence en ligne."
-              features={[
-                "Site vitrine 5 pages maximum",
-                "Design responsive (mobile, tablette, desktop)",
-                "Optimisation SEO de base",
-                "Formulaire de contact",
-                "Hébergement 1 an inclus",
-                "Formation à la gestion du contenu",
-                "Support 3 mois inclus"
-              ]}
-              buttonLabel="Choisir Starter"
-              buttonHref="/devis?plan=starter"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" delay={200}>
-            <PricingCard
-              title="Business"
-              price="5 500€"
-              period="projet"
-              description="Pour les entreprises qui veulent se démarquer avec un site professionnel et performant."
-              features={[
-                "Site sur mesure jusqu'à 15 pages",
-                "Design personnalisé et moderne",
-                "Optimisation SEO avancée",
-                "Intégration CMS (WordPress/Strapi)",
-                "Animations et interactions",
-                "Tableau de bord analytics",
-                "Formation complète",
-                "Support 3 mois inclus"
-              ]}
-              highlight={true}
-              buttonLabel="Choisir Business"
-              buttonHref="/devis?plan=business"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal direction="right" delay={300}>
-            <PricingCard
-              title="Premium"
-              price="Sur devis"
-              period=""
-              description="Pour les projets complexes nécessitant des fonctionnalités avancées et une architecture sur mesure."
-              features={[
-                "Application web complexe",
-                "Architecture scalable et sécurisée",
-                "Intégrations API tierces",
-                "Espace membre / authentification",
-                "Paiement en ligne (Stripe)",
-                "Dashboard admin personnalisé",
-                "Tests automatisés",
-                "Support prioritaire 6 mois"
-              ]}
-              buttonLabel="Demander un devis"
-              buttonHref="/devis?plan=premium"
-            />
-          </ScrollReveal>
+          {pricingData.pricingPlans.slice(0, 3).map((plan, index) => {
+            const directions = ["left", "up", "right"];
+            return (
+              <ScrollReveal key={plan.id} direction={directions[index]} delay={(index + 1) * 100}>
+                <PricingCard
+                  title={plan.title}
+                  price={plan.price}
+                  period={plan.period}
+                  description={plan.description}
+                  features={plan.features}
+                  highlight={plan.highlighted}
+                  buttonLabel={`Choisir ${plan.title}`}
+                  buttonHref={`/devis?plan=${plan.id}`}
+                />
+              </ScrollReveal>
+            );
+          })}
         </div>
 
         {/* Daily Rate Card */}

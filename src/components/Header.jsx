@@ -59,7 +59,7 @@ export default function Header() {
     <AnimatePresence>
       <motion.div
         id="menu-mobile"
-        className="fixed inset-0 top-[73px] z-[9999] lg:hidden"
+        className="fixed inset-0 top-[68px] z-[9999] lg:hidden"
         style={{ 
           zIndex: 9999,
           background: 'rgba(11,15,23,0.95)',
@@ -85,8 +85,8 @@ export default function Header() {
                   href={link.href}
                   className={`block rounded-lg px-6 py-4 text-heading-sm font-medium transition-all duration-300 ${
                     isActive
-                      ? "bg-gradient-to-r from-[#16a34a]/20 to-[#059669]/20 text-white border border-[#16a34a]/30 shadow-[0_0_12px_rgba(22,163,74,0.3)]"
-                      : "text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-[#16a34a]/10 hover:to-[#059669]/10 hover:border hover:border-[#16a34a]/20 hover:shadow-[0_0_8px_rgba(22,163,74,0.2)] hover:-translate-y-0.5"
+                      ? "bg-gradient-to-r from-[#007A5E]/20 to-[#00CFC1]/20 text-white border border-[#007A5E]/30 shadow-[0_0_12px_rgba(0,122,94,0.3)]"
+                      : "text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-[#007A5E]/10 hover:to-[#00CFC1]/10 hover:border hover:border-[#007A5E]/20 hover:shadow-[0_0_8px_rgba(0,122,94,0.2)] hover:-translate-y-0.5"
                   }`}
                 >
                   {link.label}
@@ -102,7 +102,7 @@ export default function Header() {
           >
             <Link 
               href="/devis" 
-              className="relative inline-flex items-center justify-center w-full px-6 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-[#16a34a] to-[#059669] shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_12px_24px_rgba(22,163,74,0.35)] hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
+              className="relative inline-flex items-center justify-center w-full px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-[#007A5E] to-[#00CFC1] shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_12px_24px_rgba(0,122,94,0.35)] hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#007A5E] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
             >
               <span className="relative z-10">Demander un devis</span>
             </Link>
@@ -116,34 +116,34 @@ export default function Header() {
     <>
       <motion.header
         role="banner"
-        className={`fixed top-0 inset-inline-start-0 z-50 w-full border-b transition-all duration-300 motion-reduce:transition-none pointer-events-auto ${
+        className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 motion-reduce:transition-none pointer-events-auto ${
           scrolled
-            ? "border-white/8 backdrop-blur-md shadow-[0_2px_10px_rgba(0,0,0,0.25)]"
-            : "border-transparent backdrop-blur-sm"
+            ? "border-b border-white/8 backdrop-blur-md shadow-[0_2px_10px_rgba(0,0,0,0.25)]"
+            : "border-b border-transparent backdrop-blur-sm"
         }`}
         initial={false}
         animate={{
-          backgroundColor: scrolled 
-            ? "rgba(17,24,39,0.9)" 
-            : "rgba(17,24,39,0.75)",
+          background: scrolled 
+            ? "rgba(11,15,16,.96)"
+            : "rgba(11,15,16,.92)",
+          height: scrolled ? "64px" : "68px"
         }}
         transition={{
           duration: prefersReducedMotion ? 0 : 0.3,
           ease: "easeOut",
         }}
         style={{
-          paddingTop: "env(safe-area-inset-top, 0)",
-          backdropFilter: "blur(12px)",
+          backdropFilter: "blur(8px)"
         }}
       >
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-6 py-4">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-6" style={{ height: scrolled ? "64px" : "68px" }}>
         {/* Logo BANDEV unifié - Cohérent avec l'identité héros */}
         <Link
           href="/"
           className="brand flex items-center z-10"
           aria-label="Accueil BANDEV - Développeur Web Freelance"
         >
-          <LogoHeader />
+          <LogoHeader style={{ maxHeight: '32px' }} />
         </Link>
 
         {/* Navigation Desktop - Cohérence héros : typographie Inter, transitions fluides */}
@@ -156,8 +156,8 @@ export default function Header() {
                 href={link.href}
                 className={`relative inline-flex items-center justify-center px-4 py-2 rounded-lg transition-all duration-300 group font-inter font-medium ${
                   isActive
-                    ? "text-white bg-gradient-to-r from-[#16a34a]/20 to-[#059669]/20 shadow-[0_0_12px_rgba(22,163,74,0.3)] after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-gradient-to-r after:from-[#16a34a] after:to-[#059669]"
-                    : "text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-[#16a34a]/10 hover:to-[#059669]/10 hover:shadow-[0_0_8px_rgba(22,163,74,0.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
+                    ? "text-white bg-gradient-to-r from-[#007A5E]/20 to-[#00CFC1]/20 shadow-[0_0_12px_rgba(0,122,94,0.3)] after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-gradient-to-r after:from-[#007A5E] after:to-[#00CFC1]"
+                    : "text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-[#007A5E]/10 hover:to-[#00CFC1]/10 hover:shadow-[0_0_8px_rgba(0,122,94,0.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
                 }`}
               >
                 <span className="relative z-10">{link.label}</span>
@@ -166,21 +166,22 @@ export default function Header() {
           })}
         </nav>
 
-        {/* CTA Button - Cohérent avec les boutons héros */}
+        {/* CTA Button - CORRECTED: Proportionné à la hauteur du header */}
         <div className="hidden items-center gap-4 lg:flex">
           <Link 
             href="/devis" 
-            className="relative inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-[#16a34a] to-[#059669] shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_12px_24px_rgba(22,163,74,0.35)] hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#16a34a] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0 group"
+            className="relative inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium text-sm text-white bg-gradient-to-r from-[#007A5E] to-[#00CFC1] shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-all duration-300 hover:shadow-[0_8px_16px_rgba(0,122,94,0.25)] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#007A5E] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0 group"
+            style={{ height: '36px' }} // Harmonisé avec la hauteur du header
           >
             <span className="relative z-10">Demander un devis</span>
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#10b981] to-[#047857] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#10b981] to-[#007A5E] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
         </div>
 
         {/* Menu Mobile Button - Design minimaliste cohérent */}
         <motion.button
           type="button"
-          className="relative z-[10000] inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm p-3 text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-[#16a34a]/20 hover:to-[#059669]/20 hover:shadow-[0_0_12px_rgba(22,163,74,0.3)] hover:border-[#16a34a]/40 lg:hidden"
+          className="relative z-[10000] inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm p-3 text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-[#007A5E]/20 hover:to-[#00CFC1]/20 hover:shadow-[0_0_12px_rgba(0,122,94,0.3)] hover:border-[#007A5E]/40 lg:hidden"
           style={{ zIndex: 10000 }}
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-label="Ouvrir ou fermer le menu"

@@ -59,7 +59,7 @@ export default function AproposPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title='Un partenaire technique <span class="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">de confiance</span>'
+        title='Un partenaire technique <span className="accent-word">de confiance</span>'
         subtitle="Développeur full-stack depuis plus de 10 ans, j'aide les artisans, TPE et PME à bâtir des outils digitaux performants, durables et alignés sur leurs objectifs business."
         backgroundImage="/images/apropos-hero.png"
         badge="10+ Années d'Expérience"
@@ -137,17 +137,17 @@ export default function AproposPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="values-grid">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <ScrollReveal key={value.title} direction="up" delay={index * 100}>
-                  <div className="section-card center-content gpu-accelerated group hover:shadow-matrix-lg transition-all duration-300">
-                    <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-anthracite)]/20 to-[var(--color-accent)]/10 text-[var(--color-accent)] transition-all duration-300 group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:text-[var(--color-foreground)] group-hover:shadow-matrix">
-                      <Icon className="h-7 w-7" aria-hidden="true" />
+                  <div className="value-card">
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#00C896]/20 to-[#007A5E]/10 text-[#00C896] transition-all duration-300 hover:from-[#00C896] hover:to-[#007A5E] hover:text-white">
+                      <Icon className="icon h-7 w-7" aria-hidden="true" />
                     </div>
-                    <h3 className="heading-tertiary">{value.title}</h3>
-                    <p className="mt-2 body-small">{value.description}</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">{value.title}</h3>
+                    <p className="text-white/85 text-sm leading-relaxed">{value.description}</p>
                   </div>
                 </ScrollReveal>
               );

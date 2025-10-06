@@ -9,33 +9,49 @@
     box-sizing: border-box;
   }
 
-  /* Design Tokens - Charte Matrix : Anthracite, Blanc, Vert Matrix */
+  /* Design Tokens - Charte Émeraude Profond Unifiée */
   :root {
     color-scheme: light;
     
-    /* Couleurs primaires - Charte Matrix */
-    --color-anthracite: #1A1A1A;
-    --color-white: #FFFFFF;
-    --color-matrix: #0B8A3A;
-    --color-matrix-2: #0E5F3B;
+    /* Palette Émeraude Profond Principale */
+    --color-primary: #007A5E;           /* vert émeraude profond */
+    --color-primary-dark: #003B32;      /* Matrix sombre pour hover et accents */
+    --color-turquoise: #00CFC1;         /* turquoise accent */
+    --gradient-emerald: linear-gradient(180deg, #FFFFFF 0%, #009E7A 50%, #007A5E 100%);
+    --bg-dark: #0B0F10;                 /* noir bleuté (sections sombres) */
+    --bg-light: #F8FAFC;
+    --text: #FFFFFF;
+    --text-sub: #D1D5DB;
+    --highlight: #C9A227;               /* doré subtil, parcimonieux */
     
-    /* Palette principale - Fond blanc pour contraste avec Matrix Rain */
-    --color-background: #FFFFFF;
-    --color-surface: #F8FAFB;
+    /* Variables CSS legacy pour compatibilité */
+    --color-anthracite: #0B0F10;
+    --color-white: #FFFFFF;
+    --color-matrix: #007A5E;
+    --color-matrix-2: #007A5E;
+    
+    /* Couleurs premium pour textes des sections héros */
+    --hero-text-primary: #F5F7FA;          /* couleur principale premium et lisible */
+    --hero-text-secondary: #E8ECF0;        /* couleur secondaire premium */
+    --hero-text-muted: rgba(245, 247, 250, 0.8); /* pour les sous-titres avec opacité */
+    
+    /* Palette principale - Fond pour contraste - Émeraude Profond */
+    --color-background: #F8FAFC;
+    --color-surface: #FFFFFF;
     --color-surface-hover: #EFF3F6;
-    --color-border: rgba(26, 26, 26, 0.12);
-    --color-border-hover: rgba(11, 138, 58, 0.4);
+    --color-border: rgba(0, 122, 94, 0.15);
+    --color-border-hover: rgba(0, 122, 94, 0.4);
     --color-foreground: #1A1A1A;
     --color-muted: #475569;
     
-    /* Accents - Palette Matrix harmonisée */
-    --color-accent: #0B8A3A;
-    --color-accent-hover: #0E5F3B;
-    --color-accent-secondary: #0B8A3A;
-    --color-accent-secondary-hover: #0E5F3B;
-    --color-accent-tertiary: #0B8A3A;
-    --color-accent-matrix: #0B8A3A;
-    --color-accent-matrix-hover: #0E5F3B;
+    /* Accents - Palette Émeraude Profond harmonisée */
+    --color-accent: #007A5E;
+    --color-accent-hover: #00CFC1;
+    --color-accent-secondary: #00CFC1;
+    --color-accent-secondary-hover: #003B32;
+    --color-accent-tertiary: #007A5E;
+    --color-accent-matrix: #007A5E;
+    --color-accent-matrix-hover: #00CFC1;
     --color-accent-foreground: #FFFFFF;
 
     --color-error: #DC2626;
@@ -49,17 +65,26 @@
     --color-ring: rgba(11, 138, 58, 0.35);
     --color-ring-gold: rgba(212, 175, 55, 0.45);
     
-    /* Radius */
+    /* Tokens globaux unifiés */
+    --radius: 12px;
     --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
     
-    /* Shadows - Charte Matrix */
-    --shadow-sm: 0 8px 16px rgba(0, 0, 0, 0.12);
-    --shadow-md: 0 16px 32px rgba(11, 138, 58, 0.18);
-    --shadow-lg: 0 24px 48px rgba(11, 138, 58, 0.24);
-    --shadow-ring: 0 0 0 3px rgba(11, 138, 58, 0.35);
+    /* Shadows - Charte Émeraude Profond Unifiée */
+    --shadow: 0 4px 20px rgba(0,0,0,0.25);
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.20);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.25);
+    --shadow-emerald: 0 8px 24px rgba(0, 122, 94, 0.20);
+    --shadow-ring: 0 0 0 3px rgba(0, 122, 94, 0.35);
+    
+    /* CORRECTED: Transitions uniformisées */
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-standard: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Logo BANDEV tokens */
     --logo-gold: #D4AF37;
@@ -82,7 +107,10 @@
 
   body {
     color: var(--color-foreground);
-    background-color: var(--color-background);
+    /* NOUVEAU : Fond global dégradé blanc → émeraude profond pour profondeur et élégance */
+    background: linear-gradient(180deg, #FFFFFF 0%, #009E7A 50%, #007A5E 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
     line-height: 1.6;
     font-weight: 400;
@@ -92,20 +120,28 @@
     overflow-x: hidden;
     max-width: 100vw;
     position: relative;
+    /* CRITIQUE : Remove any unwanted margins/padding that cause white gaps */
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Hiérarchie typographique Inter */
+  /* Hiérarchie typographique harmonisée - palette Emerald-Turquoise */
   h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', 'Poppins', sans-serif;
     font-weight: 600;
     letter-spacing: -0.01em;
     line-height: 1.2;
-    color: var(--color-foreground);
+    color: #1A1A1A; /* Sombre pour lisibilité sur fond clair */
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    /* Ombre subtile pour améliorer le contraste */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   }
 
   h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem); /* 40-64px */
-    font-weight: 700;
-    line-height: 1.1;
+    font-size: clamp(2.5rem, 5vw + 0.5rem, 4.5rem); /* 40-72px */
+    font-weight: 900;
+    line-height: clamp(1.1, 3vw, 1.3);
     letter-spacing: -0.02em;
   }
 
@@ -136,18 +172,40 @@
   }
 
   p {
+    font-family: 'Inter', 'Poppins', sans-serif;
     font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
     line-height: 1.6;
     font-weight: 400;
+    color: #1A1A1A; /* Sombre pour lisibilité sur fond clair */
     margin-bottom: 1.5em;
+    /* Ensure text never overlaps */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    /* Ombre subtile pour meilleur contraste */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   }
 
-  /* Éléments UI */
+  /* Éléments UI harmonisés - Émeraude Profond */
   button, .btn, a.button {
+    font-family: 'Inter', 'Poppins', sans-serif;
     font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.4;
     letter-spacing: 0.005em;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #007A5E, #00CFC1);
+    border-radius: 12px;
+    padding: 12px 24px;
+    border: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  }
+  
+  button:hover, .btn:hover, a.button:hover {
+    box-shadow: 0 0 12px rgba(0, 207, 193, 0.6);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
   }
 
   /* Petits textes et labels */
@@ -159,11 +217,67 @@
 
   main {
     @apply pb-16 md:pb-24;
+    /* CRITICAL: Remove ALL margins and paddings that create gaps between sections */
+    margin: 0 !important;
+    padding-top: 0 !important;
+    /* Inherit the global gradient background */
+    background: transparent;
+    min-height: 100vh;
+  }
+  
+  /* CRITICAL: Hero sections must start immediately after header without any gap */
+  .hero,
+  .hero-section,
+  section[class*="hero"] {
+    position: relative;
+    overflow: hidden;
+    /* Force hero to start immediately at top - NO GAPS */
+    margin: 0 !important;
+    padding-bottom: 0 !important;
+    /* Preserve hero backgrounds while eliminating gaps */
+    background-color: transparent;
+  }
+  
+  /* CRITICAL: Ensure seamless flow between hero and following sections */
+  .hero + section,
+  .hero-section + section,
+  section[class*="hero"] + section {
+    margin-top: 0 !important;
+    padding-top: clamp(4rem, 8vw, 6rem) !important;
+    /* Inherit the global gradient background for continuity */
+    background: transparent;
+  }
+  
+  .hero .container-page,
+  .hero-section .container-page {
+    /* Add proper spacing from sticky header */
+    padding-top: calc(var(--header-height) + 2rem);
+  }
+  
+  @media (max-width: 1024px) {
+    .hero .container-page,
+    .hero-section .container-page {
+      padding-top: calc(var(--header-height-mobile) + 1.5rem);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .hero .container-page,
+    .hero-section .container-page {
+      padding-top: calc(var(--header-height-mobile-sm) + 1rem);
+    }
   }
 
   a,
   button {
-    @apply transition-colors duration-200 ease-out motion-reduce:transition-none;
+    transition: var(--transition-standard);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    a,
+    button {
+      transition: none;
+    }
   }
 
   *:focus-visible {
@@ -219,16 +333,20 @@
   
   input::placeholder,
   textarea::placeholder {
-    color: var(--color-muted);
-    opacity: 0.7;
+    color: rgba(13, 17, 23, 0.6); /* Suffisamment contrasté pour la lisibilité */
+    opacity: 1;
   }
   
   label {
-    @apply block font-medium text-[var(--color-foreground)] mb-2;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    display: block;
+    font-weight: 600;
+    color: #1A1A1A; /* Sombre pour lisibilité sur fond clair */
+    margin-bottom: 0.5rem;
     font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* 12-14px */
-    font-weight: 500;
     line-height: 1.4;
     letter-spacing: 0.01em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -250,15 +368,15 @@
 
   /* Variables CSS globales pour unification complète du site */
   :root {
-    /* Palette principale unifiée - héros et navigation */
+    /* Palette principale unifiée - Émeraude Profond */
     --unified-text-color: #ffffff;
-    --unified-accent-color: #16a34a;
-    --unified-accent-hover: #10b981;
-    --unified-accent-dark: #059669;
+    --unified-accent-color: #007A5E;    /* émeraude profond */
+    --unified-accent-hover: #00CFC1;    /* turquoise accent */
+    --unified-accent-dark: #003B32;     /* Matrix sombre */
     --unified-overlay-dark: rgba(0,0,0,.45);
     --unified-overlay-light: rgba(0,0,0,.25);
-    --unified-background-dark: rgba(17,24,39,.75);
-    --unified-background-darker: rgba(11,15,23,.95);
+    --unified-background-dark: rgba(11,15,16,.75);  /* noir bleuté */
+    --unified-background-darker: rgba(11,15,16,.95);
     
     /* Typographie unifiée */
     --unified-font-family: 'Inter', system-ui, sans-serif;
@@ -275,17 +393,23 @@
     --unified-spacing-unit: 8px;
     --unified-container-max-width: 1280px;
     
-    /* Ombres et effets unifiés */
+    /* Ombres et effets unifiés - ÉMERAUDE PROFOND */
     --unified-shadow-light: 0 2px 6px rgba(0,0,0,0.1);
     --unified-shadow-medium: 0 8px 16px rgba(0,0,0,0.12);
     --unified-shadow-heavy: 0 12px 24px rgba(0,0,0,0.15);
-    --unified-shadow-accent: 0 0 12px rgba(22,163,74,0.3);
-    --unified-shadow-accent-hover: 0 12px 24px rgba(22,163,74,0.35);
+    --unified-shadow-accent: 0 0 12px rgba(0,122,94,0.3);
+    --unified-shadow-accent-hover: 0 12px 24px rgba(0,122,94,0.35);
     
     /* Transitions unifiées */
     --unified-transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
     --unified-transition-standard: 300ms cubic-bezier(0.4, 0, 0.2, 1);
     --unified-transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Header dimensions unifiées - Reduced for professional look */
+    --header-height: 68px;
+    --header-height-scrolled: 64px;
+    --header-height-mobile: 60px; /* ≤1024px */
+    --header-height-mobile-sm: 56px; /* ≤640px */
     
     /* Glassmorphism unifié */
     --unified-glass-background: rgba(255,255,255,0.1);
@@ -293,25 +417,42 @@
     --unified-glass-backdrop: blur(12px);
   }
 
-  /* Media overlay for improved text readability */
+  /* REMOVED: All dark overlays to restore video clarity and use text enhancements instead */
   .media-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.45) 60%, rgba(0,0,0,.25) 100%);
-    pointer-events: none;
-    z-index: 1;
+    display: none; /* Completely removed as requested */
+  }
+  
+  /* ENHANCED: Hero text with improved readability - ombres de texte optimales */
+  .hero h1, .hero h2, .hero-title {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
+    font-family: 'Inter', 'Poppins', sans-serif;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #FFFFFF;
+  }
+  
+  .hero h1 span, .hero h2 span, .accent-word {
+    background: linear-gradient(135deg, #007A5E, #00CFC1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 2px 6px rgba(0,122,94,0.4));
   }
 
-  @media (max-width: 768px) {
-    .media-overlay {
-      background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.6) 60%, rgba(0,0,0,.5) 100%);
-    }
+  /* Hero subtitle and general text readability */
+  .hero p, .hero .subtitle, .hero-section p, .hero-section .subtitle {
+    color: #FFFFFF;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    font-weight: 400;
   }
 
-  /* Safe area for text over complex backgrounds */
+  /* Clean text area without dark overlays - relies on text enhancements only */
   .copy-wrap {
-    background: linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0));
-    padding-inline: clamp(16px, 4vw, 32px);
+    padding-inline: clamp(20px, 4vw, 40px);
+    padding-block: clamp(12px, 2vw, 24px);
+    border-radius: 8px;
   }
 
   /* Contact card glassmorphism styling */
@@ -330,38 +471,99 @@
       width: 100%;
     }
   }
+  
+  /* Values grid - Fixed layout for About page */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 28px);
+  }
+  
+  @media (max-width: 1200px) {
+    .values-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Value card stable design */
+  .value-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    min-height: 320px;
+    padding: clamp(16px, 3vw, 28px);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow-wrap: anywhere;
+  }
+  
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  }
+  
+  .value-card .icon {
+    position: static;
+    margin-bottom: 8px;
+    width: 28px;
+    height: 28px;
+    color: #007A5E;
+  }
+  
+  .value-card h3 {
+    margin: 8px 0 6px;
+    line-height: 1.25;
+  }
+  
+  .value-card p {
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    overflow-wrap: anywhere;
+  }
 
   /* ========================================
      COMPOSANTS UNIFIÉS POUR COHÉRENCE GLOBALE
      ======================================== */
 
-  /* Bouton primaire unifié - cohérent partout */
+  /* Bouton primaire unifié - gradient émeraude profond → turquoise */
   .btn-unified,
   .btn-primary {
-    font-family: var(--unified-font-family);
-    font-weight: var(--unified-font-weight-semibold);
-    color: var(--unified-text-color);
-    background: linear-gradient(to right, var(--unified-accent-color), var(--unified-accent-dark));
+    font-family: 'Inter', 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #007A5E, #00CFC1);
     border: none;
-    border-radius: var(--unified-border-radius-lg);
+    border-radius: 12px;
     padding: 12px 24px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    box-shadow: var(--unified-shadow-medium);
-    transition: all var(--unified-transition-standard);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   }
 
   .btn-unified:hover,
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--unified-shadow-accent-hover);
-    background: linear-gradient(to right, var(--unified-accent-hover), var(--unified-accent-color));
+    box-shadow: 0 0 12px rgba(0, 207, 193, 0.6);
+    filter: brightness(1.1);
   }
 
   .btn-unified:active,
@@ -431,7 +633,7 @@
 
   /* Accent text styling */
   .accent {
-    color: #16a34a;
+    color: #00C896;
     text-shadow: 0 1px 4px rgba(0, 0, 0, .7);
   }
 
@@ -444,7 +646,65 @@
 
   /* Elevated shadow utility */
   .elevated {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .15), 0 4px 8px rgba(0, 0, 0, .1);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Universal component styling for consistency - Enhanced for new gradient background */
+  .card, 
+  [class*="card"],
+  .pricing-card,
+  .service-card,
+  .testimonial-card,
+  .project-card {
+    background: rgba(11, 15, 16, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(0, 200, 150, 0.2) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-md) !important;
+    transition: all var(--ease) 300ms !important;
+    /* Enhanced text contrast for cards */
+    color: #FFFFFF !important;
+  }
+
+  .card:hover,
+  [class*="card"]:hover,
+  .pricing-card:hover,
+  .service-card:hover,
+  .testimonial-card:hover,
+  .project-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 40px rgba(0, 63, 52, 0.3) !important;
+    border-color: rgba(0, 200, 150, 0.4) !important;
+    background: rgba(11, 15, 16, 0.9) !important;
+  }
+
+  /* Button consistency */
+  button,
+  .btn,
+  [class*="btn"],
+  a[class*="button"] {
+    border-radius: var(--radius) !important;
+    transition: all var(--ease) 300ms !important;
+  }
+
+  /* Grid layout fixes to prevent overlapping */
+  .grid {
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+
+  .grid > * {
+    min-width: 0; /* Allow flex children to shrink below content size */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Section spacing consistency */
+  section {
+    margin-bottom: clamp(3rem, 8vw, 6rem);
+  }
+
+  section:last-child {
+    margin-bottom: 0;
   }
 
   /* Screen reader only utility */
@@ -458,6 +718,40 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+  }
+
+  /* ========================================
+     FORMULAIRES ET MENUS INTERACTIFS OPTIMISÉS
+     ======================================== */
+
+  /* Amélioration des menus déroulants et sous-menus */
+  .dropdown-menu,
+  .submenu,
+  select[multiple],
+  .menu-container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 20px rgba(0, 63, 52, 0.25);
+    border: 1px solid rgba(0, 200, 150, 0.3);
+    border-radius: 12px;
+    color: #1A1A1A; /* Texte sombre pour contraste optimal */
+  }
+
+  .dropdown-menu a,
+  .submenu a,
+  .menu-item {
+    color: #1A1A1A !important; /* Force le texte sombre */
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    text-shadow: none; /* Supprime les ombres pour le menu clair */
+  }
+
+  .dropdown-menu a:hover,
+  .submenu a:hover,
+  .menu-item:hover {
+    background: linear-gradient(135deg, rgba(0, 122, 94, 0.15), rgba(0, 207, 193, 0.15));
+    color: #003B32 !important; /* Matrix sombre au hover */
   }
 
   /* ========================================
@@ -503,23 +797,11 @@
     position: relative;
   }
 
-  /* Overlay unifié et intelligent pour toutes les sections héros */
+  /* SUPPRIMÉ : Overlay automatique pour préserver la clarté des vidéos de fond */
   .hero::after,
   .hero-section::after,
   section[class*="hero"]::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, var(--unified-overlay-light) 0%, var(--unified-overlay-dark) 60%, var(--unified-overlay-light) 100%);
-    pointer-events: none;
-    z-index: 5;
-    mix-blend-mode: multiply;
-  }
-
-  /* Désactiver l'overlay automatique si .no-auto-overlay est présent */
-  .hero.no-auto-overlay::after,
-  .hero-section.no-auto-overlay::after {
-    display: none;
+    display: none; /* Complètement supprimé pour restaurer la clarté */
   }
 
   /* Hero title overlay styling for maximum readability - UNIFIÉ */
@@ -527,12 +809,12 @@
   .hero-title,
   .hero-section h1,
   section[class*="hero"] h1 {
-    font-family: var(--unified-font-family);
-    font-weight: var(--unified-font-weight-extrabold);
+    font-family: 'Inter', 'Poppins', sans-serif;
+    font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.02em;
     font-size: clamp(2rem, 4vw + 1rem, 4rem);
-    color: var(--unified-text-color);
+    color: var(--hero-text-primary);
     text-shadow: 0 2px 6px rgba(0,0,0,.5);
     -webkit-text-stroke: 0.5px rgba(0,0,0,.8);
     opacity: 0.95;
@@ -549,44 +831,47 @@
   .hero h2,
   .hero-section h2,
   section[class*="hero"] h2 {
-    font-family: var(--hero-font-family);
+    font-family: 'Inter', 'Poppins', sans-serif;
     font-weight: 700;
     letter-spacing: 0;
-    color: var(--hero-text-color);
+    color: var(--hero-text-secondary);
     text-shadow: 0 2px 6px rgba(0,0,0,.5);
     opacity: 0.95;
   }
 
-  /* Subtitle/paragraph overlay styling */
+  /* Unified hero paragraph styling with enhanced readability */
   .hero p,
   .hero .subtitle,
   .hero-section p,
   section[class*="hero"] p,
   .overlay-text {
-    font-family: var(--hero-font-family);
+    font-family: 'Inter', 'Poppins', sans-serif;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.01em;
-    text-shadow: 0 2px 6px rgba(0,0,0,.5);
-    opacity: 0.95;
-    color: var(--hero-text-color);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.45);
+    -webkit-text-stroke: 0.25px rgba(0, 0, 0, 0.4);
+    color: var(--hero-text-muted);
     /* Animation d'entrée */
     transform: translateY(10px);
     opacity: 0;
     animation: fadeInUp 0.6s ease-out 0.2s forwards;
   }
 
-  /* Accent words avec gradient vert émeraude */
+  /* Unified premium gradient for accent words across all hero sections */
   .hero .accent-word,
   .hero-section .accent-word,
   section[class*="hero"] .accent-word,
-  .text-accent-green {
-    background: linear-gradient(135deg, var(--hero-accent-color) 0%, #0f9a52 100%);
+  .text-accent-green,
+  .hero h1 span,
+  .hero h2 span {
+    background: linear-gradient(135deg, #007A5E 0%, #00CFC1 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 8px rgba(255,255,255,0.15), 0 2px 6px rgba(0,0,0,0.5);
-    filter: drop-shadow(0 0 15px rgba(22, 163, 74, 0.5));
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 2px 6px rgba(0,200,150,0.4));
   }
 
   /* Enhanced CTA buttons over media */
@@ -630,7 +915,7 @@
     .hero .accent-word,
     .hero-section .accent-word,
     section[class*="hero"] .accent-word {
-      filter: drop-shadow(0 0 10px rgba(22, 163, 74, 0.3));
+      filter: drop-shadow(0 0 10px rgba(0, 210, 127, 0.3));
     }
   }
 
@@ -748,7 +1033,7 @@
      SECTIONS AVEC CENTRAGE AUTOMATIQUE
      ======================================== */
   
-  /* Section par défaut - Hauteur adaptative au contenu */
+  /* Section par défaut - adaptée au fond global dégradé */
   section,
   .section {
     display: flex;
@@ -761,6 +1046,8 @@
     overflow-x: hidden;
     max-width: 100vw;
     width: 100%;
+    /* Inherit global gradient background for seamless continuity */
+    background: transparent;
   }
 
   /* Section pleine hauteur (pour hero sections) */
@@ -773,6 +1060,8 @@
     padding-block: clamp(3rem, 8vw, 6rem);
     overflow-x: hidden;
     max-width: 100vw;
+    /* Inherit global gradient background for seamless continuity */
+    background: transparent;
   }
 
   /* Section compacte (pour peu de contenu) */
@@ -836,8 +1125,8 @@
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 transition-all duration-300;
-    background: linear-gradient(135deg, var(--color-anthracite) 0%, var(--color-accent) 100%);
-    color: var(--color-foreground);
+    background: linear-gradient(135deg, #007A5E, #00CFC1);
+    color: #FFFFFF;
     font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
     font-weight: 600;
     line-height: 1.4;
@@ -846,7 +1135,7 @@
   }
   
   .btn-primary:hover {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+    background: linear-gradient(135deg, #003B32, #007A5E);
     box-shadow: var(--shadow-md);
     transform: translateY(-2px);
   }
@@ -866,7 +1155,7 @@
   .btn-secondary:hover {
     border-color: var(--color-accent);
     color: var(--color-accent);
-    background: linear-gradient(135deg, rgba(0, 255, 65, 0.05) 0%, rgba(0, 255, 188, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(0, 122, 94, 0.05) 0%, rgba(0, 207, 193, 0.1) 100%);
     transform: translateY(-2px);
     box-shadow: var(--shadow-matrix);
   }
@@ -1558,7 +1847,120 @@
   .list-custom {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+  }
+  
+  /* ========================================
+     ENHANCED INTERACTIVE ELEMENTS FOR GRADIENT BACKGROUND
+     ======================================== */
+  
+  /* Dropdown menus and select elements with proper contrast */
+  select,
+  .dropdown,
+  .menu-dropdown {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(6px) !important;
+    border: 1px solid rgba(0, 200, 150, 0.3) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 20px rgba(0, 63, 52, 0.25) !important;
+    color: #1A1A1A !important; /* Dark text for readability on light background */
+    font-family: 'Inter', 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+  }
+  
+  select:hover,
+  .dropdown:hover,
+  .menu-dropdown:hover {
+    border-color: rgba(0, 200, 150, 0.5) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+  
+  select:focus,
+  .dropdown:focus,
+  .menu-dropdown:focus {
+    outline: none !important;
+    border-color: var(--color-accent) !important;
+    box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.2), 0 4px 20px rgba(0, 63, 52, 0.25) !important;
+  }
+  
+  /* Option elements inside selects */
+  select option {
+    background: #FFFFFF !important;
+    color: #1A1A1A !important;
+    font-weight: 500 !important;
+  }
+  
+  select option:hover,
+  select option:checked {
+    background: rgba(0, 122, 94, 0.1) !important;
+  }
+  
+  /* Navigation dropdown menus */
+  .nav-dropdown,
+  .navigation-menu {
+    background: rgba(11, 15, 16, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(0, 122, 94, 0.3) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    color: #FFFFFF !important;
+  }
+  
+  .nav-dropdown a,
+  .navigation-menu a {
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  .nav-dropdown a:hover,
+  .navigation-menu a:hover {
+    color: var(--color-accent) !important;
+    background: rgba(0, 122, 94, 0.1) !important;
+  }
+  
+  /* Form elements enhanced for the new background */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  input[type="search"],
+  textarea {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid rgba(0, 200, 150, 0.2) !important;
+    color: #1A1A1A !important;
+    font-family: 'Inter', 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  input[type="number"]:focus,
+  input[type="date"]:focus,
+  input[type="search"]:focus,
+  textarea:focus {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: var(--color-accent) !important;
+    box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.2) !important;
+  }
+  
+  /* Enhanced placeholders for better visibility */
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(26, 26, 26, 0.6) !important;
+    font-weight: 400 !important;
+  }
+  
+  /* Labels enhanced for the gradient background */
+  label {
+    color: #1A1A1A !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
   }
 
   .list-custom li {

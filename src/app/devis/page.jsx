@@ -42,7 +42,7 @@ export default function DevisPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title="Votre projet mérite une attention sur mesure"
+        title='Votre projet mérite une attention <span className="accent-word">sur mesure</span>'
         subtitle="Renseignez quelques informations : je reviens vers vous sous 24 heures ouvrées avec un premier retour détaillé et un devis personnalisé."
         badge={{
           icon: "checkCircle",

@@ -47,7 +47,7 @@ module.exports = {
         'ui-sm': 'clamp(0.75rem, 1.5vw, 0.875rem)', // 12-14px
       },
       spacing: {
-        'section': '100px',
+        'section': '60px',
         'gutter': '24px',
         '4': '0.25rem',
         '8': '0.5rem',

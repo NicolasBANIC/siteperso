@@ -68,7 +68,7 @@ export default function HeroSection({
   return (
     <section
       ref={sectionRef}
-      className="hero-section relative overflow-hidden bg-background"
+      className="hero hero-section relative overflow-hidden bg-background"
       style={{ minHeight: height }}
     >
       {/* Image de fond avec parallax Framer Motion */}
@@ -92,11 +92,7 @@ export default function HeroSection({
         />
       </motion.div>
 
-      {/* Overlay gradient (remplacé par CSS ::after unifié mais gardé pour compatibilité) */}
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/20"
-        style={{ opacity: Number(overlayOpacity) / 100, zIndex: 1 }}
-      />
+      {/* Removed overlay - using enhanced text shadows for readability */}
 
       {/* Effet de grille subtile */}
       <div
@@ -143,14 +139,14 @@ export default function HeroSection({
           {/* Titre */}
           <ScrollReveal direction="up" delay={100}>
             <h1
-              className="text-hero font-heading font-bold tracking-tighter leading-tight text-white"
+              className="hero-title text-hero font-heading font-bold tracking-tighter leading-tight"
               dangerouslySetInnerHTML={{ __html: title }}
             />
           </ScrollReveal>
 
           {/* Sous-titre */}
           <ScrollReveal direction="up" delay={200}>
-            <p className="text-body-lg leading-relaxed text-white/90 font-regular max-w-3xl mx-auto">
+            <p className="subtitle text-body-lg leading-relaxed font-regular max-w-3xl mx-auto">
               {subtitle}
             </p>
           </ScrollReveal>
@@ -166,8 +162,7 @@ export default function HeroSection({
         </div>
       </div>
 
-      {/* Effet de vague en bas */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--color-background)] to-transparent" />
+      {/* Removed gradient effect that creates visual breaks between sections */}
     </section>
   );
 }

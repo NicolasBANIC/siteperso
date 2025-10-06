@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
+import { LogoFooter } from "./Logo";
 
 const navigationLinks = [
   { href: "/", label: "Accueil" },
@@ -61,13 +62,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <img
-                src="/brand/logo.svg"
-                alt="BANDEV"
-                width="120"
-                height="40"
-                className="h-10 w-auto"
-              />
+              <LogoFooter />
             </div>
             <p className="leading-relaxed text-white/80">
               Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
@@ -77,7 +72,7 @@ export default function Footer() {
             </p>
             <Link 
               href="/devis" 
-              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-matrix-2)] to-[var(--color-matrix)] px-6 py-3 text-sm font-medium text-white shadow-[var(--shadow-sm)] transition-all duration-fast hover:shadow-[var(--shadow-md)] hover:[box-shadow:var(--shadow-ring)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
+              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] px-6 py-3 text-sm font-medium text-white shadow-[var(--shadow-sm)] transition-all duration-300 hover:shadow-[var(--shadow-emerald)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
             >
               Demander un devis
             </Link>

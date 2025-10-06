@@ -189,7 +189,7 @@ export default function RootLayout({ children }) {
         <ScrollProgress />
         <div className="relative z-10 flex min-h-screen flex-col">
           <Header />
-          <main id="main" className="flex-1 pt-[73px]">
+          <main id="main" className="flex-1">
             {children}
           </main>
           <Footer />

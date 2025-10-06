@@ -21,7 +21,7 @@ export default function PortfolioPage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title='Portfolio : <span class="bg-gradient-to-r from-[#00FF41] to-[#00D4FF] bg-clip-text text-transparent">Mes réalisations</span>'
+        title='Portfolio : <span className="accent-word">Mes réalisations</span>'
         subtitle="Découvrez une sélection de projets web que j'ai conçus et développés. Chaque projet est unique et répond à des besoins spécifiques avec une approche sur mesure."
         backgroundImage="/images/portfolio-hero.jpg"
         badge="5 Projets Présentés"
