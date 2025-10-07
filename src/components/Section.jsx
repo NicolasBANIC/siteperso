@@ -45,7 +45,7 @@ export default function Section({
             {...animationProps}
           >
             {title && (
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold card-title-emerald">
                 {title}
               </h2>
             )}

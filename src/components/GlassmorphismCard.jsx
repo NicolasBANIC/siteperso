@@ -5,40 +5,43 @@ import { memo } from 'react';
 function GlassmorphismCard({
   children,
   className = '',
-  variant = 'default', // "default", "accent", "gradient"
+  variant = 'default', // "default", "accent", "gradient", "brand"
   hover = true,
 }) {
+  // Variants harmonisés selon les nouvelles spécifications
   const variants = {
-    default: 'bg-[var(--color-surface)] border-[var(--color-border)]',
-    accent: 'bg-[var(--color-accent)]/10 border-[var(--color-accent)]/30',
-    gradient:
-      'bg-gradient-to-br from-[var(--color-accent)]/10 to-[var(--color-accent-secondary)]/10 border-[var(--color-border)]',
-    gold: 'bg-gradient-to-br from-[var(--color-gold)]/5 to-[var(--color-gold-light)]/10 border-[var(--color-gold)]/30',
+    default: 'bg-card-glass border-card-border',
+    accent: 'bg-brand-emerald/8 border-brand-emerald/20',
+    gradient: 'bg-card-gradient border-card-border',
+    brand: 'bg-brand-gradient/10 border-brand-emerald/30',
   };
 
+  // Effets hover maîtrisés selon spécifications
   const hoverEffect = hover
-    ? 'hover:bg-[var(--color-surface-hover)] hover:border-[var(--color-border-hover)] hover:-translate-y-2 motion-reduce:hover:translate-y-0'
+    ? 'hover:bg-card-glass-hover hover:border-card-border/40 hover:-translate-y-1 motion-reduce:hover:translate-y-0'
     : '';
 
-  const hoverShadow = hover ? 'hover:[box-shadow:var(--shadow-md)]' : '';
+  // Shadow harmonisée avec les nouveaux tokens
+  const hoverShadow = hover ? 'hover:shadow-medium' : '';
 
   return (
     <div
       className={`
-        relative overflow-hidden rounded-2xl border backdrop-blur-xl
-        transition-all duration-300
+        relative overflow-hidden rounded-2xl border
+        backdrop-blur-[10px] -webkit-backdrop-blur-[10px]
+        transition-medium
         ${variants[variant]}
         ${hoverEffect}
-        shadow-[var(--shadow-sm)]
+        shadow-soft
         ${hoverShadow}
         ${className}
       `}
     >
-      {/* Shimmer effect */}
-      <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-[var(--color-accent-matrix)]/10 to-transparent" />
+      {/* Shimmer effect avec couleur de marque */}
+      <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-brand-emerald/8 to-transparent" />
 
-      {/* Content */}
-      <div className="relative z-10">{children}</div>
+      {/* Content avec espacement harmonisé */}
+      <div className="relative z-10 p-card">{children}</div>
     </div>
   );
 }

@@ -2,18 +2,18 @@
 
 ```yaml
 - generic [active] [ref=e1]:
-  - link "Aller au contenu" [ref=e2] [cursor=pointer]:
+  - link "Aller au contenu" [ref=e2]:
     - /url: "#main"
   - generic [ref=e3]:
     - banner [ref=e4]:
       - generic [ref=e5]:
-        - link "Accueil BANDEV - Développeur Web Freelance" [ref=e6] [cursor=pointer]:
+        - link "Accueil BANDEV - Développeur Web Freelance" [ref=e6]:
           - /url: /
-          - img "BANDEV - Développeur Web Freelance" [ref=e8] [cursor=pointer]:
-            - generic [ref=e9] [cursor=pointer]: BAN
-            - generic [ref=e10] [cursor=pointer]: DEV
-        - button "Ouvrir ou fermer le menu" [ref=e11]:
-          - img [ref=e13]
+          - img "BANDEV - Développeur Web Freelance" [ref=e8]:
+            - generic [ref=e9]: BAN
+            - generic [ref=e10]: DEV
+        - button "Ouvrir ou fermer le menu" [ref=e11] [cursor=pointer]:
+          - img [ref=e13] [cursor=pointer]
     - main [ref=e14]:
       - generic [ref=e15]:
         - generic [ref=e19]:
@@ -217,10 +217,10 @@
               - generic [ref=e311]: Search Console
               - generic [ref=e312]: Lighthouse
               - generic [ref=e313]: Screaming Frog
-        - link "Découvrir tous les services" [ref=e316] [cursor=pointer]:
+        - link "Découvrir tous les services" [ref=e316]:
           - /url: /services
           - text: Découvrir tous les services
-          - img [ref=e317] [cursor=pointer]
+          - img [ref=e317]
       - generic [ref=e320]:
         - generic [ref=e322]:
           - generic [ref=e323]: Processus
@@ -355,10 +355,10 @@
                       - generic [ref=e484]: Support technique 3 mois inclus
                     - listitem [ref=e485]:
                       - generic [ref=e487]: Maintenance et mises à jour de sécurité
-        - link "En savoir plus sur mon processus" [ref=e490] [cursor=pointer]:
+        - link "En savoir plus sur mon processus" [ref=e490]:
           - /url: /processus
           - text: En savoir plus sur mon processus
-          - img [ref=e491] [cursor=pointer]
+          - img [ref=e491]
       - generic [ref=e494]:
         - generic [ref=e496]:
           - generic [ref=e497]: Stack Technique
@@ -435,7 +435,7 @@
             - paragraph [ref=e629]: Animation de code qui s'écrit automatiquement, parfait pour présenter vos solutions techniques de manière dynamique.
           - generic [ref=e630]:
             - generic [ref=e636]: JavaScript
-            - code [ref=e638]
+            - code [ref=e638]: // Next.js API Route export async function
         - generic [ref=e642]:
           - generic [ref=e643]:
             - heading "Prêt à transformer votre vision digitale ?" [level=3] [ref=e644]:
@@ -443,10 +443,10 @@
               - generic [ref=e645]: vision digitale
               - text: "?"
             - paragraph [ref=e646]: Discutons de votre projet et créons ensemble une solution sur mesure qui répond parfaitement à vos besoins business.
-          - link "Démarrer votre projet" [ref=e649] [cursor=pointer]:
+          - link "Démarrer votre projet" [ref=e649]:
             - /url: /contact
-            - generic [ref=e651] [cursor=pointer]: Démarrer votre projet
-            - img [ref=e652] [cursor=pointer]
+            - generic [ref=e651]: Démarrer votre projet
+            - img [ref=e652]
         - generic [ref=e655]:
           - generic [ref=e658]:
             - img [ref=e660]
@@ -502,8 +502,6 @@
               - /url: /devis?plan=vitrine-standard
               - generic [ref=e734] [cursor=pointer]: Choisir Site Vitrine Standard
           - article [ref=e736]:
-            - generic:
-              - generic: Populaire
             - generic [ref=e737]:
               - heading "Site Vitrine Premium" [level=3] [ref=e738]
               - generic [ref=e739]:
@@ -588,10 +586,10 @@
           - link "Discuter de votre projet" [ref=e842] [cursor=pointer]:
             - /url: /contact
             - generic [ref=e844] [cursor=pointer]: Discuter de votre projet
-        - link "Voir tous les détails tarifaires" [ref=e847] [cursor=pointer]:
+        - link "Voir tous les détails tarifaires" [ref=e847]:
           - /url: /tarifs
           - text: Voir tous les détails tarifaires
-          - img [ref=e848] [cursor=pointer]
+          - img [ref=e848]
       - generic [ref=e851]:
         - generic [ref=e853]:
           - generic [ref=e854]: Témoignages
@@ -601,29 +599,29 @@
           - generic [ref=e860]:
             - img [ref=e861]
             - generic [ref=e864]:
-              - img "Photo de Sophie Martin" [ref=e867]
+              - img "Photo de Thomas Dubois" [ref=e867]
               - generic [ref=e868]:
                 - img [ref=e869]
                 - img [ref=e871]
                 - img [ref=e873]
                 - img [ref=e875]
                 - img [ref=e877]
-              - blockquote [ref=e879]: "\"Nicolas a transformé notre présence en ligne. Notre site vitrine reflète parfaitement notre savoir-faire artisanal. Les demandes de devis ont augmenté de 60% en 3 mois !\""
+              - blockquote [ref=e879]: "\"Un développeur à l'écoute et très professionnel. Notre plateforme de mise en relation fonctionne parfaitement. Le code est propre, documenté et évolutif. Je recommande vivement !\""
               - generic [ref=e880]:
-                - paragraph [ref=e881]: Sophie Martin
-                - paragraph [ref=e882]: Gérante, Atelier Bois Créatif
-                - paragraph [ref=e883]: Site vitrine premium
+                - paragraph [ref=e881]: Thomas Dubois
+                - paragraph [ref=e882]: Fondateur, GTravaux
+                - paragraph [ref=e883]: Application web sur mesure
           - generic [ref=e884]:
-            - button "Témoignage précédent" [ref=e885]
+            - button "Témoignage précédent" [ref=e885] [cursor=pointer]
             - generic [ref=e887]:
-              - button "Aller au témoignage 1" [ref=e888]
-              - button "Aller au témoignage 2" [ref=e889]
-              - button "Aller au témoignage 3" [ref=e890]
-            - button "Témoignage suivant" [ref=e891]
-        - link "Voir tous les témoignages" [ref=e895] [cursor=pointer]:
+              - button "Aller au témoignage 1" [ref=e888] [cursor=pointer]
+              - button "Aller au témoignage 2" [ref=e889] [cursor=pointer]
+              - button "Aller au témoignage 3" [ref=e890] [cursor=pointer]
+            - button "Témoignage suivant" [ref=e891] [cursor=pointer]
+        - link "Voir tous les témoignages" [ref=e895]:
           - /url: /temoignages
           - text: Voir tous les témoignages
-          - img [ref=e896] [cursor=pointer]
+          - img [ref=e896]
       - generic [ref=e900]:
         - generic [ref=e902]:
           - generic [ref=e903]:
@@ -646,10 +644,10 @@
             - generic [ref=e922]:
               - img [ref=e923]
               - generic [ref=e926]: Support 3 mois inclus
-          - link "Discutons de votre projet" [ref=e929] [cursor=pointer]:
+          - link "Discutons de votre projet" [ref=e929]:
             - /url: /contact
-            - generic [ref=e931] [cursor=pointer]: Discutons de votre projet
-            - img [ref=e932] [cursor=pointer]
+            - generic [ref=e931]: Discutons de votre projet
+            - img [ref=e932]
         - generic [ref=e936]:
           - heading "Compétences Techniques" [level=3] [ref=e937]
           - generic [ref=e938]:
@@ -685,9 +683,9 @@
         - heading "Prêt à démarrer votre projet ?" [level=2] [ref=e972]
         - paragraph [ref=e973]: Discutons de vos besoins et je vous proposerai une solution sur mesure adaptée à votre budget et vos objectifs.
         - generic [ref=e974]:
-          - link "Demander un devis gratuit" [ref=e976] [cursor=pointer]:
+          - link "Demander un devis gratuit" [ref=e976]:
             - /url: /devis
-          - link "Me contacter" [ref=e978] [cursor=pointer]:
+          - link "Me contacter" [ref=e978]:
             - /url: /contact
     - contentinfo [ref=e979]:
       - generic [ref=e980]:
@@ -698,43 +696,43 @@
               - generic [ref=e987]: DEV
             - paragraph [ref=e988]: Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
             - paragraph [ref=e989]: "SIRET : 841 375 652 00028"
-            - link "Demander un devis" [ref=e990] [cursor=pointer]:
+            - link "Demander un devis" [ref=e990]:
               - /url: /devis
           - generic [ref=e991]:
             - heading "Navigation" [level=2] [ref=e992]
             - list [ref=e993]:
               - listitem [ref=e994]:
-                - link "Accueil" [ref=e995] [cursor=pointer]:
+                - link "Accueil" [ref=e995]:
                   - /url: /
               - listitem [ref=e996]:
-                - link "Services" [ref=e997] [cursor=pointer]:
+                - link "Services" [ref=e997]:
                   - /url: /services
               - listitem [ref=e998]:
-                - link "Processus" [ref=e999] [cursor=pointer]:
+                - link "Processus" [ref=e999]:
                   - /url: /processus
               - listitem [ref=e1000]:
-                - link "Portfolio" [ref=e1001] [cursor=pointer]:
+                - link "Portfolio" [ref=e1001]:
                   - /url: /portfolio
               - listitem [ref=e1002]:
-                - link "Tarifs" [ref=e1003] [cursor=pointer]:
+                - link "Tarifs" [ref=e1003]:
                   - /url: /tarifs
               - listitem [ref=e1004]:
-                - link "Témoignages" [ref=e1005] [cursor=pointer]:
+                - link "Témoignages" [ref=e1005]:
                   - /url: /temoignages
               - listitem [ref=e1006]:
-                - link "Contact" [ref=e1007] [cursor=pointer]:
+                - link "Contact" [ref=e1007]:
                   - /url: /contact
           - generic [ref=e1008]:
             - heading "Contact" [level=2] [ref=e1009]
             - list [ref=e1010]:
               - listitem [ref=e1011]:
-                - link "Email contact@bandev.fr" [ref=e1012] [cursor=pointer]:
+                - link "Email contact@bandev.fr" [ref=e1012]:
                   - /url: mailto:contact@bandev.fr
-                  - generic [ref=e1013] [cursor=pointer]:
-                    - img [ref=e1014] [cursor=pointer]
-                    - generic [ref=e1017] [cursor=pointer]:
-                      - paragraph [ref=e1018] [cursor=pointer]: Email
-                      - paragraph [ref=e1019] [cursor=pointer]: contact@bandev.fr
+                  - generic [ref=e1013]:
+                    - img [ref=e1014]
+                    - generic [ref=e1017]:
+                      - paragraph [ref=e1018]: Email
+                      - paragraph [ref=e1019]: contact@bandev.fr
               - listitem [ref=e1020]:
                 - generic [ref=e1021]:
                   - img [ref=e1022]
@@ -744,21 +742,21 @@
             - generic [ref=e1028]:
               - heading "Réseaux sociaux" [level=3] [ref=e1029]
               - generic [ref=e1030]:
-                - link "LinkedIn" [ref=e1031] [cursor=pointer]:
+                - link "LinkedIn" [ref=e1031]:
                   - /url: https://www.linkedin.com/in/nicolasbanic
-                  - img [ref=e1032] [cursor=pointer]
-                - link "GitHub" [ref=e1036] [cursor=pointer]:
+                  - img [ref=e1032]
+                - link "GitHub" [ref=e1036]:
                   - /url: https://github.com/NicolasBANIC
-                  - img [ref=e1037] [cursor=pointer]
-                - link "Email" [ref=e1040] [cursor=pointer]:
+                  - img [ref=e1037]
+                - link "Email" [ref=e1040]:
                   - /url: mailto:contact@bandev.fr
-                  - img [ref=e1041] [cursor=pointer]
+                  - img [ref=e1041]
         - generic [ref=e1045]:
           - generic [ref=e1046]:
-            - link "Mentions légales" [ref=e1047] [cursor=pointer]:
+            - link "Mentions légales" [ref=e1047]:
               - /url: /mentions-legales
             - generic [ref=e1048]: •
-          - link "Politique de confidentialité" [ref=e1050] [cursor=pointer]:
+          - link "Politique de confidentialité" [ref=e1050]:
             - /url: /politique-confidentialite
       - generic [ref=e1052]:
         - paragraph [ref=e1053]: © 2025 BANDEV - Nicolas Banic. Tous droits réservés.
@@ -767,5 +765,7 @@
           - generic [ref=e1055]: Next.js 15
           - text: "&"
           - generic [ref=e1056]: React 19
-  - generic [ref=e1057]: Test
+  - button "Open Next.js Dev Tools" [ref=e1062] [cursor=pointer]:
+    - img [ref=e1063] [cursor=pointer]
+  - alert [ref=e1068]
 ```

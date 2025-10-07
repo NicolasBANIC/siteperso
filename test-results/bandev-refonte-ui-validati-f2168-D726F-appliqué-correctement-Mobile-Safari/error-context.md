@@ -12,8 +12,8 @@
           - img "BANDEV - Développeur Web Freelance" [ref=e8]:
             - generic [ref=e9]: BAN
             - generic [ref=e10]: DEV
-        - button "Ouvrir ou fermer le menu" [ref=e11]:
-          - img [ref=e13]
+        - button "Ouvrir ou fermer le menu" [ref=e11] [cursor=pointer]:
+          - img [ref=e13] [cursor=pointer]
     - main [ref=e14]:
       - generic [ref=e15]:
         - generic [ref=e19]:
@@ -25,13 +25,13 @@
               - text: ", performantes et centrées sur l'humain"
             - paragraph [ref=e30]: Développeur web expert, je transforme vos idées en expériences digitales exceptionnelles qui génèrent des résultats concrets.
             - generic [ref=e31]:
-              - link "Démarrer un projet" [ref=e33]:
+              - link "Démarrer un projet" [ref=e33] [cursor=pointer]:
                 - /url: /devis
-                - generic [ref=e35]: Démarrer un projet
-                - img [ref=e36]
-              - link "Voir mes réalisations" [ref=e39]:
+                - generic [ref=e35] [cursor=pointer]: Démarrer un projet
+                - img [ref=e36] [cursor=pointer]
+              - link "Voir mes réalisations" [ref=e39] [cursor=pointer]:
                 - /url: /portfolio
-                - generic [ref=e41]: Voir mes réalisations
+                - generic [ref=e41] [cursor=pointer]: Voir mes réalisations
             - generic [ref=e42]:
               - generic [ref=e43]:
                 - img [ref=e44]
@@ -217,10 +217,10 @@
               - generic [ref=e311]: Search Console
               - generic [ref=e312]: Lighthouse
               - generic [ref=e313]: Screaming Frog
-        - link "Découvrir tous les services" [ref=e316] [cursor=pointer]:
+        - link "Découvrir tous les services" [ref=e316]:
           - /url: /services
           - text: Découvrir tous les services
-          - img [ref=e317] [cursor=pointer]
+          - img [ref=e317]
       - generic [ref=e320]:
         - generic [ref=e322]:
           - generic [ref=e323]: Processus
@@ -355,10 +355,10 @@
                       - generic [ref=e484]: Support technique 3 mois inclus
                     - listitem [ref=e485]:
                       - generic [ref=e487]: Maintenance et mises à jour de sécurité
-        - link "En savoir plus sur mon processus" [ref=e490] [cursor=pointer]:
+        - link "En savoir plus sur mon processus" [ref=e490]:
           - /url: /processus
           - text: En savoir plus sur mon processus
-          - img [ref=e491] [cursor=pointer]
+          - img [ref=e491]
       - generic [ref=e494]:
         - generic [ref=e496]:
           - generic [ref=e497]: Stack Technique
@@ -435,7 +435,7 @@
             - paragraph [ref=e629]: Animation de code qui s'écrit automatiquement, parfait pour présenter vos solutions techniques de manière dynamique.
           - generic [ref=e630]:
             - generic [ref=e636]: JavaScript
-            - code [ref=e638]
+            - code [ref=e638]: // Next.js API Route export async functi
         - generic [ref=e642]:
           - generic [ref=e643]:
             - heading "Prêt à transformer votre vision digitale ?" [level=3] [ref=e644]:
@@ -498,12 +498,10 @@
               - listitem [ref=e727]:
                 - img [ref=e728]
                 - generic [ref=e730]: Support 30 jours
-            - link "Choisir Site Vitrine Standard" [ref=e732]:
+            - link "Choisir Site Vitrine Standard" [ref=e732] [cursor=pointer]:
               - /url: /devis?plan=vitrine-standard
-              - generic [ref=e734]: Choisir Site Vitrine Standard
+              - generic [ref=e734] [cursor=pointer]: Choisir Site Vitrine Standard
           - article [ref=e736]:
-            - generic:
-              - generic: Populaire
             - generic [ref=e737]:
               - heading "Site Vitrine Premium" [level=3] [ref=e738]
               - generic [ref=e739]:
@@ -538,9 +536,9 @@
               - listitem [ref=e776]:
                 - img [ref=e777]
                 - generic [ref=e779]: Maintenance 3 mois offerte
-            - link "Choisir Site Vitrine Premium" [ref=e781]:
+            - link "Choisir Site Vitrine Premium" [ref=e781] [cursor=pointer]:
               - /url: /devis?plan=vitrine-premium
-              - generic [ref=e783]: Choisir Site Vitrine Premium
+              - generic [ref=e783] [cursor=pointer]: Choisir Site Vitrine Premium
           - article [ref=e785]:
             - generic [ref=e786]:
               - heading "E-commerce" [level=3] [ref=e787]
@@ -576,18 +574,18 @@
               - listitem [ref=e825]:
                 - img [ref=e826]
                 - generic [ref=e828]: Support 90 jours
-            - link "Choisir E-commerce" [ref=e830]:
+            - link "Choisir E-commerce" [ref=e830] [cursor=pointer]:
               - /url: /devis?plan=ecommerce
-              - generic [ref=e832]: Choisir E-commerce
+              - generic [ref=e832] [cursor=pointer]: Choisir E-commerce
         - generic [ref=e835]:
           - heading "Taux Journalier Moyen (TJM)" [level=3] [ref=e836]
           - generic [ref=e837]:
             - generic [ref=e838]: 450€
             - generic [ref=e839]: / jour
           - paragraph [ref=e840]: Pour les missions en régie ou les projets nécessitant une facturation au temps passé. Idéal pour les collaborations longue durée et les projets évolutifs.
-          - link "Discuter de votre projet" [ref=e842]:
+          - link "Discuter de votre projet" [ref=e842] [cursor=pointer]:
             - /url: /contact
-            - generic [ref=e844]: Discuter de votre projet
+            - generic [ref=e844] [cursor=pointer]: Discuter de votre projet
         - link "Voir tous les détails tarifaires" [ref=e847]:
           - /url: /tarifs
           - text: Voir tous les détails tarifaires
@@ -601,25 +599,25 @@
           - generic [ref=e860]:
             - img [ref=e861]
             - generic [ref=e864]:
-              - img "Photo de Sophie Martin" [ref=e867]
+              - img "Photo de Thomas Dubois" [ref=e867]
               - generic [ref=e868]:
                 - img [ref=e869]
                 - img [ref=e871]
                 - img [ref=e873]
                 - img [ref=e875]
                 - img [ref=e877]
-              - blockquote [ref=e879]: "\"Nicolas a transformé notre présence en ligne. Notre site vitrine reflète parfaitement notre savoir-faire artisanal. Les demandes de devis ont augmenté de 60% en 3 mois !\""
+              - blockquote [ref=e879]: "\"Un développeur à l'écoute et très professionnel. Notre plateforme de mise en relation fonctionne parfaitement. Le code est propre, documenté et évolutif. Je recommande vivement !\""
               - generic [ref=e880]:
-                - paragraph [ref=e881]: Sophie Martin
-                - paragraph [ref=e882]: Gérante, Atelier Bois Créatif
-                - paragraph [ref=e883]: Site vitrine premium
+                - paragraph [ref=e881]: Thomas Dubois
+                - paragraph [ref=e882]: Fondateur, GTravaux
+                - paragraph [ref=e883]: Application web sur mesure
           - generic [ref=e884]:
-            - button "Témoignage précédent" [ref=e885]
+            - button "Témoignage précédent" [ref=e885] [cursor=pointer]
             - generic [ref=e887]:
-              - button "Aller au témoignage 1" [ref=e888]
-              - button "Aller au témoignage 2" [ref=e889]
-              - button "Aller au témoignage 3" [ref=e890]
-            - button "Témoignage suivant" [ref=e891]
+              - button "Aller au témoignage 1" [ref=e888] [cursor=pointer]
+              - button "Aller au témoignage 2" [ref=e889] [cursor=pointer]
+              - button "Aller au témoignage 3" [ref=e890] [cursor=pointer]
+            - button "Témoignage suivant" [ref=e891] [cursor=pointer]
         - link "Voir tous les témoignages" [ref=e895]:
           - /url: /temoignages
           - text: Voir tous les témoignages
@@ -767,4 +765,7 @@
           - generic [ref=e1055]: Next.js 15
           - text: "&"
           - generic [ref=e1056]: React 19
+  - button "Open Next.js Dev Tools" [ref=e1062] [cursor=pointer]:
+    - img [ref=e1063] [cursor=pointer]
+  - alert [ref=e1068]
 ```

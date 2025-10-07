@@ -6,9 +6,9 @@ import Image from 'next/image';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 
 /**
- * Composant Card réutilisable
+ * Composant Card refactorisé selon nouvelles spécifications BANDEV
+ * Glassmorphisme subtil, couleurs harmonisées, lisibilité optimale
  * Variantes : service, project, price, testimonial
- * Props : title, description, icon/image, actions, tags
  */
 const Card = memo(function Card({
   variant = 'service',
@@ -24,18 +24,24 @@ const Card = memo(function Card({
 }) {
   const prefersReducedMotion = useReducedMotion();
 
-  const baseStyles =
-    'card-glassmorphism-alt p-8 transition-all duration-300 ease-out motion-reduce:transition-none';
+  // Styles de base selon spécifications
+  const baseStyles = `
+    glass-card p-card
+    transition-medium motion-reduce:transition-none
+    hover-lift motion-reduce:hover:transform-none
+  `;
 
+  // Variants harmonisés avec nouveaux tokens
   const variantStyles = {
-    service: 'hover:border-primary/20 hover:-translate-y-1',
-    project: 'overflow-hidden hover:border-primary/20',
-    price: 'relative hover:border-primary/20',
-    testimonial: 'border-primary/10',
+    service: 'hover:border-brand-emerald/20 hover:bg-card-glass-hover',
+    project: 'overflow-hidden hover:border-brand-emerald/20',
+    price: 'relative hover:border-brand-emerald/20 hover:shadow-emerald',
+    testimonial: 'border-brand-emerald/10 bg-card-glass/80',
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
 
+  // Animations harmonisées avec transitions
   const animationProps = prefersReducedMotion
     ? {
         initial: { opacity: 1 },
@@ -47,10 +53,11 @@ const Card = memo(function Card({
         transition: { duration: 0.6, ease: 'easeOut' },
       };
 
+  // Hover effects maîtrisés selon spécifications
   const hoverProps = prefersReducedMotion
     ? {}
     : {
-        whileHover: variant === 'service' ? { y: -8 } : {},
+        whileHover: variant === 'service' ? { y: -4 } : {}, // Réduit pour subtilité
       };
 
   return (
@@ -74,28 +81,28 @@ const Card = memo(function Card({
         </div>
       )}
 
-      {/* Icon pour service variant */}
+      {/* Icon pour service variant - Harmonisé avec couleur de marque */}
       {variant === 'service' && icon && (
-        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary text-2xl shadow-sm">
+        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-emerald/8 text-brand-emerald text-2xl shadow-soft border border-brand-emerald/20">
           {icon}
         </div>
       )}
 
-      {/* Title */}
+      {/* Title - COULEUR EXACTE DU LOGO BANDEV selon spécifications */}
       {title && (
-        <h3 className="mb-4 text-heading-md font-heading font-semibold card-title-emerald transition-colors duration-200">{title}</h3>
+        <h3 className="card-title mb-4 text-heading-lg font-heading font-bold text-brand-emerald transition-fast">{title}</h3>
       )}
 
-      {/* Description */}
-      {description && <p className="text-base text-muted mb-6 leading-relaxed">{description}</p>}
+      {/* Description - Lisibilité optimale sur fond foncé */}
+      {description && <p className="text-body text-anthracite-100 mb-6 leading-relaxed">{description}</p>}
 
-      {/* Tags */}
+      {/* Tags - Harmonisés avec couleur de marque */}
       {tags && tags.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-6">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="inline-flex items-center rounded-md bg-teal/10 px-3 py-1 text-sm font-medium text-teal border border-teal/20"
+              className="inline-flex items-center rounded-lg bg-brand-emerald/8 px-3 py-1 text-small font-medium text-brand-emerald border border-brand-emerald/20 transition-fast hover:bg-brand-emerald/12"
             >
               {tag}
             </span>
