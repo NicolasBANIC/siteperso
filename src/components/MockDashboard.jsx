@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from 'react';
 import { TrendingUp, Users, DollarSign, Activity } from 'lucide-react';
 
-export default function MockDashboard({ className = "" }) {
+export default function MockDashboard({ className = '' }) {
   const [stats, setStats] = useState({
     revenue: 45231,
     users: 2345,
     growth: 12.5,
-    active: 892
+    active: 892,
   });
 
   const [chartData, setChartData] = useState([40, 45, 38, 52, 48, 55, 60]);
@@ -16,14 +16,14 @@ export default function MockDashboard({ className = "" }) {
   useEffect(() => {
     // Ralenti de 2s à 4s pour réduire les re-renders
     const interval = setInterval(() => {
-      setStats(prev => ({
+      setStats((prev) => ({
         revenue: prev.revenue + Math.floor(Math.random() * 100),
         users: prev.users + Math.floor(Math.random() * 5),
         growth: +(prev.growth + (Math.random() - 0.5) * 0.5).toFixed(1),
-        active: prev.active + Math.floor(Math.random() * 10 - 5)
+        active: prev.active + Math.floor(Math.random() * 10 - 5),
       }));
 
-      setChartData(prev => {
+      setChartData((prev) => {
         const newData = [...prev.slice(1), Math.floor(Math.random() * 30) + 40];
         return newData;
       });
@@ -34,10 +34,26 @@ export default function MockDashboard({ className = "" }) {
 
   const StatCard = ({ icon: Icon, label, value, trend, color }) => {
     const colorMap = {
-      green: { bg: 'bg-[var(--color-primary-600)]/20', icon: 'text-[var(--color-primary-500)]', trend: 'text-[var(--color-primary-300)]' },
-      blue: { bg: 'bg-[var(--color-accent-500)]/20', icon: 'text-[var(--color-accent-500)]', trend: 'text-[var(--color-accent-400)]' },
-      purple: { bg: 'bg-[var(--color-accent-700)]/20', icon: 'text-[var(--color-accent-700)]', trend: 'text-[var(--color-accent-600)]' },
-      orange: { bg: 'bg-[var(--color-accent-400)]/20', icon: 'text-[var(--color-accent-400)]', trend: 'text-[var(--color-accent-300)]' }
+      green: {
+        bg: 'bg-[var(--color-primary-600)]/20',
+        icon: 'text-[var(--color-primary-500)]',
+        trend: 'text-[var(--color-primary-300)]',
+      },
+      blue: {
+        bg: 'bg-[var(--color-accent-500)]/20',
+        icon: 'text-[var(--color-accent-500)]',
+        trend: 'text-[var(--color-accent-400)]',
+      },
+      purple: {
+        bg: 'bg-[var(--color-accent-700)]/20',
+        icon: 'text-[var(--color-accent-700)]',
+        trend: 'text-[var(--color-accent-600)]',
+      },
+      orange: {
+        bg: 'bg-[var(--color-accent-400)]/20',
+        icon: 'text-[var(--color-accent-400)]',
+        trend: 'text-[var(--color-accent-300)]',
+      },
     };
     const c = colorMap[color] || colorMap.green;
 
@@ -63,7 +79,9 @@ export default function MockDashboard({ className = "" }) {
   };
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/90 p-6 shadow-2xl backdrop-blur-xl ${className}`}>
+    <div
+      className={`relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/90 p-6 shadow-2xl backdrop-blur-xl ${className}`}
+    >
       {/* Header */}
       <div className="mb-6 flex items-center justify-between">
         <div>
@@ -99,13 +117,7 @@ export default function MockDashboard({ className = "" }) {
           trend={stats.growth}
           color="purple"
         />
-        <StatCard
-          icon={Activity}
-          label="Actifs"
-          value={stats.active}
-          trend={-2.1}
-          color="orange"
-        />
+        <StatCard icon={Activity} label="Actifs" value={stats.active} trend={-2.1} color="orange" />
       </div>
 
       {/* Chart */}
@@ -128,10 +140,7 @@ export default function MockDashboard({ className = "" }) {
         {/* Simple bar chart */}
         <div className="flex h-32 items-end justify-between gap-2">
           {chartData.map((value, index) => (
-            <div
-              key={index}
-              className="group relative flex-1 transition-all duration-500"
-            >
+            <div key={index} className="group relative flex-1 transition-all duration-500">
               <div
                 className="w-full rounded-t-lg bg-gradient-to-t from-[var(--color-accent)] to-[var(--color-accent-secondary)] transition-all duration-500 group-hover:from-[var(--color-accent-secondary)] group-hover:to-[var(--color-accent)]"
                 style={{ height: `${value}%` }}

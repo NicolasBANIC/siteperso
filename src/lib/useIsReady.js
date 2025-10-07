@@ -4,18 +4,18 @@ import { useEffect, useState } from 'react';
 
 /**
  * Hook useIsReady - Lazy loading des effets visuels lourds
- * 
+ *
  * Utilise IntersectionObserver pour détecter quand un élément entre dans le viewport
  * et active les effets visuels uniquement à ce moment-là.
- * 
+ *
  * @param {React.RefObject} ref - Référence à l'élément à observer
  * @param {Object} options - Options pour IntersectionObserver
  * @returns {boolean} isReady - true quand l'élément est visible
- * 
+ *
  * @example
  * const ref = useRef(null);
  * const isReady = useIsReady(ref);
- * 
+ *
  * return (
  *   <div ref={ref} className={isReady ? 'with-heavy-effects' : ''}>
  *     Content
@@ -60,14 +60,12 @@ export function useIsReady(ref, options = {}) {
 
 /**
  * Hook useIsReadyMultiple - Version pour plusieurs éléments
- * 
+ *
  * @param {Array<React.RefObject>} refs - Tableau de références
  * @returns {Array<boolean>} - Tableau de statuts isReady
  */
 export function useIsReadyMultiple(refs) {
-  const [readyStates, setReadyStates] = useState(
-    refs.map(() => false)
-  );
+  const [readyStates, setReadyStates] = useState(refs.map(() => false));
 
   useEffect(() => {
     const observers = refs.map((ref, index) => {

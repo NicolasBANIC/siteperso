@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import BackToTop from '@/components/BackToTop';
 import ScrollProgress from '@/components/ScrollProgress';
 
-
 import './globals.css';
 
 const inter = Inter({
@@ -39,10 +38,24 @@ const firaCode = Fira_Code({
 export const metadata = {
   title: {
     default: 'BANDEV — Développeur Web Freelance',
-    template: '%s | BANDEV'
+    template: '%s | BANDEV',
   },
-  description: 'Sites et apps Next.js performants (Lighthouse 95+), SEO, accessibilité AA, expériences premium.',
-  keywords: ['BANDEV', 'développeur web', 'freelance', 'Lyon', 'création site web', 'e-commerce', 'application web', 'Next.js', 'React', 'développeur full-stack', 'site performant', 'web moderne'],
+  description:
+    'Sites et apps Next.js performants (Lighthouse 95+), SEO, accessibilité AA, expériences premium.',
+  keywords: [
+    'BANDEV',
+    'développeur web',
+    'freelance',
+    'Lyon',
+    'création site web',
+    'e-commerce',
+    'application web',
+    'Next.js',
+    'React',
+    'développeur full-stack',
+    'site performant',
+    'web moderne',
+  ],
   authors: [{ name: 'Nicolas Banic', email: 'bcnicolaspro@gmail.com' }],
   creator: 'BANDEV - Nicolas Banic',
   metadataBase: new URL('https://siteperso-wsu8.vercel.app'),
@@ -92,7 +105,8 @@ export default function RootLayout({ children }) {
     '@type': 'ProfessionalService',
     name: 'BANDEV',
     alternateName: 'Nicolas Banic - Développeur Web Freelance',
-    description: 'BANDEV : Création de sites web modernes, performants et sur mesure. Spécialiste Next.js, React et applications web haute performance.',
+    description:
+      'BANDEV : Création de sites web modernes, performants et sur mesure. Spécialiste Next.js, React et applications web haute performance.',
     url: 'https://bandev.fr',
     logo: 'https://bandev.fr/brand/logo.png',
     image: 'https://bandev.fr/images/og-image.jpg',
@@ -114,10 +128,7 @@ export default function RootLayout({ children }) {
       '@type': 'Country',
       name: 'France',
     },
-    sameAs: [
-      'https://www.linkedin.com/in/nicolasbanic',
-      'https://github.com/NicolasBANIC',
-    ],
+    sameAs: ['https://www.linkedin.com/in/nicolasbanic', 'https://github.com/NicolasBANIC'],
     knowsAbout: [
       'Développement Web',
       'Next.js 15',
@@ -171,11 +182,11 @@ export default function RootLayout({ children }) {
         {/* Meta tags essentiels */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        
+
         {/* Preconnect pour les polices Google */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         {/* JSON-LD pour le SEO */}
         <script
           type="application/ld+json"
@@ -186,13 +197,13 @@ export default function RootLayout({ children }) {
         className={`${inter.variable} ${montserrat.variable} ${spaceGrotesk.variable} ${firaCode.variable} ${montserrat.className} text-[var(--color-foreground)]`}
       >
         {/* TODO: AA - Skip link pour accessibilité clavier (WCAG AA) */}
-        <a 
-          href="#main" 
+        <a
+          href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-black focus:text-white focus:px-3 focus:py-2"
         >
           Aller au contenu
         </a>
-        
+
         <ScrollProgress />
         <div className="relative z-10 flex min-h-screen flex-col">
           <Header />

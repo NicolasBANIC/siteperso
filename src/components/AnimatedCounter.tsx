@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect, useState, memo } from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -12,16 +12,16 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-const AnimatedCounter = memo(function AnimatedCounter({ 
-  end, 
-  duration = 2000, 
-  suffix = '', 
-  prefix = '', 
-  className = '' 
+const AnimatedCounter = memo(function AnimatedCounter({
+  end,
+  duration = 2000,
+  suffix = '',
+  prefix = '',
+  className = '',
 }: AnimatedCounterProps) {
   const [count, setCount] = useState<number>(0);
   const prefersReducedMotion = useReducedMotion();
-  
+
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -46,7 +46,7 @@ const AnimatedCounter = memo(function AnimatedCounter({
 
       // Easing function (easeOutExpo)
       const easeOutExpo = percentage === 1 ? 1 : 1 - Math.pow(2, -10 * percentage);
-      
+
       const currentCount = Math.floor(end * easeOutExpo);
       setCount(currentCount);
 
@@ -66,7 +66,9 @@ const AnimatedCounter = memo(function AnimatedCounter({
 
   return (
     <span ref={ref} className={className} aria-live="polite">
-      {prefix}{count.toLocaleString()}{suffix}
+      {prefix}
+      {count.toLocaleString()}
+      {suffix}
     </span>
   );
 });

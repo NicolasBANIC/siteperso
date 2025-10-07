@@ -8,7 +8,7 @@ import { useReducedMotion } from '@/lib/useReducedMotion';
 
 /**
  * TestimonialCard - Carte de témoignage client avec animation
- * 
+ *
  * @param {string} name - Nom du client
  * @param {string} role - Poste du client
  * @param {string} company - Entreprise du client
@@ -16,23 +16,25 @@ import { useReducedMotion } from '@/lib/useReducedMotion';
  * @param {number} rating - Note sur 5 (défaut: 5)
  * @param {string} avatar - URL de l'avatar (défaut: placeholder)
  */
-function TestimonialCard({ 
-  name, 
-  role, 
-  company, 
-  content, 
+function TestimonialCard({
+  name,
+  role,
+  company,
+  content,
   rating = 5,
-  avatar = '/images/avatar-placeholder.jpg'
+  avatar = '/images/avatar-placeholder.jpg',
 }) {
   const prefersReducedMotion = useReducedMotion();
 
-  const cardAnimationProps = prefersReducedMotion ? {} : {
-    whileHover: { y: -4 },
-    transition: { duration: 0.2, ease: 'easeOut' }
-  };
+  const cardAnimationProps = prefersReducedMotion
+    ? {}
+    : {
+        whileHover: { y: -4 },
+        transition: { duration: 0.2, ease: 'easeOut' },
+      };
 
   return (
-    <motion.div 
+    <motion.div
       className="bg-surface border border-border rounded-lg p-6 shadow-card hover:shadow-matrix-lg hover:border-accent transition-all duration-300 motion-reduce:transition-none"
       {...cardAnimationProps}
     >
@@ -42,9 +44,7 @@ function TestimonialCard({
           <Star
             key={i}
             className={`w-5 h-5 ${
-              i < rating 
-                ? 'fill-accentSecondary text-accentSecondary' 
-                : 'text-muted/30'
+              i < rating ? 'fill-accentSecondary text-accentSecondary' : 'text-muted/30'
             }`}
             aria-hidden="true"
           />
@@ -68,9 +68,7 @@ function TestimonialCard({
           />
         </div>
         <div>
-          <p className="text-ui font-semibold text-foreground font-heading">
-            {name}
-          </p>
+          <p className="text-ui font-semibold text-foreground font-heading">{name}</p>
           <p className="text-body-sm text-muted">
             {role} {company && `• ${company}`}
           </p>

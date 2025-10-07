@@ -1,14 +1,14 @@
 'use client';
 
-import { memo } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { useReducedMotion } from "@/lib/useReducedMotion";
-import ScrollReveal from "./ScrollReveal";
+import { memo } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { useReducedMotion } from '@/lib/useReducedMotion';
+import ScrollReveal from './ScrollReveal';
 
 /**
  * CTASection - Section Call-to-Action réutilisable avec gradient
- * 
+ *
  * @param {string} title - Titre principal
  * @param {string} description - Description/sous-titre
  * @param {string} primaryButtonText - Texte du bouton principal
@@ -18,32 +18,34 @@ import ScrollReveal from "./ScrollReveal";
  * @param {string} className - Classes CSS additionnelles
  */
 function CTASection({
-  title = "Vous avez un projet particulier ?",
-  description = "Contactez-moi pour un audit gratuit ou une estimation personnalisée. Je réponds sous 24 heures ouvrées.",
-  primaryButtonText = "Demander un devis gratuit",
-  primaryButtonHref = "/devis",
-  secondaryButtonText = "Me contacter",
-  secondaryButtonHref = "/contact",
-  className = ""
+  title = 'Vous avez un projet particulier ?',
+  description = 'Contactez-moi pour un audit gratuit ou une estimation personnalisée. Je réponds sous 24 heures ouvrées.',
+  primaryButtonText = 'Demander un devis gratuit',
+  primaryButtonHref = '/devis',
+  secondaryButtonText = 'Me contacter',
+  secondaryButtonHref = '/contact',
+  className = '',
 }) {
   const prefersReducedMotion = useReducedMotion();
 
-  const buttonHoverProps = prefersReducedMotion ? {} : {
-    whileHover: { y: -2, scale: 1.02 },
-    whileTap: { scale: 0.98 },
-    transition: { duration: 0.2, ease: 'easeOut' }
-  };
+  const buttonHoverProps = prefersReducedMotion
+    ? {}
+    : {
+        whileHover: { y: -2, scale: 1.02 },
+        whileTap: { scale: 0.98 },
+        transition: { duration: 0.2, ease: 'easeOut' },
+      };
 
   return (
     <ScrollReveal direction="up">
-      <section className={`rounded-lg bg-gradient-to-r from-[var(--color-anthracite)] to-[var(--color-accent)] px-8 py-12 md:py-16 text-[var(--color-foreground)] shadow-[var(--shadow-lg)] ${className}`}>
+      <section
+        className={`rounded-lg bg-gradient-to-r from-[var(--color-anthracite)] to-[var(--color-accent)] px-8 py-12 md:py-16 text-[var(--color-foreground)] shadow-[var(--shadow-lg)] ${className}`}
+      >
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-heading-xl md:text-display font-bold tracking-tight font-heading">
             {title}
           </h2>
-          <p className="text-body-lg text-foreground/90 max-w-2xl mx-auto">
-            {description}
-          </p>
+          <p className="text-body-lg text-foreground/90 max-w-2xl mx-auto">{description}</p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <motion.div {...buttonHoverProps}>
               <Link

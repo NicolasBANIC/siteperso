@@ -1,11 +1,8 @@
-"use client";
+'use client';
 
 import { useEffect, useRef, useState } from 'react';
 
-export default function MeshGradient({
-  colors = ['#064E3B', '#10B981'],
-  className = ""
-}) {
+export default function MeshGradient({ colors = ['#064E3B', '#10B981'], className = '' }) {
   const canvasRef = useRef(null);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -42,11 +39,13 @@ export default function MeshGradient({
 
     const hexToRgb = (hex) => {
       const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-      } : null;
+      return result
+        ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16),
+          }
+        : null;
     };
 
     const rgbColors = colors.map(hexToRgb);
@@ -60,10 +59,7 @@ export default function MeshGradient({
         const x1 = width * (0.5 + 0.3 * Math.sin(time * 0.0008 + i)); // Ralenti
         const y1 = height * (0.5 + 0.3 * Math.cos(time * 0.0008 + i));
 
-        const gradient = ctx.createRadialGradient(
-          x1, y1, 0,
-          x1, y1, width * 0.8
-        );
+        const gradient = ctx.createRadialGradient(x1, y1, 0, x1, y1, width * 0.8);
 
         const color = rgbColors[i % rgbColors.length];
         gradient.addColorStop(0, `rgba(${color.r}, ${color.g}, ${color.b}, 0.25)`);
@@ -96,11 +92,5 @@ export default function MeshGradient({
     };
   }, [colors, isVisible]);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className={`absolute inset-0 ${className}`}
-      aria-hidden="true"
-    />
-  );
+  return <canvas ref={canvasRef} className={`absolute inset-0 ${className}`} aria-hidden="true" />;
 }

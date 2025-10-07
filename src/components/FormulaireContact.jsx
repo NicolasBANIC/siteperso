@@ -11,7 +11,7 @@ export default function FormulaireContact() {
     message: '',
     budget: '',
     // Honeypot field - should remain empty
-    website: ''
+    website: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -26,7 +26,7 @@ export default function FormulaireContact() {
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'L\'email est requis';
+      newErrors.email = "L'email est requis";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Email invalide';
     }
@@ -47,16 +47,16 @@ export default function FormulaireContact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: '' }));
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Honeypot check - if filled, it's a bot
     if (formData.website) {
       console.log('Bot detected via honeypot');
@@ -65,7 +65,7 @@ export default function FormulaireContact() {
       setTimeout(() => setStatus('idle'), 5000);
       return;
     }
-    
+
     if (!validateForm()) {
       return;
     }
@@ -82,8 +82,8 @@ export default function FormulaireContact() {
           email: formData.email,
           sujet: formData.sujet,
           message: formData.message,
-          budget: formData.budget
-        })
+          budget: formData.budget,
+        }),
       });
 
       const data = await response.json();
@@ -99,7 +99,7 @@ export default function FormulaireContact() {
         sujet: '',
         message: '',
         budget: '',
-        website: ''
+        website: '',
       });
 
       // Reset success message after 5 seconds
@@ -107,7 +107,7 @@ export default function FormulaireContact() {
     } catch (error) {
       console.error('Error submitting form:', error);
       setStatus('error');
-      setErrorMessage(error.message || 'Une erreur est survenue lors de l\'envoi du message.');
+      setErrorMessage(error.message || "Une erreur est survenue lors de l'envoi du message.");
       setTimeout(() => {
         setStatus('idle');
         setErrorMessage('');
@@ -120,12 +120,15 @@ export default function FormulaireContact() {
       {/* TODO: AA - Messages avec aria-live pour accessibilité (WCAG AA) */}
       {/* Success Message */}
       {status === 'success' && (
-        <div 
-          role="alert" 
+        <div
+          role="alert"
           aria-live="polite"
           className="p-4 bg-[var(--color-accent-matrix)]/10 border border-[var(--color-accent-matrix)]/30 rounded-lg flex items-start gap-3"
         >
-          <CheckCircle className="w-5 h-5 text-[var(--color-accent-matrix)] flex-shrink-0 mt-0.5" aria-hidden="true" />
+          <CheckCircle
+            className="w-5 h-5 text-[var(--color-accent-matrix)] flex-shrink-0 mt-0.5"
+            aria-hidden="true"
+          />
           <div>
             <p className="text-ui font-semibold text-[var(--color-foreground)]">
               Message envoyé avec succès !
@@ -139,8 +142,8 @@ export default function FormulaireContact() {
 
       {/* Error Message */}
       {status === 'error' && (
-        <div 
-          role="alert" 
+        <div
+          role="alert"
           aria-live="assertive"
           className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-3"
         >
@@ -172,7 +175,10 @@ export default function FormulaireContact() {
 
       {/* Nom */}
       <div>
-        <label htmlFor="nom" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
+        <label
+          htmlFor="nom"
+          className="block text-caption font-medium text-[var(--color-foreground)] mb-2"
+        >
           Nom complet <span className="text-red-500">*</span>
         </label>
         <input
@@ -184,20 +190,25 @@ export default function FormulaireContact() {
           aria-invalid={errors.nom ? 'true' : 'false'}
           aria-describedby={errors.nom ? 'nom-error' : undefined}
           className={`w-full px-4 py-3 rounded-lg border text-body ${
-            errors.nom 
-              ? 'border-red-500 focus:ring-red-500' 
+            errors.nom
+              ? 'border-red-500 focus:ring-red-500'
               : 'border-[var(--color-border)] focus:ring-[var(--color-accent)]'
           } bg-[var(--color-surface)] text-[var(--color-foreground)] focus:ring-2 focus:border-transparent transition-all`}
           placeholder="Jean Dupont"
         />
         {errors.nom && (
-          <p id="nom-error" className="mt-1 text-body-sm text-red-500" role="alert">{errors.nom}</p>
+          <p id="nom-error" className="mt-1 text-body-sm text-red-500" role="alert">
+            {errors.nom}
+          </p>
         )}
       </div>
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
+        <label
+          htmlFor="email"
+          className="block text-caption font-medium text-[var(--color-foreground)] mb-2"
+        >
           Email <span className="text-red-500">*</span>
         </label>
         <input
@@ -207,20 +218,21 @@ export default function FormulaireContact() {
           value={formData.email}
           onChange={handleChange}
           className={`w-full px-4 py-3 rounded-lg border text-body ${
-            errors.email 
-              ? 'border-red-500 focus:ring-red-500' 
+            errors.email
+              ? 'border-red-500 focus:ring-red-500'
               : 'border-[var(--color-border)] focus:ring-[var(--color-accent)]'
           } bg-[var(--color-surface)] text-[var(--color-foreground)] focus:ring-2 focus:border-transparent transition-all`}
           placeholder="jean.dupont@email.com"
         />
-        {errors.email && (
-          <p className="mt-1 text-body-sm text-red-500">{errors.email}</p>
-        )}
+        {errors.email && <p className="mt-1 text-body-sm text-red-500">{errors.email}</p>}
       </div>
 
       {/* Sujet */}
       <div>
-        <label htmlFor="sujet" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
+        <label
+          htmlFor="sujet"
+          className="block text-caption font-medium text-[var(--color-foreground)] mb-2"
+        >
           Sujet <span className="text-red-500">*</span>
         </label>
         <input
@@ -230,20 +242,21 @@ export default function FormulaireContact() {
           value={formData.sujet}
           onChange={handleChange}
           className={`w-full px-4 py-3 rounded-lg border text-body ${
-            errors.sujet 
-              ? 'border-red-500 focus:ring-red-500' 
+            errors.sujet
+              ? 'border-red-500 focus:ring-red-500'
               : 'border-[var(--color-border)] focus:ring-[var(--color-accent)]'
           } bg-[var(--color-surface)] text-[var(--color-foreground)] focus:ring-2 focus:border-transparent transition-all`}
           placeholder="Demande d'information"
         />
-        {errors.sujet && (
-          <p className="mt-1 text-body-sm text-red-500">{errors.sujet}</p>
-        )}
+        {errors.sujet && <p className="mt-1 text-body-sm text-red-500">{errors.sujet}</p>}
       </div>
 
       {/* Budget (optionnel) */}
       <div>
-        <label htmlFor="budget" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
+        <label
+          htmlFor="budget"
+          className="block text-caption font-medium text-[var(--color-foreground)] mb-2"
+        >
           Budget estimé <span className="text-[var(--color-muted)] text-body-sm">(optionnel)</span>
         </label>
         <select
@@ -268,7 +281,10 @@ export default function FormulaireContact() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-caption font-medium text-[var(--color-foreground)] mb-2">
+        <label
+          htmlFor="message"
+          className="block text-caption font-medium text-[var(--color-foreground)] mb-2"
+        >
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -278,18 +294,14 @@ export default function FormulaireContact() {
           onChange={handleChange}
           rows={6}
           className={`w-full px-4 py-3 rounded-lg border text-body ${
-            errors.message 
-              ? 'border-red-500 focus:ring-red-500' 
+            errors.message
+              ? 'border-red-500 focus:ring-red-500'
               : 'border-[var(--color-border)] focus:ring-[var(--color-accent)]'
           } bg-[var(--color-surface)] text-[var(--color-foreground)] focus:ring-2 focus:border-transparent transition-all resize-none`}
           placeholder="Votre message..."
         />
-        {errors.message && (
-          <p className="mt-1 text-body-sm text-red-500">{errors.message}</p>
-        )}
-        <p className="mt-1 text-body-sm text-[var(--color-muted)]">
-          Minimum 10 caractères
-        </p>
+        {errors.message && <p className="mt-1 text-body-sm text-red-500">{errors.message}</p>}
+        <p className="mt-1 text-body-sm text-[var(--color-muted)]">Minimum 10 caractères</p>
       </div>
 
       {/* Submit Button */}
@@ -300,7 +312,10 @@ export default function FormulaireContact() {
       >
         {status === 'loading' ? (
           <>
-            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+            <div
+              className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"
+              aria-hidden="true"
+            />
             Envoi en cours...
           </>
         ) : (

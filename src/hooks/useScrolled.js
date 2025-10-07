@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 /**
  * Hook pour détecter si l'utilisateur a scrollé au-delà d'un certain offset
@@ -19,10 +19,10 @@ export function useScrolled(offset = 0) {
     onScroll();
 
     // Écouter les événements de scroll avec passive pour les performances
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener('scroll', onScroll);
     };
   }, [offset]);
 

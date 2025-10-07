@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import ScrollReveal from "./ScrollReveal";
-import OptimizedImage from "./OptimizedImage";
-import { Clock, CheckCircle, AlertCircle, Info } from "lucide-react";
-import { useReducedMotion } from "@/lib/useReducedMotion";
+import { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import ScrollReveal from './ScrollReveal';
+import OptimizedImage from './OptimizedImage';
+import { Clock, CheckCircle, AlertCircle, Info } from 'lucide-react';
+import { useReducedMotion } from '@/lib/useReducedMotion';
 
 // Map icon names to components
 const iconMap = {
@@ -29,12 +29,12 @@ interface HeroSectionProps {
   children?: React.ReactNode;
   overlayOpacity?: string;
   height?: string;
-  textAlign?: "left" | "center" | "right";
+  textAlign?: 'left' | 'center' | 'right';
 }
 
 /**
  * HeroSection - Section héros moderne avec effet parallax
- * 
+ *
  * @param title - Titre principal (peut contenir du HTML)
  * @param subtitle - Sous-titre descriptif
  * @param backgroundImage - URL de l'image de fond
@@ -50,17 +50,17 @@ export default function HeroSection({
   backgroundImage,
   badge = null,
   children = null,
-  overlayOpacity = "60",
-  height = "60vh",
-  textAlign = "center",
+  overlayOpacity = '60',
+  height = '60vh',
+  textAlign = 'center',
 }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
-  
+
   // Framer Motion parallax avec useScroll et useTransform
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, -150]);
-  
+
   // Désactiver le parallax sur mobile et si prefers-reduced-motion
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const shouldParallax = !prefersReducedMotion && !isMobile;
@@ -87,7 +87,7 @@ export default function HeroSection({
           sizes="100vw"
           className="object-cover"
           style={{
-            transform: "scale(1.15)",
+            transform: 'scale(1.15)',
           }}
         />
       </motion.div>
@@ -100,20 +100,25 @@ export default function HeroSection({
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
                            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: "50px 50px",
+          backgroundSize: '50px 50px',
           zIndex: 2,
         }}
       />
 
       {/* Contenu */}
-      <div className="container-page relative flex min-h-[inherit] items-center" style={{ zIndex: 20 }}>
+      <div
+        className="container-page relative flex min-h-[inherit] items-center"
+        style={{ zIndex: 20 }}
+      >
         <div className={`w-full space-y-6 text-${textAlign}`}>
           {/* Badge */}
           {badge && (
             <ScrollReveal direction="up">
-              <div className={`flex ${textAlign === "center" ? "justify-center" : textAlign === "right" ? "justify-end" : "justify-start"}`}>
+              <div
+                className={`flex ${textAlign === 'center' ? 'justify-center' : textAlign === 'right' ? 'justify-end' : 'justify-start'}`}
+              >
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-caption font-medium text-white backdrop-blur-sm">
-                  {typeof badge === "object" && badge.icon ? (
+                  {typeof badge === 'object' && badge.icon ? (
                     <>
                       {/* Render icon from iconMap */}
                       {(() => {
@@ -128,7 +133,7 @@ export default function HeroSection({
                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-primary-300)] opacity-75"></span>
                         <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-primary-300)]"></span>
                       </span>
-                      <span>{typeof badge === "string" ? badge : badge.text}</span>
+                      <span>{typeof badge === 'string' ? badge : badge.text}</span>
                     </>
                   )}
                 </div>
@@ -154,7 +159,9 @@ export default function HeroSection({
           {/* Contenu additionnel (boutons, etc.) */}
           {children && (
             <ScrollReveal direction="up" delay={300}>
-              <div className={`flex flex-wrap items-center gap-4 pt-4 ${textAlign === "center" ? "justify-center" : textAlign === "right" ? "justify-end" : "justify-start"}`}>
+              <div
+                className={`flex flex-wrap items-center gap-4 pt-4 ${textAlign === 'center' ? 'justify-center' : textAlign === 'right' ? 'justify-end' : 'justify-start'}`}
+              >
                 {children}
               </div>
             </ScrollReveal>

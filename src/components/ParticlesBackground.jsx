@@ -1,8 +1,9 @@
-"use client";
+'use client';
 
 import { useEffect, useRef, useState } from 'react';
 
-export default function ParticlesBackground({ interactive = false }) { // Désactivé par défaut pour performance
+export default function ParticlesBackground({ interactive = false }) {
+  // Désactivé par défaut pour performance
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: null, y: null });
   const [isVisible, setIsVisible] = useState(true);
@@ -104,7 +105,7 @@ export default function ParticlesBackground({ interactive = false }) { // Désac
         const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
         gradient.addColorStop(0, `rgba(0, 122, 94, ${this.opacity})`);
         gradient.addColorStop(1, `rgba(0, 207, 193, ${this.opacity * 0.5})`);
-        
+
         ctx.fillStyle = gradient;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -124,10 +125,10 @@ export default function ParticlesBackground({ interactive = false }) { // Désac
     const connectParticles = () => {
       // Optimisation: limiter les connexions pour réduire O(n²)
       const maxConnections = 3; // Limite de connexions par particule
-      
+
       for (let i = 0; i < particles.length; i++) {
         let connections = 0;
-        
+
         for (let j = i + 1; j < particles.length && connections < maxConnections; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
@@ -136,7 +137,7 @@ export default function ParticlesBackground({ interactive = false }) { // Désac
           // Réduit la distance de connexion de 120 à 100
           if (distance < 100) {
             const opacity = (1 - distance / 100) * 0.12;
-            
+
             // Simplifié: pas de gradient pour économiser CPU
             ctx.strokeStyle = `rgba(0, 71, 171, ${opacity})`;
             ctx.lineWidth = 0.5;
@@ -144,7 +145,7 @@ export default function ParticlesBackground({ interactive = false }) { // Désac
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
-            
+
             connections++;
           }
         }
@@ -152,12 +153,13 @@ export default function ParticlesBackground({ interactive = false }) { // Désac
 
       // Connect to mouse (seulement si interactive activé)
       if (interactive && mouseRef.current.x !== null) {
-        particles.forEach(particle => {
+        particles.forEach((particle) => {
           const dx = mouseRef.current.x - particle.x;
           const dy = mouseRef.current.y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) { // Réduit de 150 à 120
+          if (distance < 120) {
+            // Réduit de 150 à 120
             const opacity = (1 - distance / 120) * 0.25;
             ctx.strokeStyle = `rgba(0, 255, 65, ${opacity})`;
             ctx.lineWidth = 1;
@@ -177,8 +179,8 @@ export default function ParticlesBackground({ interactive = false }) { // Désac
       }
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      particles.forEach(particle => {
+
+      particles.forEach((particle) => {
         particle.update();
         particle.draw();
       });
@@ -202,11 +204,5 @@ export default function ParticlesBackground({ interactive = false }) { // Désac
     };
   }, [interactive, isVisible]);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 opacity-40"
-      aria-hidden="true"
-    />
-  );
+  return <canvas ref={canvasRef} className="absolute inset-0 opacity-40" aria-hidden="true" />;
 }

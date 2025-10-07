@@ -1,4 +1,4 @@
-﻿"use client";
+﻿'use client';
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -14,7 +14,7 @@ export default function HeroContactForm() {
     handleSubmit,
     formState: { errors },
     reset,
-    watch
+    watch,
   } = useForm();
 
   const watchedFields = watch();
@@ -40,7 +40,7 @@ export default function HeroContactForm() {
         setSubmitStatus('error');
       }
     } catch (error) {
-      console.error('Erreur lors de l\'envoi:', error);
+      console.error("Erreur lors de l'envoi:", error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -57,8 +57,11 @@ export default function HeroContactForm() {
       {/* Glassmorphism card */}
       <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-xl">
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/10 via-transparent to-[var(--color-accent-secondary)]/10" aria-hidden="true" />
-        
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/10 via-transparent to-[var(--color-accent-secondary)]/10"
+          aria-hidden="true"
+        />
+
         <div className="relative">
           <div className="mb-6 text-center">
             <h3 className="text-heading-lg font-bold text-white drop-shadow-lg">
@@ -85,7 +88,7 @@ export default function HeroContactForm() {
                   placeholder="Votre nom"
                   {...register('name', {
                     required: 'Le nom est requis',
-                    minLength: { value: 2, message: 'Minimum 2 caractères' }
+                    minLength: { value: 2, message: 'Minimum 2 caractères' },
                   })}
                   className={`w-full rounded-xl border bg-white/20 py-3 pl-12 pr-4 text-white placeholder-white/60 backdrop-blur-sm transition-all focus:bg-white/30 focus:outline-none focus:ring-2 ${
                     errors.name
@@ -123,11 +126,11 @@ export default function HeroContactForm() {
                   type="email"
                   placeholder="votre@email.com"
                   {...register('email', {
-                    required: 'L\'email est requis',
+                    required: "L'email est requis",
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'Email invalide'
-                    }
+                      message: 'Email invalide',
+                    },
                   })}
                   className={`w-full rounded-xl border bg-white/20 py-3 pl-12 pr-4 text-white placeholder-white/60 backdrop-blur-sm transition-all focus:bg-white/30 focus:outline-none focus:ring-2 ${
                     errors.email
@@ -166,7 +169,7 @@ export default function HeroContactForm() {
                   placeholder="Décrivez votre projet en quelques mots..."
                   {...register('message', {
                     required: 'Le message est requis',
-                    minLength: { value: 10, message: 'Minimum 10 caractères' }
+                    minLength: { value: 10, message: 'Minimum 10 caractères' },
                   })}
                   className={`w-full resize-none rounded-xl border bg-white/20 py-3 pl-12 pr-4 text-white placeholder-white/60 backdrop-blur-sm transition-all focus:bg-white/30 focus:outline-none focus:ring-2 ${
                     errors.message
@@ -220,11 +223,17 @@ export default function HeroContactForm() {
                 ) : (
                   <>
                     Envoyer ma demande
-                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" />
+                    <Send
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
+                      aria-hidden="true"
+                    />
                   </>
                 )}
               </span>
-              <div className="absolute inset-0 -z-0 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-0 transition-opacity group-hover:opacity-10" aria-hidden="true" />
+              <div
+                className="absolute inset-0 -z-0 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-0 transition-opacity group-hover:opacity-10"
+                aria-hidden="true"
+              />
             </button>
           </form>
 

@@ -7,7 +7,7 @@ import { Mail, ArrowRight, Check } from 'lucide-react';
 
 /**
  * Page de démonstration de la Charte Matrix
- * 
+ *
  * Affiche tous les composants avec la nouvelle charte graphique :
  * - Anthracite (#1A1A1A)
  * - Blanc (#FFFFFF)
@@ -32,9 +32,7 @@ export default function CharteDemoPage() {
       {/* Hero Section */}
       <section className="bg-[var(--color-anthracite)] text-white py-20">
         <div className="container mx-auto px-6">
-          <h1 className="text-5xl font-bold mb-4">
-            Charte Graphique Matrix
-          </h1>
+          <h1 className="text-5xl font-bold mb-4">Charte Graphique Matrix</h1>
           <p className="text-xl text-white/80 mb-8">
             Démonstration des composants avec la palette Anthracite, Blanc et Vert Matrix
           </p>
@@ -55,9 +53,7 @@ export default function CharteDemoPage() {
       {/* Palette de couleurs */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-anthracite">
-            Palette de couleurs
-          </h2>
+          <h2 className="text-3xl font-bold mb-8 text-anthracite">Palette de couleurs</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Anthracite */}
             <div className="space-y-4">
@@ -98,10 +94,8 @@ export default function CharteDemoPage() {
       {/* Boutons */}
       <section className="py-16 bg-surface">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-anthracite">
-            Boutons
-          </h2>
-          
+          <h2 className="text-3xl font-bold mb-8 text-anthracite">Boutons</h2>
+
           {/* Tailles */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4">Tailles</h3>
@@ -122,15 +116,9 @@ export default function CharteDemoPage() {
           <div className="mb-12">
             <h3 className="text-xl font-semibold mb-4">Variantes</h3>
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary">
-                Primary
-              </Button>
-              <Button variant="secondary">
-                Secondary
-              </Button>
-              <Button variant="outline">
-                Outline
-              </Button>
+              <Button variant="primary">Primary</Button>
+              <Button variant="secondary">Secondary</Button>
+              <Button variant="outline">Outline</Button>
             </div>
           </div>
 
@@ -163,10 +151,8 @@ export default function CharteDemoPage() {
       {/* Formulaires */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-anthracite">
-            Formulaires
-          </h2>
-          
+          <h2 className="text-3xl font-bold mb-8 text-anthracite">Formulaires</h2>
+
           <div className="max-w-2xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               <Input
@@ -225,17 +211,13 @@ export default function CharteDemoPage() {
       {/* États hover */}
       <section className="py-16 bg-surface">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-anthracite">
-            États Hover & Focus
-          </h2>
-          
+          <h2 className="text-3xl font-bold mb-8 text-anthracite">États Hover & Focus</h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card avec hover */}
             <div className="bg-white rounded-xl p-6 border-2 border-anthracite/10 transition-all duration-fast hover:border-matrix hover:shadow-ring-matrix hover:-translate-y-1 motion-reduce:hover:translate-y-0">
               <h3 className="text-xl font-semibold mb-2">Card avec hover</h3>
-              <p className="text-muted mb-4">
-                Survolez cette carte pour voir l'effet Matrix
-              </p>
+              <p className="text-muted mb-4">Survolez cette carte pour voir l'effet Matrix</p>
               <Button variant="primary" size="sm">
                 En savoir plus
               </Button>
@@ -244,9 +226,7 @@ export default function CharteDemoPage() {
             {/* Card avec gradient */}
             <div className="bg-gradient-to-br from-anthracite to-anthraciteLight text-white rounded-xl p-6 shadow-elev-sm transition-all duration-fast hover:shadow-elev-md hover:shadow-ring-matrix hover:-translate-y-1 motion-reduce:hover:translate-y-0">
               <h3 className="text-xl font-semibold mb-2">Card avec gradient</h3>
-              <p className="text-white/80 mb-4">
-                Gradient anthracite avec effet hover
-              </p>
+              <p className="text-white/80 mb-4">Gradient anthracite avec effet hover</p>
               <Button variant="secondary" size="sm">
                 Découvrir
               </Button>
@@ -258,25 +238,29 @@ export default function CharteDemoPage() {
       {/* Accessibilité */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-anthracite">
-            Accessibilité WCAG AA+
-          </h2>
-          
+          <h2 className="text-3xl font-bold mb-8 text-anthracite">Accessibilité WCAG AA+</h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl p-6 border-2 border-anthracite/10">
               <h3 className="text-xl font-semibold mb-4">Contrastes</h3>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
                   <Check className="text-matrix" size={20} />
-                  <span>Anthracite sur Blanc : <strong>15.3:1</strong> (AAA)</span>
+                  <span>
+                    Anthracite sur Blanc : <strong>15.3:1</strong> (AAA)
+                  </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="text-matrix" size={20} />
-                  <span>Blanc sur Anthracite : <strong>15.3:1</strong> (AAA)</span>
+                  <span>
+                    Blanc sur Anthracite : <strong>15.3:1</strong> (AAA)
+                  </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="text-matrix" size={20} />
-                  <span>Vert Matrix sur Blanc : <strong>4.8:1</strong> (AA+)</span>
+                  <span>
+                    Vert Matrix sur Blanc : <strong>4.8:1</strong> (AA+)
+                  </span>
                 </li>
               </ul>
             </div>
@@ -309,12 +293,10 @@ export default function CharteDemoPage() {
       {/* Footer demo */}
       <section className="bg-[var(--color-anthracite)] text-white py-16">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Charte Matrix appliquée
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">Charte Matrix appliquée</h2>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            Tous les composants respectent la charte graphique avec les couleurs
-            Anthracite, Blanc et Vert Matrix, tout en garantissant une accessibilité WCAG AA+.
+            Tous les composants respectent la charte graphique avec les couleurs Anthracite, Blanc
+            et Vert Matrix, tout en garantissant une accessibilité WCAG AA+.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button href="/" variant="primary">

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -8,31 +8,34 @@ import { motion, AnimatePresence } from 'framer-motion';
 const testimonials = [
   {
     id: 1,
-    name: "Sophie Martin",
-    role: "Gérante, Atelier Bois Créatif",
-    avatar: "/images/testimonial-avatar1.jpg",
-    content: "Nicolas a transformé notre présence en ligne. Notre site vitrine reflète parfaitement notre savoir-faire artisanal. Les demandes de devis ont augmenté de 60% en 3 mois !",
+    name: 'Sophie Martin',
+    role: 'Gérante, Atelier Bois Créatif',
+    avatar: '/images/testimonial-avatar1.jpg',
+    content:
+      'Nicolas a transformé notre présence en ligne. Notre site vitrine reflète parfaitement notre savoir-faire artisanal. Les demandes de devis ont augmenté de 60% en 3 mois !',
     rating: 5,
-    project: "Site vitrine premium"
+    project: 'Site vitrine premium',
   },
   {
     id: 2,
-    name: "Thomas Dubois",
-    role: "Fondateur, GTravaux",
-    avatar: "/images/testimonial-avatar2.jpg",
-    content: "Un développeur à l'écoute et très professionnel. Notre plateforme de mise en relation fonctionne parfaitement. Le code est propre, documenté et évolutif. Je recommande vivement !",
+    name: 'Thomas Dubois',
+    role: 'Fondateur, GTravaux',
+    avatar: '/images/testimonial-avatar2.jpg',
+    content:
+      "Un développeur à l'écoute et très professionnel. Notre plateforme de mise en relation fonctionne parfaitement. Le code est propre, documenté et évolutif. Je recommande vivement !",
     rating: 5,
-    project: "Application web sur mesure"
+    project: 'Application web sur mesure',
   },
   {
     id: 3,
-    name: "Léa Rousseau",
-    role: "Créatrice, Douceurs de Léa",
-    avatar: "/images/testimonial-avatar3.jpg",
-    content: "Grâce à Nicolas, je vends mes créations en ligne avec une boutique magnifique et facile à gérer. Le système de paiement est sécurisé et mes clients adorent l'expérience d'achat.",
+    name: 'Léa Rousseau',
+    role: 'Créatrice, Douceurs de Léa',
+    avatar: '/images/testimonial-avatar3.jpg',
+    content:
+      "Grâce à Nicolas, je vends mes créations en ligne avec une boutique magnifique et facile à gérer. Le système de paiement est sécurisé et mes clients adorent l'expérience d'achat.",
     rating: 5,
-    project: "E-commerce sur mesure"
-  }
+    project: 'E-commerce sur mesure',
+  },
 ];
 
 export default function TestimonialSlider() {
@@ -42,18 +45,18 @@ export default function TestimonialSlider() {
   const slideVariants = {
     enter: (direction) => ({
       x: direction > 0 ? 1000 : -1000,
-      opacity: 0
+      opacity: 0,
     }),
     center: {
       zIndex: 1,
       x: 0,
-      opacity: 1
+      opacity: 1,
     },
     exit: (direction) => ({
       zIndex: 0,
       x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    })
+      opacity: 0,
+    }),
   };
 
   const swipeConfidenceThreshold = 10000;
@@ -93,8 +96,8 @@ export default function TestimonialSlider() {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 280, damping: 35 },
-              opacity: { duration: 0.3, ease: "easeInOut" }
+              x: { type: 'spring', stiffness: 280, damping: 35 },
+              opacity: { duration: 0.3, ease: 'easeInOut' },
             }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
@@ -112,7 +115,7 @@ export default function TestimonialSlider() {
             style={{ willChange: 'transform, opacity' }}
           >
             <Quote className="absolute top-8 right-8 h-16 w-16 text-accent/10" aria-hidden="true" />
-            
+
             <div className="flex flex-col items-center text-center">
               <div className="relative mb-6 h-24 w-24">
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-50 blur"></div>
@@ -123,7 +126,7 @@ export default function TestimonialSlider() {
                   height={96}
                   className="relative h-24 w-24 rounded-full object-cover ring-4 ring-surface"
                   priority={current === 0}
-                  loading={current === 0 ? "eager" : "lazy"}
+                  loading={current === 0 ? 'eager' : 'lazy'}
                 />
               </div>
 
@@ -145,12 +148,8 @@ export default function TestimonialSlider() {
               </blockquote>
 
               <div>
-                <p className="font-semibold text-foreground">
-                  {testimonials[current].name}
-                </p>
-                <p className="text-sm text-muted">
-                  {testimonials[current].role}
-                </p>
+                <p className="font-semibold text-foreground">{testimonials[current].name}</p>
+                <p className="text-sm text-muted">{testimonials[current].role}</p>
                 <p className="mt-2 text-xs font-medium text-accent">
                   {testimonials[current].project}
                 </p>
@@ -179,9 +178,7 @@ export default function TestimonialSlider() {
                 setCurrent(index);
               }}
               className={`h-2 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-accent ${
-                index === current
-                  ? 'w-8 bg-accent'
-                  : 'w-2 bg-border hover:bg-accent/50'
+                index === current ? 'w-8 bg-accent' : 'w-2 bg-border hover:bg-accent/50'
               }`}
               aria-label={`Aller au témoignage ${index + 1}`}
             />

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
 import { memo, useEffect, useRef, useState } from 'react';
 
-function OptimizedVideo({ 
-  src, 
-  className = "",
-  opacity = "opacity-30",
+function OptimizedVideo({
+  src,
+  className = '',
+  opacity = 'opacity-30',
   disableOnMobile = true,
-  poster = null
+  poster = null,
 }) {
   const videoRef = useRef(null);
   const [shouldPlay, setShouldPlay] = useState(false);
@@ -19,19 +19,17 @@ function OptimizedVideo({
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     // Détection prefers-reduced-motion
     const checkReducedMotion = () => {
-      setPrefersReducedMotion(
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      );
+      setPrefersReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     };
 
     checkMobile();
     checkReducedMotion();
-    
+
     window.addEventListener('resize', checkMobile);
-    
+
     // Listen for changes to reduced motion preference
     const motionMediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const handleMotionChange = (e) => setPrefersReducedMotion(e.matches);
@@ -70,14 +68,14 @@ function OptimizedVideo({
   // Fallback pour reduced motion - afficher poster ou gradient
   if (prefersReducedMotion) {
     return (
-      <div 
+      <div
         className={`h-full w-full ${className} ${opacity}`}
         style={{
-          backgroundImage: poster 
-            ? `url(${poster})` 
+          backgroundImage: poster
+            ? `url(${poster})`
             : 'linear-gradient(135deg, rgba(26, 26, 26, 0.4), rgba(11, 138, 58, 0.2))',
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
         }}
         aria-hidden="true"
       />
@@ -87,14 +85,14 @@ function OptimizedVideo({
   // Ne pas afficher la vidéo sur mobile si désactivé
   if (disableOnMobile && isMobile) {
     return (
-      <div 
+      <div
         className={`h-full w-full bg-gradient-to-br from-[var(--color-anthracite)]/20 via-[var(--color-accent)]/20 to-[var(--color-anthracite)]/20 ${className} ${opacity}`}
         aria-hidden="true"
       />
     );
   }
 
-  // Extraire les sources WebM et MP4 
+  // Extraire les sources WebM et MP4
   const webmSrc = src.endsWith('.webm') ? src : src.replace(/\.mp4$/, '.webm');
   const mp4Src = src.endsWith('.mp4') ? src : src.replace(/\.webm$/, '.mp4');
 
@@ -108,10 +106,10 @@ function OptimizedVideo({
       preload="metadata"
       poster={poster}
       className={`h-full w-full object-cover ${opacity} ${className}`}
-      style={{ 
+      style={{
         willChange: 'auto',
         transform: 'translateZ(0)',
-        backfaceVisibility: 'hidden'
+        backfaceVisibility: 'hidden',
       }}
       aria-hidden="true"
     >
@@ -119,9 +117,7 @@ function OptimizedVideo({
       <source src={webmSrc} type="video/webm" />
       <source src={mp4Src} type="video/mp4" />
       {/* Fallback message */}
-      <p className="sr-only">
-        Votre navigateur ne supporte pas les vidéos HTML5.
-      </p>
+      <p className="sr-only">Votre navigateur ne supporte pas les vidéos HTML5.</p>
     </video>
   );
 }

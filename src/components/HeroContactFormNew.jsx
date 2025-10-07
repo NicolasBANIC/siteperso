@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -14,7 +14,7 @@ export default function HeroContactFormNew() {
     handleSubmit,
     formState: { errors },
     reset,
-    watch
+    watch,
   } = useForm();
 
   const watchedFields = watch();
@@ -39,7 +39,7 @@ export default function HeroContactFormNew() {
           name: data.name,
           email: data.email,
           message: data.message,
-          consent: data.consent
+          consent: data.consent,
         }),
       });
 
@@ -51,7 +51,7 @@ export default function HeroContactFormNew() {
         setSubmitStatus('error');
       }
     } catch (error) {
-      console.error('Erreur lors de l\'envoi:', error);
+      console.error("Erreur lors de l'envoi:", error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -71,13 +71,11 @@ export default function HeroContactFormNew() {
         <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-white/20 via-[var(--color-primary-300)]/30 to-white/20">
           <div className="h-full w-full rounded-2xl bg-gray-900/60 backdrop-blur-lg" />
         </div>
-        
+
         {/* Content */}
         <div className="relative z-10">
           <div className="mb-6 text-center">
-            <h3 className="text-2xl font-bold text-white drop-shadow-lg">
-              Contact rapide
-            </h3>
+            <h3 className="text-2xl font-bold text-white drop-shadow-lg">Contact rapide</h3>
             <p className="mt-2 text-sm font-medium text-white/80">
               Réponse sous 24h • Devis gratuit
             </p>
@@ -94,7 +92,7 @@ export default function HeroContactFormNew() {
                 left: '-9999px',
                 width: '1px',
                 height: '1px',
-                opacity: '0'
+                opacity: '0',
               }}
               tabIndex="-1"
               autoComplete="off"
@@ -115,7 +113,7 @@ export default function HeroContactFormNew() {
                   placeholder="Votre nom *"
                   {...register('name', {
                     required: 'Le nom est requis',
-                    minLength: { value: 2, message: 'Minimum 2 caractères' }
+                    minLength: { value: 2, message: 'Minimum 2 caractères' },
                   })}
                   className={`w-full rounded-xl border bg-slate-900/90 py-3 pl-10 pr-4 text-white placeholder-white/60 backdrop-blur-sm transition-all focus:bg-slate-800/90 focus:outline-none focus:ring-2 ${
                     errors.name
@@ -157,11 +155,11 @@ export default function HeroContactFormNew() {
                   type="email"
                   placeholder="votre@email.com *"
                   {...register('email', {
-                    required: 'L\'email est requis',
+                    required: "L'email est requis",
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'Email invalide'
-                    }
+                      message: 'Email invalide',
+                    },
                   })}
                   className={`w-full rounded-xl border bg-slate-900/90 py-3 pl-10 pr-4 text-white placeholder-white/60 backdrop-blur-sm transition-all focus:bg-slate-800/90 focus:outline-none focus:ring-2 ${
                     errors.email
@@ -215,7 +213,7 @@ export default function HeroContactFormNew() {
                   id="contact-consent"
                   type="checkbox"
                   {...register('consent', {
-                    required: 'Le consentement est requis'
+                    required: 'Le consentement est requis',
                   })}
                   className={`h-4 w-4 rounded border-2 bg-slate-900/90 text-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-500)]/30 focus:ring-offset-0 ${
                     errors.consent ? 'border-red-400' : 'border-white/30'
@@ -281,11 +279,17 @@ export default function HeroContactFormNew() {
                 ) : (
                   <>
                     Envoyer
-                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" />
+                    <Send
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
+                      aria-hidden="true"
+                    />
                   </>
                 )}
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-600)] to-[var(--color-primary-700)] opacity-0 transition-opacity group-hover:opacity-20" aria-hidden="true" />
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-600)] to-[var(--color-primary-700)] opacity-0 transition-opacity group-hover:opacity-20"
+                aria-hidden="true"
+              />
             </button>
           </form>
 
@@ -300,7 +304,10 @@ export default function HeroContactFormNew() {
                 role="status"
                 aria-live="polite"
               >
-                <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[var(--color-primary-300)]" aria-hidden="true" />
+                <CheckCircle2
+                  className="h-5 w-5 flex-shrink-0 text-[var(--color-primary-300)]"
+                  aria-hidden="true"
+                />
                 <p>Merci ! Je vous réponds sous 24h.</p>
               </motion.div>
             )}

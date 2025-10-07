@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 export default function HeaderDemoPage() {
   return (
@@ -13,9 +13,7 @@ export default function HeaderDemoPage() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl"
         >
-          <h1 className="mb-6 text-hero font-bold text-white">
-            Header Glassmorphism Demo
-          </h1>
+          <h1 className="mb-6 text-hero font-bold text-white">Header Glassmorphism Demo</h1>
           <p className="mb-8 text-body-lg text-white/80">
             Scrollez vers le bas pour voir l'effet glassmorphism s'activer sur le header.
           </p>
@@ -60,9 +58,7 @@ export default function HeaderDemoPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-xl bg-white/5 p-6 backdrop-blur-md">
-              <h3 className="mb-3 text-heading-md font-semibold text-matrix">
-                Performances
-              </h3>
+              <h3 className="mb-3 text-heading-md font-semibold text-matrix">Performances</h3>
               <ul className="space-y-2 text-left text-white/70">
                 <li>✅ Passive event listener</li>
                 <li>✅ GPU acceleration</li>
@@ -71,9 +67,7 @@ export default function HeaderDemoPage() {
               </ul>
             </div>
             <div className="rounded-xl bg-white/5 p-6 backdrop-blur-md">
-              <h3 className="mb-3 text-heading-md font-semibold text-matrix">
-                Accessibilité
-              </h3>
+              <h3 className="mb-3 text-heading-md font-semibold text-matrix">Accessibilité</h3>
               <ul className="space-y-2 text-left text-white/70">
                 <li>✅ Prefers reduced motion</li>
                 <li>✅ Safe area (mobile)</li>
@@ -88,9 +82,7 @@ export default function HeaderDemoPage() {
       {/* Section 4 - Test de contraste */}
       <section className="flex min-h-screen flex-col items-center justify-center bg-white px-6">
         <div className="max-w-4xl text-center">
-          <h2 className="mb-6 text-heading-xl font-bold text-anthracite">
-            Section 4 - Fond Clair
-          </h2>
+          <h2 className="mb-6 text-heading-xl font-bold text-anthracite">Section 4 - Fond Clair</h2>
           <p className="text-body text-anthracite/70">
             Le header glassmorphism fonctionne aussi sur fond clair.
             <br />
@@ -102,14 +94,12 @@ export default function HeaderDemoPage() {
       {/* Section 5 - Retour en haut */}
       <section className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-white to-anthracite px-6">
         <div className="max-w-4xl text-center">
-          <h2 className="mb-6 text-heading-xl font-bold text-white">
-            Section 5 - Fin de la démo
-          </h2>
+          <h2 className="mb-6 text-heading-xl font-bold text-white">Section 5 - Fin de la démo</h2>
           <p className="mb-8 text-body text-white/70">
             Remontez en haut pour voir l'effet glassmorphism se désactiver.
           </p>
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-matrix2 to-matrix px-8 py-4 font-medium text-white shadow-elev-sm transition-all duration-fast hover:-translate-y-1 hover:shadow-elev-md hover:shadow-ring-matrix"
           >
             ↑ Retour en haut

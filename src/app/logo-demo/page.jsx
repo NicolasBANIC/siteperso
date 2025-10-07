@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 export default function LogoDemoPage() {
   return (
@@ -6,31 +6,21 @@ export default function LogoDemoPage() {
       {/* Hero Section */}
       <section className="section-full bg-gradient-to-br from-[var(--color-primary-800)] via-[var(--color-primary-900)] to-[var(--neutral-900)]">
         <div className="container-page text-center">
-          <h1 className="text-hero text-white mb-8">
-            Logo BANDEV Matrix
-          </h1>
+          <h1 className="text-hero text-white mb-8">Logo BANDEV Matrix</h1>
           <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
             Découvrez le nouveau logo avec son esthétique "Matrix" et ses lignes de code animées
           </p>
-          
+
           {/* Logo sur fond sombre */}
           <div className="bg-[var(--neutral-800)] rounded-3xl p-16 mb-8 border border-[var(--color-secondary-300)]/20">
             <p className="text-sm text-white/60 mb-6 uppercase tracking-wider">Sur fond sombre</p>
-            <img 
-              src="/brand/logo.svg" 
-              alt="BANDEV Logo Matrix" 
-              className="h-20 w-auto mx-auto"
-            />
+            <img src="/brand/logo.svg" alt="BANDEV Logo Matrix" className="h-20 w-auto mx-auto" />
           </div>
-          
+
           {/* Logo sur fond clair */}
           <div className="bg-white rounded-3xl p-16 border border-[var(--color-secondary-300)]/20">
             <p className="text-sm text-gray-600 mb-6 uppercase tracking-wider">Sur fond clair</p>
-            <img 
-              src="/brand/logo.svg" 
-              alt="BANDEV Logo Matrix" 
-              className="h-20 w-auto mx-auto"
-            />
+            <img src="/brand/logo.svg" alt="BANDEV Logo Matrix" className="h-20 w-auto mx-auto" />
           </div>
         </div>
       </section>
@@ -39,7 +29,7 @@ export default function LogoDemoPage() {
       <section className="section">
         <div className="container-page">
           <h2 className="section-title mb-16">Caractéristiques du Logo Matrix</h2>
-          
+
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Couleurs */}
             <div className="card">
@@ -76,9 +66,7 @@ export default function LogoDemoPage() {
               <p className="text-[var(--color-muted)] mb-4">
                 Lignes de code animées horizontalement et verticalement
               </p>
-              <div className="text-sm text-[var(--color-muted)]">
-                Durées : 4s à 9s
-              </div>
+              <div className="text-sm text-[var(--color-muted)]">Durées : 4s à 9s</div>
             </div>
 
             {/* Effet Matrix */}
@@ -102,9 +90,7 @@ export default function LogoDemoPage() {
               <p className="text-[var(--color-muted)] mb-4">
                 Halo subtil autour des lettres pour un effet premium
               </p>
-              <div className="text-sm text-[var(--color-muted)]">
-                Gaussian blur + opacity
-              </div>
+              <div className="text-sm text-[var(--color-muted)]">Gaussian blur + opacity</div>
             </div>
 
             {/* Responsive */}
@@ -114,9 +100,7 @@ export default function LogoDemoPage() {
               <p className="text-[var(--color-muted)] mb-4">
                 Adapté à tous les écrans : desktop, tablette, mobile
               </p>
-              <div className="text-sm text-[var(--color-muted)]">
-                h-10 mobile, h-12 desktop
-              </div>
+              <div className="text-sm text-[var(--color-muted)]">h-10 mobile, h-12 desktop</div>
             </div>
           </div>
         </div>
@@ -126,66 +110,42 @@ export default function LogoDemoPage() {
       <section className="section bg-[var(--color-surface)]">
         <div className="container-page">
           <h2 className="section-title mb-16">Différentes Tailles</h2>
-          
+
           <div className="space-y-12">
             {/* Très petit */}
             <div className="text-center">
               <p className="text-sm text-[var(--color-muted)] mb-4">Très petit (h-6)</p>
-              <img 
-                src="/brand/logo.svg" 
-                alt="BANDEV Logo" 
-                className="h-6 w-auto mx-auto"
-              />
+              <img src="/brand/logo.svg" alt="BANDEV Logo" className="h-6 w-auto mx-auto" />
             </div>
 
             {/* Petit */}
             <div className="text-center">
               <p className="text-sm text-[var(--color-muted)] mb-4">Petit (h-8)</p>
-              <img 
-                src="/brand/logo.svg" 
-                alt="BANDEV Logo" 
-                className="h-8 w-auto mx-auto"
-              />
+              <img src="/brand/logo.svg" alt="BANDEV Logo" className="h-8 w-auto mx-auto" />
             </div>
 
             {/* Moyen - Mobile */}
             <div className="text-center">
               <p className="text-sm text-[var(--color-muted)] mb-4">Moyen - Mobile (h-10)</p>
-              <img 
-                src="/brand/logo.svg" 
-                alt="BANDEV Logo" 
-                className="h-10 w-auto mx-auto"
-              />
+              <img src="/brand/logo.svg" alt="BANDEV Logo" className="h-10 w-auto mx-auto" />
             </div>
 
             {/* Grand - Desktop */}
             <div className="text-center">
               <p className="text-sm text-[var(--color-muted)] mb-4">Grand - Desktop (h-12)</p>
-              <img 
-                src="/brand/logo.svg" 
-                alt="BANDEV Logo" 
-                className="h-12 w-auto mx-auto"
-              />
+              <img src="/brand/logo.svg" alt="BANDEV Logo" className="h-12 w-auto mx-auto" />
             </div>
 
             {/* Très grand */}
             <div className="text-center">
               <p className="text-sm text-[var(--color-muted)] mb-4">Très grand (h-16)</p>
-              <img 
-                src="/brand/logo.svg" 
-                alt="BANDEV Logo" 
-                className="h-16 w-auto mx-auto"
-              />
+              <img src="/brand/logo.svg" alt="BANDEV Logo" className="h-16 w-auto mx-auto" />
             </div>
 
             {/* Extra large */}
             <div className="text-center">
               <p className="text-sm text-[var(--color-muted)] mb-4">Extra large (h-24)</p>
-              <img 
-                src="/brand/logo.svg" 
-                alt="BANDEV Logo" 
-                className="h-24 w-auto mx-auto"
-              />
+              <img src="/brand/logo.svg" alt="BANDEV Logo" className="h-24 w-auto mx-auto" />
             </div>
           </div>
         </div>
@@ -195,13 +155,15 @@ export default function LogoDemoPage() {
       <section className="section">
         <div className="container-page">
           <h2 className="section-title mb-16">Intégration Technique</h2>
-          
+
           <div className="max-w-3xl mx-auto space-y-8">
             {/* HTML */}
             <div className="card">
-              <h3 className="text-lg font-semibold mb-4 text-[var(--color-secondary-300)]">HTML / JSX</h3>
+              <h3 className="text-lg font-semibold mb-4 text-[var(--color-secondary-300)]">
+                HTML / JSX
+              </h3>
               <pre className="bg-[var(--neutral-900)] text-[var(--color-primary-300)] p-6 rounded-xl overflow-x-auto text-sm font-mono">
-{`<img 
+                {`<img 
   src="/brand/logo.svg" 
   alt="BANDEV" 
   className="h-10 w-auto md:h-12"
@@ -211,9 +173,11 @@ export default function LogoDemoPage() {
 
             {/* CSS */}
             <div className="card">
-              <h3 className="text-lg font-semibold mb-4 text-[var(--color-secondary-200)]">CSS Classes</h3>
+              <h3 className="text-lg font-semibold mb-4 text-[var(--color-secondary-200)]">
+                CSS Classes
+              </h3>
               <pre className="bg-[var(--neutral-900)] text-[var(--color-primary-300)] p-6 rounded-xl overflow-x-auto text-sm font-mono">
-{`.brand {
+                {`.brand {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -231,9 +195,11 @@ export default function LogoDemoPage() {
 
             {/* Couleurs */}
             <div className="card">
-              <h3 className="text-lg font-semibold mb-4 text-[var(--color-secondary-300)]">Palette de Couleurs</h3>
+              <h3 className="text-lg font-semibold mb-4 text-[var(--color-secondary-300)]">
+                Palette de Couleurs
+              </h3>
               <pre className="bg-[var(--neutral-900)] text-[var(--color-primary-300)] p-6 rounded-xl overflow-x-auto text-sm font-mono">
-{`/* Vert Émeraude Profond (Lettres) */
+                {`/* Vert Émeraude Profond (Lettres) */
 var(--color-primary-800)  /* Début */
 var(--color-primary-900)  /* Milieu */
 var(--neutral-900)  /* Fin */
@@ -250,17 +216,22 @@ var(--color-primary-200)  /* Clair */`}
       {/* CTA */}
       <section className="section bg-gradient-to-br from-[var(--color-primary-800)] via-[var(--color-primary-900)] to-[var(--neutral-900)]">
         <div className="container-page text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Logo Matrix Prêt à l'Emploi
-          </h2>
+          <h2 className="text-4xl font-bold text-white mb-6">Logo Matrix Prêt à l'Emploi</h2>
           <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-            Le logo BANDEV avec son esthétique Matrix est maintenant intégré dans le header et prêt pour la production.
+            Le logo BANDEV avec son esthétique Matrix est maintenant intégré dans le header et prêt
+            pour la production.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a href="/" className="btn-primary bg-[var(--color-secondary-300)] text-[var(--neutral-900)] hover:bg-[var(--color-secondary-200)]">
+            <a
+              href="/"
+              className="btn-primary bg-[var(--color-secondary-300)] text-[var(--neutral-900)] hover:bg-[var(--color-secondary-200)]"
+            >
               Retour à l'accueil
             </a>
-            <a href="/contact" className="btn-secondary border-[var(--color-secondary-300)] text-white hover:bg-[var(--color-secondary-300)]/10">
+            <a
+              href="/contact"
+              className="btn-secondary border-[var(--color-secondary-300)] text-white hover:bg-[var(--color-secondary-300)]/10"
+            >
               Nous contacter
             </a>
           </div>

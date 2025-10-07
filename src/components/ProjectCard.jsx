@@ -6,18 +6,11 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 
-function ProjectCard({ 
-  title, 
-  category, 
-  description, 
-  image, 
-  technologies = [],
-  onClick 
-}) {
+function ProjectCard({ title, category, description, image, technologies = [], onClick }) {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <motion.div 
+    <motion.div
       onClick={onClick}
       className="card group cursor-pointer overflow-hidden"
       whileHover={prefersReducedMotion ? {} : { y: -8 }}
@@ -51,15 +44,13 @@ function ProjectCard({
           {title}
         </h3>
 
-        <p className="text-sm text-muted mb-4 line-clamp-2 leading-relaxed">
-          {description}
-        </p>
+        <p className="text-sm text-muted mb-4 line-clamp-2 leading-relaxed">{description}</p>
 
         {/* Technologies */}
         {technologies.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {technologies.slice(0, 3).map((tech, index) => (
-              <span 
+              <span
                 key={index}
                 className="text-xs font-medium px-2 py-1 bg-accentSecondary/10 text-accentSecondary rounded-md"
               >

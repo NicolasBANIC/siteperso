@@ -10,7 +10,7 @@ import { useReducedMotion } from '@/lib/useReducedMotion';
  * Variantes : service, project, price, testimonial
  * Props : title, description, icon/image, actions, tags
  */
-const Card = memo(function Card({ 
+const Card = memo(function Card({
   variant = 'service',
   title,
   description,
@@ -20,34 +20,40 @@ const Card = memo(function Card({
   tags,
   className = '',
   children,
-  ...props 
+  ...props
 }) {
   const prefersReducedMotion = useReducedMotion();
-  
-  const baseStyles = 'rounded-lg bg-surface border border-border p-8 shadow-sm transition-all duration-300 ease-out motion-reduce:transition-none';
-  
+
+  const baseStyles =
+    'rounded-lg bg-surface border border-border p-8 shadow-sm transition-all duration-300 ease-out motion-reduce:transition-none';
+
   const variantStyles = {
     service: 'hover:shadow-lg hover:shadow-emerald/10 hover:border-emerald/30 hover:-translate-y-1',
     project: 'overflow-hidden hover:shadow-lg hover:shadow-emerald/10 hover:border-emerald/30',
-    price: 'relative hover:shadow-xl hover:shadow-emerald/15 hover:border-emerald/30 hover:scale-[1.02]',
+    price:
+      'relative hover:shadow-xl hover:shadow-emerald/15 hover:border-emerald/30 hover:scale-[1.02]',
     testimonial: 'bg-surface/95 backdrop-blur-sm shadow-sm border-emerald/10',
   };
-  
+
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
-  
-  const animationProps = prefersReducedMotion ? {
-    initial: { opacity: 1 },
-    whileInView: { opacity: 1 },
-  } : {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: 'easeOut' }
-  };
-  
-  const hoverProps = prefersReducedMotion ? {} : {
-    whileHover: variant === 'service' ? { y: -8 } : variant === 'price' ? { scale: 1.02 } : {}
-  };
-  
+
+  const animationProps = prefersReducedMotion
+    ? {
+        initial: { opacity: 1 },
+        whileInView: { opacity: 1 },
+      }
+    : {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        transition: { duration: 0.6, ease: 'easeOut' },
+      };
+
+  const hoverProps = prefersReducedMotion
+    ? {}
+    : {
+        whileHover: variant === 'service' ? { y: -8 } : variant === 'price' ? { scale: 1.02 } : {},
+      };
+
   return (
     <motion.div
       className={combinedClassName}
@@ -68,28 +74,22 @@ const Card = memo(function Card({
           />
         </div>
       )}
-      
+
       {/* Icon pour service variant */}
       {variant === 'service' && icon && (
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald/10 text-emerald text-2xl shadow-sm">
           {icon}
         </div>
       )}
-      
+
       {/* Title */}
       {title && (
-        <h3 className="mb-4 text-heading-md font-heading font-semibold text-foreground">
-          {title}
-        </h3>
+        <h3 className="mb-4 text-heading-md font-heading font-semibold text-foreground">{title}</h3>
       )}
-      
+
       {/* Description */}
-      {description && (
-        <p className="text-base text-muted mb-6 leading-relaxed">
-          {description}
-        </p>
-      )}
-      
+      {description && <p className="text-base text-muted mb-6 leading-relaxed">{description}</p>}
+
       {/* Tags */}
       {tags && tags.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-6">
@@ -103,16 +103,12 @@ const Card = memo(function Card({
           ))}
         </div>
       )}
-      
+
       {/* Children (custom content) */}
       {children}
-      
+
       {/* Actions */}
-      {actions && (
-        <div className="mt-6 flex flex-wrap gap-3">
-          {actions}
-        </div>
-      )}
+      {actions && <div className="mt-6 flex flex-wrap gap-3">{actions}</div>}
     </motion.div>
   );
 });

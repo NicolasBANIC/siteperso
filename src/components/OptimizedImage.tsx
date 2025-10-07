@@ -63,7 +63,8 @@ export default function OptimizedImage({
   // Placeholder blur pour images locales (améliore LCP)
   if (isLocal && !priority) {
     imageProps.placeholder = 'blur';
-    imageProps.blurDataURL = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwZjBmMCIvPjwvc3ZnPg==';
+    imageProps.blurDataURL =
+      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwZjBmMCIvPjwvc3ZnPg==';
   }
 
   // Loading lazy par défaut sauf si priority
@@ -123,7 +124,8 @@ export function ThumbnailImage({ src, alt, className = '', ...props }: Thumbnail
 /**
  * Variante pour avatars
  */
-interface AvatarImageProps extends Omit<OptimizedImageProps, 'width' | 'height' | 'quality' | 'sizes'> {
+interface AvatarImageProps
+  extends Omit<OptimizedImageProps, 'width' | 'height' | 'quality' | 'sizes'> {
   src: string;
   alt: string;
   size?: number;

@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Home, ArrowLeft, Search } from "lucide-react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { Home, ArrowLeft, Search } from 'lucide-react';
 
 export const metadata = {
-  title: "Page non trouvée — Nicolas Banic",
+  title: 'Page non trouvée — Nicolas Banic',
   description: "La page que vous recherchez n'existe pas ou a été déplacée.",
 };
 
@@ -13,7 +13,10 @@ export default function NotFound() {
       <div className="text-center max-w-2xl mx-auto space-y-8">
         {/* Illustration 404 */}
         <div className="relative mx-auto w-full max-w-md">
-          <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-20 blur-2xl" aria-hidden="true" />
+          <div
+            className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] opacity-20 blur-2xl"
+            aria-hidden="true"
+          />
           <div className="relative">
             <Image
               src="/images/404-illustration.svg"
@@ -29,15 +32,13 @@ export default function NotFound() {
 
         {/* Texte */}
         <div className="space-y-4">
-          <h1 className="text-hero font-bold text-[var(--color-accent)] tracking-tighter">
-            404
-          </h1>
+          <h1 className="text-hero font-bold text-[var(--color-accent)] tracking-tighter">404</h1>
           <h2 className="text-heading-xl font-bold text-[var(--color-foreground)]">
             Page non trouvée
           </h2>
           <p className="text-body-lg text-[var(--color-muted)] max-w-md mx-auto leading-relaxed">
-            Oups ! La page que vous recherchez n'existe pas ou a été déplacée. 
-            Pas de panique, vous pouvez retourner à l'accueil ou explorer le site.
+            Oups ! La page que vous recherchez n'existe pas ou a été déplacée. Pas de panique, vous
+            pouvez retourner à l'accueil ou explorer le site.
           </p>
         </div>
 
@@ -55,33 +56,37 @@ export default function NotFound() {
 
         {/* Liens rapides */}
         <div className="pt-8 border-t border-[var(--color-border)]">
-          <p className="text-body-sm text-[var(--color-muted)] mb-4 font-medium">
-            Liens rapides :
-          </p>
+          <p className="text-body-sm text-[var(--color-muted)] mb-4 font-medium">Liens rapides :</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link 
-              href="/services" 
+            <Link
+              href="/services"
               className="text-ui text-[var(--color-accent)] hover:underline font-medium"
             >
               Services
             </Link>
-            <span className="text-[var(--color-border)]" aria-hidden="true">•</span>
-            <Link 
-              href="/apropos" 
+            <span className="text-[var(--color-border)]" aria-hidden="true">
+              •
+            </span>
+            <Link
+              href="/apropos"
               className="text-ui text-[var(--color-accent)] hover:underline font-medium"
             >
               À propos
             </Link>
-            <span className="text-[var(--color-border)]" aria-hidden="true">•</span>
-            <Link 
-              href="/contact" 
+            <span className="text-[var(--color-border)]" aria-hidden="true">
+              •
+            </span>
+            <Link
+              href="/contact"
               className="text-ui text-[var(--color-accent)] hover:underline font-medium"
             >
               Contact
             </Link>
-            <span className="text-[var(--color-border)]" aria-hidden="true">•</span>
-            <Link 
-              href="/devis" 
+            <span className="text-[var(--color-border)]" aria-hidden="true">
+              •
+            </span>
+            <Link
+              href="/devis"
               className="text-ui text-[var(--color-accent)] hover:underline font-medium"
             >
               Devis gratuit

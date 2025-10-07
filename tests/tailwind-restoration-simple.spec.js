@@ -12,12 +12,12 @@ test.describe('Tailwind CSS Restoration Verification - Core Features', () => {
     // Check header is visible and styled
     const header = page.locator('header');
     await expect(header).toBeVisible();
-    
+
     // Check hero heading exists with gradient text
     const heroHeading = page.locator('h1').first();
     await expect(heroHeading).toBeVisible();
     await expect(heroHeading).toContainText('présence digitale');
-    
+
     // Check main content is visible
     const mainContent = page.locator('main');
     await expect(mainContent).toBeVisible();
@@ -48,7 +48,7 @@ test.describe('Tailwind CSS Restoration Verification - Core Features', () => {
     await expect(page.locator('text=Site Vitrine Standard')).toBeVisible();
     await expect(page.locator('text=Site Vitrine Premium')).toBeVisible();
     await expect(page.locator('text=E-commerce')).toBeVisible();
-    
+
     // Check pricing cards have Euro symbols
     const pricingCards = page.locator('article').filter({ hasText: /€/ });
     expect(await pricingCards.count()).toBeGreaterThan(0);
@@ -58,7 +58,7 @@ test.describe('Tailwind CSS Restoration Verification - Core Features', () => {
     // Find form inputs
     const nameInput = page.locator('textbox').filter({ hasText: 'nom' }).first();
     await expect(nameInput).toBeVisible();
-    
+
     // Test form interaction
     await nameInput.fill('Test User');
     const inputValue = await nameInput.inputValue();
@@ -68,7 +68,7 @@ test.describe('Tailwind CSS Restoration Verification - Core Features', () => {
   test('should display footer with proper links', async ({ page }) => {
     const footer = page.locator('footer');
     await expect(footer).toBeVisible();
-    
+
     // Check footer has navigation links
     await expect(page.locator('footer').locator('text=Navigation')).toBeVisible();
     await expect(page.locator('footer').locator('text=Contact')).toBeVisible();
@@ -76,16 +76,17 @@ test.describe('Tailwind CSS Restoration Verification - Core Features', () => {
 
   test('should have no console errors', async ({ page }) => {
     const jsErrors = [];
-    page.on('pageerror', error => jsErrors.push(error));
-    
+    page.on('pageerror', (error) => jsErrors.push(error));
+
     await page.reload();
     await page.waitForLoadState('domcontentloaded', { timeout: 10000 });
-    
+
     // Filter out non-critical errors
-    const criticalErrors = jsErrors.filter(error => 
-      !error.message.includes('Warning') && 
-      !error.message.includes('React DevTools') &&
-      !error.message.includes('Download the React DevTools')
+    const criticalErrors = jsErrors.filter(
+      (error) =>
+        !error.message.includes('Warning') &&
+        !error.message.includes('React DevTools') &&
+        !error.message.includes('Download the React DevTools')
     );
     expect(criticalErrors).toHaveLength(0);
   });

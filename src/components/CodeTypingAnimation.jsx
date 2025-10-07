@@ -1,27 +1,27 @@
-"use client";
+'use client';
 
 import { useEffect, useState, useRef } from 'react';
 
 const codeSnippets = [
   {
-    language: "JavaScript",
+    language: 'JavaScript',
     code: `// Next.js API Route
 export async function GET(request) {
   const data = await fetchData();
   return Response.json(data);
-}`
+}`,
   },
   {
-    language: "React",
+    language: 'React',
     code: `// Modern React Component
 export default function App() {
   const [state, setState] = useState(0);
   
   return <div>{state}</div>;
-}`
+}`,
   },
   {
-    language: "TypeScript",
+    language: 'TypeScript',
     code: `// Type-safe function
 interface User {
   name: string;
@@ -30,14 +30,14 @@ interface User {
 
 const getUser = (): User => {
   return { name: "John", email: "john@example.com" };
-}`
-  }
+}`,
+  },
 ];
 
-export default function CodeTypingAnimation({ 
+export default function CodeTypingAnimation({
   snippetIndex = 0,
   typingSpeed = 50,
-  className = "" 
+  className = '',
 }) {
   const [displayedCode, setDisplayedCode] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -77,17 +77,12 @@ export default function CodeTypingAnimation({
           <div className="h-3 w-3 rounded-full bg-yellow-500" />
           <div className="h-3 w-3 rounded-full bg-[var(--color-primary-500)]" />
         </div>
-        <div className="ml-4 text-xs font-medium text-slate-400">
-          {snippet.language}
-        </div>
+        <div className="ml-4 text-xs font-medium text-slate-400">{snippet.language}</div>
       </div>
 
       {/* Code content */}
       <pre className="overflow-x-auto">
-        <code 
-          ref={codeRef}
-          className="block font-mono text-sm leading-relaxed text-slate-300"
-        >
+        <code ref={codeRef} className="block font-mono text-sm leading-relaxed text-slate-300">
           {displayedCode}
           {isTyping && (
             <span className="inline-block h-5 w-2 animate-pulse bg-[var(--color-accent-matrix)]" />

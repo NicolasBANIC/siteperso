@@ -11,7 +11,7 @@ export default function FormulaireDevis() {
     typeProjet: '',
     budget: '',
     delai: '',
-    message: ''
+    message: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -23,7 +23,7 @@ export default function FormulaireDevis() {
     'Application web',
     'Refonte de site',
     'Maintenance',
-    'Autre'
+    'Autre',
   ];
 
   const budgets = [
@@ -31,15 +31,15 @@ export default function FormulaireDevis() {
     '1 000€ - 3 000€',
     '3 000€ - 5 000€',
     '5 000€ - 10 000€',
-    'Plus de 10 000€'
+    'Plus de 10 000€',
   ];
 
   const delais = [
-    'Urgent (moins d\'1 mois)',
+    "Urgent (moins d'1 mois)",
     '1 à 3 mois',
     '3 à 6 mois',
     'Plus de 6 mois',
-    'Flexible'
+    'Flexible',
   ];
 
   const validateForm = () => {
@@ -50,7 +50,7 @@ export default function FormulaireDevis() {
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'L\'email est requis';
+      newErrors.email = "L'email est requis";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Email invalide';
     }
@@ -81,16 +81,16 @@ export default function FormulaireDevis() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: '' }));
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -99,8 +99,8 @@ export default function FormulaireDevis() {
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
       // TODO: Replace with actual API endpoint
       // const response = await fetch('/api/devis', {
       //   method: 'POST',
@@ -116,7 +116,7 @@ export default function FormulaireDevis() {
         typeProjet: '',
         budget: '',
         delai: '',
-        message: ''
+        message: '',
       });
 
       // Reset success message after 5 seconds
@@ -149,9 +149,7 @@ export default function FormulaireDevis() {
         <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-semibold text-red-900">
-              Une erreur est survenue
-            </p>
+            <p className="font-semibold text-red-900">Une erreur est survenue</p>
             <p className="text-sm text-red-700 mt-1">
               Veuillez réessayer ou me contacter directement.
             </p>
@@ -171,15 +169,13 @@ export default function FormulaireDevis() {
           value={formData.nom}
           onChange={handleChange}
           className={`w-full px-4 py-3 rounded-lg border ${
-            errors.nom 
-              ? 'border-red-500 focus:ring-red-500' 
+            errors.nom
+              ? 'border-red-500 focus:ring-red-500'
               : 'border-gray-300 focus:ring-[var(--color-accent)]'
           } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
           placeholder="Jean Dupont"
         />
-        {errors.nom && (
-          <p className="mt-1 text-sm text-red-600">{errors.nom}</p>
-        )}
+        {errors.nom && <p className="mt-1 text-sm text-red-600">{errors.nom}</p>}
       </div>
 
       {/* Email & Téléphone */}
@@ -195,15 +191,13 @@ export default function FormulaireDevis() {
             value={formData.email}
             onChange={handleChange}
             className={`w-full px-4 py-3 rounded-lg border ${
-              errors.email 
-                ? 'border-red-500 focus:ring-red-500' 
+              errors.email
+                ? 'border-red-500 focus:ring-red-500'
                 : 'border-gray-300 focus:ring-[var(--color-accent)]'
             } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
             placeholder="jean.dupont@email.com"
           />
-          {errors.email && (
-            <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-          )}
+          {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
         </div>
 
         <div>
@@ -217,15 +211,13 @@ export default function FormulaireDevis() {
             value={formData.telephone}
             onChange={handleChange}
             className={`w-full px-4 py-3 rounded-lg border ${
-              errors.telephone 
-                ? 'border-red-500 focus:ring-red-500' 
+              errors.telephone
+                ? 'border-red-500 focus:ring-red-500'
                 : 'border-gray-300 focus:ring-[var(--color-accent)]'
             } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
             placeholder="06 12 34 56 78"
           />
-          {errors.telephone && (
-            <p className="mt-1 text-sm text-red-600">{errors.telephone}</p>
-          )}
+          {errors.telephone && <p className="mt-1 text-sm text-red-600">{errors.telephone}</p>}
         </div>
       </div>
 
@@ -240,19 +232,19 @@ export default function FormulaireDevis() {
           value={formData.typeProjet}
           onChange={handleChange}
           className={`w-full px-4 py-3 rounded-lg border ${
-            errors.typeProjet 
-              ? 'border-red-500 focus:ring-red-500' 
+            errors.typeProjet
+              ? 'border-red-500 focus:ring-red-500'
               : 'border-gray-300 focus:ring-[var(--color-accent)]'
           } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
         >
           <option value="">Sélectionnez un type</option>
-          {typesProjets.map(type => (
-            <option key={type} value={type}>{type}</option>
+          {typesProjets.map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
           ))}
         </select>
-        {errors.typeProjet && (
-          <p className="mt-1 text-sm text-red-600">{errors.typeProjet}</p>
-        )}
+        {errors.typeProjet && <p className="mt-1 text-sm text-red-600">{errors.typeProjet}</p>}
       </div>
 
       {/* Budget & Délai */}
@@ -267,19 +259,19 @@ export default function FormulaireDevis() {
             value={formData.budget}
             onChange={handleChange}
             className={`w-full px-4 py-3 rounded-lg border ${
-              errors.budget 
-                ? 'border-red-500 focus:ring-red-500' 
+              errors.budget
+                ? 'border-red-500 focus:ring-red-500'
                 : 'border-gray-300 focus:ring-[var(--color-accent)]'
             } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all`}
           >
             <option value="">Sélectionnez un budget</option>
-            {budgets.map(budget => (
-              <option key={budget} value={budget}>{budget}</option>
+            {budgets.map((budget) => (
+              <option key={budget} value={budget}>
+                {budget}
+              </option>
             ))}
           </select>
-          {errors.budget && (
-            <p className="mt-1 text-sm text-red-600">{errors.budget}</p>
-          )}
+          {errors.budget && <p className="mt-1 text-sm text-red-600">{errors.budget}</p>}
         </div>
 
         <div>
@@ -294,8 +286,10 @@ export default function FormulaireDevis() {
             className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent transition-all"
           >
             <option value="">Sélectionnez un délai</option>
-            {delais.map(delai => (
-              <option key={delai} value={delai}>{delai}</option>
+            {delais.map((delai) => (
+              <option key={delai} value={delai}>
+                {delai}
+              </option>
             ))}
           </select>
         </div>
@@ -313,18 +307,14 @@ export default function FormulaireDevis() {
           onChange={handleChange}
           rows={6}
           className={`w-full px-4 py-3 rounded-lg border ${
-            errors.message 
-              ? 'border-red-500 focus:ring-red-500' 
+            errors.message
+              ? 'border-red-500 focus:ring-red-500'
               : 'border-gray-300 focus:ring-[var(--color-accent)]'
           } bg-white text-gray-900 focus:ring-2 focus:border-transparent transition-all resize-none`}
           placeholder="Décrivez votre projet, vos besoins, vos objectifs..."
         />
-        {errors.message && (
-          <p className="mt-1 text-sm text-red-600">{errors.message}</p>
-        )}
-        <p className="mt-1 text-sm text-gray-500">
-          Minimum 20 caractères
-        </p>
+        {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
+        <p className="mt-1 text-sm text-gray-500">Minimum 20 caractères</p>
       </div>
 
       {/* Submit Button */}

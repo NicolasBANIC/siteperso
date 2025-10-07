@@ -4,13 +4,13 @@ import { forwardRef } from 'react';
 
 /**
  * Composant Input - Charte Matrix (Anthracite, Blanc, Vert Matrix)
- * 
+ *
  * Respecte WCAG AA+ avec :
  * - Contraste ≥ 4.5:1
  * - Focus visible avec anneau vert Matrix
  * - États hover/focus/error accessibles
  * - Labels associés correctement
- * 
+ *
  * @param {Object} props
  * @param {'text' | 'email' | 'tel' | 'password' | 'number' | 'date' | 'textarea'} props.type
  * @param {string} props.label - Label du champ
@@ -18,15 +18,7 @@ import { forwardRef } from 'react';
  * @param {boolean} props.required - Champ requis
  */
 export const Input = forwardRef(function Input(
-  {
-    type = 'text',
-    label,
-    error,
-    required = false,
-    className = '',
-    id,
-    ...props
-  },
+  { type = 'text', label, error, required = false, className = '', id, ...props },
   ref
 ) {
   const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
@@ -52,10 +44,7 @@ export const Input = forwardRef(function Input(
   return (
     <div className="w-full">
       {label && (
-        <label
-          htmlFor={inputId}
-          className="block mb-2 text-sm font-medium text-foreground"
-        >
+        <label htmlFor={inputId} className="block mb-2 text-sm font-medium text-foreground">
           {label}
           {required && (
             <span className="ml-1 text-error" aria-label="requis">
@@ -78,11 +67,7 @@ export const Input = forwardRef(function Input(
       />
 
       {error && (
-        <p
-          id={errorId}
-          className="mt-2 text-sm text-error"
-          role="alert"
-        >
+        <p id={errorId} className="mt-2 text-sm text-error" role="alert">
           {error}
         </p>
       )}
@@ -94,15 +79,7 @@ export const Input = forwardRef(function Input(
  * Composant Select - Champ de sélection avec la charte Matrix
  */
 export const Select = forwardRef(function Select(
-  {
-    label,
-    error,
-    required = false,
-    className = '',
-    id,
-    children,
-    ...props
-  },
+  { label, error, required = false, className = '', id, children, ...props },
   ref
 ) {
   const selectId = id || `select-${Math.random().toString(36).substr(2, 9)}`;
@@ -126,10 +103,7 @@ export const Select = forwardRef(function Select(
   return (
     <div className="w-full">
       {label && (
-        <label
-          htmlFor={selectId}
-          className="block mb-2 text-sm font-medium text-foreground"
-        >
+        <label htmlFor={selectId} className="block mb-2 text-sm font-medium text-foreground">
           {label}
           {required && (
             <span className="ml-1 text-error" aria-label="requis">
@@ -152,11 +126,7 @@ export const Select = forwardRef(function Select(
       </select>
 
       {error && (
-        <p
-          id={errorId}
-          className="mt-2 text-sm text-error"
-          role="alert"
-        >
+        <p id={errorId} className="mt-2 text-sm text-error" role="alert">
           {error}
         </p>
       )}

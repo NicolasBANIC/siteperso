@@ -1,37 +1,37 @@
 import { memo } from 'react';
-import Link from "next/link";
-import { Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
-import { LogoFooter } from "./Logo";
+import Link from 'next/link';
+import { Linkedin, Github, Mail, Phone, MapPin } from 'lucide-react';
+import { LogoFooter } from './Logo';
 
 const navigationLinks = [
-  { href: "/", label: "Accueil" },
-  { href: "/services", label: "Services" },
-  { href: "/processus", label: "Processus" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/tarifs", label: "Tarifs" },
-  { href: "/temoignages", label: "Témoignages" },
-  { href: "/contact", label: "Contact" },
+  { href: '/', label: 'Accueil' },
+  { href: '/services', label: 'Services' },
+  { href: '/processus', label: 'Processus' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/tarifs', label: 'Tarifs' },
+  { href: '/temoignages', label: 'Témoignages' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const legalLinks = [
-  { href: "/mentions-legales", label: "Mentions légales" },
-  { href: "/politique-confidentialite", label: "Politique de confidentialité" },
+  { href: '/mentions-legales', label: 'Mentions légales' },
+  { href: '/politique-confidentialite', label: 'Politique de confidentialité' },
 ];
 
 const socialLinks = [
   {
-    href: "https://www.linkedin.com/in/nicolasbanic",
-    label: "LinkedIn",
+    href: 'https://www.linkedin.com/in/nicolasbanic',
+    label: 'LinkedIn',
     icon: Linkedin,
   },
   {
-    href: "https://github.com/NicolasBANIC",
-    label: "GitHub",
+    href: 'https://github.com/NicolasBANIC',
+    label: 'GitHub',
     icon: Github,
   },
   {
-    href: "mailto:contact@bandev.fr",
-    label: "Email",
+    href: 'mailto:contact@bandev.fr',
+    label: 'Email',
     icon: Mail,
   },
 ];
@@ -39,14 +39,14 @@ const socialLinks = [
 const contactInfo = [
   {
     icon: Mail,
-    label: "Email",
-    value: "contact@bandev.fr",
-    href: "mailto:contact@bandev.fr",
+    label: 'Email',
+    value: 'contact@bandev.fr',
+    href: 'mailto:contact@bandev.fr',
   },
   {
     icon: MapPin,
-    label: "Localisation",
-    value: "France",
+    label: 'Localisation',
+    value: 'France',
     href: null,
   },
 ];
@@ -65,13 +65,12 @@ function Footer() {
               <LogoFooter />
             </div>
             <p className="leading-relaxed text-white/80">
-              Développeur web freelance spécialisé dans la création de sites web modernes, ultra-performants et sur mesure.
+              Développeur web freelance spécialisé dans la création de sites web modernes,
+              ultra-performants et sur mesure.
             </p>
-            <p className="text-xs text-white/60">
-              SIRET : 841 375 652 00028
-            </p>
-            <Link 
-              href="/devis" 
+            <p className="text-xs text-white/60">SIRET : 841 375 652 00028</p>
+            <Link
+              href="/devis"
               className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] px-6 py-3 text-sm font-medium text-white shadow-[var(--shadow-sm)] transition-all duration-300 hover:shadow-[var(--shadow-emerald)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
             >
               Demander un devis
@@ -169,9 +168,7 @@ function Footer() {
                 >
                   {link.label}
                 </Link>
-                {index < legalLinks.length - 1 && (
-                  <span className="text-white/30">•</span>
-                )}
+                {index < legalLinks.length - 1 && <span className="text-white/30">•</span>}
               </span>
             ))}
           </div>
@@ -183,7 +180,7 @@ function Footer() {
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-gutter py-4 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {currentYear} BANDEV - Nicolas Banic. Tous droits réservés.</p>
           <p>
-            Développé avec <span className="text-matrix font-medium">Next.js 15</span> &{" "}
+            Développé avec <span className="text-matrix font-medium">Next.js 15</span> &{' '}
             <span className="text-matrix font-medium">React 19</span>
           </p>
         </div>

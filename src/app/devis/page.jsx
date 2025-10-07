@@ -1,39 +1,40 @@
-﻿import FormulaireDevis from "@/components/FormulaireDevis";
-import Container from "@/components/Container";
-import Section from "@/components/Section";
-import ScrollReveal from "@/components/ScrollReveal";
-import HeroSection from "@/components/HeroSection";
-import { CheckCircle, Clock, Shield, Zap } from "lucide-react";
+﻿import FormulaireDevis from '@/components/FormulaireDevis';
+import Container from '@/components/Container';
+import Section from '@/components/Section';
+import ScrollReveal from '@/components/ScrollReveal';
+import HeroSection from '@/components/HeroSection';
+import { CheckCircle, Clock, Shield, Zap } from 'lucide-react';
 
 const avantages = [
   {
     icon: Clock,
-    title: "Réponse rapide",
-    description: "Retour sous 24h ouvrées avec un premier devis détaillé"
+    title: 'Réponse rapide',
+    description: 'Retour sous 24h ouvrées avec un premier devis détaillé',
   },
   {
     icon: Shield,
-    title: "Sans engagement",
-    description: "Devis gratuit et sans obligation d'achat"
+    title: 'Sans engagement',
+    description: "Devis gratuit et sans obligation d'achat",
   },
   {
     icon: Zap,
-    title: "Sur mesure",
-    description: "Solution adaptée à vos besoins et votre budget"
+    title: 'Sur mesure',
+    description: 'Solution adaptée à vos besoins et votre budget',
   },
   {
     icon: CheckCircle,
-    title: "Transparent",
-    description: "Tarifs clairs, pas de frais cachés"
-  }
+    title: 'Transparent',
+    description: 'Tarifs clairs, pas de frais cachés',
+  },
 ];
 
 export const metadata = {
-  title: "Demande de devis gratuit — Nicolas Banic | Développeur Web Freelance",
-  description: "Demandez un devis gratuit et personnalisé pour la création ou la refonte de votre site web, e-commerce ou application métier. Réponse sous 24h.",
+  title: 'Demande de devis gratuit — Nicolas Banic | Développeur Web Freelance',
+  description:
+    'Demandez un devis gratuit et personnalisé pour la création ou la refonte de votre site web, e-commerce ou application métier. Réponse sous 24h.',
   openGraph: {
-    title: "Demande de devis — Nicolas Banic",
-    description: "Devis gratuit pour votre projet web. Réponse sous 24h ouvrées.",
+    title: 'Demande de devis — Nicolas Banic',
+    description: 'Devis gratuit pour votre projet web. Réponse sous 24h ouvrées.',
   },
 };
 
@@ -45,9 +46,9 @@ export default function DevisPage() {
         title='Votre projet mérite une attention <span className="k">sur mesure</span>'
         subtitle="Renseignez quelques informations : je reviens vers vous sous 24 heures ouvrées avec un premier retour détaillé et un devis personnalisé."
         badge={{
-          icon: "checkCircle",
-          text: "Devis gratuit et sans engagement",
-          variant: "success"
+          icon: 'checkCircle',
+          text: 'Devis gratuit et sans engagement',
+          variant: 'success',
         }}
         backgroundImage="/images/tarifs-hero.png"
       />
@@ -60,19 +61,15 @@ export default function DevisPage() {
               {avantages.map((avantage, index) => {
                 const Icon = avantage.icon;
                 return (
-                  <div 
+                  <div
                     key={index}
                     className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-200 hover:border-[var(--color-accent)] hover:shadow-matrix transition-all duration-300 group"
                   >
                     <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[var(--color-anthracite)]/20 to-[var(--color-accent)]/10 text-[var(--color-accent)] rounded-lg mb-4 group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:text-white group-hover:shadow-matrix transition-all duration-300">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">
-                      {avantage.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      {avantage.description}
-                    </p>
+                    <h3 className="font-semibold text-gray-900 mb-2">{avantage.title}</h3>
+                    <p className="text-sm text-gray-600">{avantage.description}</p>
                   </div>
                 );
               })}
@@ -119,32 +116,31 @@ export default function DevisPage() {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                step: "01",
-                title: "Analyse de votre demande",
-                description: "J'étudie votre projet en détail et je prépare une proposition adaptée à vos besoins et votre budget."
+                step: '01',
+                title: 'Analyse de votre demande',
+                description:
+                  "J'étudie votre projet en détail et je prépare une proposition adaptée à vos besoins et votre budget.",
               },
               {
-                step: "02",
-                title: "Devis personnalisé",
-                description: "Vous recevez un devis détaillé sous 24h avec les fonctionnalités, le planning et les tarifs."
+                step: '02',
+                title: 'Devis personnalisé',
+                description:
+                  'Vous recevez un devis détaillé sous 24h avec les fonctionnalités, le planning et les tarifs.',
               },
               {
-                step: "03",
-                title: "Échange et validation",
-                description: "Nous discutons ensemble pour affiner le projet. Une fois validé, je démarre le développement."
-              }
+                step: '03',
+                title: 'Échange et validation',
+                description:
+                  'Nous discutons ensemble pour affiner le projet. Une fois validé, je démarre le développement.',
+              },
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <div className="text-center group">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[var(--color-anthracite)] to-[var(--color-accent)] text-white rounded-full text-2xl font-bold mb-4 shadow-matrix group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:shadow-matrix-lg transition-all duration-300">
                     {item.step}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600">
-                    {item.description}
-                  </p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
                 </div>
               </ScrollReveal>
             ))}

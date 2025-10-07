@@ -14,19 +14,30 @@ const config = {
         mono: ['var(--font-fira-code)', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
       },
       colors: {
-        // Harmonized palette based on BANDEV logo/header (emerald → turquoise)
+        // ÉTAPE 5 : Mapping Tailwind avec nouvelles variables CSS sémantiques
         transparent: 'transparent',
         current: 'currentColor',
 
+        // Tokens sémantiques principaux (ÉTAPE 2 implémentée)
+        background: 'var(--background)',         // #C5C6C6 - Fond principal requis
+        foreground: 'var(--foreground)',         // #111827 - Texte principal
+        muted: 'var(--muted)',                   // #D3D5D5 - Surfaces atténuées  
+        'muted-foreground': 'var(--muted-foreground)', // #334155 - Texte secondaire
+        card: 'var(--card)',                     // #DCDDDE - Surface carte
+        border: 'var(--border)',                 // #94A3B8 - Bordures
+
+        // Primary (emerald) - COULEUR DE MARQUE PRÉSERVÉE
         primary: {
+          DEFAULT: 'var(--primary)',             // #10B981 - Vert émeraude exact
+          foreground: 'var(--primary-foreground)', // #0A0F0F - Texte sur accent
           50: '#ECFDF5',
           100: '#D1FAE5',
           200: '#A7F3D0',
           300: '#6EE7B7',
           400: '#34D399',
-          500: '#10B981',
-          600: '#059669',
-          700: '#047857',
+          500: '#10B981',                        // Base conservée
+          600: '#059669',                        // Hover (légèrement plus sombre)
+          700: '#047857',                        // Active
           800: '#065F46',
           900: '#064E3B'
         },
@@ -57,6 +68,7 @@ const config = {
           900: '#172554'
         },
 
+        // Neutral scale harmonisée avec nouveau fond
         neutral: {
           50: '#F8FAFC',
           100: '#F1F5F9',
@@ -70,15 +82,8 @@ const config = {
           900: '#0F172A'
         },
 
-        // Semantic tokens
-        background: '#F1F5F9',
-        surface: '#FFFFFF',
-        surfaceHover: '#F8FAFC',
-        foreground: '#0F172A',
-        muted: '#64748B',
-
         // Legacy compatibility
-        emerald: '#10B981',
+        emerald: '#10B981',                      // Préservé pour compatibilité
         turquoise: '#06B6D4',
         teal: '#14B8A6',
 

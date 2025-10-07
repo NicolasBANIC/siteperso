@@ -8,32 +8,31 @@ const MAX_REQUESTS = 3; // Max 3 requests per minute per IP
 function checkRateLimit(ip) {
   const now = Date.now();
   const userRequests = rateLimitMap.get(ip) || [];
-  
+
   // Filter out old requests
-  const recentRequests = userRequests.filter(time => now - time < RATE_LIMIT_WINDOW);
-  
+  const recentRequests = userRequests.filter((time) => now - time < RATE_LIMIT_WINDOW);
+
   if (recentRequests.length >= MAX_REQUESTS) {
     return false;
   }
-  
+
   recentRequests.push(now);
   rateLimitMap.set(ip, recentRequests);
-  
+
   // Cleanup old entries periodically
   if (rateLimitMap.size > 1000) {
     rateLimitMap.clear();
   }
-  
+
   return true;
 }
 
 export async function POST(request) {
   try {
     // Get IP for rate limiting
-    const ip = request.headers.get('x-forwarded-for') || 
-               request.headers.get('x-real-ip') || 
-               'unknown';
-    
+    const ip =
+      request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
+
     // Rate limiting check
     if (!checkRateLimit(ip)) {
       return NextResponse.json(
@@ -74,10 +73,7 @@ export async function POST(request) {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Email invalide' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Email invalide' }, { status: 400 });
     }
 
     // Subject validation
@@ -97,19 +93,19 @@ export async function POST(request) {
     }
 
     // Log the contact request
-    console.log('Nouveau message de contact:', { 
-      nom, 
-      email, 
-      sujet, 
+    console.log('Nouveau message de contact:', {
+      nom,
+      email,
+      sujet,
       budget: budget || 'Non spécifié',
       ip,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
 
     // TODO: Intégrer avec votre service email
     // Pour l'instant, on simule un envoi r��ussi
     // Décommentez le code ci-dessous et configurez vos variables d'environnement
-    
+
     /*
     // Installation requise: npm install nodemailer
     const nodemailer = require('nodemailer');
@@ -219,10 +215,7 @@ Reçu le ${new Date().toLocaleString('fr-FR')}
       { status: 200 }
     );
   } catch (error) {
-    console.error('Erreur lors de l\'envoi du message:', error);
-    return NextResponse.json(
-      { error: 'Erreur lors de l\'envoi du message' },
-      { status: 500 }
-    );
+    console.error("Erreur lors de l'envoi du message:", error);
+    return NextResponse.json({ error: "Erreur lors de l'envoi du message" }, { status: 500 });
   }
 }

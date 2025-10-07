@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import HeroSection from "@/components/HeroSection";
-import CTAButton from "@/components/CTAButton";
-import ProjectCard from "@/components/portfolio/ProjectCard";
-import { getAllProjects, getCategories } from "@/data/projectsData";
-import { motion } from "framer-motion";
+import { useState } from 'react';
+import HeroSection from '@/components/HeroSection';
+import CTAButton from '@/components/CTAButton';
+import ProjectCard from '@/components/portfolio/ProjectCard';
+import { getAllProjects, getCategories } from '@/data/projectsData';
+import { motion } from 'framer-motion';
 
 export default function PortfolioPage() {
   const projects = getAllProjects();
   const categories = getCategories();
-  const [selectedCategory, setSelectedCategory] = useState("Tous");
+  const [selectedCategory, setSelectedCategory] = useState('Tous');
 
   const filteredProjects =
-    selectedCategory === "Tous"
+    selectedCategory === 'Tous'
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
 
@@ -42,13 +42,10 @@ export default function PortfolioPage() {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <h2 className="heading-secondary mb-4">
-            Une sélection de projets variés
-          </h2>
+          <h2 className="heading-secondary mb-4">Une sélection de projets variés</h2>
           <p className="body-large">
-            Du site vitrine au e-commerce en passant par les applications web,
-            découvrez comment je transforme des idées en solutions digitales
-            performantes et esthétiques.
+            Du site vitrine au e-commerce en passant par les applications web, découvrez comment je
+            transforme des idées en solutions digitales performantes et esthétiques.
           </p>
         </motion.div>
 
@@ -66,8 +63,8 @@ export default function PortfolioPage() {
               onClick={() => setSelectedCategory(category)}
               className={`rounded-full px-6 py-2.5 text-sm font-medium transition-all ${
                 selectedCategory === category
-                  ? "bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] text-white shadow-matrix-lg"
-                  : "border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:shadow-matrix"
+                  ? 'bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-secondary)] text-white shadow-matrix-lg'
+                  : 'border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:shadow-matrix'
               }`}
             >
               {category}
@@ -99,12 +96,9 @@ export default function PortfolioPage() {
           className="mt-20 text-center"
         >
           <div className="card mx-auto max-w-2xl">
-            <h2 className="heading-secondary mb-4">
-              Prêt à lancer votre projet ?
-            </h2>
+            <h2 className="heading-secondary mb-4">Prêt à lancer votre projet ?</h2>
             <p className="body-large mb-6">
-              Discutons de vos besoins et créons ensemble une solution digitale
-              qui vous ressemble.
+              Discutons de vos besoins et créons ensemble une solution digitale qui vous ressemble.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <CTAButton href="/devis">Demander un devis gratuit</CTAButton>

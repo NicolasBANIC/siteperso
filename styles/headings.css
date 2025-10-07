@@ -7,33 +7,35 @@
   /* Design Tokens - Variables CSS pour les titres */
   :root {
     /* Police et typographie */
-    --heading-family: 'Inter', 'Sora', 'Manrope', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    --heading-family:
+      'Inter', 'Sora', 'Manrope', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+      Helvetica, Arial;
     --heading-weight-reg: 700;
     --heading-weight-bold: 800;
     --ls-tight: -0.02em;
     --lh-hero: 1.05;
     --lh-sec: 1.12;
-    
+
     /* Échelles responsives */
     --h1-hero: clamp(40px, 6vw, 80px);
     --h2-sec: clamp(32px, 4vw, 56px);
     --h3-sec: clamp(24px, 2.6vw, 34px);
     --h-sub: clamp(18px, 2.1vw, 28px);
-    
-    /* Couleurs de base - EXACT SPECS */
-    --heading-base: #FFFFFF;
-    --heading-dark: #0B1324;
-    
+
+    /* ÉTAPE 3 : Couleurs adaptées au fond #C5C6C6 avec contraste WCAG AA */
+    --heading-base: #111827; /* Texte principal sombre pour fond clair */
+    --heading-dark: #0f172a; /* Encore plus sombre pour maximum contraste */
+
     /* Dégradé émeraude → turquoise → bleu pour les mots-clés - EXACT SPECS */
-    --g-start: var(--color-primary-600);     /* 0% */
-    --g-mid: var(--color-secondary-500);     /* 55% */
-    --g-end: var(--color-accent-500);        /* 100% */
-    
-    /* Effets de lisibilité */
-    --stroke-dark: rgba(0,0,0,0.35);
-    --shadow-dark: 0 2px 14px rgba(0,0,0,0.35);
+    --g-start: var(--color-primary-600); /* 0% */
+    --g-mid: var(--color-secondary-500); /* 55% */
+    --g-end: var(--color-accent-500); /* 100% */
+
+    /* ÉTAPE 3 : Effets adaptés au fond clair #C5C6C6 */
+    --stroke-light: rgba(255, 255, 255, 0.25); /* Stroke clair pour texte sombre */
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile pour fond clair */
   }
-  
+
   /* Base pour tous les titres */
   .heading,
   .hero-title,
@@ -47,17 +49,17 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
-  /* Titre héros (H1) */
+
+  /* Titre héros (H1) - ÉTAPE 3 : Adapté pour fond clair */
   .hero-title {
     font-size: var(--h1-hero);
     line-height: var(--lh-hero);
-    color: var(--heading-base);
-    -webkit-text-stroke: 1.2px var(--stroke-dark);
-    text-shadow: var(--shadow-dark);
+    color: var(--heading-base); /* Texte sombre sur fond clair */
+    -webkit-text-stroke: 0.8px var(--stroke-light); /* Stroke subtil */
+    text-shadow: var(--shadow-light); /* Ombre réduite */
     font-weight: var(--heading-weight-bold);
   }
-  
+
   /* Titre de section (H2) */
   .section-title {
     font-size: var(--h2-sec);
@@ -65,7 +67,7 @@
     color: var(--heading-dark);
     font-weight: var(--heading-weight-bold);
   }
-  
+
   /* Titre de card/sous-section (H3) */
   .card-title {
     font-size: var(--h3-sec);
@@ -73,53 +75,58 @@
     color: var(--heading-dark);
     font-weight: var(--heading-weight-reg);
   }
-  
-  /* Sous-titre héros */
+
+  /* Sous-titre héros - ÉTAPE 3 : Adapté pour fond clair */
   .hero-subtitle {
     font-size: var(--h-sub);
     line-height: 1.4;
-    color: var(--heading-base);
+    color: var(--heading-base); /* Texte sombre */
     font-weight: 400;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Ombre très subtile */
   }
-  
+
   /* Classe pour les mots-clés avec dégradé - EXACT GRADIENT */
   .k {
-    background-image: linear-gradient(90deg, var(--g-start) 0%, var(--g-mid) 55%, var(--g-end) 100%);
+    background-image: linear-gradient(
+      90deg,
+      var(--g-start) 0%,
+      var(--g-mid) 55%,
+      var(--g-end) 100%
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 100% 100%;
   }
-  
-  /* Dégradé pour mots-clés dans les titres héros */
+
+  /* Dégradé pour mots-clés dans les titres héros - ÉTAPE 3 : Fond clair */
   .hero-title .k {
-    -webkit-text-stroke: 1.1px var(--stroke-dark);
-    text-shadow: var(--shadow-dark);
+    -webkit-text-stroke: 0.8px var(--stroke-light); /* Stroke clair adapté */
+    text-shadow: var(--shadow-light);
   }
-  
-  /* Dégradé pour mots-clés dans les titres de section */
+
+  /* Dégradé pour mots-clés dans les titres de section - ÉTAPE 3 : Fond clair */
   .section-title .k {
-    -webkit-text-stroke: 0.6px rgba(0,0,0,0.18);
+    -webkit-text-stroke: 0.4px rgba(255, 255, 255, 0.2); /* Stroke clair subtil */
   }
-  
+
   /* Mots-clés dans les cards - pas de stroke supplémentaire */
   .card-title .k {
     /* Garde seulement le dégradé propre */
   }
-  
-  /* Accessibilité - Réduction des effets si préféré */
+
+  /* Accessibilité - Réduction des effets si préféré - ÉTAPE 3 : Fond clair */
   @media (prefers-reduced-motion: reduce) {
-    .hero-title { 
-      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    .hero-title {
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre très réduite */
     }
-    
+
     .hero-title .k,
-    .section-title .k { 
-      -webkit-text-stroke: 0.8px rgba(0,0,0,0.25);
+    .section-title .k {
+      -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.15); /* Stroke clair minimal */
     }
   }
-  
+
   /* Responsive - Ajustements pour mobile */
   @media (max-width: 640px) {
     :root {
@@ -127,12 +134,12 @@
       --h2-sec: clamp(28px, 6vw, 48px);
       --h3-sec: clamp(22px, 4vw, 32px);
     }
-    
+
     .hero-title {
-      -webkit-text-stroke: 1.0px var(--stroke-dark);
+      -webkit-text-stroke: 0.6px var(--stroke-light); /* Stroke réduit sur mobile */
     }
   }
-  
+
   /* Support pour les anciens navigateurs */
   @supports not (background-clip: text) {
     .k {

@@ -1,11 +1,11 @@
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeft, ExternalLink, Calendar, Clock, CheckCircle2 } from "lucide-react";
-import { getAllProjectSlugs, getProjectBySlug, getAllProjects } from "@/data/projectsData";
-import ProjectGallery from "@/components/portfolio/ProjectGallery";
-import CTAButton from "@/components/CTAButton";
-import type { Metadata } from "next";
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowLeft, ExternalLink, Calendar, Clock, CheckCircle2 } from 'lucide-react';
+import { getAllProjectSlugs, getProjectBySlug, getAllProjects } from '@/data/projectsData';
+import ProjectGallery from '@/components/portfolio/ProjectGallery';
+import CTAButton from '@/components/CTAButton';
+import type { Metadata } from 'next';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   if (!project) {
     return {
-      title: "Projet non trouvé",
+      title: 'Projet non trouvé',
     };
   }
 
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       title: `${project.title} - ${project.subtitle}`,
       description: project.shortDescription,
       images: [project.heroImage],
-      type: "website",
+      type: 'website',
     },
   };
 }
@@ -69,7 +69,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        
+
         {/* Contenu hero */}
         <div className="absolute inset-0 flex items-end">
           <div className="container-page w-full pb-12">
@@ -80,19 +80,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <ArrowLeft className="h-4 w-4" />
               Retour au portfolio
             </Link>
-            
+
             <div className="mb-4">
               <span className="inline-flex items-center rounded-full bg-white/90 px-4 py-1.5 text-sm font-semibold text-gray-900 backdrop-blur-sm">
                 {project.category}
               </span>
             </div>
-            
+
             <h1 className="mb-3 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
               {project.title}
             </h1>
-            <p className="max-w-2xl text-lg text-white/90 md:text-xl">
-              {project.subtitle}
-            </p>
+            <p className="max-w-2xl text-lg text-white/90 md:text-xl">{project.subtitle}</p>
           </div>
         </div>
       </div>
@@ -123,7 +121,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <span className="text-sm font-semibold uppercase tracking-wide">Type</span>
             </div>
             <p className="text-lg font-bold text-[var(--color-foreground)]">
-              {project.isReal ? "Projet réel" : "Projet fictif"}
+              {project.isReal ? 'Projet réel' : 'Projet fictif'}
             </p>
           </div>
 
@@ -155,7 +153,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <h2 className="heading-secondary mb-6">À propos du projet</h2>
           <div className="card">
             <p className="body-large mb-6">{project.description}</p>
-            
+
             <div className="space-y-6">
               <div>
                 <h3 className="mb-3 text-lg font-bold text-[var(--color-foreground)]">Contexte</h3>
