@@ -14,37 +14,61 @@ const config = {
         mono: ['var(--font-fira-code)', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
       },
       colors: {
-        // Refonte BANDEV - Mapping avec nouveaux tokens harmonisés
+        // Premium Design - Couleurs profondes et accents vibrantes
         transparent: 'transparent',
         current: 'currentColor',
 
-        // Tokens sémantiques principaux (Refonte #5D726F)
-        background: 'var(--bg-site)',            // #5D726F - Fond principal selon spécifications
-        foreground: 'var(--text-primary)',      // Texte principal optimal sur fond foncé
-        muted: 'var(--surface-glass)',          // Surfaces glassmorphiques atténuées  
-        'muted-foreground': 'var(--text-secondary)', // Texte secondaire lisible
-        card: 'var(--surface-card)',            // Surface carte glassmorphique
-        border: 'var(--border-subtle)',         // Bordures glassmorphiques
+        // Brand colors - Premium deep tones
+        brand: {
+          navy: '#0B1220',    // Deep navy blue for sophisticated backgrounds
+          emerald: '#0F3B33', // Deep emerald green for contrast
+          teal: '#17C3B2',    // Vibrant teal for primary actions
+          cyan: '#22D3EE',    // Electric cyan for highlights and focus
+        },
 
-        // Glassmorphism tokens unifiés selon spécifications
-        'card-start': 'var(--gradient-card-start)',    // Début dégradé léger
-        'card-end': 'var(--gradient-card-end)',        // Fin dégradé léger
-        'card-border': 'var(--stroke-glass)',          // Bordure semi-transparente
-        'card-glass': 'var(--surface-glass)',          // Fond glassmorphism subtil
-        'card-glass-hover': 'var(--surface-glass-hover)', // Hover glassmorphism
+        // Surface tokens for glassmorphism
+        surface: {
+          glass: 'rgba(255,255,255,0.06)',
+          'glass-strong': 'rgba(255,255,255,0.1)',
+          'glass-border': 'rgba(255,255,255,0.1)',
+          'glass-border-strong': 'rgba(255,255,255,0.15)',
+        },
 
-        // Primary (emerald) - COULEUR EXACTE DU LOGO BANDEV
+        // Semantic tokens
+        background: 'var(--bg-site)',            
+        foreground: 'var(--text-primary)',      
+        muted: 'var(--surface-glass)',          
+        'muted-foreground': 'var(--text-secondary)',
+        card: 'var(--surface-card)',            
+        border: 'var(--border-subtle)',         
+
+        // Primary (teal) for actions
         primary: {
-          DEFAULT: 'var(--brand-emerald)',       // #10B981 - Vert émeraude exact logo BANDEV
-          foreground: 'var(--anthracite-50)',   // Texte sur accent (contraste optimal)
+          DEFAULT: '#17C3B2',
+          foreground: '#0B1220',   
+          50: '#ECFEFF',
+          100: '#CFFAFE',
+          200: '#A5F3FC',
+          300: '#67E8F9',
+          400: '#22D3EE',
+          500: '#17C3B2',
+          600: '#0891B2',
+          700: '#0E7490',
+          800: '#155E75',
+          900: '#164E63'
+        },
+
+        // Emerald for brand elements
+        emerald: {
+          DEFAULT: '#10B981',
           50: '#ECFDF5',
           100: '#D1FAE5',
           200: '#A7F3D0',
           300: '#6EE7B7',
           400: '#34D399',
-          500: 'var(--brand-emerald)',          // Base - couleur exacte du logo
-          600: '#059669',                        // Hover
-          700: '#047857',                        // Active
+          500: '#10B981',
+          600: '#059669',
+          700: '#047857',
           800: '#065F46',
           900: '#064E3B'
         },
@@ -197,10 +221,13 @@ const config = {
         'slide-up': 'slide-up 0.6s ease-out',
       },
       backgroundImage: {
-        // Dégradés harmonisés selon spécifications
+        // Premium gradient backgrounds
+        'radial-premium': 'radial-gradient(circle at 30% 30%, #0B1220, #0F3B33)',
+        'linear-premium': 'linear-gradient(to right, #0B1220, #0F3B33)',
         'card-gradient': 'linear-gradient(180deg, var(--gradient-card-start) 0%, var(--gradient-card-end) 100%)',
         'card-glass': 'var(--surface-glass)',
-        'brand-gradient': 'linear-gradient(135deg, var(--brand-emerald), var(--color-secondary-500))',
+        'brand-gradient': 'linear-gradient(135deg, #10B981, #17C3B2)',
+        'cta-gradient': 'linear-gradient(135deg, #10B981, #22D3EE)',
       },
     },
   },

@@ -128,9 +128,9 @@
     --transition-standard: var(--transition-medium);
     --transition-slow: var(--transition-slow);
 
-    /* Header tokens adaptés */
-    --header-bg: rgba(93, 114, 111, 0.8);
-    --header-bg-scrolled: rgba(93, 114, 111, 0.95);
+    /* Header tokens - Premium colors */
+    --header-bg: rgba(11, 18, 32, 0.3);
+    --header-bg-scrolled: rgba(11, 18, 32, 0.95);
     --header-height: 68px;
     --header-height-scrolled: 64px;
 

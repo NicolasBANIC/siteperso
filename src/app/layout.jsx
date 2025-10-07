@@ -194,7 +194,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.variable} ${montserrat.variable} ${spaceGrotesk.variable} ${firaCode.variable} ${montserrat.className} text-[var(--color-foreground)]`}
+        className={`${inter.variable} ${montserrat.variable} ${spaceGrotesk.variable} ${firaCode.variable} ${montserrat.className} bg-radial-premium text-slate-100`}
       >
         {/* TODO: AA - Skip link pour accessibilité clavier (WCAG AA) */}
         <a
