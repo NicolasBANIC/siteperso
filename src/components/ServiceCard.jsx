@@ -12,7 +12,7 @@ function ServiceCard({ title, description, icon, features, href }) {
 
   return (
     <motion.article
-      className="group relative h-full rounded-lg border border-border bg-surface p-8 shadow-[var(--shadow-sm)] transition-all duration-300 hover:[box-shadow:var(--shadow-md)] hover:border-borderHover"
+      className="group relative h-full card-glassmorphism-alt p-8 transition-all duration-300 hover:border-primary/20"
       whileHover={
         prefersReducedMotion
           ? {}
@@ -22,7 +22,7 @@ function ServiceCard({ title, description, icon, features, href }) {
       }
       transition={{ duration: 0.3, ease: 'easeOut' }}
     >
-      <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--color-anthracite)]/20 to-[var(--color-accent)]/10 text-[var(--color-accent)] transition-all duration-300 group-hover:from-[var(--color-accent)] group-hover:to-[var(--color-accent-secondary)] group-hover:text-white group-hover:shadow-matrix">
+      <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-primary/20 text-primary transition-all duration-300 group-hover:from-primary group-hover:to-primary/80 group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/25">
         {icon ? (
           <Image
             src={icon}
@@ -32,11 +32,11 @@ function ServiceCard({ title, description, icon, features, href }) {
             className="h-8 w-8 object-cover rounded-lg"
           />
         ) : (
-          <div className="h-8 w-8 rounded-full bg-[var(--color-accent)]/20" />
+          <div className="h-8 w-8 rounded-full bg-primary/20" />
         )}
       </div>
 
-      <h3 className="mt-6 font-heading text-heading-md font-semibold text-[var(--color-foreground)]">
+      <h3 className="mt-6 font-heading text-heading-md font-semibold card-title-emerald">
         {title}
       </h3>
       <p className="mt-3 text-body-sm leading-relaxed text-[var(--color-muted)]">{description}</p>
@@ -49,7 +49,7 @@ function ServiceCard({ title, description, icon, features, href }) {
               className="flex items-start gap-2 text-body-sm text-[var(--color-muted)]"
             >
               <span
-                className="mt-1.5 inline-flex h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"
+                className="mt-1.5 inline-flex h-1.5 w-1.5 rounded-full bg-primary"
                 aria-hidden="true"
               />
               {feature}
@@ -61,7 +61,7 @@ function ServiceCard({ title, description, icon, features, href }) {
       {href && (
         <Link
           href={href}
-          className="mt-6 inline-flex items-center gap-2 text-caption font-medium text-[var(--color-accent)] transition-colors hover:text-[var(--color-accent-secondary)]"
+          className="mt-6 inline-flex items-center gap-2 text-caption font-medium text-primary transition-colors hover:text-primary/80"
         >
           En savoir plus
           <ArrowRight

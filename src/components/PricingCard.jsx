@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { Button } from './Button';
-import PopularBadge from './PopularBadge';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 
 /**
@@ -24,23 +23,21 @@ export default function PricingCard({
 
   return (
     <motion.article
-      className={`relative overflow-hidden rounded-lg bg-surface border p-8 transition-all duration-300 ${
+      className={`relative overflow-hidden card-glassmorphism-alt p-8 transition-all duration-300 ${
         highlight
-          ? 'border-accent shadow-matrix-lg scale-105'
-          : 'border-border hover:shadow-matrix-lg hover:border-accent/50 hover:scale-[1.02]'
+          ? 'border-primary'
+          : 'hover:border-primary/20'
       } motion-reduce:transform-none`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
-      {highlight && <PopularBadge />}
-
       <div className="space-y-4">
-        <h3 className="text-heading-lg font-bold text-foreground">{title}</h3>
+        <h3 className="text-heading-lg font-bold card-title-emerald">{title}</h3>
 
         <div className="flex items-baseline gap-2">
-          <span className="text-display font-bold text-accent">{price}</span>
+          <span className="text-display font-bold text-primary">{price}</span>
           {period && <span className="text-body-sm text-muted">/ {period}</span>}
         </div>
 
@@ -50,7 +47,7 @@ export default function PricingCard({
       <ul className="mt-8 space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
-            <Check className="h-5 w-5 flex-shrink-0 text-accentSecondary" aria-hidden="true" />
+            <Check className="h-5 w-5 flex-shrink-0 text-primary" aria-hidden="true" />
             <span className="text-body-sm text-foreground">{feature}</span>
           </li>
         ))}

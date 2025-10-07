@@ -23,6 +23,13 @@
     --card: #dcddde; /* Surface carte légèrement plus claire */
     --border: #94a3b8; /* Bordures visibles */
 
+    /* ÉTAPE 3 : Variables Glassmorphism unifiées */
+    --card-start: #d3d5d5; /* Départ du dégradé des cards (harmonisé avec le fond) */
+    --card-end: #a9abab; /* Fin du dégradé avec teinte plus sombre */
+    --card-border: rgba(255, 255, 255, 0.4); /* Bordure semi-transparente */
+    --card-glass-bg: rgba(255, 255, 255, 0.35); /* Fond glassmorphism */
+    --card-glass-hover: rgba(255, 255, 255, 0.45); /* Fond glassmorphism au hover */
+
     /* Primary (emerald) scale - COULEUR DE MARQUE INCHANGÉE */
     --primary: #10b981; /* Vert émeraude exact du logo */
     --primary-foreground: #0a0f0f; /* Texte sur accent (contraste optimisé) */
@@ -396,6 +403,38 @@
     position: relative;
     isolation: isolate;
     min-height: 100vh;
+  }
+
+  /* ÉTAPE 3 : Styles épurés et harmonieux pour toutes les cards */
+  .card-glassmorphism {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem; /* 16px */
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  .card-glassmorphism-alt {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  .card-glassmorphism:hover,
+  .card-glassmorphism-alt:hover {
+    background: #ffffff;
+    border-color: #10b981;
+    box-shadow: 0 4px 16px 0 rgba(16, 185, 129, 0.1);
+  }
+
+  /* Titres avec style vert émeraude unifié */
+  .card-title-emerald {
+    color: #10b981;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .card-title-emerald:hover {
+    color: #059669;
   }
 
   /* CRITICAL: Hero sections must start immediately after header without any gap */

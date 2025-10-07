@@ -39,10 +39,10 @@ function CTASection({
   return (
     <ScrollReveal direction="up">
       <section
-        className={`rounded-lg bg-gradient-to-r from-[var(--color-anthracite)] to-[var(--color-accent)] px-8 py-12 md:py-16 text-[var(--color-foreground)] shadow-[var(--shadow-lg)] ${className}`}
+        className={`card-glassmorphism px-8 py-12 md:py-16 text-foreground border-primary/20 ${className}`}
       >
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-heading-xl md:text-display font-bold tracking-tight font-heading">
+          <h2 className="text-heading-xl md:text-display font-bold tracking-tight font-heading card-title-emerald">
             {title}
           </h2>
           <p className="text-body-lg text-foreground/90 max-w-2xl mx-auto">{description}</p>

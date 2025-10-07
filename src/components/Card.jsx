@@ -25,14 +25,13 @@ const Card = memo(function Card({
   const prefersReducedMotion = useReducedMotion();
 
   const baseStyles =
-    'rounded-lg bg-surface border border-border p-8 shadow-sm transition-all duration-300 ease-out motion-reduce:transition-none';
+    'card-glassmorphism-alt p-8 transition-all duration-300 ease-out motion-reduce:transition-none';
 
   const variantStyles = {
-    service: 'hover:shadow-lg hover:shadow-emerald/10 hover:border-emerald/30 hover:-translate-y-1',
-    project: 'overflow-hidden hover:shadow-lg hover:shadow-emerald/10 hover:border-emerald/30',
-    price:
-      'relative hover:shadow-xl hover:shadow-emerald/15 hover:border-emerald/30 hover:scale-[1.02]',
-    testimonial: 'bg-surface/95 backdrop-blur-sm shadow-sm border-emerald/10',
+    service: 'hover:border-primary/20 hover:-translate-y-1',
+    project: 'overflow-hidden hover:border-primary/20',
+    price: 'relative hover:border-primary/20',
+    testimonial: 'border-primary/10',
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
@@ -51,7 +50,7 @@ const Card = memo(function Card({
   const hoverProps = prefersReducedMotion
     ? {}
     : {
-        whileHover: variant === 'service' ? { y: -8 } : variant === 'price' ? { scale: 1.02 } : {},
+        whileHover: variant === 'service' ? { y: -8 } : {},
       };
 
   return (
@@ -77,14 +76,14 @@ const Card = memo(function Card({
 
       {/* Icon pour service variant */}
       {variant === 'service' && icon && (
-        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald/10 text-emerald text-2xl shadow-sm">
+        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary text-2xl shadow-sm">
           {icon}
         </div>
       )}
 
       {/* Title */}
       {title && (
-        <h3 className="mb-4 text-heading-md font-heading font-semibold text-foreground">{title}</h3>
+        <h3 className="mb-4 text-heading-md font-heading font-semibold card-title-emerald transition-colors duration-200">{title}</h3>
       )}
 
       {/* Description */}

@@ -35,7 +35,7 @@ function TestimonialCard({
 
   return (
     <motion.div
-      className="bg-surface border border-border rounded-lg p-6 shadow-card hover:shadow-matrix-lg hover:border-accent transition-all duration-300 motion-reduce:transition-none"
+      className="card-glassmorphism-alt p-6 transition-all duration-300 hover:border-primary/20 motion-reduce:transition-none"
       {...cardAnimationProps}
     >
       {/* Rating */}
@@ -44,7 +44,7 @@ function TestimonialCard({
           <Star
             key={i}
             className={`w-5 h-5 ${
-              i < rating ? 'fill-accentSecondary text-accentSecondary' : 'text-muted/30'
+              i < rating ? 'fill-primary text-primary' : 'text-muted/30'
             }`}
             aria-hidden="true"
           />
@@ -57,8 +57,8 @@ function TestimonialCard({
       </blockquote>
 
       {/* Author */}
-      <div className="flex items-center gap-4 pt-4 border-t border-border">
-        <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-accent/20">
+      <div className="flex items-center gap-4 pt-4 border-t border-card-border">
+        <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-primary/20">
           <Image
             src={avatar}
             alt={`Photo de profil de ${name}, ${role} chez ${company}`}
