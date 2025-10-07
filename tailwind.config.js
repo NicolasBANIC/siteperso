@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const config = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -14,44 +14,76 @@ export default {
         mono: ['var(--font-fira-code)', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
       },
       colors: {
-        // Système de couleurs harmonisé émeraude → turquoise selon spécifications
-        emerald: '#10B981',
-        turquoise: '#06B6D4', 
-        teal: '#14B8A6',
-        'blue-accent': '#3B82F6',
-        'neutral-dark': '#0F172A',
-        'neutral-light': '#F1F5F9',
-        
-        // Compatibilité legacy
-        emeraldDeep: '#10B981', 
-        matrixDark: '#0F172A',
-        ink: '#0F172A',
-        paper: '#FFFFFF',
-        
-        // Charte Matrix modernisée
-        anthracite: '#0F172A',
-        white: '#FFFFFF',
-        matrix: '#10B981',
-        matrix2: '#06B6D4',
-        
-        // Palette principale harmonisée
+        // Harmonized palette based on BANDEV logo/header (emerald → turquoise)
+        transparent: 'transparent',
+        current: 'currentColor',
+
+        primary: {
+          50: '#ECFDF5',
+          100: '#D1FAE5',
+          200: '#A7F3D0',
+          300: '#6EE7B7',
+          400: '#34D399',
+          500: '#10B981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065F46',
+          900: '#064E3B'
+        },
+
+        secondary: {
+          50: '#ECFEFF',
+          100: '#CFFAFE',
+          200: '#A5F3FC',
+          300: '#67E8F9',
+          400: '#22D3EE',
+          500: '#06B6D4',
+          600: '#0891B2',
+          700: '#0E7490',
+          800: '#155E75',
+          900: '#164E63'
+        },
+
+        accent: {
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          300: '#93C5FD',
+          400: '#60A5FA',
+          500: '#3B82F6',
+          600: '#2563EB',
+          700: '#1D4ED8',
+          800: '#1E40AF',
+          900: '#172554'
+        },
+
+        neutral: {
+          50: '#F8FAFC',
+          100: '#F1F5F9',
+          200: '#E2E8F0',
+          300: '#CBD5E1',
+          400: '#94A3B8',
+          500: '#64748B',
+          600: '#475569',
+          700: '#334155',
+          800: '#1F2937',
+          900: '#0F172A'
+        },
+
+        // Semantic tokens
         background: '#F1F5F9',
         surface: '#FFFFFF',
         surfaceHover: '#F8FAFC',
         foreground: '#0F172A',
         muted: '#64748B',
-        border: 'rgba(16, 185, 129, 0.15)',
-        borderHover: 'rgba(16, 185, 129, 0.3)',
-        
-        // Accents émeraude → turquoise
-        accent: '#10B981',
-        accentHover: '#06B6D4',
-        accentSecondary: '#14B8A6',
-        accentTertiary: '#3B82F6',
-        accentMatrix: '#10B981',
-        accentMatrixHover: '#06B6D4',
-        ring: 'rgba(16, 185, 129, 0.35)',
 
+        // Legacy compatibility
+        emerald: '#10B981',
+        turquoise: '#06B6D4',
+        teal: '#14B8A6',
+
+        // Utility colors
+        ring: 'rgba(16, 185, 129, 0.35)',
         error: '#DC2626',
       },
       fontSize: {
@@ -118,4 +150,6 @@ export default {
       },
     },
   },
-}
+};
+
+export default config;

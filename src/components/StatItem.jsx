@@ -14,7 +14,7 @@ import { useReducedMotion } from '@/lib/useReducedMotion';
  * @param {string} suffix - Suffixe (ex: "+", "%", "h")
  * @param {string} description - Description optionnelle
  */
-const StatItem = memo(function StatItem({ icon, count, label, suffix = '', description }) {
+const StatItem = memo(function StatItem({ icon, count, label, suffix = '', description, compact = false }) {
   const prefersReducedMotion = useReducedMotion();
   
   const [ref, inView] = useInView({
@@ -62,30 +62,30 @@ const StatItem = memo(function StatItem({ icon, count, label, suffix = '', descr
   return (
     <motion.div
       ref={ref}
-      className="flex flex-col items-center text-center p-6"
+      className={`${compact ? 'flex items-center gap-3 p-2 text-left' : 'flex flex-col items-center text-center p-6'}`}
       {...animationProps}
     >
       {/* Icon */}
       {icon && (
-        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent motion-safe:transition-transform motion-safe:hover:scale-110 motion-reduce:hover:scale-100">
+        <div className={`${compact ? 'flex h-8 w-8 items-center justify-center rounded-full bg-accent/10 text-accent' : 'mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent motion-safe:transition-transform motion-safe:hover:scale-110 motion-reduce:hover:scale-100'}`}>
           {icon}
         </div>
       )}
-      
+
       {/* Count */}
-      <div className="mb-2">
-        <span className="text-display font-bold text-foreground font-heading">
+      <div className={`${compact ? '' : 'mb-2'}`}>
+        <span className={`${compact ? 'text-heading-sm font-bold' : 'text-display font-bold'} text-foreground font-heading`}>
           {displayCount}{suffix}
         </span>
       </div>
-      
+
       {/* Label */}
-      <div className="text-heading-sm font-semibold text-foreground mb-1 font-heading">
+      <div className={`${compact ? 'text-body-sm font-medium text-foreground' : 'text-heading-sm font-semibold text-foreground mb-1 font-heading'}`}>
         {label}
       </div>
-      
+
       {/* Description */}
-      {description && (
+      {!compact && description && (
         <div className="text-body-sm text-muted">
           {description}
         </div>

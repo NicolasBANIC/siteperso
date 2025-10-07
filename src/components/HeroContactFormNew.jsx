@@ -68,7 +68,7 @@ export default function HeroContactFormNew() {
       {/* Glassmorphism card with enhanced styling */}
       <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gray-900/60 p-6 shadow-2xl backdrop-blur-lg">
         {/* Subtle gradient border */}
-        <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-white/20 via-green-500/30 to-white/20">
+        <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-white/20 via-[var(--color-primary-300)]/30 to-white/20">
           <div className="h-full w-full rounded-2xl bg-gray-900/60 backdrop-blur-lg" />
         </div>
         
@@ -120,7 +120,7 @@ export default function HeroContactFormNew() {
                   className={`w-full rounded-xl border bg-slate-900/90 py-3 pl-10 pr-4 text-white placeholder-white/60 backdrop-blur-sm transition-all focus:bg-slate-800/90 focus:outline-none focus:ring-2 ${
                     errors.name
                       ? 'border-red-400 ring-2 ring-red-400/50'
-                      : 'border-white/20 focus:border-green-500/50 focus:ring-green-500/30'
+                      : 'border-white/20 focus:border-[var(--color-primary-500)]/50 focus:ring-[var(--color-primary-500)]/30'
                   }`}
                   aria-required="true"
                   aria-describedby={errors.name ? 'name-error' : undefined}
@@ -166,7 +166,7 @@ export default function HeroContactFormNew() {
                   className={`w-full rounded-xl border bg-slate-900/90 py-3 pl-10 pr-4 text-white placeholder-white/60 backdrop-blur-sm transition-all focus:bg-slate-800/90 focus:outline-none focus:ring-2 ${
                     errors.email
                       ? 'border-red-400 ring-2 ring-red-400/50'
-                      : 'border-white/20 focus:border-green-500/50 focus:ring-green-500/30'
+                      : 'border-white/20 focus:border-[var(--color-primary-500)]/50 focus:ring-[var(--color-primary-500)]/30'
                   }`}
                   aria-required="true"
                   aria-describedby={errors.email ? 'email-error' : undefined}
@@ -203,7 +203,7 @@ export default function HeroContactFormNew() {
                   rows={4}
                   placeholder="Décrivez votre projet en quelques mots (facultatif)..."
                   {...register('message')}
-                  className="w-full resize-none rounded-xl border border-white/20 bg-slate-900/90 py-3 pl-10 pr-4 text-white placeholder-white/60 backdrop-blur-sm transition-all focus:border-green-500/50 focus:bg-slate-800/90 focus:outline-none focus:ring-2 focus:ring-green-500/30"
+                  className="w-full resize-none rounded-xl border border-white/20 bg-slate-900/90 py-3 pl-10 pr-4 text-white placeholder-white/60 backdrop-blur-sm transition-all focus:border-[var(--color-primary-500)]/50 focus:bg-slate-800/90 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/30"
                 />
               </div>
             </div>
@@ -217,7 +217,7 @@ export default function HeroContactFormNew() {
                   {...register('consent', {
                     required: 'Le consentement est requis'
                   })}
-                  className={`h-4 w-4 rounded border-2 bg-slate-900/90 text-green-500 focus:ring-2 focus:ring-green-500/30 focus:ring-offset-0 ${
+                  className={`h-4 w-4 rounded border-2 bg-slate-900/90 text-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-500)]/30 focus:ring-offset-0 ${
                     errors.consent ? 'border-red-400' : 'border-white/30'
                   }`}
                   aria-required="true"
@@ -250,7 +250,7 @@ export default function HeroContactFormNew() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn-primary group relative w-full overflow-hidden rounded-xl bg-green-600 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-green-500 hover:scale-[1.02] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transform-none"
+              className="btn-primary group relative w-full overflow-hidden rounded-xl bg-[var(--color-primary-600)] py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[var(--color-primary-500)] hover:scale-[1.02] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transform-none"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 {isSubmitting ? (
@@ -285,7 +285,7 @@ export default function HeroContactFormNew() {
                   </>
                 )}
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 opacity-0 transition-opacity group-hover:opacity-20" aria-hidden="true" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-600)] to-[var(--color-primary-700)] opacity-0 transition-opacity group-hover:opacity-20" aria-hidden="true" />
             </button>
           </form>
 
@@ -296,11 +296,11 @@ export default function HeroContactFormNew() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="mt-4 flex items-center gap-2 rounded-xl bg-green-600/20 p-3 text-sm font-medium text-white backdrop-blur-sm"
+                className="mt-4 flex items-center gap-2 rounded-xl bg-[var(--color-primary-600)]/20 p-3 text-sm font-medium text-white backdrop-blur-sm"
                 role="status"
                 aria-live="polite"
               >
-                <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-green-400" aria-hidden="true" />
+                <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[var(--color-primary-300)]" aria-hidden="true" />
                 <p>Merci ! Je vous réponds sous 24h.</p>
               </motion.div>
             )}

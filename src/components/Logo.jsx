@@ -65,9 +65,9 @@ const Logo = memo(function Logo({
         <defs>
           {/* Gradient émeraude unifié */}
           <linearGradient id={`emerald-gradient-${variant}`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style={{stopColor: '#007A5E', stopOpacity: 1}} />
-            <stop offset="50%" style={{stopColor: '#10b981', stopOpacity: 1}} />
-            <stop offset="100%" style={{stopColor: '#007A5E', stopOpacity: 1}} />
+            <stop offset="0%" style={{stopColor: 'var(--color-primary-800)', stopOpacity: 1}} />
+            <stop offset="50%" style={{stopColor: 'var(--color-primary-500)', stopOpacity: 1}} />
+            <stop offset="100%" style={{stopColor: 'var(--color-primary-800)', stopOpacity: 1}} />
           </linearGradient>
           
           {/* Filtre pour ombre textuelle */}
@@ -111,7 +111,7 @@ const Logo = memo(function Logo({
             y1="40" 
             x2="164" 
             y2="40" 
-            stroke="#007A5E" 
+            stroke="var(--color-primary-700)" 
             strokeWidth="2" 
             opacity="0.4"
           />

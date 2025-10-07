@@ -125,8 +125,8 @@ export default function HeroSection({
                   ) : (
                     <>
                       <span className="relative flex h-2 w-2">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00FF41] opacity-75"></span>
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00FF41]"></span>
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-primary-300)] opacity-75"></span>
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-primary-300)]"></span>
                       </span>
                       <span>{typeof badge === "string" ? badge : badge.text}</span>
                     </>

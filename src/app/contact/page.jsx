@@ -1,4 +1,4 @@
-﻿import FormulaireContact from "@/components/FormulaireContact";
+import FormulaireContact from "@/components/FormulaireContact";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -83,7 +83,7 @@ export default function ContactPage() {
                   <h2 className="text-2xl font-bold text-white mb-2">
                     Envoyez-moi un message
                   </h2>
-                  <p className="text-[#D1D5DB]">
+                  <p className="text-[var(--color-muted)]">
                     Je vous répondrai dans les plus brefs délais.
                   </p>
                 </div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                             <Icon className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="text-sm text-[#D1D5DB] mb-1">
+                            <p className="text-sm text-[var(--color-muted)] mb-1">
                               {item.label}
                             </p>
                             {item.href ? (
@@ -123,7 +123,7 @@ export default function ContactPage() {
                               </p>
                             )}
                             {item.subtext && (
-                              <p className="text-sm text-[#D1D5DB] mt-1">
+                              <p className="text-sm text-[var(--color-muted)] mt-1">
                                 {item.subtext}
                               </p>
                             )}
@@ -165,7 +165,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-white mb-2">
                     Vous préférez un devis détaillé ?
                   </h3>
-                  <p className="text-sm text-[#D1D5DB] mb-4">
+                  <p className="text-sm text-[var(--color-muted)] mb-4">
                     Remplissez le formulaire de demande de devis pour recevoir une proposition personnalisée sous 24h.
                   </p>
                   <Link href="/devis" className="btn-primary text-sm">

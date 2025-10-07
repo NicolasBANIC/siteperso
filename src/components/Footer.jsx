@@ -55,10 +55,10 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[var(--color-border)] bg-[var(--color-anthracite)] text-sm text-white/70">
-      <div className="mx-auto w-full max-w-7xl px-gutter py-14">
+    <footer className="border-t border-[var(--color-border)] bg-[var(--color-background)] text-sm text-white/80">
+      <div className="mx-auto w-full max-w-7xl px-gutter py-6 md:py-8">
         {/* Main Footer Content */}
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {/* Brand Section */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
@@ -159,7 +159,7 @@ function Footer() {
         </div>
 
         {/* Legal Links - Charte Matrix */}
-        <div className="mt-12 border-t border-white/10 pt-8">
+        <div className="mt-6 border-t border-white/10 pt-6">
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
             {legalLinks.map((link, index) => (
               <span key={link.href} className="flex items-center gap-4">
@@ -180,7 +180,7 @@ function Footer() {
 
       {/* Bottom Bar - Charte Matrix */}
       <div className="border-t border-white/10 bg-transparent">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-gutter py-6 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-gutter py-4 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {currentYear} BANDEV - Nicolas Banic. Tous droits réservés.</p>
           <p>
             Développé avec <span className="text-matrix font-medium">Next.js 15</span> &{" "}

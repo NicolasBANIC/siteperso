@@ -84,8 +84,8 @@ function Header() {
                   href={link.href}
                   className={`block rounded-lg px-6 py-4 text-heading-sm font-medium transition-all duration-300 ${
                     isActive
-                      ? "bg-gradient-to-r from-[#0F8F72]/20 to-[#00C8B4]/20 text-white border border-[#0F8F72]/30 shadow-[0_0_12px_rgba(15,143,114,0.3)]"
-                      : "text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-[#0F8F72]/10 hover:to-[#00C8B4]/10 hover:border hover:border-[#0F8F72]/20 hover:shadow-[0_0_8px_rgba(15,143,114,0.2)] hover:-translate-y-0.5"
+                      ? "bg-gradient-to-r from-[var(--color-primary-700)]/20 to-[var(--color-secondary-500)]/20 text-white border border-[var(--color-primary-700)]/30 shadow-[0_0_12px_rgba(15,143,114,0.3)]"
+                      : "text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-[var(--color-primary-700)]/10 hover:to-[var(--color-secondary-500)]/10 hover:border hover:border-[var(--color-primary-700)]/20 hover:shadow-[0_0_8px_rgba(15,143,114,0.2)] hover:-translate-y-0.5"
                   }`}
                 >
                   {link.label}
@@ -101,7 +101,7 @@ function Header() {
           >
             <Link 
               href="/devis" 
-              className="relative inline-flex items-center justify-center w-full px-6 py-3 rounded-[9999px] font-semibold text-white bg-gradient-to-r from-[#0F8F72] to-[#00C8B4] shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,200,180,0.4)] hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F8F72] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
+              className="relative inline-flex items-center justify-center w-full px-6 py-3 rounded-[9999px] font-semibold text-white bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-secondary-500)] shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,200,180,0.4)] hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
             >
               <span className="relative z-10">Demander un devis</span>
             </Link>
@@ -122,10 +122,10 @@ function Header() {
         }`}
         initial={false}
         animate={{
-          background: scrolled 
-            ? "rgba(11,15,16,.96)"
-            : "rgba(11,15,16,.92)",
-          height: scrolled ? "64px" : "68px"
+          background: scrolled
+            ? "var(--header-bg-scrolled)"
+            : "var(--header-bg)",
+          height: scrolled ? "var(--header-height-scrolled)" : "var(--header-height)"
         }}
         transition={{
           duration: prefersReducedMotion ? 0 : 0.3,
@@ -155,8 +155,8 @@ function Header() {
                 href={link.href}
                 className={`relative inline-flex items-center justify-center px-4 py-2 rounded-lg transition-all duration-300 group font-inter font-medium ${
                   isActive
-                    ? "text-white bg-gradient-to-r from-[#0F8F72]/20 to-[#00C8B4]/20 shadow-[0_0_12px_rgba(15,143,114,0.3)] after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-gradient-to-r after:from-[#0F8F72] after:to-[#00C8B4]"
-                    : "text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-[#0F8F72]/10 hover:to-[#00C8B4]/10 hover:shadow-[0_0_8px_rgba(15,143,114,0.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
+                    ? "text-white bg-gradient-to-r from-[var(--color-primary-700)]/20 to-[var(--color-secondary-500)]/20 shadow-[0_0_12px_rgba(15,143,114,0.3)] after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-gradient-to-r after:from-[var(--color-primary-700)] after:to-[var(--color-secondary-500)]"
+                    : "text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-[var(--color-primary-700)]/10 hover:to-[var(--color-secondary-500)]/10 hover:shadow-[0_0_8px_rgba(15,143,114,0.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
                 }`}
               >
                 <span className="relative z-10">{link.label}</span>
@@ -169,7 +169,7 @@ function Header() {
         <div className="hidden items-center gap-4 lg:flex">
           <Link 
             href="/devis" 
-            className="relative inline-flex items-center justify-center px-4 py-2 rounded-[9999px] font-medium text-sm text-white bg-gradient-to-r from-[#0F8F72] to-[#00C8B4] shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,200,180,0.4)] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F8F72] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
+            className="relative inline-flex items-center justify-center px-4 py-2 rounded-[9999px] font-medium text-sm text-white bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-secondary-500)] shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,200,180,0.4)] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)] focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
             style={{ height: '36px' }} // Harmonisé avec la hauteur du header
           >
             <span className="relative z-10">Demander un devis</span>
@@ -179,7 +179,7 @@ function Header() {
         {/* Menu Mobile Button - Design minimaliste cohérent */}
         <motion.button
           type="button"
-          className="relative z-[10000] inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm p-3 text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-[#0F8F72]/20 hover:to-[#00C8B4]/20 hover:shadow-[0_0_12px_rgba(15,143,114,0.3)] hover:border-[#0F8F72]/40 lg:hidden"
+          className="relative z-[10000] inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm p-3 text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-[var(--color-primary-700)]/20 hover:to-[var(--color-secondary-500)]/20 hover:shadow-[0_0_12px_rgba(15,143,114,0.3)] hover:border-[var(--color-primary-700)]/40 lg:hidden"
           style={{ zIndex: 10000 }}
           onClick={() => setIsMenuOpen((prev) => !prev)}
           aria-label="Ouvrir ou fermer le menu"

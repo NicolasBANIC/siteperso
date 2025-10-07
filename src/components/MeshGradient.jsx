@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-export default function MeshGradient({ 
-  colors = ['#0047AB', '#006D77'],
-  className = "" 
+export default function MeshGradient({
+  colors = ['#064E3B', '#10B981'],
+  className = ""
 }) {
   const canvasRef = useRef(null);
   const [isVisible, setIsVisible] = useState(true);

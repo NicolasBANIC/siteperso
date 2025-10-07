@@ -75,7 +75,7 @@ export default function CodeTypingAnimation({
         <div className="flex gap-2">
           <div className="h-3 w-3 rounded-full bg-red-500" />
           <div className="h-3 w-3 rounded-full bg-yellow-500" />
-          <div className="h-3 w-3 rounded-full bg-green-500" />
+          <div className="h-3 w-3 rounded-full bg-[var(--color-primary-500)]" />
         </div>
         <div className="ml-4 text-xs font-medium text-slate-400">
           {snippet.language}

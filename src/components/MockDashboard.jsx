@@ -32,25 +32,35 @@ export default function MockDashboard({ className = "" }) {
     return () => clearInterval(interval);
   }, []);
 
-  const StatCard = ({ icon: Icon, label, value, trend, color }) => (
-    <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10">
-      <div className="flex items-start justify-between">
-        <div>
-          <p className="text-xs text-white/60">{label}</p>
-          <p className="mt-1 text-2xl font-bold text-white">{value}</p>
-          {trend && (
-            <p className={`mt-1 text-xs ${trend > 0 ? 'text-green-400' : 'text-red-400'}`}>
-              {trend > 0 ? '↑' : '↓'} {Math.abs(trend)}%
-            </p>
-          )}
+  const StatCard = ({ icon: Icon, label, value, trend, color }) => {
+    const colorMap = {
+      green: { bg: 'bg-[var(--color-primary-600)]/20', icon: 'text-[var(--color-primary-500)]', trend: 'text-[var(--color-primary-300)]' },
+      blue: { bg: 'bg-[var(--color-accent-500)]/20', icon: 'text-[var(--color-accent-500)]', trend: 'text-[var(--color-accent-400)]' },
+      purple: { bg: 'bg-[var(--color-accent-700)]/20', icon: 'text-[var(--color-accent-700)]', trend: 'text-[var(--color-accent-600)]' },
+      orange: { bg: 'bg-[var(--color-accent-400)]/20', icon: 'text-[var(--color-accent-400)]', trend: 'text-[var(--color-accent-300)]' }
+    };
+    const c = colorMap[color] || colorMap.green;
+
+    return (
+      <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10">
+        <div className="flex items-start justify-between">
+          <div>
+            <p className="text-xs text-white/60">{label}</p>
+            <p className="mt-1 text-2xl font-bold text-white">{value}</p>
+            {trend && (
+              <p className={`mt-1 text-xs ${trend > 0 ? c.trend : 'text-red-400'}`}>
+                {trend > 0 ? '↑' : '↓'} {Math.abs(trend)}%
+              </p>
+            )}
+          </div>
+          <div className={`${c.bg} rounded-lg p-2`}>
+            <Icon className={`h-5 w-5 ${c.icon}`} />
+          </div>
         </div>
-        <div className={`rounded-lg bg-${color}-500/20 p-2`}>
-          <Icon className={`h-5 w-5 text-${color}-400`} />
-        </div>
+        <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
       </div>
-      <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-    </div>
-  );
+    );
+  };
 
   return (
     <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-slate-800/90 p-6 shadow-2xl backdrop-blur-xl ${className}`}>
@@ -61,7 +71,7 @@ export default function MockDashboard({ className = "" }) {
           <p className="text-sm text-white/60">Temps réel • Mise à jour automatique</p>
         </div>
         <div className="flex gap-2">
-          <div className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
+          <div className="h-2 w-2 animate-pulse rounded-full bg-[var(--color-primary-300)]" />
           <span className="text-xs text-white/60">Live</span>
         </div>
       </div>

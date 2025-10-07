@@ -291,8 +291,8 @@ export default function HomePage() {
             {/* Left: Text Content with enhanced readability and semi-transparent overlay */}
             <ScrollReveal direction="left">
               <div className="copy-wrap space-y-8 xl:max-w-none relative">
-                {/* Overlay léger émeraude → turquoise selon spécifications */}
-                <div className="absolute inset-0 -m-8 bg-gradient-to-br from-emerald/10 to-turquoise/15 backdrop-blur-[6px] rounded-2xl"></div>
+
+
                 <div className="relative z-10">
                   <div className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--color-accent-matrix)]/50 bg-[var(--color-accent-matrix)]/20 px-4 py-2 text-caption font-medium backdrop-blur-sm">
                     <span className="relative flex h-2 w-2">
@@ -378,10 +378,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section - Expertise */}
-      <section className="py-16 md:py-24">
-        <div className="container-page">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Stats Section - Compact Expertise Band */}
+      <section className="py-1">
+        <div className="container-page-no-py">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             {stats.map((stat, index) => (
               <StatItem
                 key={stat.label}
@@ -389,15 +389,16 @@ export default function HomePage() {
                 suffix={stat.suffix}
                 label={stat.label}
                 description={stat.description}
+                compact={true}
                 icon={
                   index === 0 ? (
-                    <Rocket className="h-8 w-8" />
+                    <Rocket className="h-5 w-5" />
                   ) : index === 1 ? (
-                    <CheckCircle2 className="h-8 w-8" />
+                    <CheckCircle2 className="h-5 w-5" />
                   ) : index === 2 ? (
-                    <Zap className="h-8 w-8" />
+                    <Zap className="h-5 w-5" />
                   ) : (
-                    <Shield className="h-8 w-8" />
+                    <Shield className="h-5 w-5" />
                   )
                 }
               />
@@ -407,12 +408,12 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="relative py-12 md:py-20">
+      <section className="relative py-8 md:py-12">
         <ParticlesBackground />
 
         <div className="container-page-no-py">
           <ScrollReveal direction="up">
-            <div className="relative z-10 mb-16 space-y-4 text-center">
+            <div className="relative z-10 mb-8 space-y-4 text-center">
               <div className="eyebrow mx-auto">Services</div>
               <h2 className="section-title">
                 Une <span className="k">expertise technique</span> complète pour propulser votre activité
@@ -713,7 +714,7 @@ export default function HomePage() {
               <ScrollReveal key={item.step} direction="up" delay={index * 100}>
                 <div className="card group text-center transition-all duration-300 hover:scale-[1.02] hover:border-accent hover:shadow-emerald/10">
                   <div className="mb-6 flex flex-col items-center gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald to-turquoise text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-emerald/20">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--color-primary-800)] to-[var(--color-primary-300)] text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-emerald/20">
                       {item.icon}
                     </div>
                     <span className="text-2xl font-bold text-accent">{item.step}</span>
@@ -946,7 +947,7 @@ export default function HomePage() {
                   </p>
                   <p>
                     Ma philosophie ? Créer des expériences utilisateur exceptionnelles tout en respectant 
-                    les standards les plus exigeants : code propre, performances optimales, et accessibilité 
+                    les standards les plus exigeants : code propre, performances optimales, et accessibilit�� 
                     universelle.
                   </p>
                   <p>
@@ -981,7 +982,7 @@ export default function HomePage() {
             {/* Right: Skills Grid */}
             <ScrollReveal direction="right">
               <div className="space-y-8">
-                <div className="card bg-gradient-to-br from-emerald/5 to-turquoise/5 border-emerald/20">
+                <div className="card bg-gradient-to-br from-[var(--color-primary-800)]/5 to-[var(--color-primary-300)]/5 border-[var(--color-primary-800)]/20">
                   <h3 className="card-title mb-6 text-center">Compétences Techniques</h3>
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div className="space-y-3">
@@ -998,7 +999,7 @@ export default function HomePage() {
                       <h4 className="text-sm font-semibold text-accent uppercase tracking-wide">Design</h4>
                       <div className="flex flex-wrap gap-2">
                         {['UX/UI', 'Figma', 'Photoshop', 'Motion'].map(skill => (
-                          <span key={skill} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-turquoise/10 text-turquoise border border-turquoise/20">
+                          <span key={skill} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[var(--color-primary-300)]/10 text-[var(--color-primary-300)] border border-[var(--color-primary-300)]/20">
                             {skill}
                           </span>
                         ))}

@@ -4,7 +4,7 @@ export default function LogoDemoPage() {
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
       {/* Hero Section */}
-      <section className="section-full bg-gradient-to-br from-[#007A5E] via-[#003B32] to-[#001A15]">
+      <section className="section-full bg-gradient-to-br from-[var(--color-primary-800)] via-[var(--color-primary-900)] to-[var(--neutral-900)]">
         <div className="container-page text-center">
           <h1 className="text-hero text-white mb-8">
             Logo BANDEV Matrix
@@ -14,7 +14,7 @@ export default function LogoDemoPage() {
           </p>
           
           {/* Logo sur fond sombre */}
-          <div className="bg-[#111827] rounded-3xl p-16 mb-8 border border-[#00CFC1]/20">
+          <div className="bg-[var(--neutral-800)] rounded-3xl p-16 mb-8 border border-[var(--color-secondary-300)]/20">
             <p className="text-sm text-white/60 mb-6 uppercase tracking-wider">Sur fond sombre</p>
             <img 
               src="/brand/logo.svg" 
@@ -24,7 +24,7 @@ export default function LogoDemoPage() {
           </div>
           
           {/* Logo sur fond clair */}
-          <div className="bg-white rounded-3xl p-16 border border-[#00CFC1]/20">
+          <div className="bg-white rounded-3xl p-16 border border-[var(--color-secondary-300)]/20">
             <p className="text-sm text-gray-600 mb-6 uppercase tracking-wider">Sur fond clair</p>
             <img 
               src="/brand/logo.svg" 
@@ -43,35 +43,35 @@ export default function LogoDemoPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Couleurs */}
             <div className="card">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#007A5E] to-[#003B32] mb-4"></div>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--color-primary-800)] to-[var(--color-primary-900)] mb-4"></div>
               <h3 className="text-xl font-semibold mb-3">Vert Émeraude Profond</h3>
               <p className="text-[var(--color-muted)] mb-4">
                 Lettres principales en vert émeraude (#007A5E → #003B32)
               </p>
               <div className="flex gap-2">
-                <div className="w-8 h-8 rounded bg-[#007A5E] border border-[var(--color-border)]"></div>
-                <div className="w-8 h-8 rounded bg-[#003B32] border border-[var(--color-border)]"></div>
-                <div className="w-8 h-8 rounded bg-[#001A15] border border-[var(--color-border)]"></div>
+                <div className="w-8 h-8 rounded bg-[var(--color-primary-800)] border border-[var(--color-border)]"></div>
+                <div className="w-8 h-8 rounded bg-[var(--color-primary-900)] border border-[var(--color-border)]"></div>
+                <div className="w-8 h-8 rounded bg-[var(--neutral-900)] border border-[var(--color-border)]"></div>
               </div>
             </div>
 
             {/* Lignes de code */}
             <div className="card">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#00CFC1] to-[#00E5D6] mb-4"></div>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--color-secondary-300)] to-[var(--color-secondary-200)] mb-4"></div>
               <h3 className="text-xl font-semibold mb-3">Turquoise Accent</h3>
               <p className="text-[var(--color-muted)] mb-4">
                 Lignes de code lumineuses (#00CFC1 → #00E5D6)
               </p>
               <div className="flex gap-2">
-                <div className="w-8 h-8 rounded bg-[#00CFC1] border border-[var(--color-border)]"></div>
-                <div className="w-8 h-8 rounded bg-[#00E5D6] border border-[var(--color-border)]"></div>
-                <div className="w-8 h-8 rounded bg-[#00B8AE] border border-[var(--color-border)]"></div>
+                <div className="w-8 h-8 rounded bg-[var(--color-secondary-300)] border border-[var(--color-border)]"></div>
+                <div className="w-8 h-8 rounded bg-[var(--color-secondary-200)] border border-[var(--color-border)]"></div>
+                <div className="w-8 h-8 rounded bg-[var(--color-primary-300)] border border-[var(--color-border)]"></div>
               </div>
             </div>
 
             {/* Animations */}
             <div className="card">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#00CFC1] to-[#007A5E] mb-4 animate-pulse"></div>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--color-secondary-300)] to-[var(--color-primary-800)] mb-4 animate-pulse"></div>
               <h3 className="text-xl font-semibold mb-3">Animations Fluides</h3>
               <p className="text-[var(--color-muted)] mb-4">
                 Lignes de code animées horizontalement et verticalement
@@ -83,7 +83,7 @@ export default function LogoDemoPage() {
 
             {/* Effet Matrix */}
             <div className="card">
-              <div className="w-12 h-12 rounded-full bg-[#007A5E] mb-4 flex items-center justify-center text-[#00CFC1] font-mono text-xs">
+              <div className="w-12 h-12 rounded-full bg-[var(--color-primary-800)] mb-4 flex items-center justify-center text-[var(--color-secondary-300)] font-mono text-xs">
                 &lt;/&gt;
               </div>
               <h3 className="text-xl font-semibold mb-3">Effet "Pluie de Code"</h3>
@@ -97,7 +97,7 @@ export default function LogoDemoPage() {
 
             {/* Lueur */}
             <div className="card">
-              <div className="w-12 h-12 rounded-full bg-[#003B32] mb-4 shadow-lg shadow-[#00CFC1]/50"></div>
+              <div className="w-12 h-12 rounded-full bg-[var(--color-primary-900)] mb-4 shadow-lg shadow-[var(--color-secondary-300)]/50"></div>
               <h3 className="text-xl font-semibold mb-3">Effet de Lueur</h3>
               <p className="text-[var(--color-muted)] mb-4">
                 Halo subtil autour des lettres pour un effet premium
@@ -109,7 +109,7 @@ export default function LogoDemoPage() {
 
             {/* Responsive */}
             <div className="card">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#007A5E] to-[#00CFC1] mb-4"></div>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--color-primary-800)] to-[var(--color-secondary-300)] mb-4"></div>
               <h3 className="text-xl font-semibold mb-3">100% Responsive</h3>
               <p className="text-[var(--color-muted)] mb-4">
                 Adapté à tous les écrans : desktop, tablette, mobile
@@ -199,8 +199,8 @@ export default function LogoDemoPage() {
           <div className="max-w-3xl mx-auto space-y-8">
             {/* HTML */}
             <div className="card">
-              <h3 className="text-lg font-semibold mb-4 text-[#00CFC1]">HTML / JSX</h3>
-              <pre className="bg-[#111827] text-[#00CFC1] p-6 rounded-xl overflow-x-auto text-sm font-mono">
+              <h3 className="text-lg font-semibold mb-4 text-[var(--color-secondary-300)]">HTML / JSX</h3>
+              <pre className="bg-[var(--neutral-900)] text-[var(--color-primary-300)] p-6 rounded-xl overflow-x-auto text-sm font-mono">
 {`<img 
   src="/brand/logo.svg" 
   alt="BANDEV" 
@@ -211,8 +211,8 @@ export default function LogoDemoPage() {
 
             {/* CSS */}
             <div className="card">
-              <h3 className="text-lg font-semibold mb-4 text-[#00FF55]">CSS Classes</h3>
-              <pre className="bg-[#111827] text-[#00FF55] p-6 rounded-xl overflow-x-auto text-sm font-mono">
+              <h3 className="text-lg font-semibold mb-4 text-[var(--color-secondary-200)]">CSS Classes</h3>
+              <pre className="bg-[var(--neutral-900)] text-[var(--color-primary-300)] p-6 rounded-xl overflow-x-auto text-sm font-mono">
 {`.brand {
   display: inline-flex;
   align-items: center;
@@ -231,16 +231,16 @@ export default function LogoDemoPage() {
 
             {/* Couleurs */}
             <div className="card">
-              <h3 className="text-lg font-semibold mb-4 text-[#00CFC1]">Palette de Couleurs</h3>
-              <pre className="bg-[#111827] text-[#00CFC1] p-6 rounded-xl overflow-x-auto text-sm font-mono">
+              <h3 className="text-lg font-semibold mb-4 text-[var(--color-secondary-300)]">Palette de Couleurs</h3>
+              <pre className="bg-[var(--neutral-900)] text-[var(--color-primary-300)] p-6 rounded-xl overflow-x-auto text-sm font-mono">
 {`/* Vert Émeraude Profond (Lettres) */
-#007A5E  /* Début */
-#003B32  /* Milieu */
-#001A15  /* Fin */
+var(--color-primary-800)  /* Début */
+var(--color-primary-900)  /* Milieu */
+var(--neutral-900)  /* Fin */
 
-/* Turquoise Accent (Lignes) */
-#00CFC1  /* Néon */
-#00E5D6  /* Clair */`}
+/* Accent émeraude (Lignes) */
+var(--color-primary-300)  /* Néon */
+var(--color-primary-200)  /* Clair */`}
               </pre>
             </div>
           </div>
@@ -248,7 +248,7 @@ export default function LogoDemoPage() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-gradient-to-br from-[#007A5E] via-[#003B32] to-[#001A15]">
+      <section className="section bg-gradient-to-br from-[var(--color-primary-800)] via-[var(--color-primary-900)] to-[var(--neutral-900)]">
         <div className="container-page text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Logo Matrix Prêt à l'Emploi
@@ -257,10 +257,10 @@ export default function LogoDemoPage() {
             Le logo BANDEV avec son esthétique Matrix est maintenant intégré dans le header et prêt pour la production.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a href="/" className="btn-primary bg-[#00FF55] text-[#0B3D0B] hover:bg-[#33FF77]">
+            <a href="/" className="btn-primary bg-[var(--color-secondary-300)] text-[var(--neutral-900)] hover:bg-[var(--color-secondary-200)]">
               Retour à l'accueil
             </a>
-            <a href="/contact" className="btn-secondary border-[#00FF55] text-white hover:bg-[#00FF55]/10">
+            <a href="/contact" className="btn-secondary border-[var(--color-secondary-300)] text-white hover:bg-[var(--color-secondary-300)]/10">
               Nous contacter
             </a>
           </div>

@@ -25,9 +25,9 @@
     --heading-dark: #0B1324;
     
     /* Dégradé émeraude → turquoise → bleu pour les mots-clés - EXACT SPECS */
-    --g-start: #0FA97A;     /* 0% */
-    --g-mid: #00C8B4;       /* 55% */
-    --g-end: #39BDF8;       /* 100% */
+    --g-start: var(--color-primary-600);     /* 0% */
+    --g-mid: var(--color-secondary-500);     /* 55% */
+    --g-end: var(--color-accent-500);        /* 100% */
     
     /* Effets de lisibilité */
     --stroke-dark: rgba(0,0,0,0.35);

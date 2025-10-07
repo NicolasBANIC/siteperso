@@ -4,123 +4,140 @@
 @import "../../styles/headings.css";
 
 @layer base {
-  /* Box-sizing universel pour un layout prévisible */
+  /* Box-sizing universel pour un layout pr��visible */
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  /* Design Tokens - Charte Émeraude Profond Unifiée */
+  /* Design Tokens - Harmonized BANDEV palette (based on logo/header) */
   :root {
     color-scheme: light;
-    
-    /* White Background with Matrix Rain Design Tokens */
+
+    /* Core white / background */
     --bg-white: #FFFFFF;
-    --rain-far-color: #00C896;
-    --rain-mid-color: #00A8A8;
-    --rain-near-color: #00FF41;
-    --rain-far-opacity: 0.05;
-    --rain-mid-opacity: 0.07;
-    --rain-near-opacity: 0.10;
+
+    /* Matrix rain tokens (subtle accent) */
+    --rain-far-color: var(--color-primary-700);
+    --rain-mid-color: var(--color-primary-500);
+    --rain-near-color: var(--color-primary-300);
+    --rain-far-opacity: 0.04;
+    --rain-mid-opacity: 0.06;
+    --rain-near-opacity: 0.08;
     --rain-far-speed: 45s;
     --rain-mid-speed: 30s;
     --rain-near-speed: 20s;
-    
-    /* Section Height Adjustments */
-    --section-padding-y: clamp(56px, 6vw, 96px);
-    --section-extra-margin: min(3vh, 48px);
-    
-    /* Système de couleurs harmonisé émeraude → turquoise selon spécifications */
-    --color-primary: #10B981;          /* emerald */
-    --color-primary-dark: #0F172A;     /* neutral-dark */
-    --color-turquoise: #06B6D4;        /* turquoise */
-    --color-emerald-accent: #10B981;   /* emerald */
-    --text-dark: #0F172A;              /* neutral-dark */
-    
-    /* Global Background Design Tokens harmonisés */
-    --bg_white: #FFFFFF;
-    --emerald_dark: #10B981;
-    --emerald_core: #10B981;
-    --text_dark: #0F172A;
-    --text_light: #FFFFFF;
-    
-    /* Global background - WHITE with Matrix rain */
-    --global_bg: var(--bg-white);
-    --gradient-emerald: var(--bg-white);
-    --bg-dark: #0B0F10;                 /* noir bleuté (sections sombres) */
-    --bg-light: #F8FAFC;
-    --text: #0E1116;
-    --text-sub: #475569;
-    --highlight: #C9A227;               /* doré subtil, parcimonieux */
-    
-    /* Variables CSS legacy pour compatibilité - UPDATED */
-    --color-anthracite: #0B0F10;
-    --color-white: #FFFFFF;
-    --color-matrix: #006B4B;
-    --color-matrix-2: #006B4B;
-    
-    /* Couleurs premium pour textes des sections héros */
-    --hero-text-primary: #F5F7FA;          /* couleur principale premium et lisible */
-    --hero-text-secondary: #E8ECF0;        /* couleur secondaire premium */
-    --hero-text-muted: rgba(245, 247, 250, 0.8); /* pour les sous-titres avec opacité */
-    
-    /* Palette principale harmonisée selon spécifications */
-    --color-background: #F1F5F9;
-    --color-surface: #FFFFFF;
-    --color-surface-hover: #F8FAFC;
-    --color-border: rgba(16, 185, 129, 0.15);
-    --color-border-hover: rgba(16, 185, 129, 0.3);
-    --color-foreground: #0F172A;
-    --color-muted: #64748B;
-    
-    /* Accents harmonisés émeraude → turquoise selon spécifications */
-    --color-accent: #10B981;
-    --color-accent-hover: #06B6D4;
-    --color-accent-secondary: #14B8A6;
-    --color-accent-secondary-hover: #0F172A;
-    --color-accent-tertiary: #3B82F6;
-    --color-accent-matrix: #10B981;
-    --color-accent-matrix-hover: #06B6D4;
+
+    /* Section sizing tokens */
+    --section-padding-y: clamp(48px, 5vw, 80px);
+    --section-extra-margin: min(2.5vh, 40px);
+
+    /* Primary (emerald) scale - derived from logo */
+    --color-primary-50: #ECFDF5;
+    --color-primary-100: #D1FAE5;
+    --color-primary-200: #A7F3D0;
+    --color-primary-300: #6EE7B7;
+    --color-primary-400: #34D399;
+    --color-primary-500: #10B981; /* base */
+    --color-primary-600: #059669;
+    --color-primary-700: #047857;
+    --color-primary-800: #065F46;
+    --color-primary-900: #064E3B;
+    --color-primary: var(--color-primary-500);
+
+    /* Secondary (turquoise/cyan) scale - header accent */
+    --color-secondary-50: #ECFEFF;
+    --color-secondary-100: #CFFAFE;
+    --color-secondary-200: #A5F3FC;
+    --color-secondary-300: #67E8F9;
+    --color-secondary-400: #22D3EE;
+    --color-secondary-500: #06B6D4; /* base */
+    --color-secondary-600: #0891B2;
+    --color-secondary-700: #0E7490;
+    --color-secondary-800: #155E75;
+    --color-secondary-900: #164E63;
+    --color-secondary: var(--color-secondary-500);
+
+    /* Accent (blue) scale for tertiary elements */
+    --color-accent-50: #EFF6FF;
+    --color-accent-100: #DBEAFE;
+    --color-accent-200: #BFDBFE;
+    --color-accent-300: #93C5FD;
+    --color-accent-400: #60A5FA;
+    --color-accent-500: #3B82F6;
+    --color-accent-600: #2563EB;
+    --color-accent-700: #1D4ED8;
+    --color-accent-800: #1E40AF;
+    --color-accent-900: #172554;
+    --color-accent: var(--color-accent-500);
+
+    /* Neutral scale (for backgrounds, surfaces, texts) */
+    --neutral-50: #F8FAFC;
+    --neutral-100: #F1F5F9;
+    --neutral-200: #E2E8F0;
+    --neutral-300: #CBD5E1;
+    --neutral-400: #94A3B8;
+    --neutral-500: #64748B;
+    --neutral-600: #475569;
+    --neutral-700: #334155;
+    --neutral-800: #1F2937;
+    --neutral-900: #0F172A;
+
+    /* Semantic tokens mapped to the new scales - DARK premium theme based on BANDEV logo */
+    --color-background: var(--neutral-900);
+    --color-surface: var(--neutral-800);
+    --color-surface-hover: var(--neutral-700);
+    --color-border: rgba(16, 185, 129, 0.12);
+    --color-border-hover: rgba(16, 185, 129, 0.22);
+    --color-foreground: var(--bg-white);
+    --color-muted: var(--neutral-400);
+
+    /* Accent mappings for components */
+    --color-accent-primary: var(--color-primary-500);
+    --color-accent-primary-hover: var(--color-primary-600);
+    --color-accent-secondary: var(--color-secondary-500);
+    --color-accent-secondary-hover: var(--color-secondary-600);
     --color-accent-foreground: #FFFFFF;
 
     --color-error: #DC2626;
-    
-    /* Or métallique */
+
+    /* Gold accent preserved but used sparingly */
     --color-gold: #D4AF37;
     --color-gold-light: #FFD700;
     --color-gold-dark: #B8860B;
-    
-    /* Focus & interactions - Émeraude harmonisé */
-    --color-ring: rgba(16, 185, 129, 0.35);
-    --color-ring-gold: rgba(212, 175, 55, 0.45);
-    
-    /* Tokens globaux unifiés */
+
+    /* Interaction & focus */
+    --color-ring: rgba(16, 185, 129, 0.32);
+    --color-ring-strong: rgba(6, 182, 212, 0.32);
+
+    /* Tokens */
     --radius: 12px;
     --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
-    
-    /* Shadows harmonisés émeraude → turquoise */
+
     --shadow: 0 4px 20px rgba(0,0,0,0.25);
-    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.20);
-    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.25);
-    --shadow-emerald: 0 8px 24px rgba(16, 185, 129, 0.20);
-    --shadow-ring: 0 0 0 3px rgba(16, 185, 129, 0.35);
-    
-    /* CORRECTED: Transitions uniformisées */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.16);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.20);
+    --shadow-accent: 0 8px 24px rgba(16, 185, 129, 0.16);
+    --shadow-ring: 0 0 0 3px rgba(16, 185, 129, 0.28);
+
+    /* Transitions */
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-standard: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Logo BANDEV tokens */
+    --transition-fast: all 0.18s var(--ease);
+    --transition-standard: all 0.25s var(--ease);
+    --transition-slow: all 0.32s var(--ease);
+
+    /* Logo tokens */
     --logo-gold: #D4AF37;
-    --logo-green: #00FF41;
-    --logo-blue: #0D99FF;
-    --logo-ink: #0A192F;
+    --logo-green: #10B981;
+    --logo-blue: #06B6D4;
+    --logo-ink: #0F172A;
+    /* Legacy token kept for compatibility */
+    --color-anthracite: #1A1A1A;
   }
 
   html {
@@ -137,8 +154,8 @@
 
   body {
     color: var(--color-foreground);
-    /* WHITE background with subtle Matrix rain effect */
-    background-color: var(--bg-white) !important;
+    background-color: var(--color-background) !important;
+    background-image: radial-gradient(1200px 400px at 10% 10%, rgba(16,185,129,0.06), transparent), radial-gradient(800px 300px at 90% 80%, rgba(6,182,212,0.04), transparent);
     background-attachment: fixed;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -164,16 +181,16 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='%2300C896' fill-opacity='0.05'%3E%3Ctext x='8' y='16' font-family='monospace' font-size='12'%3E01%3C/text%3E%3Ctext x='40' y='40' font-family='monospace' font-size='12'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E"),
-                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='%2300A8A8' fill-opacity='0.07'%3E%3Ctext x='4' y='14' font-family='monospace' font-size='10'%3E01%3C/text%3E%3Ctext x='28' y='34' font-family='monospace' font-size='10'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E"),
-                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cg fill='%2300FF41' fill-opacity='0.10'%3E%3Ctext x='2' y='10' font-family='monospace' font-size='9'%3E0%3C/text%3E%3Ctext x='18' y='26' font-family='monospace' font-size='9'%3E1%3C/text%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='%2306B6D4' fill-opacity='0.04'%3E%3Ctext x='8' y='16' font-family='monospace' font-size='12'%3E01%3C/text%3E%3Ctext x='40' y='40' font-family='monospace' font-size='12'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E"),
+                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='%230891B2' fill-opacity='0.05'%3E%3Ctext x='4' y='14' font-family='monospace' font-size='10'%3E01%3C/text%3E%3Ctext x='28' y='34' font-family='monospace' font-size='10'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E"),
+                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cg fill='%2300FF41' fill-opacity='0.06'%3E%3Ctext x='2' y='10' font-family='monospace' font-size='9'%3E0%3C/text%3E%3Ctext x='18' y='26' font-family='monospace' font-size='9'%3E1%3C/text%3E%3C/g%3E%3C/svg%3E");
     background-repeat: repeat, repeat, repeat;
     background-size: 64px 128px, 48px 96px, 32px 64px;
     animation: rainFar var(--rain-far-speed) linear infinite,
                rainMid var(--rain-mid-speed) linear infinite,
                rainNear var(--rain-near-speed) linear infinite;
-    opacity: 1;
-    mix-blend-mode: normal;
+    opacity: 0.9;
+    mix-blend-mode: overlay;
   }
 
   @keyframes rainFar {
@@ -201,12 +218,60 @@
 
   /* Base heading styles integrated into unified heading system - see headings.css */
 
+  /* --- Global dark theme adjustments: backgrounds & surfaces --- */
+  body, main, .container-page, .container-page-no-py {
+    background-color: transparent;
+    color: var(--color-foreground);
+  }
+
+  /* Center text horizontally in main containers */
+  .container-page,
+  .container-page-no-py,
+  .section,
+  .card,
+  .hero .container-page {
+    text-align: center;
+  }
+
+  /* Ensure direct children are centered and constrained */
+  .container-page > *,
+  .container-page-no-py > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Make cards and sections center their content vertically */
+  .card,
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Center form labels and input text */
+  label,
+  input,
+  textarea,
+  select,
+  button {
+    text-align: center;
+    color: var(--color-foreground);
+  }
+
+  /* Headings, paragraphs and lists centered */
+  h1,h2,h3,h4,h5,h6,p,li {
+    text-align: center;
+    color: var(--color-foreground);
+  }
+
   p {
     font-family: 'Inter', 'Poppins', sans-serif;
     font-size: clamp(1rem, 2vw, 1.125rem); /* 16-18px */
     line-height: 1.6;
     font-weight: 400;
-    color: #1A1A1A; /* Sombre pour lisibilité sur fond clair */
+    color: var(--color-foreground); /* tokenized foreground for dark theme */
     margin-bottom: 1.5em;
     /* Ensure text never overlaps */
     word-wrap: break-word;
@@ -224,7 +289,7 @@
     line-height: 1.4;
     letter-spacing: 0.005em;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #10B981, #06B6D4);
+    background: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500));
     border-radius: 9999px;
     padding: 12px 24px;
     border: none;
@@ -251,8 +316,8 @@
     /* CRITICAL: Remove ALL margins and paddings that create gaps between sections */
     margin: 0 !important;
     padding-top: 0 !important;
-    /* White background */
-    background-color: var(--bg-white) !important;
+    /* Unified dark background for main content */
+    background-color: var(--color-background) !important;
     position: relative;
     isolation: isolate;
     min-height: 100vh;
@@ -315,12 +380,12 @@
 
   *:focus-visible {
     @apply outline-none ring-2 ring-offset-2 ring-offset-white;
-    --tw-ring-color: #10B981;
+    --tw-ring-color: var(--color-primary-500);
   }
   
   button:focus-visible, .btn:focus-visible, a.button:focus-visible {
     @apply ring-2 ring-offset-2 ring-offset-white;
-    --tw-ring-color: #10B981;
+    --tw-ring-color: var(--color-primary-500);
     box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(16, 185, 129, 0.6);
   }
 
@@ -341,6 +406,8 @@
   select {
     @apply w-full rounded-lg border-2 border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-foreground)] transition-all duration-300;
     font-size: clamp(0.875rem, 2vw, 1rem);
+    color: var(--color-foreground);
+    text-align: center;
   }
   
   input[type="text"]:hover,
@@ -381,7 +448,7 @@
     font-family: 'Inter', 'Poppins', sans-serif;
     display: block;
     font-weight: 600;
-    color: #1A1A1A; /* Sombre pour lisibilité sur fond clair */
+    color: var(--color-foreground); /* tokenized foreground for labels */
     margin-bottom: 0.5rem;
     font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* 12-14px */
     line-height: 1.4;
@@ -432,25 +499,25 @@
      WHITE BACKGROUND ENFORCEMENT FOR ALL SECTIONS
      ======================================== */
   
-  /* Apply white background to main content wrapper */
-  body, 
-  main, 
-  .page-content, 
+  /* Apply unified dark background to main content wrapper */
+  body,
+  main,
+  .page-content,
   [data-section]:not(.hero):not(.hero-section) {
-    background-color: var(--bg-white) !important;
+    background-color: var(--color-background) !important;
     position: relative;
     isolation: isolate;
   }
-  
-  /* Force reset all section backgrounds to white */
-  section:not(.hero):not(.hero-section):not([class*="hero"]), 
-  .section:not(.hero):not(.hero-section), 
+
+  /* Ensure section backgrounds inherit the unified dark theme */
+  section:not(.hero):not(.hero-section):not([class*="hero"]),
+  .section:not(.hero):not(.hero-section),
   [data-section]:not(.hero):not(.hero-section),
   section[class*="py-"]:not(.hero):not(.hero-section) {
     border: 0 !important;
     background-image: none !important;
-    background-color: var(--bg-white) !important;
-    background: var(--bg-white) !important;
+    background-color: var(--color-background) !important;
+    background: var(--color-background) !important;
     box-shadow: none !important;
     outline: none !important;
   }
@@ -534,22 +601,22 @@
 
   /* Variables CSS globales pour unification complète du site - UPDATED */
   :root {
-    /* Palette principale unifiée - Émeraude Profond */
-    --unified-text-color: #ffffff;
-    --unified-accent-color: #006B4B;    /* Deep emerald as specified */
-    --unified-accent-hover: #00C896;    /* Emerald accent */
-    --unified-accent-dark: #003D2E;     /* Matrix dark */
-    --unified-overlay-dark: rgba(0,0,0,.35);
-    --unified-overlay-light: rgba(0,0,0,.25);
-    --unified-background-dark: rgba(11,15,16,.75);  /* noir bleuté */
-    --unified-background-darker: rgba(11,15,16,.95);
-    
-    /* Unified Card Styling - According to exact specifications */
-    --card-background: linear-gradient(180deg, rgba(15,143,114,0.9) 0%, rgba(0,200,180,0.75) 50%, rgba(255,255,255,0.98) 100%);
-    --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* Palette principale unifiée - Émeraude Profond (based on DEV) */
+    --unified-text-color: var(--color-foreground);
+    --unified-accent-color: var(--color-primary-800);
+    --unified-accent-hover: var(--color-primary-600);
+    --unified-accent-dark: var(--color-primary-900);
+    --unified-overlay-dark: rgba(0,0,0,.45);
+    --unified-overlay-light: rgba(0,0,0,.32);
+    --unified-background-dark: rgba(15,18,20,.85);
+    --unified-background-darker: rgba(10,12,14,.96);
+
+    /* Unified Card Styling - Dark premium emerald variants */
+    --card-background: linear-gradient(180deg, var(--color-primary-900) 0%, rgba(6,8,10,0.6) 50%, rgba(6,8,10,0.9) 100%);
+    --card-shadow: 0 12px 32px rgba(0,0,0,0.45);
     --card-border-radius: 16px;
-    --card-text-color: #0B1324;
-    --card-title-color: #003B2F;
+    --card-text-color: var(--color-foreground);
+    --card-title-color: var(--color-primary-800);
     
     /* Typographie unifiée */
     --unified-font-family: 'Inter', system-ui, sans-serif;
@@ -570,8 +637,8 @@
     --unified-shadow-light: 0 2px 6px rgba(0,0,0,0.1);
     --unified-shadow-medium: 0 8px 16px rgba(0,0,0,0.12);
     --unified-shadow-heavy: 0 12px 24px rgba(0,0,0,0.15);
-    --unified-shadow-accent: 0 0 12px rgba(0,122,94,0.3);
-    --unified-shadow-accent-hover: 0 12px 24px rgba(0,122,94,0.35);
+    --unified-shadow-accent: 0 0 18px rgba(16,185,129,0.18);
+    --unified-shadow-accent-hover: 0 16px 32px rgba(16,185,129,0.22);
     
     /* Transitions unifiées */
     --unified-transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -585,9 +652,14 @@
     --header-height-mobile-sm: 56px; /* ≤640px */
     
     /* Glassmorphism unifié */
-    --unified-glass-background: rgba(255,255,255,0.1);
-    --unified-glass-border: rgba(255,255,255,0.2);
+    --unified-glass-background: rgba(255,255,255,0.04);
+    --unified-glass-border: rgba(255,255,255,0.08);
     --unified-glass-backdrop: blur(12px);
+
+    /* Header glass backgrounds (dark, emerald-tinted) */
+    --header-bg: linear-gradient(180deg, rgba(16,185,129,0.04), rgba(6,8,10,0.55));
+    --header-bg-scrolled: linear-gradient(180deg, rgba(16,185,129,0.06), rgba(6,8,10,0.75));
+    --header-border-color: rgba(16,185,129,0.08);
   }
 
   /* REMOVED: All dark overlays to restore video clarity and use text enhancements instead */
@@ -640,7 +712,7 @@
     font-family: 'Inter', 'Poppins', sans-serif;
     font-weight: 600;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #0F8F72, #00C8B4);
+    background: linear-gradient(135deg, var(--color-primary-700), var(--color-secondary-500));
     border: none;
     border-radius: 9999px;
     padding: 12px 24px;
@@ -731,8 +803,8 @@
 
   /* Accent text styling */
   .accent {
-    color: #00C896;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, .7);
+    color: var(--color-primary-500);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
   }
 
   /* Glassmorphism utility */
@@ -822,34 +894,34 @@
      FORMULAIRES ET MENUS INTERACTIFS OPTIMISÉS
      ======================================== */
 
-  /* Amélioration des menus déroulants et sous-menus */
+  /* Amélioration des menus déroulants et sous-menus (dark, glassmorphism) */
   .dropdown-menu,
   .submenu,
   select[multiple],
   .menu-container {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 20px rgba(0, 63, 52, 0.25);
-    border: 1px solid rgba(0, 200, 150, 0.3);
+    background: linear-gradient(180deg, rgba(15,20,18,0.6), rgba(11,13,14,0.5));
+    backdrop-filter: blur(8px) saturate(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(16, 185, 129, 0.08);
     border-radius: 12px;
-    color: #1A1A1A; /* Texte sombre pour contraste optimal */
+    color: var(--color-foreground); /* Texte clair pour contraste optimal */
   }
 
   .dropdown-menu a,
   .submenu a,
   .menu-item {
-    color: #1A1A1A !important; /* Force le texte sombre */
+    color: var(--color-foreground) !important;
     padding: 8px 16px;
-    transition: all 0.3s ease;
+    transition: all 0.25s var(--ease);
     border-radius: 8px;
-    text-shadow: none; /* Supprime les ombres pour le menu clair */
+    text-shadow: none;
   }
 
   .dropdown-menu a:hover,
   .submenu a:hover,
   .menu-item:hover {
-    background: linear-gradient(135deg, rgba(0, 122, 94, 0.15), rgba(0, 207, 193, 0.15));
-    color: #003B32 !important; /* Matrix sombre au hover */
+    background: linear-gradient(135deg, rgba(16,185,129,0.06), rgba(16,185,129,0.03));
+    color: var(--color-foreground) !important;
   }
 
   /* ========================================
@@ -932,8 +1004,8 @@
   .text-accent-green,
   .hero h1 span,
   .hero h2 span {
-    /* Updated: emerald to turquoise gradient as specified */
-    background: linear-gradient(135deg, #00C896 0%, #00A8A8 100%);
+    /* Updated: emerald premium gradient based on DEV */
+    background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-300) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1193,7 +1265,7 @@
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 transition-all duration-300;
-    background: linear-gradient(135deg, #007A5E, #00CFC1);
+    background: linear-gradient(135deg, var(--color-primary-800), var(--color-secondary-300));
     color: #FFFFFF;
     font-size: clamp(0.875rem, 2vw, 1rem); /* 14-16px */
     font-weight: 600;
@@ -1203,7 +1275,7 @@
   }
   
   .btn-primary:hover {
-    background: linear-gradient(135deg, #003B32, #007A5E);
+    background: linear-gradient(135deg, var(--color-primary-900), var(--color-primary-800));
     box-shadow: var(--shadow-md);
     transform: translateY(-2px);
   }
