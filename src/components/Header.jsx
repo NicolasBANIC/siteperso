@@ -116,7 +116,7 @@ function Header() {
         className={`sticky top-0 inset-x-0 z-[60] transition-all duration-300 motion-reduce:transition-none ${
           scrolled
             ? 'header-glass'
-            : 'bg-transparent'
+            : 'header-transparent'
         }`}
         style={{ 
           height: 'var(--header-h, 80px)'
@@ -124,7 +124,7 @@ function Header() {
         initial={false}
         transition={{
           duration: prefersReducedMotion ? 0 : 0.22,
-          ease: 'easeOut',
+          ease: [0.4, 0, 0.2, 1],
         }}
       >
         {/* Conteneur principal - Layout structuré */}
@@ -180,14 +180,14 @@ function Header() {
             </motion.button>
           </div>
 
-          {/* Layout desktop - Structure 3 zones selon spécifications */}
-          <div className="hidden lg:grid grid-cols-[auto_1fr_auto] items-center w-full">
-            {/* Gauche = LOGO (cliquable) */}
-            <div className="justify-self-start" style={{ minWidth: '132px' }}>
+          {/* Layout desktop - Structure 15/70/15 PARFAITE avec Tailwind optimisé */}
+          <div className="hidden lg:grid grid-cols-[15%_70%_15%] items-center w-full h-full gap-0">
+            {/* Zone GAUCHE 15% = LOGO BANDEV (cliquable, parfaitement intégré) */}
+            <div className="flex items-center justify-start w-full h-full pl-2 min-w-0 overflow-hidden">
               <Link
                 href="/"
-                className="brand flex items-center"
-                aria-label="BANDEV"
+                className="brand flex items-center focus-visible:ring-2 focus-visible:ring-[var(--brand-emerald)] focus-visible:ring-offset-2 rounded-lg transition-transform duration-300 hover:scale-105 motion-reduce:hover:scale-100"
+                aria-label="BANDEV - Accueil"
               >
                 <img 
                   src="/brand/logo-bandev-unified.svg" 
@@ -198,27 +198,28 @@ function Header() {
                   style={{ 
                     display: 'block',
                     width: '132px',
-                    minWidth: '132px'
+                    minWidth: '132px',
+                    maxWidth: '132px'
                   }}
                 />
               </Link>
             </div>
 
-            {/* Centre = NAV */}
+            {/* Zone CENTRE 70% = NAVIGATION (liens parfaitement centrés et espacés) */}
             <nav
-              className="justify-self-center"
+              className="flex items-center justify-center w-full h-full min-w-0 overflow-hidden"
               aria-label="Navigation principale"
             >
-              <ul className="flex items-center gap-6">
+              <ul className="flex items-center justify-center gap-6 w-full max-w-4xl px-4 flex-wrap-nowrap min-w-0">
                 {links.map((link) => {
                   const isActive = pathname === link.href;
                   return (
-                    <li key={link.href}>
+                    <li key={link.href} className="flex-shrink-0">
                       <Link
                         href={link.href}
-                        className={`relative inline-flex items-center justify-center px-4 py-2 rounded-full transition-all duration-300 group font-inter font-medium focus-visible:ring-2 focus-visible:ring-[var(--brand-emerald)] focus-visible:ring-offset-2 ${
+                        className={`relative inline-flex items-center justify-center px-3 py-2 rounded-full transition-all duration-300 font-inter font-medium text-sm whitespace-nowrap focus-visible:ring-2 focus-visible:ring-[var(--brand-emerald)] focus-visible:ring-offset-2 ${
                           isActive
-                            ? 'pastille-active text-cyan-300 bg-white/5 shadow-[0_0_24px_rgba(34,211,238,.35)]'
+                            ? 'pastille-active text-cyan-300'
                             : 'text-white/90 hover:text-cyan-300 hover:bg-white/5 hover:shadow-[0_0_12px_rgba(34,211,238,.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0'
                         }`}
                       >
@@ -230,17 +231,23 @@ function Header() {
               </ul>
             </nav>
 
-            {/* Droite = CTA */}
-            <div className="justify-self-end">
-              <a href="#contact" className="inline-flex items-center justify-center rounded-md px-5 py-2 font-semibold
-                                 text-slate-900 shadow-sm transition-colors whitespace-nowrap
-                                 bg-gradient-to-r from-[var(--brand-emerald)]
-                                 to-[color-mix(in_oklab,var(--brand-emerald)_70%,white_30%)]
-                                 hover:opacity-95 focus-visible:outline-none
-                                 focus-visible:ring-2 focus-visible:ring-offset-2
-                                 focus-visible:ring-[var(--brand-emerald)]">
-                Demander un devis
-              </a>
+            {/* Zone DROITE 15% = CTA BOUTON (sur une seule ligne, jamais coupé) */}
+            <div className="flex items-center justify-end w-full h-full pr-2 min-w-0 overflow-hidden">
+              <Link 
+                href="/devis" 
+                className="inline-flex items-center justify-center rounded-md px-4 py-2 font-semibold text-sm
+                           text-slate-900 shadow-sm transition-all duration-300 whitespace-nowrap
+                           bg-gradient-to-r from-[var(--brand-emerald)]
+                           to-[color-mix(in_oklab,var(--brand-emerald)_70%,white_30%)]
+                           hover:opacity-95 hover:scale-105 focus-visible:outline-none
+                           focus-visible:ring-2 focus-visible:ring-offset-2
+                           focus-visible:ring-[var(--brand-emerald)]
+                           motion-reduce:hover:scale-100
+                           min-w-fit max-w-full"
+                aria-label="Demander un devis gratuit"
+              >
+                <span className="truncate">Demander un devis</span>
+              </Link>
             </div>
           </div>
         </div>
