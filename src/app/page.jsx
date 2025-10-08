@@ -273,7 +273,7 @@ export default function HomePage() {
         {/* Vidéo de fond - clean without dark filters */}
         <div className="absolute inset-0 z-0">
           <OptimizedVideo
-            src="/videos/videolibreCodingWebm.webm"
+            src="/videos/3163534-uhd_3840_2160_30fps.webm"
             className=""
             opacity="opacity-90"
             disableOnMobile={false}
