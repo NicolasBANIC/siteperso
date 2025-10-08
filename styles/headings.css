@@ -1,47 +1,47 @@
-/* 
- * Système de Titres Unifiés BANDEV - Refonte selon nouvelles spécifications
- * Fond global #5D726F avec couleurs harmonisées et lisibilité optimale
+﻿/* 
+ * SystÃ¨me de Titres UnifiÃ©s BANDEV - Refonte selon nouvelles spÃ©cifications
+ * Fond global #5D726F avec couleurs harmonisÃ©es et lisibilitÃ© optimale
  */
 
 @layer components {
-  /* Design Tokens harmonisés pour titres selon spécifications */
+  /* Design Tokens harmonisÃ©s pour titres selon spÃ©cifications */
   :root {
-    /* Police système moderne unifiée */
+    /* Police systÃ¨me moderne unifiÃ©e */
     --heading-family:
       'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     --heading-weight-reg: 700;
     --heading-weight-bold: 800;
     --heading-weight-black: 900;
 
-    /* Espacements optimisés */
+    /* Espacements optimisÃ©s */
     --ls-tight: var(--tracking-tight);
     --ls-normal: var(--tracking-normal);
     --lh-hero: var(--leading-tight);
     --lh-sec: var(--leading-normal);
 
-    /* Échelles responsives harmonisées avec tokens */
+    /* Ã‰chelles responsives harmonisÃ©es avec tokens */
     --h1-hero: var(--text-hero);      /* clamp(2.5rem, 5vw, 4rem) */
     --h2-sec: var(--text-h2);         /* clamp(1.75rem, 3.5vw, 2.25rem) */
     --h3-sec: var(--text-h3);         /* clamp(1.5rem, 3vw, 1.875rem) */
     --h-sub: var(--text-h4);          /* clamp(1.25rem, 2.5vw, 1.5rem) */
 
-    /* COULEURS selon spécifications - fond #5D726F */
-    --heading-primary: var(--text-primary);      /* Texte principal optimal sur fond foncé */
+    /* COULEURS selon spÃ©cifications - fond #5D726F */
+    --heading-primary: var(--text-primary);      /* Texte principal optimal sur fond foncÃ© */
     --heading-secondary: var(--text-secondary);  /* Texte secondaire lisible */
     --heading-brand: var(--brand-emerald);       /* Couleur exacte logo BANDEV pour titres de section */
     --heading-contrast: var(--anthracite-50);    /* Contraste maximum */
 
-    /* Dégradé harmonisé avec marque BANDEV */
+    /* DÃ©gradÃ© harmonisÃ© avec marque BANDEV */
     --g-start: var(--brand-emerald);             /* Couleur exacte logo BANDEV */
-    --g-mid: var(--color-secondary-500);         /* Turquoise complémentaire */
+    --g-mid: var(--color-secondary-500);         /* Turquoise complÃ©mentaire */
     --g-end: var(--color-accent-500);            /* Bleu accent */
 
-    /* Effets adaptés au fond #5D726F */
+    /* Effets adaptÃ©s au fond #5D726F */
     --stroke-glass: rgba(255, 255, 255, 0.18);   /* Stroke glassmorphique */
-    --shadow-heading: 0 2px 8px rgba(0, 0, 0, 0.15); /* Ombre subtile pour lisibilité */
+    --shadow-heading: 0 2px 8px rgba(0, 0, 0, 0.15); /* Ombre subtile pour lisibilitÃ© */
   }
 
-  /* Base pour tous les titres - LISIBILITÉ GARANTIE */
+  /* Base pour tous les titres - LISIBILITÃ‰ GARANTIE */
   .heading,
   .hero-title,
   .section-title,
@@ -54,17 +54,16 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* CORRECTION PRIORITAIRE : lisibilité sur fond #5D726F */
-    color: var(--heading-primary) !important;
+    /* CORRECTION PRIORITAIRE : lisibilitÃ© sur fond #5D726F */
+    color: var(--heading-primary) ;
   }
 
-  /* Titre héros (H1) - Contraste optimal sur fond #5D726F */
+  /* Titre hÃ©ros (H1) - Contraste optimal sur fond #5D726F */
   .hero-title,
   h1 {
     font-size: var(--h1-hero);
     line-height: var(--lh-hero);
-    color: var(--heading-contrast) !important; /* Contraste maximum */
-    text-shadow: var(--shadow-heading); /* Ombre pour lisibilité */
+    color: var(--heading-contrast) ;text-shadow: var(--shadow-heading); /* Ombre pour lisibilitÃ© */
     font-weight: var(--heading-weight-black);
   }
 
@@ -73,8 +72,7 @@
   h2 {
     font-size: var(--h2-sec);
     line-height: var(--lh-sec);
-    color: var(--heading-brand) !important; /* Couleur exacte du logo BANDEV */
-    font-weight: var(--heading-weight-bold);
+    color: var(--heading-brand) ;font-weight: var(--heading-weight-bold);
     letter-spacing: var(--ls-normal);
   }
 
@@ -83,44 +81,40 @@
   h3 {
     font-size: var(--h3-sec);
     line-height: 1.2;
-    color: var(--heading-brand) !important; /* Couleur exacte du logo BANDEV */
-    font-weight: var(--heading-weight-reg);
+    color: var(--heading-brand) ;font-weight: var(--heading-weight-reg);
   }
 
-  /* Sous-titres (H4, H5, H6) - Hiérarchie anthracite */
+  /* Sous-titres (H4, H5, H6) - HiÃ©rarchie anthracite */
   h4 {
     font-size: var(--h-sub);
     line-height: 1.3;
-    color: var(--anthracite-200) !important; /* Lisible sur fond foncé */
-    font-weight: var(--heading-weight-reg);
+    color: var(--anthracite-200) ;font-weight: var(--heading-weight-reg);
   }
 
   h5 {
     font-size: var(--text-body);
     line-height: 1.4;
-    color: var(--anthracite-300) !important; /* Hiérarchie visuelle */
-    font-weight: 600;
+    color: var(--anthracite-300) ;font-weight: 600;
   }
 
   h6 {
     font-size: var(--text-small);
     line-height: 1.4;
-    color: var(--anthracite-400) !important; /* Jamais en dessous de 4.5:1 */
-    font-weight: 600;
+    color: var(--anthracite-400) ;font-weight: 600;
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
   }
 
-  /* Sous-titre héros - Lisibilité optimale */
+  /* Sous-titre hÃ©ros - LisibilitÃ© optimale */
   .hero-subtitle {
     font-size: var(--h-sub);
     line-height: 1.4;
-    color: var(--heading-secondary) !important;
+    color: var(--heading-secondary) ;
     font-weight: 400;
     text-shadow: var(--shadow-heading);
   }
 
-  /* Classe pour les mots-clés avec dégradé harmonisé */
+  /* Classe pour les mots-clÃ©s avec dÃ©gradÃ© harmonisÃ© */
   .k {
     background-image: linear-gradient(
       90deg,
@@ -134,27 +128,26 @@
     background-size: 100% 100%;
   }
 
-  /* Dégradé pour mots-clés dans les titres héros */
+  /* DÃ©gradÃ© pour mots-clÃ©s dans les titres hÃ©ros */
   .hero-title .k {
     text-shadow: var(--shadow-heading);
   }
 
-  /* Dégradé pour mots-clés dans les titres de section */
+  /* DÃ©gradÃ© pour mots-clÃ©s dans les titres de section */
   .section-title .k {
-    /* Garde seulement le dégradé pour lisibilité */
+    /* Garde seulement le dÃ©gradÃ© pour lisibilitÃ© */
   }
 
-  /* Mots-clés dans les cards - dégradé propre */
+  /* Mots-clÃ©s dans les cards - dÃ©gradÃ© propre */
   .card-title .k {
-    /* Garde seulement le dégradé propre */
+    /* Garde seulement le dÃ©gradÃ© propre */
   }
 
-  /* CORRECTIONS SPÉCIFIQUES pour lisibilité */
+  /* CORRECTIONS SPÃ‰CIFIQUES pour lisibilitÃ© */
   
-  /* Overlays sombres réduites pour titres lisibles */
+  /* Overlays sombres rÃ©duites pour titres lisibles */
   .overlay-dark {
-    background: rgba(0, 0, 0, 0.3) !important; /* Réduit pour lisibilité */
-  }
+    background: rgba(0, 0, 0, 0.3) ;}
   
   .overlay-dark h1,
   .overlay-dark h2,
@@ -162,7 +155,7 @@
   .overlay-dark .hero-title,
   .overlay-dark .section-title,
   .overlay-dark .card-title {
-    color: var(--anthracite-50) !important;
+    color: var(--anthracite-50) ;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   }
 
@@ -171,10 +164,10 @@
   .glass-card h2,
   .glass-card h3,
   .glass-card .card-title {
-    color: var(--heading-primary) !important;
+    color: var(--heading-primary) ;
   }
 
-  /* Accessibilité - Réduction des effets si préféré */
+  /* AccessibilitÃ© - RÃ©duction des effets si prÃ©fÃ©rÃ© */
   @media (prefers-reduced-motion: reduce) {
     .hero-title,
     .section-title,
@@ -200,7 +193,7 @@
       font-size: clamp(1.25rem, 5vw, 1.75rem);
     }
     
-    /* Espacement mobile optimisé */
+    /* Espacement mobile optimisÃ© */
     .hero-title,
     .section-title,
     .card-title {
@@ -208,24 +201,24 @@
     }
   }
 
-  /* Contraste élevé pour accessibilité */
+  /* Contraste Ã©levÃ© pour accessibilitÃ© */
   @media (prefers-contrast: high) {
     .hero-title,
     .section-title,
     .card-title,
     h1, h2, h3, h4, h5, h6 {
-      color: var(--anthracite-50) !important;
+      color: var(--anthracite-50) ;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
   }
 
-  /* Print styles - Lisibilité sur papier */
+  /* Print styles - LisibilitÃ© sur papier */
   @media print {
     .hero-title,
     .section-title,
     .card-title,
     h1, h2, h3, h4, h5, h6 {
-      color: #000000 !important;
+      color: #000000 ;
       text-shadow: none;
     }
     

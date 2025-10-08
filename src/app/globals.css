@@ -1,40 +1,53 @@
-@import 'tailwindcss';
+﻿@import 'tailwindcss';
 
-/* Import du nouveau système de tokens */
+/* Import du nouveau systÃ¨me de tokens */
 @import '../../styles/tokens.css';
 
-/* Import du système de titres unifiés */
+/* Import du systÃ¨me de titres unifiÃ©s */
 @import '../../styles/headings.css';
 
+/* Import du thÃ¨me unifiÃ© complet - REFONTE UI/UX */
+@import '../../styles/theme-unifie.css';
+
 @layer base {
-  /* Box-sizing universel pour un layout prévisible */
+  /* Box-sizing universel pour un layout prÃ©visible */
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
+  /* Application du fond global #0D1D2C OBLIGATOIRE selon specifications */
+  body {
+    background-color: #0D1D2C !important;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   /* Design Tokens BANDEV - Refonte complète selon spécifications */
   :root {
     color-scheme: light;
 
-    /* FOND GLOBAL SELON SPÉCIFICATIONS - #5D726F */
-    --background: var(--bg-site); /* #5D726F - Fond principal requis */
-    --foreground: var(--text-primary); /* Texte principal optimal sur fond foncé */
-    --muted: var(--surface-glass); /* Surfaces atténuées glassmorphiques */
+    /* FOND GLOBAL SELON SPÃ‰CIFICATIONS - #0D1D2C */
+    --background: var(--bg-site); /* #0D1D2C - Fond principal requis */
+    --foreground: var(--text-primary); /* Texte principal optimal sur fond foncÃ© */
+    --muted: var(--surface-glass); /* Surfaces attÃ©nuÃ©es glassmorphiques */
     --muted-foreground: var(--text-secondary); /* Texte secondaire lisible */
     --card: var(--surface-card); /* Surface carte glassmorphique */
     --border: var(--border-subtle); /* Bordures glassmorphiques */
 
-    /* GLASSMORPHISM UNIFIÉ SELON SPÉCIFICATIONS */
-    --card-start: var(--gradient-card-start); /* Départ dégradé léger */
-    --card-end: var(--gradient-card-end); /* Fin dégradé léger */
+    /* GLASSMORPHISM UNIFIÃ‰ SELON SPÃ‰CIFICATIONS */
+    --card-start: var(--gradient-card-start); /* DÃ©part dÃ©gradÃ© lÃ©ger */
+    --card-end: var(--gradient-card-end); /* Fin dÃ©gradÃ© lÃ©ger */
     --card-border: var(--stroke-glass); /* Bordure semi-transparente */
     --card-glass-bg: var(--surface-glass); /* Fond glassmorphism subtil */
     --card-glass-hover: var(--surface-glass-hover); /* Hover glassmorphism */
 
     /* PRIMARY - COULEUR EXACTE DU LOGO BANDEV */
-    --primary: var(--brand-emerald); /* #10B981 - Vert émeraude exact */
+    --primary: var(--brand-emerald); /* #10B981 - Vert Ã©meraude exact */
     --primary-foreground: var(--anthracite-50); /* Texte sur accent (contraste optimal) */
     --color-primary-50: #ecfdf5;
     --color-primary-100: #d1fae5;
@@ -48,7 +61,7 @@
     --color-primary-900: #064e3b;
     --color-primary: var(--color-primary-500);
 
-    /* ANTHRACITE SCALE - Gamme harmonisée */
+    /* ANTHRACITE SCALE - Gamme harmonisÃ©e */
     --neutral-50: var(--anthracite-50);
     --neutral-100: var(--anthracite-100);
     --neutral-200: var(--anthracite-200);
@@ -86,7 +99,7 @@
     --color-accent-900: #172554;
     --color-accent: var(--color-accent-500);
 
-    /* Semantic tokens harmonisés avec le nouveau fond */
+    /* Semantic tokens harmonisÃ©s avec le nouveau fond */
     --color-background: var(--background);
     --color-surface: var(--card);
     --color-surface-hover: var(--surface-elevated);
@@ -108,7 +121,7 @@
     --color-ring: rgba(16, 185, 129, 0.32);
     --color-ring-strong: rgba(6, 182, 212, 0.32);
 
-    /* Tokens harmonisés */
+    /* Tokens harmonisÃ©s */
     --radius: var(--radius-xl);
     --radius-sm: 8px;
     --radius-md: var(--radius-xl);
@@ -122,7 +135,7 @@
     --shadow-accent: var(--shadow-emerald);
     --shadow-ring: var(--focus-shadow);
 
-    /* Transitions harmonisées */
+    /* Transitions harmonisÃ©es */
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: var(--transition-fast);
     --transition-standard: var(--transition-medium);
@@ -153,45 +166,43 @@
     /* Support des safe-area pour notch/encoche */
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
-    /* CRITIQUE : Empêcher le scroll horizontal */
+    /* CRITIQUE : EmpÃªcher le scroll horizontal */
     overflow-x: hidden;
     max-width: 100vw;
   }
 
   body {
-    /* FOND PRINCIPAL #5D726F avec texte contrasté selon spécifications */
+    /* FOND PRINCIPAL #0D1D2C avec texte contrastÃ© selon spÃ©cifications */
     color: var(--foreground);
-    background-color: var(--background) !important;
-    /* Gradients subtils harmonisés avec le nouveau fond */
-    background-image:
+    background-color: var(--background) ;background-image:
       radial-gradient(1200px 400px at 10% 10%, rgba(16, 185, 129, 0.04), transparent),
       radial-gradient(800px 300px at 90% 80%, rgba(6, 182, 212, 0.03), transparent);
     background-attachment: fixed;
     background-repeat: no-repeat;
     min-height: 100vh;
     font-size: var(--text-body); /* 16-18px - WCAG compliant */
-    line-height: var(--leading-relaxed); /* Lisibilité optimale */
+    line-height: var(--leading-relaxed); /* LisibilitÃ© optimale */
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* CRITIQUE : Empêcher le scroll horizontal */
+    /* CRITIQUE : EmpÃªcher le scroll horizontal */
     overflow-x: hidden;
     max-width: 100vw;
     position: relative;
     /* CRITIQUE : Remove any unwanted margins/padding that cause white gaps */
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0 ;
+    padding: 0 ;
     isolation: isolate;
   }
 
-  /* Matrix Rain Effect - Adapté pour fond #5D726F */
+  /* Matrix Rain Effect - AdaptÃ© pour fond #0D1D2C */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    /* Opacités réduites pour fond plus foncé + couleurs du vert émeraude */
+    /* OpacitÃ©s rÃ©duites pour fond #0D1D2C + couleurs du vert Ã©meraude */
     background-image:
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='%23047857' fill-opacity='0.03'%3E%3Ctext x='8' y='16' font-family='monospace' font-size='12'%3E01%3C/text%3E%3Ctext x='40' y='40' font-family='monospace' font-size='12'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E"),
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='%23059669' fill-opacity='0.04'%3E%3Ctext x='4' y='14' font-family='monospace' font-size='10'%3E01%3C/text%3E%3Ctext x='28' y='34' font-family='monospace' font-size='10'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E"),
@@ -205,8 +216,8 @@
       rainFar 45s linear infinite,
       rainMid 30s linear infinite,
       rainNear 20s linear infinite;
-    opacity: 0.8; /* Adapté pour fond plus foncé */
-    mix-blend-mode: screen; /* Meilleur blend mode pour fond foncé */
+    opacity: 0.8; /* AdaptÃ© pour fond plus foncÃ© */
+    mix-blend-mode: screen; /* Meilleur blend mode pour fond foncÃ© */
   }
 
   @keyframes rainFar {
@@ -258,11 +269,11 @@
   @media (prefers-reduced-motion: reduce) {
     body::before {
       animation: none;
-      opacity: 0.03; /* Très subtil pour reduced motion */
+      opacity: 0.03; /* TrÃ¨s subtil pour reduced motion */
     }
   }
 
-  /* --- Fond #5D726F : ajustements pour surfaces et textes --- */
+  /* --- Fond #0D1D2C : ajustements pour surfaces et textes --- */
   body,
   main,
   .container-page,
@@ -297,7 +308,7 @@
     text-align: center;
   }
 
-  /* Center form labels and input text - CONTRASTE ADAPTÉ AU FOND #5D726F */
+  /* Center form labels and input text - CONTRASTE ADAPTÃ‰ AU FOND #0D1D2C */
   label,
   input,
   textarea,
@@ -307,7 +318,7 @@
     color: var(--foreground);
   }
 
-  /* Headings, paragraphs and lists centered - CONTRASTE OPTIMISÉ */
+  /* Headings, paragraphs and lists centered - CONTRASTE OPTIMISÃ‰ */
   h1,
   h2,
   h3,
@@ -320,15 +331,15 @@
     color: var(--foreground);
   }
 
-  /* TYPOGRAPHIE OPTIMISÉE pour lisibilité sur fond #5D726F */
+  /* TYPOGRAPHIE OPTIMISÃ‰E pour lisibilitÃ© sur fond #0D1D2C */
   p {
     font-family: 'Inter', 'Poppins', sans-serif;
     font-size: var(--text-body); /* 16-18px - WCAG AA compliant */
-    line-height: var(--leading-relaxed); /* Lisibilité optimale 1.6 */
+    line-height: var(--leading-relaxed); /* LisibilitÃ© optimale 1.6 */
     font-weight: 400;
-    color: var(--text-primary); /* Contraste optimal sur fond #5D726F */
+    color: var(--text-primary); /* Contraste optimal sur fond #0D1D2C */
     margin-bottom: 1.5em;
-    /* Largeur de ligne optimale : 50-75 caractères */
+    /* Largeur de ligne optimale : 50-75 caractÃ¨res */
     max-width: 65ch;
     margin-left: auto;
     margin-right: auto;
@@ -336,7 +347,7 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
-    /* Ombre très légère pour lisibilité */
+    /* Ombre trÃ¨s lÃ©gÃ¨re pour lisibilitÃ© */
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 
@@ -389,13 +400,13 @@
   main {
     @apply pb-16 md:pb-24;
     /* CRITICAL: Remove ALL margins and paddings that create gaps between sections */
-    margin: 0 !important;
-    padding-top: 0 !important;
+    margin: 0 ;
+    padding-top: 0 ;
   }
 
   /* Layout constraints responsives */
   .container-page {
-    max-width: 1280px; /* Harmonisé selon spécifications */
+    max-width: 1280px; /* HarmonisÃ© selon spÃ©cifications */
     margin: 0 auto;
     padding: 0 var(--spacing-section);
   }
@@ -406,7 +417,7 @@
     padding: 0 var(--spacing-section);
   }
 
-  /* Grille harmonisée pour cards */
+  /* Grille harmonisÃ©e pour cards */
   .grid-layout {
     display: grid;
     gap: var(--gap-grid);
@@ -420,7 +431,7 @@
     padding-bottom: var(--section-padding-y);
   }
 
-  /* LIENS avec états hover harmonisés */
+  /* LIENS avec Ã©tats hover harmonisÃ©s */
   a {
     color: var(--text-primary);
     text-decoration: none;
@@ -436,19 +447,17 @@
     outline-offset: var(--focus-offset);
   }
 
-  /* CORRECTION DES TITRES ILLISIBLES - Priorité maximale */
+  /* CORRECTION DES TITRES ILLISIBLES - PrioritÃ© maximale */
   h1, h2, h3, h4, h5, h6 {
-    color: var(--text-primary) !important; /* Lisibilité garantie sur fond #5D726F */
-  }
+    color: var(--text-primary) ;}
 
   /* Titres de section et titres principaux de cards utilisent la couleur de marque */
   .section-title,
   .card-title,
   .main-title {
-    color: var(--brand-emerald) !important; /* Couleur exacte du logo BANDEV */
-  }
+    color: var(--brand-emerald) ;}
 
-  /* Cards glassmorphiques harmonisées */
+  /* Cards glassmorphiques harmonisÃ©es */
   .card {
     background: var(--surface-glass);
     border: 1px solid var(--stroke-glass);
@@ -467,13 +476,12 @@
     transform: translateY(-2px);
   }
 
-  /* CORRECTIONS de lisibilité pour overlays trop sombres */
+  /* CORRECTIONS de lisibilitÃ© pour overlays trop sombres */
   .overlay-dark {
-    background: rgba(0, 0, 0, 0.3) !important; /* Réduit pour lisibilité */
-  }
+    background: rgba(0, 0, 0, 0.3) ;}
 
   .overlay-text {
-    color: var(--anthracite-50) !important;
+    color: var(--anthracite-50) ;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
@@ -491,26 +499,26 @@
   }
 }
 
-/* Tailwind utilities overrides pour assurer la cohérence */
+/* Tailwind utilities overrides pour assurer la cohÃ©rence */
 @layer utilities {
   .bg-site {
-    background-color: var(--bg-site) !important;
+    background-color: var(--bg-site) ;
   }
   
   .text-brand {
-    color: var(--brand-emerald) !important;
+    color: var(--brand-emerald) ;
   }
   
   .text-anthracite-100 {
-    color: var(--anthracite-100) !important;
+    color: var(--anthracite-100) ;
   }
   
   .text-anthracite-200 {
-    color: var(--anthracite-200) !important;
+    color: var(--anthracite-200) ;
   }
   
   .text-anthracite-800 {
-    color: var(--anthracite-800) !important;
+    color: var(--anthracite-800) ;
   }
   
   .glass-surface {

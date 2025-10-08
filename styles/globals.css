@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+﻿@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -61,3 +61,4 @@ body {
     background-color: rgba(11, 18, 32, 0.95);
   }
 }
+

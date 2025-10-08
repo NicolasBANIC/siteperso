@@ -55,7 +55,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="glass border-t border-white/10 text-sm text-white/80">
+    <footer className="footer-premium glass border-t border-white/10 text-sm text-white/80">
       <div className="mx-auto w-full max-w-7xl px-gutter py-6 md:py-8">
         {/* Main Footer Content */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
@@ -71,7 +71,7 @@ function Footer() {
             <p className="text-xs text-white/60">SIRET : 841 375 652 00028</p>
             <Link
               href="/devis"
-              className="inline-flex items-center justify-center rounded-full bg-cta-gradient px-6 py-3 text-sm font-medium text-slate-900 shadow-lg transition-all duration-300 hover:opacity-95 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
+              className="btn inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 px-6 py-3 text-sm font-medium text-slate-900 shadow-lg transition-all duration-300 hover:opacity-95 hover:shadow-xl hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
             >
               Demander un devis
             </Link>
@@ -86,7 +86,7 @@ function Footer() {
               {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    className="text-slate-200 transition-all duration-300 hover:text-brand-cyan hover:translate-x-1 inline-block"
+                    className="link text-slate-200 transition-all duration-300 hover:text-cyan-300 hover:translate-x-1 inline-block"
                     href={link.href}
                   >
                     {link.label}
@@ -119,7 +119,7 @@ function Footer() {
                     {item.href ? (
                       <Link
                         href={item.href}
-                        className="block transition-all duration-300 hover:text-brand-cyan hover:translate-x-1"
+                        className="link block transition-all duration-300 hover:text-cyan-300 hover:translate-x-1"
                       >
                         {content}
                       </Link>
@@ -143,7 +143,7 @@ function Footer() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-brand-cyan transition-all duration-300 hover:border-brand-cyan hover:bg-brand-cyan hover:text-white hover:scale-110 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 motion-reduce:hover:scale-100"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-cyan-300 transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-300 hover:text-white hover:scale-110 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 motion-reduce:hover:scale-100"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
@@ -164,7 +164,7 @@ function Footer() {
               <span key={link.href} className="flex items-center gap-4">
                 <Link
                   href={link.href}
-                  className="text-slate-200 transition-all duration-300 hover:text-brand-cyan"
+                  className="link text-slate-200 transition-all duration-300 hover:text-cyan-300"
                 >
                   {link.label}
                 </Link>
@@ -180,8 +180,8 @@ function Footer() {
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 px-gutter py-4 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {currentYear} BANDEV - Nicolas Banic. Tous droits réservés.</p>
           <p>
-            Développé avec <span className="text-brand-cyan font-medium">Next.js 15</span> &{' '}
-            <span className="text-brand-cyan font-medium">React 19</span>
+            Développé avec <span className="text-cyan-300 font-medium">Next.js 15</span> &{' '}
+            <span className="text-cyan-300 font-medium">React 19</span>
           </p>
         </div>
       </div>

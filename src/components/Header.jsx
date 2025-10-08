@@ -82,8 +82,8 @@ function Header() {
                   href={link.href}
                   className={`block rounded-full px-6 py-4 text-heading-sm font-medium transition-all duration-300 ${
                     isActive
-                      ? 'bg-white/5 text-white border border-brand-cyan/30 shadow-[0_0_24px_rgba(34,211,238,.35)]'
-                      : 'text-white/80 hover:text-brand-cyan hover:bg-white/5 hover:border hover:border-brand-cyan/20 hover:shadow-[0_0_12px_rgba(34,211,238,.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0'
+                      ? 'pastille-active text-white border border-cyan-300/30 shadow-[0_0_24px_rgba(34,211,238,.35)]'
+                      : 'text-white/80 hover:text-cyan-300 hover:bg-white/5 hover:border hover:border-cyan-300/20 hover:shadow-[0_0_12px_rgba(34,211,238,.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0'
                   }`}
                 >
                   {link.label}
@@ -115,8 +115,8 @@ function Header() {
         role="banner"
         className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 motion-reduce:transition-none pointer-events-auto ${
           scrolled
-            ? 'glass-strong shadow-lg border-b border-white/10'
-            : 'bg-transparent backdrop-blur-sm border-b border-transparent'
+            ? 'header-premium scrolled glass-strong shadow-lg border-b border-white/10'
+            : 'header-premium bg-transparent backdrop-blur-sm border-b border-transparent'
         }`}
         initial={false}
         transition={{
@@ -152,8 +152,8 @@ function Header() {
                   href={link.href}
                   className={`relative inline-flex items-center justify-center px-4 py-2 rounded-full transition-all duration-300 group font-inter font-medium ${
                     isActive
-                      ? 'text-white bg-white/5 shadow-[0_0_24px_rgba(34,211,238,.35)] after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-brand-cyan'
-                      : 'text-white/90 hover:text-brand-cyan hover:bg-white/5 hover:shadow-[0_0_12px_rgba(34,211,238,.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0'
+                      ? 'pastille-active text-cyan-300 bg-white/5 shadow-[0_0_24px_rgba(34,211,238,.35)]'
+                      : 'text-white/90 hover:text-cyan-300 hover:bg-white/5 hover:shadow-[0_0_12px_rgba(34,211,238,.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0'
                   }`}
                 >
                   <span className="relative z-10">{link.label}</span>
@@ -166,7 +166,7 @@ function Header() {
           <div className="hidden items-center gap-4 lg:flex">
             <Link
               href="/devis"
-              className="relative inline-flex items-center justify-center px-6 py-2 rounded-full font-semibold text-sm text-slate-900 bg-cta-gradient shadow-lg transition-all duration-300 hover:opacity-95 hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
+              className="btn relative inline-flex items-center justify-center px-6 py-2 rounded-full font-semibold text-sm text-slate-900 bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg transition-all duration-300 hover:opacity-95 hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
             >
               <span className="relative z-10">Demander un devis</span>
             </Link>

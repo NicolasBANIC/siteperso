@@ -1,0 +1,335 @@
+/* =====================================================
+   BANDEV - REFONTE UI/UX COMPLÈTE
+   Système de design unifié selon spécifications
+   Version: 2.0 - Harmonisation totale
+   ===================================================== */
+
+/* ✨ Variables CSS Custom Properties - Système complet */
+:root {
+  /* 🎨 COULEURS PRINCIPALES */
+  --bg-site: #0D1D2C; /* Fond global obligatoire selon spécifications */
+  --brand-emerald: #10B981; /* Couleur EXACTE du logo BANDEV extraite du SVG */
+  
+  /* 🌫️ PALETTE ANTHRACITE - Gamme harmonisée */
+  --anthracite-50: #F2F4F4;
+  --anthracite-100: #E6E9E9;
+  --anthracite-200: #CBD3D2;
+  --anthracite-300: #AEB9B7;
+  --anthracite-400: #8F9E9C;
+  --anthracite-500: #6F807D;
+  --anthracite-600: #4C5C59;
+  --anthracite-700: #3A4846;
+  --anthracite-800: #283231;
+  --anthracite-900: #1B2221;
+  
+  /* 💎 GLASSMORPHISME SUBTIL - Opacité < 0.12 selon spécifications */
+  --surface-glass: rgba(255,255,255,0.08);
+  --stroke-glass: rgba(255,255,255,0.18);
+  --surface-glass-hover: rgba(255,255,255,0.12);
+  --stroke-glass-hover: rgba(255,255,255,0.28);
+  
+  /* 🌈 SHADOWS & EFFECTS */
+  --shadow-soft: 0 8px 24px rgba(0,0,0,0.18);
+  --shadow-medium: 0 12px 28px rgba(0,0,0,0.22);
+  --shadow-strong: 0 16px 40px rgba(0,0,0,0.26);
+  --shadow-emerald: 0 8px 24px rgba(16,185,129,0.20);
+  
+  /* 📐 RADIUS & ESPACEMENTS */
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  
+  /* ⚡ TRANSITIONS - Harmonisées selon spécifications */
+  --transition-fast: 160ms ease;
+  --transition-medium: 240ms ease;
+  --transition-slow: 320ms ease;
+  
+  /* 📝 TYPOGRAPHIE - Hiérarchie claire pour lisibilité */
+  --text-hero: clamp(2.5rem, 5vw, 4rem);
+  --text-h1: clamp(2rem, 4vw, 3rem);
+  --text-h2: clamp(1.75rem, 3.5vw, 2.25rem);
+  --text-h3: clamp(1.5rem, 3vw, 1.875rem);
+  --text-h4: clamp(1.25rem, 2.5vw, 1.5rem);
+  --text-body: clamp(1rem, 2vw, 1.125rem);
+  --text-small: clamp(0.875rem, 1.5vw, 1rem);
+  
+  /* Line heights pour lisibilité optimale */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  
+  /* Letter spacing pour améliorer la lisibilité */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  
+  /* ♿ ACCESSIBILITÉ - Focus et contrastes */
+  --focus-ring: 2px solid var(--brand-emerald);
+  --focus-offset: 2px;
+  --focus-shadow: 0 0 0 3px rgba(16,185,129,0.3);
+}
+
+/* 🧱 COMPOSANTS - Glassmorphisme maîtrisé */
+
+/* Cards avec glassmorphisme léger */
+.card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: var(--surface-glass);
+  border: 1px solid var(--stroke-glass);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-2xl);
+  transition: transform var(--transition-fast), box-shadow var(--transition-medium);
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  border-color: var(--stroke-glass-hover);
+  box-shadow: var(--shadow-medium);
+  background: var(--surface-glass-hover);
+}
+
+/* Titres de cards en couleur de marque */
+.card h2, .card h3 {
+  color: var(--brand-emerald);
+  letter-spacing: 0.2px;
+  font-weight: 700;
+}
+
+/* 🌟 GLASSMORPHISME HEADER/FOOTER - Premium selon spécifications */
+.glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: var(--surface-glass);
+  border: 1px solid var(--stroke-glass);
+  box-shadow: var(--shadow-soft);
+}
+
+.glass-strong {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: rgba(11, 18, 32, 0.95); /* Premium profond pour header scrollé */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-medium);
+}
+
+/* 🎯 HIÉRARCHIE TYPOGRAPHIQUE - Lisibilité exemplaire */
+
+/* H1 : Contraste maximum pour titres principaux */
+h1 {
+  font-size: var(--text-h1);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  color: var(--anthracite-100); /* Contraste ≥ 4.5:1 sur #0D1D2C */
+  letter-spacing: var(--tracking-tight);
+}
+
+/* H2 : Titres de sections en couleur de marque */
+h2 {
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--leading-normal);
+  color: var(--brand-emerald); /* Couleur de marque selon spécifications */
+  letter-spacing: var(--tracking-normal);
+}
+
+/* H3 : Sous-titres avec bon contraste */
+h3 {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: var(--leading-normal);
+  color: var(--anthracite-200); /* Contraste ≥ 4.5:1 */
+}
+
+/* H4-H6 : Hiérarchie décroissante */
+h4, h5, h6 {
+  font-weight: 600;
+  color: var(--anthracite-300);
+  line-height: var(--leading-normal);
+}
+
+/* Body text avec contraste optimal */
+p, body {
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  color: var(--anthracite-100); /* Contraste ≥ 4.5:1 sur #0D1D2C */
+}
+
+/* 🔘 BOUTONS - États cohérents avec triade couleur */
+.btn {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: var(--text-small);
+  padding: 12px 24px;
+  border-radius: 9999px; /* Pills selon spécifications */
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-medium), background var(--transition-medium);
+  background: linear-gradient(135deg, var(--brand-emerald), #06b6d4);
+  color: var(--anthracite-50);
+  box-shadow: var(--shadow-emerald);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+  background: linear-gradient(135deg, #059669, #0891b2); /* Hover states */
+}
+
+.btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  box-shadow: var(--focus-shadow);
+}
+
+/* 🔗 LIENS - Hover cohérent */
+.link {
+  color: var(--anthracite-200);
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--brand-emerald);
+}
+
+/* 💊 PASTILLE ACTIVE - Cyan selon spécifications */
+.pastille-active {
+  background: rgba(255, 255, 255, 0.05);
+  color: #22d3ee; /* Cyan pour l'actif */
+  border-radius: 9999px;
+  padding: 8px 16px;
+}
+
+/* 🌐 LAYOUT GLOBAL */
+body {
+  background-color: var(--bg-site) !important; /* #0D1D2C obligatoire */
+  color: var(--anthracite-100);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Conteneurs avec max-width harmonisée */
+.container-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 🎭 ÉTATS INTERACTIFS - Cohérence totale */
+
+/* Hover lift pour cards */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Focus visible accessible partout */
+.focus-ring:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  box-shadow: var(--focus-shadow);
+}
+
+/* Transitions harmonisées */
+.transition-all {
+  transition: all var(--transition-medium);
+}
+
+/* ♿ ACCESSIBILITÉ - Contrastes conformes AA/AAA */
+
+/* Assurer contraste minimal 4.5:1 sur tous les textes */
+.text-contrast-high {
+  color: var(--anthracite-50); /* Contraste maximum */
+}
+
+.text-contrast-medium {
+  color: var(--anthracite-100); /* Contraste élevé */
+}
+
+.text-contrast-low {
+  color: var(--anthracite-200); /* Contraste minimum acceptable */
+}
+
+/* 📱 RESPONSIVE - Breakpoints harmonisés */
+@media (max-width: 768px) {
+  .container-page {
+    padding: 0 16px;
+  }
+  
+  h1 { font-size: var(--text-h2); }
+  h2 { font-size: var(--text-h3); }
+}
+
+/* 🎨 PREMIUM HEADER - Couleurs profondes avec glassmorphism */
+.header-premium {
+  background: linear-gradient(135deg, rgba(11, 18, 32, 0.3), rgba(15, 59, 51, 0.3));
+}
+
+.header-premium.scrolled {
+  background: linear-gradient(135deg, rgba(11, 18, 32, 0.95), rgba(15, 59, 51, 0.95));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* 🦶 PREMIUM FOOTER - Même style que header */
+.footer-premium {
+  background: linear-gradient(135deg, rgba(11, 18, 32, 0.95), rgba(15, 59, 51, 0.95));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* 🎭 ANIMATIONS - Parallax discret selon spécifications */
+@media (prefers-reduced-motion: no-preference) {
+  .parallax-subtle {
+    transform: translateY(calc(var(--scroll) * -0.1px));
+  }
+}
+
+/* 📱 SUPPORT FALLBACK pour browsers sans backdrop-filter */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass,
+  .glass-strong {
+    background-color: rgba(11, 18, 32, 0.95);
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ♻️ REDUCED MOTION - Respecter les préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hover-lift:hover {
+    transform: none;
+  }
+}
+
+/* 🖨️ PRINT STYLES - Optimisation pour l'impression */
+@media print {
+  :root {
+    --shadow-soft: none;
+    --shadow-medium: none;
+    --shadow-strong: none;
+  }
+  
+  .card {
+    background: white !important;
+    border: 1px solid var(--anthracite-300) !important;
+    color: black !important;
+  }
+  
+  .glass,
+  .glass-strong {
+    background: white !important;
+    backdrop-filter: none !important;
+  }
+}

@@ -1,21 +1,22 @@
-/* =========================================
+﻿/* =========================================
    BANDEV - Design Tokens & Theme System 
-   Refonte UI/UX - Harmonisation complète
+   Refonte UI/UX - Harmonisation complÃ¨te
+   Version: 2.0 - Fond #0D1D2C + Couleur exacte logo BANDEV
    ========================================= */
 
-/* Définition des tokens selon la nouvelle charte */
+/* DÃ©finition des tokens selon la nouvelle charte UI/UX */
 :root {
   /* ======================
      COULEURS PRINCIPALES
      ====================== */
   
-  /* Fond global selon spécifications */
-  --bg-site: #5D726F;
+  /* Fond global selon spÃ©cifications EXACTES - #0D1D2C */
+  --bg-site: #0D1D2C;
   
-  /* Couleur de marque - EXACT du logo BANDEV */
-  --brand-emerald: #10B981; /* Couleur exacte extraite du logo SVG */
+  /* Couleur de marque - EXACTE du logo BANDEV (extraite du SVG) */
+  --brand-emerald: #10B981; /* Couleur principale du gradient Ã©meraude */
   
-  /* Palette anthracite - Gamme du clair au foncé */
+  /* Palette anthracite - Gamme du clair au foncÃ© */
   --anthracite-50:  #F2F4F4;
   --anthracite-100: #E6E9E9;
   --anthracite-200: #CBD3D2;
@@ -31,13 +32,13 @@
      SURFACES & GLASSMORPHISME
      ====================== */
   
-  /* Glassmorphisme subtil pour lisibilité */
+  /* Glassmorphisme subtil pour lisibilitÃ© */
   --surface-glass: rgba(255,255,255,0.08);
   --stroke-glass: rgba(255,255,255,0.18);
   --surface-glass-hover: rgba(255,255,255,0.12);
   --stroke-glass-hover: rgba(255,255,255,0.28);
   
-  /* Dégradés légers pour les cards */
+  /* DÃ©gradÃ©s lÃ©gers pour les cards */
   --gradient-card-start: rgba(255,255,255,0.06);
   --gradient-card-end: rgba(0,0,0,0.04);
   
@@ -58,7 +59,7 @@
   --radius-2xl: 20px;
   --radius-3xl: 24px;
   
-  /* Espacements harmonisés */
+  /* Espacements harmonisÃ©s */
   --spacing-card: 20px;
   --spacing-section: 24px;
   --gap-grid: 20px;
@@ -85,18 +86,18 @@
   --text-body: clamp(1rem, 2vw, 1.125rem);
   --text-small: clamp(0.875rem, 1.5vw, 1rem);
   
-  /* Line heights optimisés */
+  /* Line heights optimisÃ©s */
   --leading-tight: 1.2;
   --leading-normal: 1.5;
   --leading-relaxed: 1.6;
   
-  /* Letter spacing pour lisibilité */
+  /* Letter spacing pour lisibilitÃ© */
   --tracking-tight: -0.02em;
   --tracking-normal: 0;
   --tracking-wide: 0.025em;
   
   /* ======================
-     TOKENS SÉMANTIQUES
+     TOKENS SÃ‰MANTIQUES
      ====================== */
   
   /* Surfaces */
@@ -110,10 +111,10 @@
   --border-focus: var(--brand-emerald);
   
   /* Textes selon contexte */
-  --text-primary: var(--anthracite-100);           /* Principal sur fonds foncés */
-  --text-secondary: var(--anthracite-200);         /* Secondaire sur fonds foncés */
-  --text-muted: var(--anthracite-300);             /* Atténué sur fonds foncés */
-  --text-inverse: var(--anthracite-800);           /* Foncé sur fonds clairs */
+  --text-primary: var(--anthracite-100);           /* Principal sur fonds foncÃ©s */
+  --text-secondary: var(--anthracite-200);         /* Secondaire sur fonds foncÃ©s */
+  --text-muted: var(--anthracite-300);             /* AttÃ©nuÃ© sur fonds foncÃ©s */
+  --text-inverse: var(--anthracite-800);           /* FoncÃ© sur fonds clairs */
   --text-brand: var(--brand-emerald);              /* Couleur de marque */
   
   /* Interactions */
@@ -122,7 +123,7 @@
   --interactive-hover: var(--anthracite-200);
   
   /* ======================
-     FOCUS & ACCESSIBILITÉ
+     FOCUS & ACCESSIBILITÃ‰
      ====================== */
   
   --focus-ring: 2px solid var(--brand-emerald);
@@ -130,7 +131,7 @@
   --focus-shadow: 0 0 0 3px rgba(16,185,129,0.3);
   
   /* ======================
-     BREAKPOINTS (pour référence)
+     BREAKPOINTS (pour rÃ©fÃ©rence)
      ====================== */
   
   --bp-sm: 640px;
@@ -144,7 +145,7 @@
    CLASSES UTILITAIRES
    ====================== */
 
-/* Dégradé harmonisé pour cards */
+/* DÃ©gradÃ© harmonisÃ© pour cards */
 .card-gradient {
   background: linear-gradient(180deg, var(--gradient-card-start), var(--gradient-card-end));
 }
@@ -180,20 +181,20 @@
 .container-xl { max-width: 1280px; }
 .container-2xl { max-width: 1536px; }
 
-/* Grille harmonisée */
+/* Grille harmonisÃ©e */
 .grid-cards {
   display: grid;
   gap: var(--gap-grid);
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* Transitions harmonisées */
+/* Transitions harmonisÃ©es */
 .transition-all { transition: all var(--transition-medium); }
 .transition-fast { transition: all var(--transition-fast); }
 .transition-slow { transition: all var(--transition-slow); }
 .transition-bounce { transition: all var(--transition-bounce); }
 
-/* États hover harmonisés */
+/* Ã‰tats hover harmonisÃ©s */
 .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-medium);
@@ -214,7 +215,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Ajustements pour le mode sombre si nécessaire */
+    /* Ajustements pour le mode sombre si nÃ©cessaire */
     --surface-glass: rgba(255,255,255,0.05);
     --stroke-glass: rgba(255,255,255,0.12);
   }
