@@ -8,7 +8,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 import { useScrolled } from '@/hooks/useScrolled';
-import { LogoHeader } from './Logo';
+import Image from 'next/image';
 
 const links = [
   { href: '/', label: 'Accueil' },
@@ -132,19 +132,24 @@ function Header() {
           ease: 'easeOut',
         }}
       >
-        {/* Conteneur principal - Centrage parfait H/V */}
-        <div className="NavInner mx-auto w-full max-w-7xl px-6 h-full flex items-center justify-center">
+        {/* Conteneur principal - Layout structuré */}
+        <div className="mx-auto max-w-[1200px] px-4 lg:px-6 h-full flex items-center">
           {/* Layout mobile - justification entre les éléments */}
           <div className="flex items-center justify-between lg:hidden w-full">
             {/* Logo mobile */}
             <Link
               href="/"
               className="brand flex items-center z-10"
-              aria-label="Accueil BANDEV - Développeur Web Freelance"
+              aria-label="BANDEV"
             >
-              <div className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-brand-cyan font-bold text-xl">
-                <LogoHeader style={{ maxHeight: '32px' }} />
-              </div>
+              <Image 
+                src="/brand/logo-bandev-unified.svg" 
+                alt="BANDEV" 
+                width={132} 
+                height={32} 
+                priority 
+                className="h-8 w-auto"
+              />
             </Link>
 
             {/* Menu Mobile Button */}
@@ -177,54 +182,65 @@ function Header() {
             </motion.button>
           </div>
 
-          {/* Layout desktop - Centrage parfait H/V */}
-          <div className="hidden lg:flex items-center justify-center gap-6 flex-wrap text-center">
-            {/* Logo BANDEV - Partie du flux centré */}
-            <Link
-              href="/"
-              className="brand flex items-center z-10"
-              aria-label="Accueil BANDEV - Développeur Web Freelance"
-            >
-              <div className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-brand-cyan font-bold text-xl">
-                <LogoHeader style={{ maxHeight: '32px' }} />
-              </div>
-            </Link>
+          {/* Layout desktop - Structure 3 zones selon spécifications */}
+          <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center w-full">
+            {/* Gauche = LOGO (cliquable) */}
+            <div className="justify-self-start">
+              <Link
+                href="/"
+                className="brand flex items-center"
+                aria-label="BANDEV"
+              >
+                <Image 
+                  src="/brand/logo-bandev-unified.svg" 
+                  alt="BANDEV" 
+                  width={132} 
+                  height={32} 
+                  priority 
+                  className="h-8 w-auto"
+                />
+              </Link>
+            </div>
 
-            {/* Navigation Desktop - Centrée dans le flux */}
+            {/* Centre = NAV */}
             <nav
-              className="flex items-center justify-center gap-5 text-ui font-medium"
+              className="justify-self-center"
               aria-label="Navigation principale"
             >
-              {links.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`relative inline-flex items-center justify-center px-4 py-2 rounded-full transition-all duration-300 group font-inter font-medium focus-visible:ring-2 focus-visible:ring-[var(--brand-emerald)] focus-visible:ring-offset-2 ${
-                      isActive
-                        ? 'pastille-active text-cyan-300 bg-white/5 shadow-[0_0_24px_rgba(34,211,238,.35)]'
-                        : 'text-white/90 hover:text-cyan-300 hover:bg-white/5 hover:shadow-[0_0_12px_rgba(34,211,238,.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0'
-                    }`}
-                  >
-                    <span className="relative z-10">{link.label}</span>
-                  </Link>
-                );
-              })}
+              <ul className="flex items-center gap-6">
+                {links.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className={`relative inline-flex items-center justify-center px-4 py-2 rounded-full transition-all duration-300 group font-inter font-medium focus-visible:ring-2 focus-visible:ring-[var(--brand-emerald)] focus-visible:ring-offset-2 ${
+                          isActive
+                            ? 'pastille-active text-cyan-300 bg-white/5 shadow-[0_0_24px_rgba(34,211,238,.35)]'
+                            : 'text-white/90 hover:text-cyan-300 hover:bg-white/5 hover:shadow-[0_0_12px_rgba(34,211,238,.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0'
+                        }`}
+                      >
+                        <span className="relative z-10">{link.label}</span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
             </nav>
 
-            {/* CTA Button Premium - Dégradé exact BANDEV */}
-            <button className="rounded-md px-5 py-2 font-semibold text-slate-900 shadow-sm
-                               bg-gradient-to-r from-[var(--brand-emerald)]
-                               to-[color-mix(in_oklab,var(--brand-emerald)_70%,white_30%)]
-                               hover:opacity-95 focus-visible:outline-none
-                               focus-visible:ring-2 focus-visible:ring-offset-2
-                               focus-visible:ring-[var(--brand-emerald)]
-                               transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5
-                               motion-reduce:hover:translate-y-0"
-                               onClick={() => window.location.href = '/devis'}>
-              Demander un devis
-            </button>
+            {/* Droite = CTA */}
+            <div className="justify-self-end">
+              <a href="#contact" className="rounded-md px-5 py-2 font-semibold text-slate-900 shadow-sm
+                                 bg-gradient-to-r from-[var(--brand-emerald)]
+                                 to-[color-mix(in_oklab,var(--brand-emerald)_70%,white_30%)]
+                                 hover:opacity-95 focus-visible:outline-none
+                                 focus-visible:ring-2 focus-visible:ring-offset-2
+                                 focus-visible:ring-[var(--brand-emerald)]
+                                 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5
+                                 motion-reduce:hover:translate-y-0">
+                Demander un devis
+              </a>
+            </div>
           </div>
         </div>
       </motion.header>

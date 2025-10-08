@@ -286,22 +286,11 @@ export default function HomePage() {
         {/* Matrix Rain effect now handled by global CSS */}
 
         {/* Content */}
-        <div className="container-page relative z-10 flex min-h-[60vh] items-center px-4 sm:px-6 md:px-8 mx-auto max-w-screen-xl">
-          <div className="grid gap-6 lg:gap-12 xl:gap-16 w-full xl:grid-cols-2 xl:items-center">
-            {/* Left: Text Content with enhanced readability and semi-transparent overlay */}
-            <ScrollReveal direction="left">
-              <div className="copy-wrap space-y-8 xl:max-w-none relative">
+        <section className="relative mx-auto max-w-[1200px] px-6 lg:px-8 py-12 lg:py-20 grid grid-cols-12 gap-8 items-start">
+          {/* Colonne gauche : 7/12 */}
+          <ScrollReveal direction="left">
+            <div className="col-span-12 lg:col-span-7 xl:col-span-7 copy-wrap space-y-8 relative">
                 <div className="relative z-10">
-                  <div className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--color-accent-matrix)]/50 bg-[var(--color-accent-matrix)]/20 px-4 py-2 text-caption font-medium backdrop-blur-sm">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--color-accent-matrix)] opacity-75 motion-safe:animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-accent-matrix)] shadow-[0_0_8px_rgba(0,255,0,0.6)]"></span>
-                    </span>
-                    <span className="text-white font-semibold drop-shadow-md">
-                      Disponible pour de nouveaux projets
-                    </span>
-                  </div>
-
                   <h1 className="hero-title">
                     Je conçois des <span className="k">interfaces modernes</span>, performantes et
                     centrées sur l'humain
@@ -353,14 +342,13 @@ export default function HomePage() {
               </div>
             </ScrollReveal>
 
-            {/* Right: Contact Form (replaces MockDashboard) */}
+            {/* Colonne droite : 5/12, plus à droite */}
             <ScrollReveal direction="right" delay={200}>
-              <div className="relative flex justify-center xl:justify-end">
+              <aside className="col-span-12 lg:col-span-5 xl:col-span-5 lg:ml-auto max-w-[520px] w-full">
                 <HeroContactFormNew />
-              </div>
+              </aside>
             </ScrollReveal>
-          </div>
-        </div>
+        </section>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 motion-safe:animate-bounce">

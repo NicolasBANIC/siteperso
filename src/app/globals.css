@@ -26,6 +26,12 @@
   }
 
   /* Configuration de base - voir body complet plus bas */
+  
+  /* Configuration HTML pour scroll-padding (ancres) */
+  html {
+    scroll-padding-top: var(--header-h, 80px);
+    scroll-behavior: smooth;
+  }
 
   /* Design Tokens BANDEV - Refonte complète selon spécifications */
   :root {
