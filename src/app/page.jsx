@@ -269,7 +269,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section - Clean video background sans overlay sombre */}
-      <section className="hero relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden min-h-[80vh]">
+      <section className="hero section-soft relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden min-h-[80vh]">
         {/* Vidéo de fond - clean without dark filters */}
         <div className="absolute inset-0 z-0">
           <OptimizedVideo
@@ -379,7 +379,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section - Compact Expertise Band */}
-      <section className="py-1">
+      <section className="section-soft py-1">
         <div className="container-page-no-py">
           <div className="flex flex-wrap items-center justify-center gap-4">
             {stats.map((stat, index) => (
@@ -408,7 +408,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="relative py-8 md:py-12">
+      <section className="section-soft relative py-8 md:py-12">
         <ParticlesBackground />
 
         <div className="container-page-no-py">
@@ -504,7 +504,7 @@ export default function HomePage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20">
+      <section className="section-soft py-20">
         <div className="container-page">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -598,7 +598,7 @@ export default function HomePage() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-12 md:py-20">
+      <section className="section-soft py-12 md:py-20">
         <div className="container-page-no-py">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -822,7 +822,7 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-12 md:py-20">
+      <section className="section-soft py-12 md:py-20">
         <div className="container-page-no-py">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -893,7 +893,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20">
+      <section className="section-soft py-20">
         <div className="container-page">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -922,7 +922,7 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 md:py-24">
+      <section className="section-soft py-16 md:py-24">
         <div className="container-page">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Left: Content */}

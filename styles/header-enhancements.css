@@ -1,0 +1,137 @@
+/* =====================================================
+   BANDEV - HEADER ENHANCEMENTS
+   Glassmorphisme premium et transitions entre sections
+   ===================================================== */
+
+/* ✨ GLASSMORPHISME HEADER - Configuration premium selon spécifications */
+.header-glass {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(13, 29, 44, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: background 0.22s ease, backdrop-filter 0.22s ease, box-shadow 0.22s ease;
+}
+
+/* ✨ CONTENEUR NAVIGATION - Centrage parfait H/V */
+.NavInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.NavInner > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ✨ BOUTON CTA - Style rectangulaire avec coins doux */
+.cta-button-premium {
+  background: linear-gradient(135deg, #10B981, #22D3EE);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 300ms ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.cta-button-premium:hover {
+  opacity: 0.95;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+  transform: translateY(-1px);
+}
+
+.cta-button-premium:focus-visible {
+  outline: 2px solid #10B981;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+}
+
+/* 🌈 TRANSITIONS DOUCES ENTRE SECTIONS */
+.section-soft {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Dégradé haut (vers la section précédente) */
+.section-soft::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 56px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Dégradé bas (vers la section suivante) */  
+.section-soft::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 56px;
+  background: linear-gradient(0deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Variantes d'opacité pour sections spécifiques */
+.section-soft-subtle::before,
+.section-soft-subtle::after {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+}
+
+.section-soft-strong::before, 
+.section-soft-strong::after {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+}
+
+/* ♿ ACCESSIBILITÉ - Focus visible pour tous les liens de navigation */
+.nav-link:focus-visible {
+  outline: 2px solid #10B981;
+  outline-offset: 2px;
+  border-radius: 9999px;
+}
+
+/* 📱 RESPONSIVE - Ajustements mobile */
+@media (max-width: 1024px) {
+  .section-soft::before,
+  .section-soft::after {
+    height: 32px;
+  }
+}
+
+/* 🎯 CTA Premium - Bouton BANDEV exact */
+button[class*="bg-gradient-to-r"]:is(.from-\[var\(--brand-emerald\)\]) {
+  background: linear-gradient(135deg, var(--brand-emerald), color-mix(in oklab, var(--brand-emerald) 70%, white 30%)) !important;
+}
+
+/* 📱 RESPONSIVE - Menu mobile centré */
+@media (max-width: 1024px) {
+  .NavInner {
+    justify-content: space-between;
+  }
+  
+  .section-soft::before,
+  .section-soft::after {
+    height: 32px;
+  }
+}
+
+/* ♻️ REDUCED MOTION - Respecter les préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  .header-glass,
+  .cta-button-premium,
+  button[class*="transition-all"] {
+    transition: none;
+  }
+  
+  .cta-button-premium:hover,
+  button[class*="hover:-translate-y-0.5"]:hover {
+    transform: none;
+  }
+}

@@ -113,43 +113,8 @@
   box-shadow: var(--shadow-medium);
 }
 
-/* 🎯 HIÉRARCHIE TYPOGRAPHIQUE - Lisibilité exemplaire */
-
-/* H1 : Contraste maximum pour titres principaux */
-h1 {
-  font-size: var(--text-h1);
-  font-weight: 800;
-  line-height: var(--leading-tight);
-  color: var(--anthracite-100); /* Contraste ≥ 4.5:1 sur #0D1D2C */
-  letter-spacing: var(--tracking-tight);
-}
-
-/* H2 : Titres de sections en couleur de marque */
-h2 {
-  font-size: var(--text-h2);
-  font-weight: 700;
-  line-height: var(--leading-normal);
-  color: var(--brand-emerald); /* Couleur de marque selon spécifications */
-  letter-spacing: var(--tracking-normal);
-}
-
-/* H3 : Sous-titres avec bon contraste */
-h3 {
-  font-size: var(--text-h3);
-  font-weight: 600;
-  line-height: var(--leading-normal);
-  color: var(--anthracite-200); /* Contraste ≥ 4.5:1 */
-}
-
-/* H4-H6 : Hiérarchie décroissante */
-h4, h5, h6 {
-  font-weight: 600;
-  color: var(--anthracite-300);
-  line-height: var(--leading-normal);
-}
-
-/* Body text avec contraste optimal */
-p, body {
+/* 🎯 TEXT GLOBAL - Configuration de base */
+p {
   font-size: var(--text-body);
   font-weight: 400;
   line-height: var(--leading-relaxed);
@@ -202,12 +167,7 @@ p, body {
   padding: 8px 16px;
 }
 
-/* 🌐 LAYOUT GLOBAL */
-body {
-  background-color: var(--bg-site) !important; /* #0D1D2C obligatoire */
-  color: var(--anthracite-100);
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
+/* Note: Configuration body déplacée dans globals.css pour éviter les doublons */
 
 /* Conteneurs avec max-width harmonisée */
 .container-page {
@@ -261,16 +221,7 @@ body {
   h2 { font-size: var(--text-h3); }
 }
 
-/* 🎨 PREMIUM HEADER - Couleurs profondes avec glassmorphism */
-.header-premium {
-  background: linear-gradient(135deg, rgba(11, 18, 32, 0.3), rgba(15, 59, 51, 0.3));
-}
-
-.header-premium.scrolled {
-  background: linear-gradient(135deg, rgba(11, 18, 32, 0.95), rgba(15, 59, 51, 0.95));
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-}
+/* Header styles définis dans header-enhancements.css pour éviter duplication */
 
 /* 🦶 PREMIUM FOOTER - Même style que header */
 .footer-premium {
@@ -296,6 +247,45 @@ body {
   .card {
     background-color: rgba(255, 255, 255, 0.08);
   }
+}
+
+/* 🌈 TRANSITIONS DOUCES ENTRE SECTIONS - Dégradés de lissage */
+.section-soft {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Dégradé haut (vers la section précédente) */
+.section-soft::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 56px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Dégradé bas (vers la section suivante) */
+.section-soft::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 56px;
+  background: linear-gradient(0deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Variantes d'opacité pour sections avec couleurs spécifiques */
+.section-soft-subtle::before,
+.section-soft-subtle::after {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+}
+
+.section-soft-strong::before,
+.section-soft-strong::after {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
 }
 
 /* ♻️ REDUCED MOTION - Respecter les préférences utilisateur */

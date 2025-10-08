@@ -5,6 +5,7 @@ import BackToTop from '@/components/BackToTop';
 import ScrollProgress from '@/components/ScrollProgress';
 
 import './globals.css';
+import '../../styles/header-enhancements.css';
 
 const inter = Inter({
   subsets: ['latin'],

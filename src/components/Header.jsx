@@ -32,10 +32,7 @@ function Header() {
     setMounted(true);
   }, []);
 
-  // Debug: log state changes
-  useEffect(() => {
-    console.log('🍔 Menu state changed:', isMenuOpen, 'Scrolled:', scrolled);
-  }, [isMenuOpen, scrolled]);
+  // État du menu suivi pour accessibilité
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -97,12 +94,17 @@ function Header() {
             transition={{ delay: links.length * 0.05, duration: 0.3 }}
             className="mt-6 px-2"
           >
-            <Link
-              href="/devis"
-              className="relative inline-flex items-center justify-center w-full px-6 py-3 rounded-full font-semibold text-slate-900 bg-cta-gradient shadow-lg transition-all duration-300 hover:opacity-95 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
-            >
+            <button className="rounded-md px-5 py-2 w-full font-semibold text-slate-900 shadow-sm
+                               bg-gradient-to-r from-[var(--brand-emerald)]
+                               to-[color-mix(in_oklab,var(--brand-emerald)_70%,white_30%)]
+                               hover:opacity-95 focus-visible:outline-none
+                               focus-visible:ring-2 focus-visible:ring-offset-2
+                               focus-visible:ring-[var(--brand-emerald)]
+                               transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5
+                               motion-reduce:hover:translate-y-0"
+                               onClick={() => window.location.href = '/devis'}>
               <span className="relative z-10">Demander un devis</span>
-            </Link>
+            </button>
           </motion.div>
         </nav>
       </motion.div>
@@ -113,93 +115,117 @@ function Header() {
     <>
       <motion.header
         role="banner"
-        className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 motion-reduce:transition-none pointer-events-auto ${
+        className={`sticky top-0 left-0 right-0 z-[60] w-full transition-all duration-300 motion-reduce:transition-none ${
           scrolled
-            ? 'header-premium scrolled glass-strong shadow-lg border-b border-white/10'
-            : 'header-premium bg-transparent backdrop-blur-sm border-b border-transparent'
+            ? 'header-glass'
+            : 'bg-transparent'
         }`}
+        style={{ 
+          height: 'var(--header-h, 80px)',
+          margin: 0,
+          padding: 0,
+          paddingTop: 'max(10px, env(safe-area-inset-top))'
+        }}
         initial={false}
         transition={{
-          duration: prefersReducedMotion ? 0 : 0.3,
+          duration: prefersReducedMotion ? 0 : 0.22,
           ease: 'easeOut',
         }}
       >
-        <div
-          className="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-6"
-          style={{ height: scrolled ? '64px' : '68px' }}
-        >
-          {/* Logo BANDEV - Premium gradient styling */}
-          <Link
-            href="/"
-            className="brand flex items-center z-10"
-            aria-label="Accueil BANDEV - Développeur Web Freelance"
-          >
-            <div className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-brand-cyan font-bold text-xl">
-              <LogoHeader style={{ maxHeight: '32px' }} />
-            </div>
-          </Link>
-
-          {/* Navigation Desktop - Premium pill design */}
-          <nav
-            className="hidden items-center gap-6 text-ui font-medium lg:flex"
-            aria-label="Navigation principale"
-          >
-            {links.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`relative inline-flex items-center justify-center px-4 py-2 rounded-full transition-all duration-300 group font-inter font-medium ${
-                    isActive
-                      ? 'pastille-active text-cyan-300 bg-white/5 shadow-[0_0_24px_rgba(34,211,238,.35)]'
-                      : 'text-white/90 hover:text-cyan-300 hover:bg-white/5 hover:shadow-[0_0_12px_rgba(34,211,238,.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0'
-                  }`}
-                >
-                  <span className="relative z-10">{link.label}</span>
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* CTA Button - Premium pill design */}
-          <div className="hidden items-center gap-4 lg:flex">
+        {/* Conteneur principal - Centrage parfait H/V */}
+        <div className="NavInner mx-auto w-full max-w-7xl px-6 h-full flex items-center justify-center">
+          {/* Layout mobile - justification entre les éléments */}
+          <div className="flex items-center justify-between lg:hidden w-full">
+            {/* Logo mobile */}
             <Link
-              href="/devis"
-              className="btn relative inline-flex items-center justify-center px-6 py-2 rounded-full font-semibold text-sm text-slate-900 bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg transition-all duration-300 hover:opacity-95 hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 motion-reduce:hover:translate-y-0"
+              href="/"
+              className="brand flex items-center z-10"
+              aria-label="Accueil BANDEV - Développeur Web Freelance"
             >
-              <span className="relative z-10">Demander un devis</span>
+              <div className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-brand-cyan font-bold text-xl">
+                <LogoHeader style={{ maxHeight: '32px' }} />
+              </div>
             </Link>
+
+            {/* Menu Mobile Button */}
+            <motion.button
+              type="button"
+              className="relative z-[10000] inline-flex items-center justify-center rounded-lg glass p-3 text-white transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_12px_rgba(34,211,238,0.3)] hover:border-brand-cyan/40"
+              style={{ zIndex: 10000 }}
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              aria-label="Ouvrir ou fermer le menu"
+              aria-controls="menu-mobile"
+              aria-expanded={isMenuOpen}
+              data-testid="mobile-menu-button"
+              whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={isMenuOpen ? 'close' : 'open'}
+                  initial={prefersReducedMotion ? {} : { rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={prefersReducedMotion ? {} : { rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                >
+                  {isMenuOpen ? (
+                    <X className="h-5 w-5" aria-hidden strokeWidth={2.5} />
+                  ) : (
+                    <Menu className="h-5 w-5" aria-hidden strokeWidth={2.5} />
+                  )}
+                </motion.div>
+              </AnimatePresence>
+            </motion.button>
           </div>
 
-          {/* Menu Mobile Button - Premium glassmorphism design */}
-          <motion.button
-            type="button"
-            className="relative z-[10000] inline-flex items-center justify-center rounded-lg glass p-3 text-white transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_12px_rgba(34,211,238,0.3)] hover:border-brand-cyan/40 lg:hidden"
-            style={{ zIndex: 10000 }}
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            aria-label="Ouvrir ou fermer le menu"
-            aria-controls="menu-mobile"
-            aria-expanded={isMenuOpen}
-            data-testid="mobile-menu-button"
-            whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={isMenuOpen ? 'close' : 'open'}
-                initial={prefersReducedMotion ? {} : { rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={prefersReducedMotion ? {} : { rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2, ease: 'easeOut' }}
-              >
-                {isMenuOpen ? (
-                  <X className="h-5 w-5" aria-hidden strokeWidth={2.5} />
-                ) : (
-                  <Menu className="h-5 w-5" aria-hidden strokeWidth={2.5} />
-                )}
-              </motion.div>
-            </AnimatePresence>
-          </motion.button>
+          {/* Layout desktop - Centrage parfait H/V */}
+          <div className="hidden lg:flex items-center justify-center gap-6 flex-wrap text-center">
+            {/* Logo BANDEV - Partie du flux centré */}
+            <Link
+              href="/"
+              className="brand flex items-center z-10"
+              aria-label="Accueil BANDEV - Développeur Web Freelance"
+            >
+              <div className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-brand-cyan font-bold text-xl">
+                <LogoHeader style={{ maxHeight: '32px' }} />
+              </div>
+            </Link>
+
+            {/* Navigation Desktop - Centrée dans le flux */}
+            <nav
+              className="flex items-center justify-center gap-5 text-ui font-medium"
+              aria-label="Navigation principale"
+            >
+              {links.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative inline-flex items-center justify-center px-4 py-2 rounded-full transition-all duration-300 group font-inter font-medium focus-visible:ring-2 focus-visible:ring-[var(--brand-emerald)] focus-visible:ring-offset-2 ${
+                      isActive
+                        ? 'pastille-active text-cyan-300 bg-white/5 shadow-[0_0_24px_rgba(34,211,238,.35)]'
+                        : 'text-white/90 hover:text-cyan-300 hover:bg-white/5 hover:shadow-[0_0_12px_rgba(34,211,238,.2)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0'
+                    }`}
+                  >
+                    <span className="relative z-10">{link.label}</span>
+                  </Link>
+                );
+              })}
+            </nav>
+
+            {/* CTA Button Premium - Dégradé exact BANDEV */}
+            <button className="rounded-md px-5 py-2 font-semibold text-slate-900 shadow-sm
+                               bg-gradient-to-r from-[var(--brand-emerald)]
+                               to-[color-mix(in_oklab,var(--brand-emerald)_70%,white_30%)]
+                               hover:opacity-95 focus-visible:outline-none
+                               focus-visible:ring-2 focus-visible:ring-offset-2
+                               focus-visible:ring-[var(--brand-emerald)]
+                               transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5
+                               motion-reduce:hover:translate-y-0"
+                               onClick={() => window.location.href = '/devis'}>
+              Demander un devis
+            </button>
+          </div>
         </div>
       </motion.header>
 

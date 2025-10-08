@@ -127,14 +127,9 @@ const config = {
           900: 'var(--anthracite-900)'
         },
 
-        // Brand tokens harmonisés
-        'brand-emerald': 'var(--brand-emerald)',  // Couleur exacte du logo BANDEV
-        'bg-site': 'var(--bg-site)',             // Fond global #5D726F
-
-        // Legacy compatibility (transitoire)
-        emerald: 'var(--brand-emerald)',         // Utilise la couleur exacte du logo
-        turquoise: '#06B6D4',
-        teal: '#14B8A6',
+        // Brand tokens harmonisés - Couleur EXACTE du logo BANDEV
+        'brand-emerald': '#10B981',              // Couleur exacte extraite du logo
+        'bg-site': 'var(--bg-site)',             // Fond global #0D1D2C
 
         // Utility colors harmonisées
         ring: 'var(--color-ring)',
@@ -172,12 +167,12 @@ const config = {
       },
       borderRadius: {
         // Radius harmonisés selon tokens
-        'sm': '8px',
-        'md': 'var(--radius-xl)',      // 16px
-        'lg': 'var(--radius-2xl)',     // 20px
-        'xl': 'var(--radius-3xl)',     // 24px
-        '2xl': 'var(--radius-3xl)',    // 24px
-        '3xl': '28px',
+        'sm': '4px',
+        'md': '6px',                   // 6px pour rectangulaire avec coins doux
+        'lg': '8px',                   // 8px
+        'xl': '12px',                  // 12px
+        '2xl': '16px',                 // 16px
+        '3xl': '20px',                 // 20px
       },
       transitionDuration: {
         // Transitions harmonisées selon tokens
@@ -195,11 +190,6 @@ const config = {
         'strong': 'var(--shadow-strong)',   // 0 16px 40px rgba(0,0,0,0.26)
         'emerald': 'var(--shadow-emerald)', // Ombre émeraude
         'focus': 'var(--focus-shadow)',     // Focus accessible
-        // Legacy compatibility
-        'matrix-sm': 'var(--shadow-soft)',
-        'matrix-md': 'var(--shadow-medium)',
-        'matrix-lg': 'var(--shadow-strong)',
-        'matrix-ring': 'var(--focus-shadow)',
       },
       keyframes: {
         shimmer: {

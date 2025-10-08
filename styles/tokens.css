@@ -64,6 +64,9 @@
   --spacing-section: 24px;
   --gap-grid: 20px;
   
+  /* Header dimensions */
+  --header-h: 80px;
+  
   /* ======================
      TRANSITIONS
      ====================== */
@@ -150,6 +153,11 @@
   background: linear-gradient(180deg, var(--gradient-card-start), var(--gradient-card-end));
 }
 
+/* Dégradé EXACT du logo BANDEV pour boutons CTA */
+.bg-cta-gradient {
+  background: linear-gradient(135deg, #10B981, #22D3EE);
+}
+
 /* Glassmorphisme pour cards */
 .glass-card {
   backdrop-filter: blur(10px);
@@ -158,6 +166,14 @@
   border: 1px solid var(--stroke-glass);
   box-shadow: var(--shadow-soft);
   border-radius: var(--radius-2xl);
+}
+
+/* Glassmorphisme spécifique header - sticky */
+.glass {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: var(--surface-glass);
+  border: 1px solid var(--stroke-glass);
 }
 
 .glass-card:hover {
