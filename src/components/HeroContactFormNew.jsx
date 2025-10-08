@@ -63,13 +63,13 @@ export default function HeroContactFormNew() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.4 }}
-      className="contact-card relative"
+      className="contact-card relative w-full"
     >
       {/* Glassmorphism card with enhanced styling */}
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gray-900/60 p-6 shadow-2xl backdrop-blur-lg">
+      <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-gray-900/70 p-6 shadow-2xl backdrop-blur-xl">
         {/* Subtle gradient border */}
         <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-white/20 via-[var(--color-primary-300)]/30 to-white/20">
-          <div className="h-full w-full rounded-2xl bg-gray-900/60 backdrop-blur-lg" />
+          <div className="h-full w-full rounded-2xl bg-gray-900/70 backdrop-blur-xl" />
         </div>
 
         {/* Content */}

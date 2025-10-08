@@ -269,7 +269,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section - Clean video background sans overlay sombre */}
-      <section className="hero section-soft relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden min-h-[80vh]">
+      <section className="hero relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden min-h-[80vh]">
         {/* Vidéo de fond - clean without dark filters */}
         <div className="absolute inset-0 z-0">
           <OptimizedVideo
@@ -286,10 +286,11 @@ export default function HomePage() {
         {/* Matrix Rain effect now handled by global CSS */}
 
         {/* Content */}
-        <section className="relative mx-auto max-w-[1200px] px-6 lg:px-8 py-12 lg:py-20 grid grid-cols-12 gap-8 items-start">
-          {/* Colonne gauche : 7/12 */}
-          <ScrollReveal direction="left">
-            <div className="col-span-12 lg:col-span-7 xl:col-span-7 copy-wrap space-y-8 relative">
+        <div className="container-page relative z-10 flex min-h-[60vh] items-center px-4 sm:px-6 md:px-8 mx-auto max-w-screen-xl">
+          <div className="grid gap-6 lg:gap-12 xl:gap-16 w-full xl:grid-cols-2 xl:items-center">
+            {/* Left: Text Content with enhanced readability and semi-transparent overlay */}
+            <ScrollReveal direction="left">
+              <div className="copy-wrap space-y-8 xl:max-w-none relative">
                 <div className="relative z-10">
                   <h1 className="hero-title">
                     Je conçois des <span className="k">interfaces modernes</span>, performantes et
@@ -342,13 +343,14 @@ export default function HomePage() {
               </div>
             </ScrollReveal>
 
-            {/* Colonne droite : 5/12, plus à droite */}
+            {/* Right: Contact Form (replaces MockDashboard) */}
             <ScrollReveal direction="right" delay={200}>
-              <aside className="col-span-12 lg:col-span-5 xl:col-span-5 lg:ml-auto max-w-[520px] w-full">
+              <div className="relative flex justify-center xl:justify-end">
                 <HeroContactFormNew />
-              </aside>
+              </div>
             </ScrollReveal>
-        </section>
+          </div>
+        </div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 motion-safe:animate-bounce">
@@ -367,7 +369,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section - Compact Expertise Band */}
-      <section className="section-soft py-1">
+      <section className="py-1 section-soft">
         <div className="container-page-no-py">
           <div className="flex flex-wrap items-center justify-center gap-4">
             {stats.map((stat, index) => (
@@ -396,7 +398,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="section-soft relative py-8 md:py-12">
+      <section className="relative py-8 md:py-12 section-soft">
         <ParticlesBackground />
 
         <div className="container-page-no-py">
@@ -492,7 +494,7 @@ export default function HomePage() {
       </section>
 
       {/* Process Section */}
-      <section className="section-soft py-20">
+      <section className="py-20 section-soft">
         <div className="container-page">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -586,7 +588,7 @@ export default function HomePage() {
       </section>
 
       {/* Technologies Section */}
-      <section className="section-soft py-12 md:py-20">
+      <section className="py-12 md:py-20 section-soft section-divider">
         <div className="container-page-no-py">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -655,7 +657,7 @@ export default function HomePage() {
       </section>
 
       {/* Workflow Section - NEW */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 section-soft">
         <div className="container-page">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -719,7 +721,7 @@ export default function HomePage() {
       </section>
 
       {/* Tech Showcase Section - NEW */}
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden py-20 section-soft-dark">
         <div className="container-page relative z-10">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -810,7 +812,7 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="section-soft py-12 md:py-20">
+      <section className="py-12 md:py-20 section-soft">
         <div className="container-page-no-py">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -881,7 +883,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-soft py-20">
+      <section className="py-20 section-soft">
         <div className="container-page">
           <ScrollReveal direction="up">
             <div className="mb-16 space-y-4 text-center">
@@ -910,7 +912,7 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section className="section-soft py-16 md:py-24">
+      <section className="py-16 md:py-24 section-soft section-divider">
         <div className="container-page">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Left: Content */}
@@ -1036,7 +1038,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20">
+      <section className="py-12 md:py-20 section-soft-dark">
         <div className="container-page-no-py">
           <CTASection
             title="Prêt à démarrer votre projet ?"

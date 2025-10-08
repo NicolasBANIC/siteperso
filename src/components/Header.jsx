@@ -8,7 +8,6 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 import { useScrolled } from '@/hooks/useScrolled';
-import Image from 'next/image';
 
 const links = [
   { href: '/', label: 'Accueil' },
@@ -22,7 +21,7 @@ const links = [
 
 function Header() {
   const pathname = usePathname();
-  const scrolled = useScrolled(1);
+  const scrolled = useScrolled(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const prefersReducedMotion = useReducedMotion();
@@ -94,14 +93,13 @@ function Header() {
             transition={{ delay: links.length * 0.05, duration: 0.3 }}
             className="mt-6 px-2"
           >
-            <button className="rounded-md px-5 py-2 w-full font-semibold text-slate-900 shadow-sm
+            <button className="inline-flex items-center justify-center rounded-md px-5 py-2 w-full font-semibold
+                               text-slate-900 shadow-sm transition-colors whitespace-nowrap
                                bg-gradient-to-r from-[var(--brand-emerald)]
                                to-[color-mix(in_oklab,var(--brand-emerald)_70%,white_30%)]
                                hover:opacity-95 focus-visible:outline-none
                                focus-visible:ring-2 focus-visible:ring-offset-2
-                               focus-visible:ring-[var(--brand-emerald)]
-                               transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5
-                               motion-reduce:hover:translate-y-0"
+                               focus-visible:ring-[var(--brand-emerald)]"
                                onClick={() => window.location.href = '/devis'}>
               <span className="relative z-10">Demander un devis</span>
             </button>
@@ -115,16 +113,13 @@ function Header() {
     <>
       <motion.header
         role="banner"
-        className={`sticky top-0 left-0 right-0 z-[60] w-full transition-all duration-300 motion-reduce:transition-none ${
+        className={`sticky top-0 inset-x-0 z-[60] transition-all duration-300 motion-reduce:transition-none ${
           scrolled
             ? 'header-glass'
             : 'bg-transparent'
         }`}
         style={{ 
-          height: 'var(--header-h, 80px)',
-          margin: 0,
-          padding: 0,
-          paddingTop: 'max(10px, env(safe-area-inset-top))'
+          height: 'var(--header-h, 80px)'
         }}
         initial={false}
         transition={{
@@ -142,13 +137,16 @@ function Header() {
               className="brand flex items-center z-10"
               aria-label="BANDEV"
             >
-              <Image 
+              <img 
                 src="/brand/logo-bandev-unified.svg" 
                 alt="BANDEV" 
                 width={132} 
                 height={32} 
-                priority 
-                className="h-8 w-auto"
+                className="h-8"
+                style={{ 
+                  display: 'block',
+                  width: '132px'
+                }}
               />
             </Link>
 
@@ -183,21 +181,25 @@ function Header() {
           </div>
 
           {/* Layout desktop - Structure 3 zones selon spécifications */}
-          <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center w-full">
+          <div className="hidden lg:grid grid-cols-[auto_1fr_auto] items-center w-full">
             {/* Gauche = LOGO (cliquable) */}
-            <div className="justify-self-start">
+            <div className="justify-self-start" style={{ minWidth: '132px' }}>
               <Link
                 href="/"
                 className="brand flex items-center"
                 aria-label="BANDEV"
               >
-                <Image 
+                <img 
                   src="/brand/logo-bandev-unified.svg" 
                   alt="BANDEV" 
                   width={132} 
                   height={32} 
-                  priority 
-                  className="h-8 w-auto"
+                  className="h-8"
+                  style={{ 
+                    display: 'block',
+                    width: '132px',
+                    minWidth: '132px'
+                  }}
                 />
               </Link>
             </div>
@@ -230,14 +232,13 @@ function Header() {
 
             {/* Droite = CTA */}
             <div className="justify-self-end">
-              <a href="#contact" className="rounded-md px-5 py-2 font-semibold text-slate-900 shadow-sm
+              <a href="#contact" className="inline-flex items-center justify-center rounded-md px-5 py-2 font-semibold
+                                 text-slate-900 shadow-sm transition-colors whitespace-nowrap
                                  bg-gradient-to-r from-[var(--brand-emerald)]
                                  to-[color-mix(in_oklab,var(--brand-emerald)_70%,white_30%)]
                                  hover:opacity-95 focus-visible:outline-none
                                  focus-visible:ring-2 focus-visible:ring-offset-2
-                                 focus-visible:ring-[var(--brand-emerald)]
-                                 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5
-                                 motion-reduce:hover:translate-y-0">
+                                 focus-visible:ring-[var(--brand-emerald)]">
                 Demander un devis
               </a>
             </div>

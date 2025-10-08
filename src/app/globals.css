@@ -396,6 +396,30 @@
     margin-top: 0 !important;
   }
   
+  /* Anti-bugs locaux Hero - fixes spécifiques */
+  #hero, #hero * {
+    writing-mode: initial !important;
+    text-orientation: initial !important;
+    transform: none !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+  
+  #hero [data-hero-left], #hero [data-hero-right] {
+    min-width: 0;
+    max-width: 100%;
+  }
+  
+  @media (min-width: 1024px) {
+    #hero [data-hero-right] {
+      min-width: 360px;
+    }
+  }
+  
+  #hero, #hero > * {
+    overflow: visible;
+  }
+
   /* CRITICAL: First section should start immediately */
   section:first-child,
   .section:first-child,
@@ -526,5 +550,66 @@
     border: 1px solid var(--stroke-glass);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* =====================================================
+   TRANSITIONS LÉGÈRES ENTRE SECTIONS
+   Dégradés subtils pour continuité visuelle douce
+   ===================================================== */
+
+@layer utilities {
+  /* Lissage générique de transition entre sections */
+  .section-soft {
+    position: relative;
+    isolation: isolate; /* empêche les artefacts avec blur/glass enfants */
+  }
+
+  /* Dégradé vers la section précédente (haut) */
+  .section-soft::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 56px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Dégradé vers la section suivante (bas) */
+  .section-soft::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 56px;
+    background: linear-gradient(0deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Variante sombre (si la section a un fond plus foncé) */
+  .section-soft-dark::before,
+  .section-soft-dark::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.14),
+      rgba(0,0,0,0)
+    );
+  }
+
+  /* Option séparateur fin (si besoin de marqueur léger) */
+  .section-divider {
+    position: relative;
+  }
+
+  .section-divider::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
+    pointer-events: none;
   }
 }
